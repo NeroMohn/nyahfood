@@ -21,19 +21,8 @@ public class Pedido {
         setDate(date);
     }
 
-    public void adicionarComida(Comida comida, int quantidade) {
 
-    }
-
-    public void removerComida(Comida comida, int quantidade) {
-
-    }
-
-    public void finalizaCompra() {
-
-    }
-
-    public long getIdPedido() {
+    public Long getIdPedido() {
         return idPedido;
     }
 
@@ -89,7 +78,7 @@ public class Pedido {
         this.date = date;
     }
 
-    public long getCodComida() { return codComida; }
+    public Long getCodComida() { return codComida; }
 
     public void setCodComida(Long codComida) { this.codComida = codComida; }
 }

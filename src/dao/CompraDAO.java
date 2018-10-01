@@ -36,7 +36,7 @@ public class CompraDAO {
     }
 
 
-    private static void alterar(Compra compra) throws SQLException, ClassNotFoundException {
+    public static void alterar(Compra compra) throws SQLException, ClassNotFoundException {
         Connection conexao = null;
         PreparedStatement comando = null;
         try {

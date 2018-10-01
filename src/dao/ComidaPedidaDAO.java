@@ -33,7 +33,7 @@ public class ComidaPedidaDAO {
         }
     }
 
-    private static void alterar(ComidaPedida comidaPedida) throws SQLException, ClassNotFoundException {
+    public static void alterar(ComidaPedida comidaPedida) throws SQLException, ClassNotFoundException {
         Connection conexao = null;
         PreparedStatement comando = null;
         try {

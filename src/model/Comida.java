@@ -22,7 +22,7 @@ public class Comida {
         setLoja(loja);
     }
 
-    public long getIdComida() {
+    public Long getIdComida() {
         return idComida;
     }
 
@@ -86,7 +86,7 @@ public class Comida {
         this.loja = loja;
     }
 
-    public long getCodLoja() {
+    public Long getCodLoja() {
         return codLoja;
     }
 

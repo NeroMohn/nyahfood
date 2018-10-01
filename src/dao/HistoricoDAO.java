@@ -30,7 +30,7 @@ public class HistoricoDAO {
         }
     }
 
-    private static void alterar(Historico historico) throws SQLException, ClassNotFoundException {
+    public static void alterar(Historico historico) throws SQLException, ClassNotFoundException {
         Connection conexao = null;
         PreparedStatement comando = null;
         try {

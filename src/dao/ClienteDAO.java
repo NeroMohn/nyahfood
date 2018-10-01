@@ -42,7 +42,7 @@ public class ClienteDAO {
     }
 
 
-    private static void alterar(Cliente cliente) throws SQLException, ClassNotFoundException{
+    public static void alterar(Cliente cliente) throws SQLException, ClassNotFoundException{
         Connection conexao = null;
         PreparedStatement comando = null;
         try {

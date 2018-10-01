@@ -35,7 +35,7 @@ public class FavoritoDAO {
         }
     }
 
-    private static void alterar(Favorito favorito) throws SQLException, ClassNotFoundException {
+    public static void alterar(Favorito favorito) throws SQLException, ClassNotFoundException {
         Connection conexao = null;
         PreparedStatement comando = null;
         try {

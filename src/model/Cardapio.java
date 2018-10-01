@@ -15,7 +15,7 @@ public class Cardapio {
     }
 
 
-    public long getIdCardapio() {
+    public Long getIdCardapio() {
         return idCardapio;
     }
 
@@ -39,7 +39,7 @@ public class Cardapio {
         this.comida = comida;
     }
 
-    public long getCodComida(Long codComida) {
+    public Long getCodComida(Long codComida) {
         return this.codComida;
     }
 

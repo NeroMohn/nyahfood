@@ -15,7 +15,7 @@ public class TipoCozinha {
     }
 
 
-    public long getIdTipoCozinha() {
+    public Long getIdTipoCozinha() {
         return idTipoCozinha;
     }
 

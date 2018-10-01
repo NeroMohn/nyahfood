@@ -85,7 +85,7 @@ public class Loja extends Usuario {
         this.pagamento = pagamento;
     }
 
-    public long getCodTipoCozinha() {
+    public Long getCodTipoCozinha() {
         return codTipoCozinha;
     }
 
@@ -93,7 +93,7 @@ public class Loja extends Usuario {
         this.codTipoCozinha = codTipoCozinha;
     }
 
-    public long getCodTipoCulinaria() {
+    public Long getCodTipoCulinaria() {
         return codTipoCulinaria;
     }
 

@@ -34,7 +34,7 @@ public class PedidoDAO {
         }
     }
 
-    private static void alterar(Pedido pedido) throws SQLException, ClassNotFoundException {
+    public static void alterar(Pedido pedido) throws SQLException, ClassNotFoundException {
         Connection conexao = null;
         PreparedStatement comando = null;
         try {

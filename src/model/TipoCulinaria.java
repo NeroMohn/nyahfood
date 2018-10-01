@@ -49,7 +49,7 @@ public class TipoCulinaria {
         this.tipocozinha = tipocozinha;
     }
 
-    public long getCodLoja() {
+    public Long getCodLoja() {
         return codLoja;
     }
 
@@ -57,7 +57,7 @@ public class TipoCulinaria {
         this.codLoja = codLoja;
     }
 
-    public long getCodTipoCozinha() {
+    public Long getCodTipoCozinha() {
         return codTipoCozinha;
     }
 

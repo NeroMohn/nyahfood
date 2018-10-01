@@ -25,7 +25,7 @@ public class CardapioDAO {
             BD.fecharConexao(conexao, comando);
         }catch (SQLException e){throw e;}
     }
-    private static void alterar(Cardapio cardapio) throws SQLException, ClassNotFoundException{
+    public static void alterar(Cardapio cardapio) throws SQLException, ClassNotFoundException{
         Connection conexao = null;
         PreparedStatement comando = null;
         try {

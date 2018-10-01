@@ -17,7 +17,7 @@ public class ComidaPedida {
         setComida(comida);
     }
 
-    public long getIdComidaPedida() {
+    public Long getIdComidaPedida() {
         return idComidaPedida;
     }
 
@@ -53,7 +53,7 @@ public class ComidaPedida {
 
     public void setComida(Comida comida) { this.comida = comida; }
 
-    public long getCodComida() { return codComida; }
+    public Long getCodComida() { return codComida; }
 
     public void setCodComida(Long codComida) { this.codComida = codComida; }
 }

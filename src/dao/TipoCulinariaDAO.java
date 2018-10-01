@@ -28,7 +28,7 @@ public class TipoCulinariaDAO {
         }catch (SQLException e){throw e;}
     }
 
-    private static void alterar(TipoCulinaria tipoCulinaria) throws SQLException, ClassNotFoundException {
+    public static void alterar(TipoCulinaria tipoCulinaria) throws SQLException, ClassNotFoundException {
         Connection conexao = null;
         PreparedStatement comando = null;
         try {

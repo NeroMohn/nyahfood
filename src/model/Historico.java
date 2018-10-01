@@ -10,15 +10,6 @@ public class Historico {
         this.compra = compra;
     }
 
-    //injeta a compra no histórico / BD
-    public void adicionarCompra() {
-
-    }
-
-    // retorna o historico //
-    public Historico retornaHistorico() {
-        return this;
-    }
 
     public Compra getCompra() {
         return compra;
@@ -28,7 +19,7 @@ public class Historico {
         this.compra = compra;
     }
 
-    public long getIdHistorico() {
+    public Long getIdHistorico() {
         return idHistorico;
     }
 
@@ -36,7 +27,7 @@ public class Historico {
         this.idHistorico = idHistorico;
     }
 
-    public long getCodCompra() {
+    public Long getCodCompra() {
         return codCompra;
     }
 

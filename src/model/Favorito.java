@@ -38,7 +38,7 @@ public class Favorito {
         this.loja = loja;
     }
 
-    public long getCodCliente(Long codCliente) {
+    public Long getCodCliente(Long codCliente) {
         return this.codCliente;
     }
 
@@ -46,7 +46,7 @@ public class Favorito {
         this.codCliente = codCliente;
     }
 
-    public long getCodLoja(Long codLoja) {
+    public Long getCodLoja(Long codLoja) {
         return this.codLoja;
     }
 

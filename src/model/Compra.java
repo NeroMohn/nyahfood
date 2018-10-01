@@ -38,7 +38,7 @@ public class Compra {
         this.status = status;
     }
 
-    public long getIdCompra() {
+    public Long getIdCompra() {
         return idCompra;
     }
 
@@ -46,7 +46,7 @@ public class Compra {
         this.idCompra = idCompra;
     }
 
-    public long getCodPedido() {
+    public Long getCodPedido() {
         return codPedido;
     }
 

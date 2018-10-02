@@ -4,8 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Loja extends Usuario {
-    private TipoCozinha tipoCozinha;
-    private TipoCulinaria tipoCulinaria;
+
     private Long idLoja;
     private String CNPJ;
     private String descricao;
@@ -17,7 +16,7 @@ public class Loja extends Usuario {
         super();
     }
 
-    public Loja(Long idLoja, String nome, String telefone, String email, String senha, String foto, String CEP, String logradouro, String bairro, String complemento, String cidade, String estado, String numero, String CNPJ, String descricao, String nomeGerente, ArrayList<String> pagamento) {
+    public Loja(Long idLoja, String nome, String telefone, String email, String senha, String foto, String CEP, String logradouro, String bairro, String complemento, String cidade, String estado, String numero, String CNPJ, String descricao, String nomeGerente) {
         super(nome, telefone, email, senha, foto, CEP, logradouro, bairro, complemento, cidade, estado, numero);
         this.idLoja = idLoja;
         this.CNPJ = CNPJ;
@@ -27,21 +26,6 @@ public class Loja extends Usuario {
 
     }
 
-    public TipoCozinha getTipoCozinha() {
-        return tipoCozinha;
-    }
-
-    public void setTipoCozinha(TipoCozinha tipoCozinha) {
-        this.tipoCozinha = tipoCozinha;
-    }
-
-    public TipoCulinaria getTipoCulinaria() {
-        return tipoCulinaria;
-    }
-
-    public void setTipoCulinaria(TipoCulinaria tipoCulinaria) {
-        this.tipoCulinaria = tipoCulinaria;
-    }
 
     public Long getIdLoja() {
         return idLoja;

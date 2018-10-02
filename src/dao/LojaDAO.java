@@ -14,9 +14,9 @@ public class LojaDAO {
         PreparedStatement comando = null;
         try{
             conexao = BD.getConexao();
-            String sql = "Insert into loja (idLoja, nome, cnpj, email, senha, linkImagem, telefone, logradouro,"+
-                    " numero, bairro, complemento, cep, cidade, estado, descricao, nomeGerente, pagamento, tipoCozinha, tipoCulinaria)"
-                    + "values(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
+            String sql = "Insert into loja (idLoja, nome, telefone, email, senha, foto, cep, logradouro,"+
+                    " bairro, complemento, cidade, estado, numero, cnpj, descricao, nomeGerente)"
+                    + "values(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
             comando = conexao.prepareStatement(sql);
             comando.setLong(1, loja.getIdLoja());
             comando.setString(2,loja.getNome());
@@ -34,7 +34,7 @@ public class LojaDAO {
             comando.setString(14,loja.getEstado());
             comando.setString(15,loja.getDescricao());
             comando.setString(16,loja.getNomeGerente());
-            comando.setArray(17, (Array) loja.getPagamento());
+
 
 
             comando.execute();
@@ -90,7 +90,7 @@ public class LojaDAO {
 
         try{
             conexao = BD.getConexao();
-            String sql = "delete from cardapio where idLoja = ?";
+            String sql = "delete from loja where idLoja = ?";
             comando = conexao.prepareStatement(sql);
             comando.setLong(1, loja.getIdLoja());
             comando.execute();
@@ -167,9 +167,7 @@ public class LojaDAO {
                         rs.getString("numero"),
                         rs.getString("cnpj"),
                         rs.getString("descricao"),
-                        rs.getString("nomeGerente"),
-                        (ArrayList<String>) rs.getArray("pagamento"),
-                        );
+                        rs.getString("nomeGerente"));
 
                 lojas.add(loja);
             }

@@ -2,7 +2,26 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9f8b3665-6c8f-44e8-bfa9-bcc275ca458f" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/nyahfood/view/cadastro-comida.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/nyahfood/view/cadastro-loja.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/nyahfood/view/cadastro-pessoa.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/nyahfood/view/classificar-empresa.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/nyahfood/view/duvidas.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/nyahfood/view/login-admin.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/nyahfood/view/login-cliente.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/nyahfood/view/login-loja.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/nyahfood/view/login-user.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/nyahfood/view/menu-cliente.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/nyahfood/view/menu-loja.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/nyahfood/view/menu.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/nyahfood/view/pedido-empresa.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/nyahfood/view/pesquisa-alimento.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/nyahfood/view/pesquisa-loja.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/nyahfood/view/promocao.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/nyahfood/view/registros-comida.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/nyahfood/view/registros-loja.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/nyahfood/view/registros-usuario.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/nyahfood/view/status-pedido-cliente.html" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -65,6 +84,24 @@
       <usages-collector id="statistics.spring.boot.mvc.usages" />
       <usages-collector id="statistics.spring.boot.run.usages" />
     </session>
+    <session id="1774277502">
+      <usages-collector id="statistics.lifecycle.project">
+        <counts>
+          <entry key="project.open.time.81" value="1" />
+          <entry key="project.opened" value="1" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.open">
+        <counts>
+          <entry key="java" value="1" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.open">
+        <counts>
+          <entry key="JAVA" value="1" />
+        </counts>
+      </usages-collector>
+    </session>
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
@@ -76,7 +113,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/dao/CardapioDAO.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="102">
+            <state relative-caret-position="32">
               <caret line="6" column="22" selection-start-line="6" selection-start-column="22" selection-end-line="6" selection-end-column="22" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -88,17 +125,26 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/dao/HistoricoDAO.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="476">
+            <state relative-caret-position="448">
               <caret line="32" column="10" selection-start-line="32" selection-start-column="10" selection-end-line="32" selection-end-column="10" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/model/Historico.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="102">
-              <caret line="6" lean-forward="true" selection-start-line="6" selection-end-line="6" />
+            <state relative-caret-position="96">
+              <caret line="6" selection-start-line="6" selection-end-line="6" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/mains/MainLoja.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="80">
+              <caret line="14" column="3" selection-start-line="14" selection-start-column="3" selection-end-line="14" selection-end-column="3" />
             </state>
           </provider>
         </entry>
@@ -142,11 +188,11 @@
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
   </component>
-  <component name="ProjectFrameBounds">
-    <option name="x" value="-38" />
-    <option name="y" value="99" />
-    <option name="width" value="1431" />
-    <option name="height" value="886" />
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="-19" />
+    <option name="y" value="10" />
+    <option name="width" value="1386" />
+    <option name="height" value="788" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -154,7 +200,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -167,17 +213,35 @@
               <item name="nyahfood" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="Nyahfood" type="b2602c69:ProjectViewProjectNode" />
+              <item name="nyahfood" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="dao" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Nyahfood" type="b2602c69:ProjectViewProjectNode" />
+              <item name="nyahfood" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="mains" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Nyahfood" type="b2602c69:ProjectViewProjectNode" />
+              <item name="nyahfood" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="model" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1538435148557" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1538480970314" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="project.structure.last.edited" value="Libraries" />
     <property name="project.structure.proportion" value="0.0" />
@@ -213,16 +277,19 @@
       <workItem from="1538425267270" duration="361000" />
       <workItem from="1538434578968" duration="847000" />
       <workItem from="1538435902385" duration="1270000" />
+      <workItem from="1538480730258" duration="221000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="6360000" />
+    <option name="totallyTimeSpent" value="6581000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="291" y="91" width="1431" height="886" extended-state="0" />
+    <frame x="-8" y="-8" width="1382" height="754" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2713348" />
+      <window_info id="Learn" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.27609682" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -391,13 +458,6 @@
     <entry file="file://$PROJECT_DIR$/src/dao/LojaDAO.java">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/mains/MainLoja.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="23" column="25" selection-start-line="23" selection-start-column="25" selection-end-line="23" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/.idea/.name">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -450,7 +510,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/dao/CardapioDAO.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
+        <state relative-caret-position="32">
           <caret line="6" column="22" selection-start-line="6" selection-start-column="22" selection-end-line="6" selection-end-column="22" />
           <folding>
             <element signature="imports" expanded="true" />
@@ -460,15 +520,22 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/dao/HistoricoDAO.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="476">
+        <state relative-caret-position="448">
           <caret line="32" column="10" selection-start-line="32" selection-start-column="10" selection-end-line="32" selection-end-column="10" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/model/Historico.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="6" lean-forward="true" selection-start-line="6" selection-end-line="6" />
+        <state relative-caret-position="96">
+          <caret line="6" selection-start-line="6" selection-end-line="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/mains/MainLoja.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="80">
+          <caret line="14" column="3" selection-start-line="14" selection-start-column="3" selection-end-line="14" selection-end-column="3" />
         </state>
       </provider>
     </entry>

@@ -11,22 +11,20 @@ public class Loja extends Usuario {
     private String descricao;
     private String nomeGerente;
     private List<String> pagamento;
-    private Long codTipoCozinha;
-    private Long codTipoCulinaria;
+
 
     public Loja(){
         super();
     }
 
-    public Loja(Long idLoja, String nome, String telefone, String email, String senha, String foto, String CEP, String logradouro, String bairro, String complemento, String cidade, String estado, String numero, String CNPJ, String descricao, String nomeGerente, ArrayList<String> pagamento, TipoCozinha tipoCozinha, TipoCulinaria tipoCulinaria) {
+    public Loja(Long idLoja, String nome, String telefone, String email, String senha, String foto, String CEP, String logradouro, String bairro, String complemento, String cidade, String estado, String numero, String CNPJ, String descricao, String nomeGerente, ArrayList<String> pagamento) {
         super(nome, telefone, email, senha, foto, CEP, logradouro, bairro, complemento, cidade, estado, numero);
         this.idLoja = idLoja;
         this.CNPJ = CNPJ;
         this.descricao = descricao;
         this.nomeGerente = nomeGerente;
         this.pagamento = pagamento;
-        this.tipoCozinha = tipoCozinha;
-        this.tipoCulinaria = tipoCulinaria;
+
     }
 
     public TipoCozinha getTipoCozinha() {
@@ -85,19 +83,4 @@ public class Loja extends Usuario {
         this.pagamento = pagamento;
     }
 
-    public Long getCodTipoCozinha() {
-        return codTipoCozinha;
-    }
-
-    public void setCodTipoCozinha(Long codTipoCozinha) {
-        this.codTipoCozinha = codTipoCozinha;
-    }
-
-    public Long getCodTipoCulinaria() {
-        return codTipoCulinaria;
-    }
-
-    public void setCodTipoCulinaria(Long codTipoCulinaria) {
-        this.codTipoCulinaria = codTipoCulinaria;
-    }
 }

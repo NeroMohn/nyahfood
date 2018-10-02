@@ -36,11 +36,6 @@ public class LojaDAO {
             comando.setString(16,loja.getNomeGerente());
             comando.setArray(17, (Array) loja.getPagamento());
 
-            if(loja.getTipoCozinha() == null){comando.setNull(18, Types.NULL);}
-            else{comando.setLong(18, loja.getTipoCozinha().getIdTipoCozinha());}
-
-            if(loja.getTipoCulinaria() == null){comando.setNull(19, Types.NULL);}
-            else{comando.setLong(19, loja.getTipoCulinaria().getIdTipoCulinaria());}
 
             comando.execute();
             BD.fecharConexao(conexao, comando);
@@ -58,7 +53,7 @@ public class LojaDAO {
             conexao = BD.getConexao();
             String sql = "update loja set nome = ?, cnpj = ?, email = ?, senha = ?, linkImagem = ?, telefone = ?," +
                     " logradouro = ?, numero = ?, bairro = ?, complemento = ?, cep = ?, cidade = ?, estado = ?, descricao = ?,"+
-                    " nomeGerente = ?, pagamento = ?, idLoja = ?, tipoCozinha = ?, tipoCulinaria = ? where idLoja = ?";
+                    " nomeGerente = ?, pagamento = ?, idLoja = ? where idLoja = ?";
 
             comando = conexao.prepareStatement(sql);
             comando.setString(1,loja.getNome());
@@ -78,11 +73,7 @@ public class LojaDAO {
             comando.setString(15,loja.getNomeGerente());
             comando.setArray(16, (Array) loja.getPagamento());
             comando.setLong(17, loja.getIdLoja());
-            if(loja.getTipoCozinha() == null){comando.setNull(18, Types.NULL);}
-            else{comando.setLong(18, loja.getTipoCozinha().getIdTipoCozinha());}
 
-            if(loja.getTipoCulinaria() == null){comando.setNull(19, Types.NULL);}
-            else{comando.setLong(19, loja.getTipoCulinaria().getIdTipoCulinaria());}
             comando.execute();
             BD.fecharConexao(conexao, comando);
 
@@ -139,10 +130,9 @@ public class LojaDAO {
                     rs.getString("cnpj"),
                     rs.getString("descricao"),
                     rs.getString("nomeGerente")
-                    //(ArrayList<String>) rs.getArray("pagamento"),
-                    ,null,null, null);
-            loja.setCodTipoCozinha(rs.getLong("codTipoCozinha"));
-            loja.setCodTipoCulinaria(rs.getLong("codTipoCulinaria"));
+                    //(ArrayList<String>) rs.getArray("pagamento")
+            );
+
         } catch (SQLException e) {
             e.printStackTrace();
         } finally {
@@ -179,9 +169,7 @@ public class LojaDAO {
                         rs.getString("descricao"),
                         rs.getString("nomeGerente"),
                         (ArrayList<String>) rs.getArray("pagamento"),
-                        null,null);
-                loja.setCodTipoCozinha(rs.getLong("codTipoCozinha"));
-                loja.setCodTipoCulinaria(rs.getLong("codTipoCulinaria"));
+                        );
 
                 lojas.add(loja);
             }

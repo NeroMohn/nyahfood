@@ -12,9 +12,9 @@ public class MainCardapio {
         cardapio.setNome("Bebidas");
         cardapio.setCodComida(1L);
 
-        //CardapioDAO.gravar(cardapio);  //OK
+        CardapioDAO.gravar(cardapio);  //OK
         //CardapioDAO.alterar(cardapio);
-        CardapioDAO.excluir(cardapio);
+        //CardapioDAO.excluir(cardapio);  //OK
         //CardapioDAO.obterCardapio(1L);
         //CardapioDAO.obterTodosCardapios();  //OK???
     }

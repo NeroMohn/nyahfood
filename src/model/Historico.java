@@ -5,9 +5,11 @@ public class Historico {
     private Compra compra;
     private Long codCompra;
 
-    public Historico(Long idHistorico, Compra compra) {
+    public Historico(){}
+
+    public Historico(Long idHistorico, Long codCompra) {
         this.idHistorico = idHistorico;
-        this.compra = compra;
+        this.codCompra = codCompra;
     }
 
 

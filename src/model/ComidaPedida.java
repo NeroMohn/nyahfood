@@ -9,12 +9,14 @@ public class ComidaPedida {
     private double precoTotal;
     private Long codComida;
 
-    public ComidaPedida(Long idComidaPedida, double precoUnitario, int quantidade, double precoTotal,Comida comida) {
+    public ComidaPedida(){}
+
+    public ComidaPedida(Long idComidaPedida, double precoUnitario, int quantidade, double precoTotal,Long codComida) {
         setIdComidaPedida(idComidaPedida);
         setPrecoTotal(precoTotal);
         setPrecoUnitario(precoUnitario);
         setQuantidade(quantidade);
-        setComida(comida);
+        setCodComida(codComida);
     }
 
     public Long getIdComidaPedida() {

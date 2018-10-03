@@ -13,13 +13,13 @@ public class CardapioDAO {
         PreparedStatement comando = null;
         try{
             conexao = BD.getConexao();
-            String sql = "Insert into cardapio (idCardapio, nome, comida)"
+            String sql = "Insert into cardapio (idCardapio, nome, codComida)"
                     + "values(?,?,?)";
             comando = conexao.prepareStatement(sql);
             comando.setLong(1, cardapio.getIdCardapio());
             comando.setString(2,cardapio.getNome());
-            if(cardapio.getComida() == null){comando.setNull(3, Types.NULL);}
-            else{comando.setLong(3, cardapio.getComida().getIdComida());}
+            if(cardapio.getCodComida() == null){comando.setNull(3, Types.NULL);}
+            else{comando.setLong(3, cardapio.getCodComida());}
 
             comando.execute();
             BD.fecharConexao(conexao, comando);
@@ -99,8 +99,8 @@ public class CardapioDAO {
 
             while(rs.next()) {
                 Cardapio cardapio = new Cardapio(rs.getLong("idCardapio"),
-                        rs.getString("nome"), null);
-                cardapio.getCodComida(rs.getLong("codComida"));
+                        rs.getString("nome"),null);
+                cardapio.setCodComida(rs.getLong("codComida"));
 
                 cardapios.add(cardapio);
             }

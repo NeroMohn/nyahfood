@@ -1,15 +1,11 @@
 package mains;
 
-import dao.ComidaDAO;
 import dao.LojaDAO;
 import model.Loja;
-import model.TipoCozinha;
-import model.TipoCulinaria;
+
 
 import java.sql.SQLException;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
+
 
 public class MainLoja {
     public static void main(String[] args) throws SQLException, ClassNotFoundException {
@@ -18,7 +14,6 @@ public class MainLoja {
         loja.setIdLoja(1L);
         loja.setCNPJ("12356");
         loja.setDescricao("Somos Bons");
-        loja.setIdLoja(1L);
         loja.setNomeGerente("Braian");
         loja.setNome("Hasagui");
         loja.setBairro("Fabrica");
@@ -28,8 +23,11 @@ public class MainLoja {
         loja.setTelefone("32314858");
         loja.setSenha("123456");
         loja.setFoto("https//img.sol");
-        loja.setEstado("mg");
+        loja.setEstado("MG");
         loja.setComplemento("Perto quitanda");
+        loja.setNumero("10");
+        loja.setPagamento("NULL");
+
 
         LojaDAO.gravar(loja);
     }

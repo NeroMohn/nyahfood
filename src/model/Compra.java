@@ -7,6 +7,8 @@ public class Compra {
     private Long idCompra;
     private Long codPedido;
 
+    public Compra(){}
+
     public Compra( Long idCompra, double total, String status,Pedido pedido) {
         this.pedido = pedido;
         this.total = total;

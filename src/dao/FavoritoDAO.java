@@ -13,19 +13,19 @@ public class FavoritoDAO {
         PreparedStatement comando = null;
         try {
             conexao = BD.getConexao();
-            String sql = "Insert into favorito (idFavorito, cliente,loja)"
+            String sql = "Insert into favorito (idFavorito, codCliente, codLoja)"
                     + "values(?,?,?)";
             comando = conexao.prepareStatement(sql);
             comando.setLong(1, favorito.getIdFavorito());
-            if (favorito.getCliente() == null) {
+            if (favorito.getCodCliente() == null) {
                 comando.setNull(2, Types.NULL);
             } else {
-                comando.setLong(2, favorito.getCliente().getIdCliente());
+                comando.setLong(2, favorito.getCodCliente());
             }
-            if (favorito.getLoja() == null) {
+            if (favorito.getCodLoja() == null) {
                 comando.setNull(3, Types.NULL);
             } else {
-                comando.setLong(3, favorito.getLoja().getIdLoja());
+                comando.setLong(3, favorito.getCodLoja());
             }
 
             comando.execute();
@@ -40,7 +40,7 @@ public class FavoritoDAO {
         PreparedStatement comando = null;
         try {
             conexao = BD.getConexao();
-            String sql = "update favorito set cliente = ?, loja = ? where idfavorito = ?";
+            String sql = "update favorito set codCliente = ?, codLoja = ? where idfavorito = ?";
             comando = conexao.prepareStatement(sql);
             if (favorito.getCliente() == null) {
                 comando.setNull(1, Types.NULL);
@@ -98,8 +98,6 @@ public class FavoritoDAO {
             rs.first();
             favorito = new Favorito(rs.getLong("idFavorito"),
                     null, null);
-            favorito.getCodCliente(rs.getLong("codCliente"));
-            favorito.getCodLoja(rs.getLong("codLoja"));
         } catch (SQLException e) {
             e.printStackTrace();
         } finally {

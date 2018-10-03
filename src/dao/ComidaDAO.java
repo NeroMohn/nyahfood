@@ -91,6 +91,7 @@ public class ComidaDAO {
         try {
             conexao = BD.getConexao();
             String sql = "SELECT * FROM comida WHERE idComida = ?";
+            comando = conexao.prepareStatement(sql);
             comando.setLong(1, idComida);
             ResultSet rs = comando.executeQuery(sql);
             rs.first();

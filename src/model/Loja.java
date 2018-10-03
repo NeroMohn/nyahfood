@@ -9,7 +9,7 @@ public class Loja extends Usuario {
     private String CNPJ;
     private String descricao;
     private String nomeGerente;
-    private List<String> pagamento;
+    private String pagamento;
 
 
     public Loja(){
@@ -59,11 +59,11 @@ public class Loja extends Usuario {
         this.nomeGerente = nomeGerente;
     }
 
-    public List<String> getPagamento() {
+    public String getPagamento() {
         return pagamento;
     }
 
-    public void setPagamento(List<String> pagamento) {
+    public void setPagamento(String pagamento) {
         this.pagamento = pagamento;
     }
 

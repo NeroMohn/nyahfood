@@ -13,17 +13,17 @@ public class ComidaPedidaDAO {
         PreparedStatement comando = null;
         try {
             conexao = BD.getConexao();
-            String sql = "Insert into comidaPedida (idComidaPedida, precoUnitario, quantidade, precoTotal,comida)"
+            String sql = "Insert into comidaPedida (idComidaPedida, precoUnitario, quantidade, precoTotal, codComida)"
                     + "values(?,?,?,?,?)";
             comando = conexao.prepareStatement(sql);
             comando.setLong(1, comidaPedida.getIdComidaPedida());
             comando.setDouble(2, comidaPedida.getPrecoUnitario());
             comando.setInt(3, comidaPedida.getQuantidade());
             comando.setDouble(4, comidaPedida.getPrecoTotal());
-            if (comidaPedida.getComida() == null) {
+            if (comidaPedida.getCodComida() == null) {
                 comando.setNull(5, Types.NULL);
             } else {
-                comando.setLong(5, comidaPedida.getComida().getIdComida());
+                comando.setLong(5, comidaPedida.getCodComida());
             }
 
             comando.execute();
@@ -38,7 +38,7 @@ public class ComidaPedidaDAO {
         PreparedStatement comando = null;
         try {
             conexao = BD.getConexao();
-            String sql = "update comidaPedida set precoUnitario = ?, quantidade = ?, precoTotal = ? where idComidaPedida = ?,comida = ?";
+            String sql = "update comidaPedida set precoUnitario = ?, quantidade = ?, precoTotal = ? where idComidaPedida = ?,codComida = ?";
             comando = conexao.prepareStatement(sql);
             comando.setDouble(1, comidaPedida.getPrecoUnitario());
             comando.setInt(2, comidaPedida.getQuantidade());
@@ -66,7 +66,7 @@ public class ComidaPedidaDAO {
 
         try {
             conexao = BD.getConexao();
-            String sql = "delete from cardapio where idComidaPedida = ?";
+            String sql = "delete from comidaPedida where idComidaPedida = ?";
             comando = conexao.prepareStatement(sql);
             comando.setLong(1, comidaPedida.getIdComidaPedida());
             comando.execute();
@@ -88,6 +88,7 @@ public class ComidaPedidaDAO {
         try {
             conexao = BD.getConexao();
             String sql = "SELECT * FROM comidaPedida WHERE idComidaPedida = ?";
+            comando = conexao.prepareStatement(sql);
             comando.setLong(1, idComidaPedida);
             ResultSet rs = comando.executeQuery(sql);
             rs.first();

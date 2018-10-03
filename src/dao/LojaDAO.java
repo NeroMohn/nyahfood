@@ -71,7 +71,7 @@ public class LojaDAO {
             comando.setString(13,loja.getEstado());
             comando.setString(14,loja.getDescricao());
             comando.setString(15,loja.getNomeGerente());
-            comando.setArray(16, (Array) loja.getPagamento());
+            comando.setString(16, loja.getPagamento());
             comando.setLong(17, loja.getIdLoja());
 
             comando.execute();

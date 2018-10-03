@@ -84,6 +84,7 @@ public class PedidoDAO {
         try {
             conexao = BD.getConexao();
             String sql = "SELECT * FROM pedido WHERE idPedido = ?";
+            comando = conexao.prepareStatement(sql);
             comando.setLong(1, idPedido);
             ResultSet rs = comando.executeQuery(sql);
             rs.first();

@@ -13,14 +13,14 @@ public class HistoricoDAO {
         PreparedStatement comando = null;
         try {
             conexao = BD.getConexao();
-            String sql = "Insert into historico (idHistorico, compra)"
+            String sql = "Insert into historico (idHistorico, codCompra)"
                     + "values(?,?)";
             comando = conexao.prepareStatement(sql);
             comando.setLong(1, historico.getIdHistorico());
-            if (historico.getCompra() == null) {
+            if (historico.getCodCompra() == null) {
                 comando.setNull(2, Types.NULL);
             } else {
-                comando.setLong(2, historico.getCompra().getIdCompra());
+                comando.setLong(2, historico.getCodCompra());
             }
 
             comando.execute();
@@ -35,12 +35,12 @@ public class HistoricoDAO {
         PreparedStatement comando = null;
         try {
             conexao = BD.getConexao();
-            String sql = "update historico set compra = ?, loja = ? where idHistorico = ?";
+            String sql = "update historico set codCompra = ? where idHistorico = ?";
             comando = conexao.prepareStatement(sql);
-            if (historico.getCompra() == null) {
+            if (historico.getCodCompra() == null) {
                 comando.setNull(1, Types.NULL);
             } else {
-                comando.setLong(1, historico.getCompra().getIdCompra());
+                comando.setLong(1, historico.getCodCompra());
             }
             comando.setLong(2, historico.getIdHistorico());
             comando.execute();
@@ -59,7 +59,7 @@ public class HistoricoDAO {
 
         try {
             conexao = BD.getConexao();
-            String sql = "delete from cardapio where idHistorico = ?";
+            String sql = "delete from historico where idHistorico = ?";
             comando = conexao.prepareStatement(sql);
             comando.setLong(1, historico.getIdHistorico());
             comando.execute();
@@ -81,6 +81,7 @@ public class HistoricoDAO {
         try {
             conexao = BD.getConexao();
             String sql = "SELECT * FROM historico WHERE idHistorico = ?";
+            comando = conexao.prepareStatement(sql);
             comando.setLong(1, idHistorico);
             ResultSet rs = comando.executeQuery(sql);
             rs.first();

@@ -7,14 +7,16 @@ public class Favorito {
     private Long codCliente;
     private Long codLoja;
 
-    public Favorito(Long idFavorito, Cliente cliente, Loja loja) {
+    public Favorito(){}
+
+    public Favorito(Long idFavorito, Long CodCliente, Long CodLoja) {
         this.idFavorito = idFavorito;
-        this.cliente = cliente;
-        this.loja = loja;
+        this.codCliente = codCliente;
+        this.codLoja = codLoja;
 
     }
 
-    public long getIdFavorito() {
+    public Long getIdFavorito() {
         return idFavorito;
     }
 
@@ -38,16 +40,16 @@ public class Favorito {
         this.loja = loja;
     }
 
-    public Long getCodCliente(Long codCliente) {
-        return this.codCliente;
+    public Long getCodCliente() {
+        return codCliente;
     }
 
     public void setCodCliente(Long codCliente) {
         this.codCliente = codCliente;
     }
 
-    public Long getCodLoja(Long codLoja) {
-        return this.codLoja;
+    public Long getCodLoja() {
+        return codLoja;
     }
 
     public void setCodLoja(Long codLoja) {

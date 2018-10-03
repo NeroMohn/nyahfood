@@ -103,6 +103,7 @@ public class ClienteDAO {
         try{
             conexao = BD.getConexao();
             String sql ="SELECT * FROM cliente WHERE idCliente = ?";
+            comando = conexao.prepareStatement(sql);
             comando.setLong(1,idCliente);
             ResultSet rs = comando.executeQuery(sql);
             rs.first();

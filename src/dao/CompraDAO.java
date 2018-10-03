@@ -90,6 +90,7 @@ public class CompraDAO {
         try {
             conexao = BD.getConexao();
             String sql = "SELECT * FROM compra WHERE idCompra = ?";
+            comando = conexao.prepareStatement(sql);
             comando.setLong(1, idCompra);
             ResultSet rs = comando.executeQuery(sql);
             rs.first();

@@ -7,13 +7,14 @@ public class Cardapio {
     private Comida comida;
     private Long codComida;
 
-    public Cardapio(Long idCardapio, String nome, Comida comida) {
+    public Cardapio(){}
+
+    public Cardapio(Long idCardapio, String nome, Long codComida) {
         this.idCardapio = idCardapio;
         this.nome = nome;
-        this.comida = comida;
+        this.codComida = codComida;
 
     }
-
 
     public Long getIdCardapio() {
         return idCardapio;
@@ -39,12 +40,11 @@ public class Cardapio {
         this.comida = comida;
     }
 
-    public Long getCodComida(Long codComida) {
-        return this.codComida;
+    public Long getCodComida() {
+        return codComida;
     }
 
     public void setCodComida(Long codComida) {
-        this.codComida = this.codComida;
+        this.codComida = codComida;
     }
-
 }

@@ -13,7 +13,7 @@ public class PedidoDAO {
         PreparedStatement comando = null;
         try {
             conexao = BD.getConexao();
-            String sql = "Insert into pedido (idPedido, comida, quantidade,subtotal,metodoPagamento, cupomDesconto,date)"
+            String sql = "Insert into pedido (idPedido, codComida, quantidade,subtotal,metodoPagamento, cupomDesconto,date)"
                     + "values(?,?,?,?,?,?,?)";
             comando = conexao.prepareStatement(sql);
             comando.setLong(1, pedido.getIdPedido());
@@ -39,7 +39,7 @@ public class PedidoDAO {
         PreparedStatement comando = null;
         try {
             conexao = BD.getConexao();
-            String sql = "update pedido set comida = ?, quantidade = ?,subtotal = ?,metodoPagamento = ?, "
+            String sql = "update pedido set codComida = ?, quantidade = ?,subtotal = ?,metodoPagamento = ?, "
                     + "cupomDesconto = ?,date = ? where idPedido = ?";
             comando = conexao.prepareStatement(sql);
             if (pedido.getComida() == null) {
@@ -93,7 +93,7 @@ public class PedidoDAO {
                     rs.getDouble("subtotal"),
                     rs.getString("metodoPagamento"),
                     rs.getString("cupomDesconto"),
-                    rs.getString("data"),
+                    rs.getString("date"),
                     null);
             pedido.setCodComida(rs.getLong("codComida"));
         } catch (SQLException e) {
@@ -119,7 +119,7 @@ public class PedidoDAO {
                         rs.getDouble("subtotal"),
                         rs.getString("metodoPagamento"),
                         rs.getString("cupomDesconto"),
-                        rs.getString("data"),
+                        rs.getString("date"),
                         null);
                 pedido.setCodComida(rs.getLong("codComida"));
                 pedidos.add(pedido);

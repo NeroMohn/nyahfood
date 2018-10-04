@@ -25,7 +25,9 @@ public class TipoCulinariaDAO {
 
             comando.execute();
             BD.fecharConexao(conexao, comando);
-        }catch (SQLException e){throw e;}
+        }catch (SQLException e) {
+            throw e;
+        }
     }
 
     public static void alterar(TipoCulinaria tipoCulinaria) throws SQLException, ClassNotFoundException {

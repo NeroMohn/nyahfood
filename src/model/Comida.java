@@ -11,7 +11,8 @@ public class Comida {
     private Loja loja;
     private Long codLoja;
 
-    public Comida(Long idComida, String nome, String ingrediente, String tempoPreparo, String foto, double preco, double desconto, Loja loja) {
+    public Comida(Long idComida, String nome, String ingrediente, String tempoPreparo, String foto, double preco,
+                  double desconto, Loja loja) {
         setIdComida(idComida);
         setNome(nome);
         setIngrediente(ingrediente);

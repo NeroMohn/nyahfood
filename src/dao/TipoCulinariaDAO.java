@@ -13,15 +13,15 @@ public class TipoCulinariaDAO {
         PreparedStatement comando = null;
         try{
             conexao = BD.getConexao();
-            String sql = "Insert into tipoCulinaria (idTipoCulinaria, culinaria, loja, tipoCozinha)"
+            String sql = "Insert into tipoCulinaria (idTipoCulinaria, culinaria, codLoja, codTipoCozinha)"
                     + "values(?,?,?,?)";
             comando = conexao.prepareStatement(sql);
             comando.setLong(1, tipoCulinaria.getIdTipoCulinaria());
             comando.setString(2, tipoCulinaria.getCulinaria());
-            if(tipoCulinaria.getLoja() == null){comando.setNull(3, Types.NULL);}
-            else{comando.setLong(3, tipoCulinaria.getLoja().getIdLoja());}
-            if(tipoCulinaria.getTipocozinha() == null){comando.setNull(4, Types.NULL);}
-            else{comando.setLong(4, tipoCulinaria.getTipocozinha().getIdTipoCozinha());}
+            if(tipoCulinaria.getCodLoja() == null){comando.setNull(3, Types.NULL);}
+            else{comando.setLong(3, tipoCulinaria.getCodLoja());}
+            if(tipoCulinaria.getCodTipoCozinha() == null){comando.setNull(4, Types.NULL);}
+            else{comando.setLong(4, tipoCulinaria.getCodTipoCozinha());}
 
             comando.execute();
             BD.fecharConexao(conexao, comando);

@@ -8,11 +8,15 @@ public class Comida {
     private String foto;
     private double preco;
     private double desconto;
-    private Loja loja;
     private Long codLoja;
 
+    public Comida(){
+
+    }
+
+
     public Comida(Long idComida, String nome, String ingrediente, String tempoPreparo, String foto, double preco,
-                  double desconto, Loja loja) {
+                  double desconto) {
         setIdComida(idComida);
         setNome(nome);
         setIngrediente(ingrediente);
@@ -20,7 +24,9 @@ public class Comida {
         setFoto(foto);
         setPreco(preco);
         setDesconto(desconto);
-        setLoja(loja);
+
+    }
+    public Comida(long idComida, String nome, String ingrediente, String tempoPreparo, String foto, double preco, double desconto, Object o){
     }
 
     public Long getIdComida() {
@@ -79,13 +85,6 @@ public class Comida {
         this.desconto = desconto;
     }
 
-    public Loja getLoja() {
-        return loja;
-    }
-
-    public void setLoja(Loja loja) {
-        this.loja = loja;
-    }
 
     public Long getCodLoja() {
         return codLoja;

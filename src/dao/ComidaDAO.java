@@ -15,7 +15,7 @@ public class ComidaDAO {
         PreparedStatement comando = null;
         try {
             conexao = dao.BD.getConexao();
-            String sql = "insert into comida (idComida, nome, ingredientes,tempoPreparo,foto,preco,desconto,loja)" +
+            String sql = "insert into comida (idComida, nome, ingrediente,tempoPreparo,foto,preco,desconto,codLoja)" +
                     "values (?,?,?,?,?,?,?,?)";
             comando = conexao.prepareStatement(sql);
             comando.setLong(1, comida.getIdComida());
@@ -25,10 +25,10 @@ public class ComidaDAO {
             comando.setString(5, comida.getFoto());
             comando.setDouble(6, comida.getPreco());
             comando.setDouble(7, comida.getDesconto());
-            if (comida.getLoja() == null) {
+            if (comida.getCodLoja() == null) {
                 comando.setNull(8, Types.NULL);
             } else {
-                comando.setLong(8, comida.getLoja().getIdLoja());
+                comando.setLong(8, comida.getCodLoja());
             }
             comando.execute();
             BD.fecharConexao(conexao, comando);
@@ -45,8 +45,8 @@ public class ComidaDAO {
         PreparedStatement comando = null;
         try {
             conexao = BD.getConexao();
-            String sql = "update comida set nome = ?, ingredientes = ?, tempoPreparo = ?, foto = ?, preco = ?, desconto = ?," +
-                    "loja = ? where idComida = ?";
+            String sql = "update comida set nome = ?, ingrediente = ?, tempoPreparo = ?, foto = ?, preco = ?, desconto = ?," +
+                    "codLoja = ? where idComida = ?";
             comando = conexao.prepareStatement(sql);
             comando.setString(1, comida.getNome());
             comando.setString(2, comida.getIngrediente());
@@ -54,10 +54,10 @@ public class ComidaDAO {
             comando.setString(4, comida.getFoto());
             comando.setDouble(5, comida.getPreco());
             comando.setDouble(6, comida.getDesconto());
-            if (comida.getLoja() == null) {
+            if (comida.getCodLoja()== null) {
                 comando.setNull(7, Types.NULL);
             } else {
-                comando.setLong(7, comida.getLoja().getIdLoja());
+                comando.setLong(7, comida.getCodLoja());
             }
             comando.setLong(8, comida.getIdComida());
             comando.execute();
@@ -74,7 +74,9 @@ public class ComidaDAO {
         try {
             conexao = BD.getConexao();
             String sql = "delete from comida where idComida = ?";
+            comando = conexao.prepareStatement(sql);
             comando.setLong(1, comida.getIdComida());
+
             comando.execute();
         } catch (SQLException e) {
             throw e;

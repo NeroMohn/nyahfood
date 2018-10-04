@@ -8,11 +8,11 @@ public class TipoCulinaria {
     private Long codLoja;
     private Long codTipoCozinha;
 
-    public TipoCulinaria(Long idTipoCulinaria, String culinaria, Loja loja, TipoCozinha tipocozinha) {
+    public TipoCulinaria(Long idTipoCulinaria, String culinaria, Long codLoja, Long codTipoCozinha) {
         this.idTipoCulinaria = idTipoCulinaria;
         this.culinaria = culinaria;
-        this.loja = loja;
-        this.tipocozinha = tipocozinha;
+        this.codLoja = codLoja;
+        this.codTipoCozinha = codTipoCozinha;
     }
 
     public TipoCulinaria() {

@@ -67,7 +67,9 @@ public class PedidoDAO {
         try {
             conexao = BD.getConexao();
             String sql = "delete from pedido where idPedido = ?";
+            comando = conexao.prepareStatement(sql);
             comando.setLong(1, pedido.getIdPedido());
+
             comando.execute();
         } catch (SQLException e) {
             throw e;

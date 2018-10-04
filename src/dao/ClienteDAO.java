@@ -14,8 +14,8 @@ public class ClienteDAO {
         PreparedStatement comando = null;
         try{
             conexao = BD.getConexao();
-            String sql = "Insert into cliente (idCliente, nome, CPF, email, senha, linkImagem, telefone, historico, logradouro, numero, bairro, complemento, cidade, estado)"
-                         + "values(?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
+            String sql = "Insert into cliente (idCliente, nome, CPF, email, senha, linkImagem, telefone, historico, logradouro, numero, bairro, complemento, cidade, estado, codHistorico)"
+                         + "values(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
             comando = conexao.prepareStatement(sql);
             comando.setLong(1, cliente.getIdCliente());
             comando.setString(2,cliente.getNome());

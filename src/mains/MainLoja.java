@@ -30,5 +30,7 @@ public class MainLoja {
 
 
         LojaDAO.gravar(loja);
+        LojaDAO.alterar(loja);
+        LojaDAO.excluir(loja);
     }
 }

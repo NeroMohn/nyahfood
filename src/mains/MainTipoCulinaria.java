@@ -7,8 +7,13 @@ import java.sql.SQLException;
 
 public class MainTipoCulinaria {
     public static void main(String[] args) throws SQLException, ClassNotFoundException {
-        TipoCulinaria tipo1 = new TipoCulinaria((long)12345, "asdf", (long)123, (long)123);
-        //TipoCulinariaDAO.gravar(tipo1);
-        TipoCulinariaDAO.excluir(tipo1);
+
+        TipoCulinaria tipoCulinaria = new TipoCulinaria(123L, "Arabe",122L,133L);
+
+        //ClienteDAO.gravar(cliente);  //OK
+        //ClienteDAO.alterar(cliente);  //OK
+        //ClienteDAO.excluir(cliente);  //OK
+        //ClienteDAO.obterCliente(1);
+        //ClienteDAO.obterTodosCliente();
     }
 }

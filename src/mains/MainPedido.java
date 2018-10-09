@@ -8,19 +8,18 @@ import java.sql.SQLException;
 
 public class MainPedido {
     public static void main(String[] args) throws SQLException, ClassNotFoundException {
-        /*Comida comida = new Comida((long) 1234, "Pastel", "massa e queijo",
-                "15", "null",
-        4.5, 0, null);*/
-        Pedido pedido = new Pedido((long) 12348,5, 22.30, "cartao",
-                "XYZDD", "30-10-2018", null);
-        Pedido pedido2 = new Pedido((long) 90908,3, 22.30, "cartao",
-                "XYZDD", "30-10-2018", null);
 
-       // PedidoDAO.gravar(pedido);
-        //PedidoDAO.gravar(pedido2);
-        //PedidoDAO.alterar(pedido);
-        //PedidoDAO.excluir(pedido);
 
+        Pedido pedido = new Pedido();
+        pedido.setCodComida(1L);
+        pedido.setCupomDesconto("Haha");
+        pedido.setIdPedido(2L);
+
+
+        //PedidoDAO.gravar(pedido);  //OK
+        //PedidoDAO.alterar(pedido);  //OK
+        //PedidoDAO.excluir(pedido);  //OK
+        //PedidoDAO.obterPedido(1);
         //PedidoDAO.obterTodosPedidos();
 
 

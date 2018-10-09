@@ -42,15 +42,15 @@ public class FavoritoDAO {
             conexao = BD.getConexao();
             String sql = "update favorito set codCliente = ?, codLoja = ? where idfavorito = ?";
             comando = conexao.prepareStatement(sql);
-            if (favorito.getCliente() == null) {
+            if (favorito.getCodCliente() == null) {
                 comando.setNull(1, Types.NULL);
             } else {
-                comando.setLong(1, favorito.getCliente().getIdCliente());
+                comando.setLong(1, favorito.getCodCliente());
             }
-            if (favorito.getLoja() == null) {
+            if (favorito.getCodLoja() == null) {
                 comando.setNull(2, Types.NULL);
             } else {
-                comando.setLong(2, favorito.getLoja().getIdLoja());
+                comando.setLong(2, favorito.getCodLoja());
             }
             comando.setLong(3, favorito.getIdFavorito());
 

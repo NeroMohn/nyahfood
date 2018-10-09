@@ -11,10 +11,10 @@ public class MainHistorico {
         historico.setIdHistorico(1L);
         historico.setCodCompra(1L);
 
-        HistoricoDAO.gravar(historico);  //OK
-        //HistoricoDAO.alterar(historico);
+        //HistoricoDAO.gravar(historico);  //OK
+        //HistoricoDAO.alterar(historico);  //OK
         //HistoricoDAO.obterHistorico(1L);
-        //HistoricoDAO.obterTodosHistoricos(); //OK???
+        //HistoricoDAO.obterTodosHistoricos();
         //HistoricoDAO.excluir(historico);  //OK
     }
 }

@@ -14,7 +14,7 @@ public class ClienteDAO {
         PreparedStatement comando = null;
         try{
             conexao = BD.getConexao();
-            String sql = "Insert into cliente (idCliente, nome, CPF, email, senha, linkImagem, telefone, historico, logradouro, numero, bairro, complemento, cidade, estado, codHistorico)"
+            String sql = "Insert into cliente (idCliente, nome, CPF, email, senha, foto, telefone, logradouro, CEP, numero, bairro, complemento, cidade, estado, codHistorico)"
                          + "values(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
             comando = conexao.prepareStatement(sql);
             comando.setLong(1, cliente.getIdCliente());
@@ -25,13 +25,14 @@ public class ClienteDAO {
             comando.setString(6,cliente.getFoto());
             comando.setString(7,cliente.getTelefone());
             comando.setString(8,cliente.getLogradouro());
-            comando.setString(9,cliente.getNumero());
-            comando.setString(10,cliente.getBairro());
-            comando.setString(11,cliente.getCEP());
-            comando.setString(12,cliente.getCidade());
-            comando.setString(13,cliente.getEstado());
-            if(cliente.getHistorico() == null){comando.setNull(14, Types.NULL);}
-            else{comando.setLong(14, cliente.getHistorico().getIdHistorico());}
+            comando.setString(9,cliente.getCEP());
+            comando.setString(10,cliente.getNumero());
+            comando.setString(11,cliente.getBairro());
+            comando.setString(12,cliente.getComplemento());
+            comando.setString(13,cliente.getCidade());
+            comando.setString(14,cliente.getEstado());
+            if(cliente.getCodHistorico() == null){comando.setNull(15, Types.NULL);}
+            else{comando.setLong(15, cliente.getCodHistorico());}
 
             comando.execute();
             BD.fecharConexao(conexao, comando);
@@ -47,29 +48,26 @@ public class ClienteDAO {
         PreparedStatement comando = null;
         try {
             conexao = BD.getConexao();
-            String sql = "update cliente set nome = ?, CPF = ?, email = ?, senha = ?, linkImagem = ?, telefone = ?," +
-                    " logradouro = ?, numero = ?, bairro = ?, cep = ?, cidade = ?, estado = ?, historico = ?, idCliente = ? where idCliente = ?";
+            String sql = "update cliente set nome = ?, CPF = ?, email = ?, senha = ?, foto = ?, telefone = ?," +
+                    " logradouro = ?, CEP = ?, numero = ?, bairro = ?, complemento = ?, cidade = ?, estado = ?, codHistorico = ? where idCliente = ?";
             comando = conexao.prepareStatement(sql);
-            comando.setString(1, cliente.getNome());
-            comando.setString(2, cliente.getCpf());
-            comando.setString(3, cliente.getEmail());
-            comando.setString(4, cliente.getSenha());
-            comando.setString(5, cliente.getFoto());
-            comando.setString(6, cliente.getTelefone());
+            comando.setString(1,cliente.getNome());
+            comando.setString(2,cliente.getCpf());
+            comando.setString(3,cliente.getEmail());
+            comando.setString(4,cliente.getSenha());
+            comando.setString(5,cliente.getFoto());
+            comando.setString(6,cliente.getTelefone());
             comando.setString(7,cliente.getLogradouro());
-            comando.setString(8,cliente.getNumero());
-            comando.setString(9,cliente.getBairro());
-            comando.setString(10,cliente.getCEP());
-            comando.setString(11,cliente.getCidade());
-            comando.setString(12,cliente.getEstado());
+            comando.setString(8,cliente.getCEP());
+            comando.setString(9,cliente.getNumero());
+            comando.setString(10,cliente.getBairro());
+            comando.setString(11,cliente.getComplemento());
+            comando.setString(12,cliente.getCidade());
+            comando.setString(13,cliente.getEstado());
+            if(cliente.getCodHistorico() == null){comando.setNull(14, Types.NULL);}
+            else{comando.setLong(14, cliente.getCodHistorico());}
 
-
-            if (cliente.getHistorico() == null) {
-                comando.setNull(13, Types.NULL);
-            } else {
-                comando.setLong(13, cliente.getHistorico().getIdHistorico());
-            }
-            comando.setLong(14, cliente.getIdCliente());
+            comando.setLong(15, cliente.getIdCliente());
             comando.execute();
             BD.fecharConexao(conexao, comando);
 
@@ -84,7 +82,8 @@ public class ClienteDAO {
         PreparedStatement comando = null;
         try{
             conexao = BD.getConexao();
-            String sql = "delete from comida where idComida = ?";
+            String sql = "delete from cliente where idCliente = ?";
+            comando = conexao.prepareStatement(sql);
             comando.setLong(1, cliente.getIdCliente());
             comando.execute();
         }
@@ -109,7 +108,7 @@ public class ClienteDAO {
             rs.first();
             cliente = new Cliente (rs.getLong("idCliente"),
                     rs.getString("nome"),
-                    rs.getString("cpf"),
+                    rs.getString("CPF"),
                     rs.getString("telefone"),
                     rs.getString("email"),
                     rs.getString("senha"),

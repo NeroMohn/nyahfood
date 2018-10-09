@@ -14,7 +14,7 @@ public class MainLoja {
         loja.setIdLoja(1L);
         loja.setCNPJ("12356");
         loja.setDescricao("Somos Bons");
-        loja.setNomeGerente("Braian");
+        loja.setNomeGerente("Lixo");
         loja.setNome("Hasagui");
         loja.setBairro("Fabrica");
         loja.setLogradouro("Rio branco");
@@ -29,8 +29,11 @@ public class MainLoja {
         loja.setPagamento("NULL");
 
 
-        LojaDAO.gravar(loja);
-        LojaDAO.alterar(loja);
-        LojaDAO.excluir(loja);
+        //LojaDAO.gravar(loja);  //OK
+        //LojaDAO.alterar(loja); //OK
+        //LojaDAO.excluir(loja);  //OK
+        //LojaDAO.obterLoja(1);
+        //LojaDAO.obterTodasLojas();
+
     }
 }

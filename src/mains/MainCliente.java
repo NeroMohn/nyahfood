@@ -10,15 +10,13 @@ public class MainCliente {
 
         Cliente cliente = new Cliente();
 
-        cliente.setIdCliente(1L);
-        cliente.setNome("Braian");
-        cliente.setCpf("123456");
-        cliente.setBairro("Fabrica");
-        cliente.setCidade("Caxambu");
+        cliente.setIdCliente(2L);
 
-        ClienteDAO.gravar(cliente);
-        ClienteDAO.alterar(cliente);
-        ClienteDAO.excluir(cliente);
+        //ClienteDAO.gravar(cliente);  //OK
+        //ClienteDAO.alterar(cliente);  //OK
+        //ClienteDAO.excluir(cliente);  //OK
+        //ClienteDAO.obterCliente(1);
+        //ClienteDAO.obterTodosCliente();
 
 
     }

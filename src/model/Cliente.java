@@ -13,11 +13,12 @@ public class Cliente extends Usuario {
 
     public Cliente(Long idCliente, String nome,String cpf, String telefone, String email, String senha, String foto, String CEP, String logradouro,
                    String bairro, String complemento, String cidade, String estado, String numero,
-                    Historico historico) {
+                    Long codHistorico) {
         super(nome, telefone, email, senha, foto, CEP, logradouro, bairro, complemento, cidade, estado, numero);
         this.idCliente = idCliente;
         this.cpf = cpf;
         this.historico = historico;
+        this.codHistorico = codHistorico;
     }
 
 
@@ -45,9 +46,11 @@ public class Cliente extends Usuario {
         this.historico = historico;
     }
 
+    public Long getCodHistorico() {
+        return codHistorico;
+    }
+
     public void setCodHistorico(Long codHistorico) {
         this.codHistorico = codHistorico;
     }
-
-    public Long getCodHistorico() { return codHistorico; }
 }

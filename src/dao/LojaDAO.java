@@ -51,9 +51,9 @@ public class LojaDAO {
         PreparedStatement comando = null;
         try {
             conexao = BD.getConexao();
-            String sql = "update loja set nome = ?, cnpj = ?, email = ?, senha = ?, linkImagem = ?, telefone = ?," +
+            String sql = "update loja set nome = ?, cnpj = ?, email = ?, senha = ?, foto = ?, telefone = ?," +
                     " logradouro = ?, numero = ?, bairro = ?, complemento = ?, cep = ?, cidade = ?, estado = ?, descricao = ?,"+
-                    " nomeGerente = ?, pagamento = ?, idLoja = ? where idLoja = ?";
+                    " nomeGerente = ?, pagamento = ? where idLoja = ?";
 
             comando = conexao.prepareStatement(sql);
             comando.setString(1,loja.getNome());
@@ -103,7 +103,7 @@ public class LojaDAO {
 
     }
 
-    public static Loja obterLoja() throws ClassNotFoundException {
+    public static Loja obterLoja(long idLoja) throws ClassNotFoundException {
         Connection conexao = null;
         PreparedStatement comando = null;
         Loja loja = null;
@@ -130,7 +130,6 @@ public class LojaDAO {
                     rs.getString("cnpj"),
                     rs.getString("descricao"),
                     rs.getString("nomeGerente")
-                    //(ArrayList<String>) rs.getArray("pagamento")
             );
 
         } catch (SQLException e) {

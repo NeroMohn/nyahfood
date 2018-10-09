@@ -14,17 +14,17 @@ public class CompraDAO {
         PreparedStatement comando = null;
         try {
             conexao = BD.getConexao();
-            String sql = "Insert into compra (idCompra, pedido, total, status)"
+            String sql = "Insert into compra (idCompra, total, status, codPedido)"
                     + "values(?,?,?,?)";
             comando = conexao.prepareStatement(sql);
             comando.setLong(1, compra.getIdCompra());
             comando.setDouble(2, compra.getTotal());
             comando.setString(3, compra.getStatus());
 
-            if (compra.getPedido() == null) {
+            if (compra.getCodPedido() == null) {
                 comando.setNull(4, Types.NULL);
             } else {
-                comando.setLong(4, compra.getPedido().getIdPedido());
+                comando.setLong(4, compra.getCodPedido());
             }
             comando.execute();
             BD.fecharConexao(conexao, comando);
@@ -41,17 +41,17 @@ public class CompraDAO {
         PreparedStatement comando = null;
         try {
             conexao = BD.getConexao();
-            String sql = "update compra set idCompra = ?, pedido = ?, total = ?, status = ? where idCompra = ?";
+            String sql = "update compra set total = ?, status = ?, codPedido = ? where idCompra = ?";
+            comando = conexao.prepareStatement(sql);
+            comando.setDouble(1, compra.getTotal());
+            comando.setString(2, compra.getStatus());
 
-            comando.setLong(1, compra.getIdCompra());
-            comando.setDouble(2, compra.getTotal());
-            comando.setString(3, compra.getStatus());
-
-            if (compra.getPedido() == null) {
-                comando.setNull(4, Types.NULL);
+            if (compra.getCodPedido() == null) {
+                comando.setNull(3, Types.NULL);
             } else {
-                comando.setLong(4, compra.getPedido().getIdPedido());
+                comando.setLong(3, compra.getCodPedido());
             }
+            comando.setLong(4, compra.getIdCompra());
             comando.execute();
             BD.fecharConexao(conexao, comando);
 
@@ -67,7 +67,7 @@ public class CompraDAO {
 
         try {
             conexao = BD.getConexao();
-            String sql = "delete from cardapio where idCompra = ?";
+            String sql = "delete from compra where idCompra = ?";
             comando = conexao.prepareStatement(sql);
             comando.setLong(1, compra.getIdCompra());
             comando.execute();

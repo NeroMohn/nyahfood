@@ -10,10 +10,11 @@ public class Pedido {
     private String date;
     private Long codComida;
 
+    public Pedido(){};
 
-    public Pedido(Long idPedido, int quantidade, double subtotal, String metodoPagamento, String cupomDesconto, String date, Comida comida) {
+    public Pedido(Long idPedido, int quantidade, double subtotal, String metodoPagamento, String cupomDesconto, String date, Long codComida) {
         setIdPedido(idPedido);
-        setComida(comida);
+        setCodComida(codComida);
         setQuantidade(quantidade);
         setSubtotal(subtotal);
         setMetodoPagamento(metodoPagamento);

@@ -76,7 +76,6 @@ public class ComidaDAO {
             String sql = "delete from comida where idComida = ?";
             comando = conexao.prepareStatement(sql);
             comando.setLong(1, comida.getIdComida());
-
             comando.execute();
         } catch (SQLException e) {
             throw e;

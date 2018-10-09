@@ -9,8 +9,8 @@ public class Compra {
 
     public Compra(){}
 
-    public Compra( Long idCompra, double total, String status,Pedido pedido) {
-        this.pedido = pedido;
+    public Compra( Long idCompra, double total, String status,Long codPedido) {
+        this.codPedido = codPedido;
         this.total = total;
         this.status = status;
         this.idCompra = idCompra;

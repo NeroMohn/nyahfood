@@ -38,16 +38,16 @@ public class ComidaPedidaDAO {
         PreparedStatement comando = null;
         try {
             conexao = BD.getConexao();
-            String sql = "update comidaPedida set precoUnitario = ?, quantidade = ?, precoTotal = ? where idComidaPedida = ?,codComida = ?";
+            String sql = "update comidaPedida set precoUnitario = ?, quantidade = ?, precoTotal = ? where idComidaPedida = ? and codComida = ?";
             comando = conexao.prepareStatement(sql);
             comando.setDouble(1, comidaPedida.getPrecoUnitario());
             comando.setInt(2, comidaPedida.getQuantidade());
             comando.setDouble(3, comidaPedida.getPrecoTotal());
             comando.setLong(4, comidaPedida.getIdComidaPedida());
-            if (comidaPedida.getComida() == null) {
+            if (comidaPedida.getCodComida() == null) {
                 comando.setNull(5, Types.NULL);
             } else {
-                comando.setLong(5, comidaPedida.getComida().getIdComida());
+                comando.setLong(5, comidaPedida.getCodComida());
             }
 
             comando.execute();

@@ -13,14 +13,14 @@ public class PedidoDAO {
         PreparedStatement comando = null;
         try {
             conexao = BD.getConexao();
-            String sql = "Insert into pedido (idPedido, codComida, quantidade,subtotal,metodoPagamento, cupomDesconto,date)"
+            String sql = "Insert into pedido (idPedido, codComida, quantidade,subtotal,metodoPagamento, cupomDesconto, date)"
                     + "values(?,?,?,?,?,?,?)";
             comando = conexao.prepareStatement(sql);
             comando.setLong(1, pedido.getIdPedido());
-            if (pedido.getComida() == null) {
+            if (pedido.getCodComida() == null) {
                 comando.setNull(2, Types.NULL);
             } else {
-                comando.setLong(2, pedido.getComida().getIdComida());
+                comando.setLong(2, pedido.getCodComida());
             }
             comando.setInt(3, pedido.getQuantidade());
             comando.setDouble(4, pedido.getSubtotal());
@@ -42,10 +42,10 @@ public class PedidoDAO {
             String sql = "update pedido set codComida = ?, quantidade = ?,subtotal = ?,metodoPagamento = ?, "
                     + "cupomDesconto = ?,date = ? where idPedido = ?";
             comando = conexao.prepareStatement(sql);
-            if (pedido.getComida() == null) {
+            if (pedido.getCodComida() == null) {
                 comando.setNull(1, Types.NULL);
             } else {
-                comando.setLong(1, pedido.getComida().getIdComida());
+                comando.setLong(1, pedido.getCodComida());
             }
             comando.setInt(2, pedido.getQuantidade());
             comando.setDouble(3, pedido.getSubtotal());

@@ -3,33 +3,10 @@
   <component name="ChangeListManager">
     <list default="true" id="c38716be-5b68-4334-9f30-493e21cda68f" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/nyahfood-master/dao/ClienteDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/nyahfood-master/dao/ClienteDAO.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/nyahfood-master/dao/ComidaDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/nyahfood-master/dao/ComidaDAO.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/nyahfood-master/dao/ComidaPedidaDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/nyahfood-master/dao/ComidaPedidaDAO.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/nyahfood-master/dao/CompraDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/nyahfood-master/dao/CompraDAO.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/nyahfood-master/mains/MainCliente.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/nyahfood-master/mains/MainCliente.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/nyahfood-master/mains/MainComida.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/nyahfood-master/mains/MainComida.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/nyahfood-master/mains/MainComidaPedida.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/nyahfood-master/mains/MainComidaPedida.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/nyahfood-master/mains/MainFavorito.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/nyahfood-master/mains/MainFavorito.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/nyahfood-master/model/Cliente.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/nyahfood-master/model/Cliente.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/nyahfood-master/model/Compra.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/nyahfood-master/model/Compra.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/dao/ClienteDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dao/ClienteDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/dao/ComidaDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dao/ComidaDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/dao/ComidaPedidaDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dao/ComidaPedidaDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/dao/CompraDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dao/CompraDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/dao/FavoritoDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dao/FavoritoDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/dao/LojaDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dao/LojaDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/dao/PedidoDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dao/PedidoDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/mains/MainCliente.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/mains/MainCliente.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/mains/MainComida.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/mains/MainComida.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/mains/MainComidaPedida.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/mains/MainComidaPedida.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/mains/MainFavorito.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/mains/MainFavorito.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/mains/MainHistorico.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/mains/MainHistorico.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/mains/MainLoja.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/mains/MainLoja.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/mains/MainPedido.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/mains/MainPedido.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/nyahfood-master/mains/MainPedido.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/nyahfood-master/mains/MainPedido.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/nyahfood-master/mains/MainTipoCozinha.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/nyahfood-master/mains/MainTipoCozinha.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/nyahfood-master/mains/MainTipoCulinaria.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/nyahfood-master/mains/MainTipoCulinaria.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/model/Cliente.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/Cliente.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/model/Compra.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/Compra.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/model/Pedido.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/Pedido.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -56,17 +33,19 @@
     <session id="1774277502">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="1" />
+          <entry key="project.closed" value="2" />
           <entry key="project.open.time.0" value="1" />
+          <entry key="project.open.time.57" value="1" />
           <entry key="project.open.time.69" value="1" />
           <entry key="project.open.time.72" value="1" />
-          <entry key="project.opened" value="3" />
+          <entry key="project.opened" value="4" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
           <entry key="class" value="2" />
-          <entry key="java" value="29" />
+          <entry key="html" value="1" />
+          <entry key="java" value="30" />
           <entry key="sql" value="1" />
           <entry key="xml" value="1" />
         </counts>
@@ -74,19 +53,22 @@
       <usages-collector id="statistics.file.types.open">
         <counts>
           <entry key="CLASS" value="2" />
-          <entry key="JAVA" value="29" />
+          <entry key="HTML" value="1" />
+          <entry key="JAVA" value="30" />
           <entry key="Scratch" value="1" />
           <entry key="XML" value="1" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="java" value="947" />
+          <entry key="java" value="1177" />
+          <entry key="jsp" value="944" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="947" />
+          <entry key="JAVA" value="1177" />
+          <entry key="JSP" value="944" />
         </counts>
       </usages-collector>
     </session>
@@ -125,12 +107,51 @@
     </session>
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
+    <leaf>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/controller/pesquisaCliente.jsp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="176">
+              <caret line="11" column="6" selection-start-line="11" selection-start-column="6" selection-end-line="11" selection-end-column="6" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/model/Cliente.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="331">
+              <caret line="71" column="37" lean-forward="true" selection-start-line="71" selection-start-column="37" selection-end-line="71" selection-end-column="37" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#777#778#0" expanded="true" />
+                <element signature="e#809#810#0" expanded="true" />
+                <element signature="e#857#858#0" expanded="true" />
+                <element signature="e#899#900#0" expanded="true" />
+                <element signature="e#929#930#0" expanded="true" />
+                <element signature="e#955#956#0" expanded="true" />
+                <element signature="e#993#994#0" expanded="true" />
+                <element signature="e#1023#1024#0" expanded="true" />
+                <element signature="e#1062#1063#0" expanded="true" />
+                <element signature="e#1094#1095#0" expanded="true" />
+                <element signature="e#1147#1148#0" expanded="true" />
+                <element signature="e#1189#1190#0" expanded="true" />
+                <element signature="e#1226#1227#0" expanded="true" />
+                <element signature="e#1261#1262#0" expanded="true" />
+                <element signature="e#1315#1316#0" expanded="true" />
+                <element signature="e#1363#1364#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Class" />
+        <option value="HTML File" />
       </list>
     </option>
   </component>
@@ -152,7 +173,6 @@
         <option value="$PROJECT_DIR$/src/model/TipoCulinaria.java" />
         <option value="$PROJECT_DIR$/src/mains/MainTipoCulinaria.java" />
         <option value="$PROJECT_DIR$/src/model/Comida.java" />
-        <option value="$PROJECT_DIR$/src/model/Cliente.java" />
         <option value="$PROJECT_DIR$/src/dao/ComidaDAO.java" />
         <option value="$PROJECT_DIR$/src/dao/ClienteDAO.java" />
         <option value="$PROJECT_DIR$/src/mains/MainCliente.java" />
@@ -170,6 +190,9 @@
         <option value="$PROJECT_DIR$/src/dao/PedidoDAO.java" />
         <option value="$PROJECT_DIR$/src/model/Pedido.java" />
         <option value="$PROJECT_DIR$/src/mains/MainPedido.java" />
+        <option value="$PROJECT_DIR$/src/controller/pesquisaCliente.html" />
+        <option value="$PROJECT_DIR$/src/controller/pesquisaCliente.jsp" />
+        <option value="$PROJECT_DIR$/src/model/Cliente.java" />
       </list>
     </option>
   </component>
@@ -201,24 +224,13 @@
             <path>
               <item name="Nyahfood" type="b2602c69:ProjectViewProjectNode" />
               <item name="nyahfood" type="462c0819:PsiDirectoryNode" />
-              <item name="lib" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Nyahfood" type="b2602c69:ProjectViewProjectNode" />
-              <item name="nyahfood" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="Nyahfood" type="b2602c69:ProjectViewProjectNode" />
               <item name="nyahfood" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="dao" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Nyahfood" type="b2602c69:ProjectViewProjectNode" />
-              <item name="nyahfood" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="mains" type="462c0819:PsiDirectoryNode" />
+              <item name="controller" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="Nyahfood" type="b2602c69:ProjectViewProjectNode" />
@@ -235,9 +247,10 @@
   </component>
   <component name="PropertiesComponent">
     <property name="DatabaseDriversLRU" value="mysql" />
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1539047045308" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1539093385847" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
@@ -354,21 +367,22 @@
       <workItem from="1538612114649" duration="4147000" />
       <workItem from="1538653954832" duration="4328000" />
       <workItem from="1539040975364" duration="5044000" />
+      <workItem from="1539087329891" duration="4159000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="16985000" />
+    <option name="totallyTimeSpent" value="21144000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <frame x="-8" y="-8" width="1382" height="754" extended-state="6" />
     <layout>
       <window_info id="Image Layers" order="0" />
       <window_info id="Designer" order="1" />
       <window_info id="UI Designer" order="2" />
       <window_info id="Learn" order="3" weight="0.32980332" />
       <window_info id="Capture Tool" order="4" />
-      <window_info active="true" content_ui="combo" id="Project" order="5" visible="true" weight="0.1748401" />
+      <window_info content_ui="combo" id="Project" order="5" weight="0.17700455" />
       <window_info id="Structure" order="6" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="7" side_tool="true" />
       <window_info anchor="bottom" id="Terminal" order="0" />
@@ -377,7 +391,7 @@
       <window_info anchor="bottom" id="Version Control" order="3" />
       <window_info anchor="bottom" id="Message" order="4" />
       <window_info anchor="bottom" id="Find" order="5" />
-      <window_info anchor="bottom" id="Run" order="6" weight="0.18329719" />
+      <window_info anchor="bottom" id="Run" order="6" weight="0.18225807" />
       <window_info anchor="bottom" id="Debug" order="7" weight="0.4" />
       <window_info anchor="bottom" id="Messages" order="8" weight="0.4978308" />
       <window_info anchor="bottom" id="Cvs" order="9" weight="0.25" />
@@ -393,37 +407,6 @@
       <window_info anchor="right" id="Ant Build" order="7" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="8" weight="0.25" />
     </layout>
-    <layout-to-restore>
-      <window_info id="Image Layers" order="0" />
-      <window_info id="Designer" order="1" />
-      <window_info id="UI Designer" order="2" />
-      <window_info id="Learn" order="3" weight="0.32980332" />
-      <window_info id="Capture Tool" order="4" />
-      <window_info content_ui="combo" id="Project" order="5" visible="true" weight="0.17701025" />
-      <window_info id="Structure" order="6" side_tool="true" weight="0.25" />
-      <window_info id="Favorites" order="7" side_tool="true" />
-      <window_info anchor="bottom" id="Terminal" order="0" />
-      <window_info anchor="bottom" id="Event Log" order="1" side_tool="true" />
-      <window_info anchor="bottom" id="Database Changes" order="2" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Version Control" order="3" />
-      <window_info anchor="bottom" id="Message" order="4" />
-      <window_info anchor="bottom" id="Find" order="5" />
-      <window_info active="true" anchor="bottom" id="Run" order="6" visible="true" weight="0.18653421" />
-      <window_info anchor="bottom" id="Debug" order="7" weight="0.4" />
-      <window_info anchor="bottom" id="Messages" order="8" weight="0.4983871" />
-      <window_info anchor="bottom" id="Cvs" order="9" weight="0.25" />
-      <window_info anchor="bottom" id="Inspection" order="10" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="11" />
-      <window_info anchor="right" id="Capture Analysis" order="0" />
-      <window_info anchor="right" id="Theme Preview" order="1" />
-      <window_info anchor="right" id="Database" order="2" weight="0.32980332" />
-      <window_info anchor="right" id="Palette&#9;" order="3" />
-      <window_info anchor="right" id="Maven Projects" order="4" />
-      <window_info anchor="right" id="Palette" order="5" />
-      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="6" type="SLIDING" weight="0.4" />
-      <window_info anchor="right" id="Ant Build" order="7" weight="0.25" />
-      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="8" weight="0.25" />
-    </layout-to-restore>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
@@ -486,20 +469,8 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/dao/CardapioDAO.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="64">
-          <caret line="89" column="32" selection-start-line="89" selection-start-column="32" selection-end-line="89" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/model/Cardapio.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="32">
-          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/dao/CardapioDAO.java" />
+    <entry file="file://$PROJECT_DIR$/src/model/Cardapio.java" />
     <entry file="file://$PROJECT_DIR$/src/model/TipoCulinaria.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="323">
@@ -522,30 +493,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="160">
           <caret line="14" selection-start-line="14" selection-end-line="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/model/Cliente.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="408">
-          <caret line="24" column="32" selection-start-line="24" selection-start-column="32" selection-end-line="24" selection-end-column="32" />
-          <folding>
-            <element signature="e#809#810#0" expanded="true" />
-            <element signature="e#857#858#0" expanded="true" />
-            <element signature="e#899#900#0" expanded="true" />
-            <element signature="e#929#930#0" expanded="true" />
-            <element signature="e#955#956#0" expanded="true" />
-            <element signature="e#993#994#0" expanded="true" />
-            <element signature="e#1023#1024#0" expanded="true" />
-            <element signature="e#1062#1063#0" expanded="true" />
-            <element signature="e#1094#1095#0" expanded="true" />
-            <element signature="e#1147#1148#0" expanded="true" />
-            <element signature="e#1189#1190#0" expanded="true" />
-            <element signature="e#1226#1227#0" expanded="true" />
-            <element signature="e#1261#1262#0" expanded="true" />
-            <element signature="e#1315#1316#0" expanded="true" />
-            <element signature="e#1363#1364#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -717,6 +664,39 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="68">
           <caret line="4" column="13" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/model/Cliente.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="331">
+          <caret line="71" column="37" lean-forward="true" selection-start-line="71" selection-start-column="37" selection-end-line="71" selection-end-column="37" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#777#778#0" expanded="true" />
+            <element signature="e#809#810#0" expanded="true" />
+            <element signature="e#857#858#0" expanded="true" />
+            <element signature="e#899#900#0" expanded="true" />
+            <element signature="e#929#930#0" expanded="true" />
+            <element signature="e#955#956#0" expanded="true" />
+            <element signature="e#993#994#0" expanded="true" />
+            <element signature="e#1023#1024#0" expanded="true" />
+            <element signature="e#1062#1063#0" expanded="true" />
+            <element signature="e#1094#1095#0" expanded="true" />
+            <element signature="e#1147#1148#0" expanded="true" />
+            <element signature="e#1189#1190#0" expanded="true" />
+            <element signature="e#1226#1227#0" expanded="true" />
+            <element signature="e#1261#1262#0" expanded="true" />
+            <element signature="e#1315#1316#0" expanded="true" />
+            <element signature="e#1363#1364#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/controller/pesquisaCliente.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="176">
+          <caret line="11" column="6" selection-start-line="11" selection-start-column="6" selection-end-line="11" selection-end-column="6" />
         </state>
       </provider>
     </entry>

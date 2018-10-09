@@ -1,6 +1,9 @@
 package model;
 
 
+import dao.ClienteDAO;
+
+import java.sql.SQLException;
 
 public class Cliente extends Usuario {
 
@@ -52,5 +55,25 @@ public class Cliente extends Usuario {
 
     public void setCodHistorico(Long codHistorico) {
         this.codHistorico = codHistorico;
+    }
+
+    public void gravar() throws SQLException, ClassNotFoundException{
+        ClienteDAO.gravar(this);
+    }
+
+    public void alterar() throws SQLException, ClassNotFoundException{
+        ClienteDAO.alterar(this);
+    }
+
+    public void excluir() throws SQLException, ClassNotFoundException{
+        ClienteDAO.excluir(this);
+    }
+
+    public static Cliente obterCliente(int idCliente) throws SQLException, ClassNotFoundException{
+        ClienteDAO.obterCliente(idCliente);
+    }
+
+    public static List<Cliente> obterTodosClientes(int idCliente) throws SQLException, ClassNotFoundException{
+        ClienteDAO.obterTodosCliente();
     }
 }

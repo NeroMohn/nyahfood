@@ -1,5 +1,10 @@
 package model;
 
+import dao.TipoCulinariaDAO;
+
+import java.sql.SQLException;
+import java.util.List;
+
 public class TipoCulinaria {
     private Long idTipoCulinaria;
     private String culinaria;
@@ -63,5 +68,25 @@ public class TipoCulinaria {
 
     public void setCodTipoCozinha(Long codTipoCozinha) {
         this.codTipoCozinha = codTipoCozinha;
+    }
+
+    public void gravar() throws SQLException, ClassNotFoundException{
+        TipoCulinariaDAO.gravar(this);
+    }
+
+    public void alterar() throws SQLException, ClassNotFoundException{
+        TipoCulinariaDAO.alterar(this);
+    }
+
+    public void excluir() throws SQLException, ClassNotFoundException{
+        TipoCulinariaDAO.excluir(this);
+    }
+
+    public static TipoCulinaria obterTipoCulinaria(int idTipoCulinaria) throws SQLException, ClassNotFoundException{
+        return TipoCulinariaDAO.obterTipoCulinaria(idTipoCulinaria);
+    }
+
+    public static List<TipoCulinaria> obterTodosTiposCulinaria throws SQLException, ClassNotFoundException{
+        return TipoCulinariaDAO.obterTodosTiposCulinaria();
     }
 }

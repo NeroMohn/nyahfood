@@ -1,5 +1,10 @@
 package model;
 
+import dao.FavoritoDAO;
+
+import java.sql.SQLException;
+import java.util.List;
+
 public class Favorito {
     private Long idFavorito;
     private Cliente cliente;
@@ -54,5 +59,25 @@ public class Favorito {
 
     public void setCodLoja(Long codLoja) {
         this.codLoja = codLoja;
+    }
+
+    public void gravar() throws SQLException, ClassNotFoundException{
+        FavoritoDAO.gravar(this);
+    }
+
+    public void alterar() throws SQLException, ClassNotFoundException{
+        FavoritoDAO.alterar(this);
+    }
+
+    public void excluir() throws SQLException, ClassNotFoundException{
+        FavoritoDAO.excluir(this);
+    }
+
+    public static Favorito obterFavorito(int idFavorito) throws SQLException, ClassNotFoundException{
+        return FavoritoDAO.obterFavorito(idFavorito);
+    }
+
+    public static List<Favorito> obterTodosFavoritos throws SQLException, ClassNotFoundException{
+        return FavoritoDAO.obterTodosFavoritos();
     }
 }

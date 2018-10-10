@@ -60,7 +60,7 @@ public class TipoCulinariaDAO {
 
         try{
             conexao = BD.getConexao();
-            String sql = "delete from cardapio where idTipoCulinaria = ?";
+            String sql = "delete from tipoCulinaria where idTipoCulinaria = ?";
             comando = conexao.prepareStatement(sql);
             comando.setLong(1, tipoCulinaria.getIdTipoCulinaria());
             comando.execute();
@@ -79,7 +79,7 @@ public class TipoCulinariaDAO {
         TipoCulinaria tipoCulinaria = null;
         try {
             conexao = BD.getConexao();
-            String sql = "SELECT * FROM cardapio WHERE idTipoCulinaria = ?";
+            String sql = "SELECT * FROM tipoCulinaria WHERE idTipoCulinaria = ?";
             comando = conexao.prepareStatement(sql);
             comando.setLong(1, idTipoCulinaria);
             ResultSet rs = comando.executeQuery(sql);
@@ -96,7 +96,7 @@ public class TipoCulinariaDAO {
         return tipoCulinaria;
     }
 
-    public static List<TipoCulinaria> obterTodosCardapios() throws ClassNotFoundException {
+    public static List<TipoCulinaria> obterTodosTiposCulinaria() throws ClassNotFoundException {
         Connection conexao = null;
         Statement comando = null;
         List<TipoCulinaria> tipoCulinarias = new ArrayList<TipoCulinaria>();

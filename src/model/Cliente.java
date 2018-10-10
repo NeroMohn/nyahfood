@@ -4,6 +4,7 @@ package model;
 import dao.ClienteDAO;
 
 import java.sql.SQLException;
+import java.util.List;
 
 public class Cliente extends Usuario {
 
@@ -70,10 +71,10 @@ public class Cliente extends Usuario {
     }
 
     public static Cliente obterCliente(int idCliente) throws SQLException, ClassNotFoundException{
-        ClienteDAO.obterCliente(idCliente);
+        return ClienteDAO.obterCliente(idCliente);
     }
 
-    public static List<Cliente> obterTodosClientes(int idCliente) throws SQLException, ClassNotFoundException{
-        ClienteDAO.obterTodosCliente();
+    public static List<Cliente> obterTodosClientes throws SQLException, ClassNotFoundException{
+        return ClienteDAO.obterTodosCliente();
     }
 }

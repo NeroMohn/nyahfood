@@ -1,5 +1,10 @@
 package model;
 
+import dao.HistoricoDAO;
+
+import java.sql.SQLException;
+import java.util.List;
+
 public class Historico {
     private Long idHistorico;
     private Compra compra;
@@ -35,5 +40,25 @@ public class Historico {
 
     public void setCodCompra(Long codCompra) {
         this.codCompra = codCompra;
+    }
+
+    public void gravar() throws SQLException, ClassNotFoundException{
+        HistoricoDAO.gravar(this);
+    }
+
+    public void alterar() throws SQLException, ClassNotFoundException{
+        HistoricoDAO.alterar(this);
+    }
+
+    public void excluir() throws SQLException, ClassNotFoundException{
+        HistoricoDAO.excluir(this);
+    }
+
+    public static Historico obterCliente(int idHistorico) throws SQLException, ClassNotFoundException{
+        return HistoricoDAO.obterHistorico(idHistorico);
+    }
+
+    public static List<Historico> obterTodosHistoricos throws SQLException, ClassNotFoundException{
+        return HistoricoDAO.obterTodosHistoricos();
     }
 }

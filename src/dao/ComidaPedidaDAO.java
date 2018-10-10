@@ -106,7 +106,7 @@ public class ComidaPedidaDAO {
         return comidaPedida;
     }
 
-    public static List<ComidaPedida> obterTodasComidas() throws ClassNotFoundException {
+    public static List<ComidaPedida> obterTodasComidasPedidas() throws ClassNotFoundException {
         Connection conexao = null;
         Statement comando = null;
         List<ComidaPedida> comidaspedidas = new ArrayList<ComidaPedida>();

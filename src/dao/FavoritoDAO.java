@@ -85,7 +85,7 @@ public class FavoritoDAO {
 
     }
 
-    public static Favorito ObterFavorito(long idFavorito) throws ClassNotFoundException {
+    public static Favorito obterFavorito(long idFavorito) throws ClassNotFoundException {
         Connection conexao = null;
         PreparedStatement comando = null;
         Favorito favorito = null;

@@ -1,5 +1,8 @@
 package model;
 
+import dao.LojaDAO;
+
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -65,6 +68,26 @@ public class Loja extends Usuario {
 
     public void setPagamento(String pagamento) {
         this.pagamento = pagamento;
+    }
+
+    public void gravar() throws SQLException, ClassNotFoundException{
+        LojaDAO.gravar(this);
+    }
+
+    public void alterar() throws SQLException, ClassNotFoundException{
+        LojaDAO.alterar(this);
+    }
+
+    public void excluir() throws SQLException, ClassNotFoundException{
+        LojaDAO.excluir(this);
+    }
+
+    public static Loja obterLoja(int idLoja) throws SQLException, ClassNotFoundException{
+        return LojaDAO.obterLoja(idLoja);
+    }
+
+    public static List<Loja> obterTodasLojas throws SQLException, ClassNotFoundException{
+        return LojaDAO.obterTodasLojas();
     }
 
 }

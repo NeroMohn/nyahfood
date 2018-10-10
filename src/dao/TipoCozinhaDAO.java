@@ -15,7 +15,7 @@ public class TipoCozinhaDAO {
         PreparedStatement comando = null;
         try{
             conexao = BD.getConexao();
-            String sql = "Insert into tipo_cozinha (idTipoCozinha, tipo)"
+            String sql = "Insert into tipoCozinha (idTipoCozinha, tipo)"
                     + "values(?,?)";
             comando = conexao.prepareStatement(sql);
             comando.setLong(1, tipoCozinha.getIdTipoCozinha());
@@ -34,7 +34,7 @@ public class TipoCozinhaDAO {
         PreparedStatement comando = null;
         try {
             conexao = BD.getConexao();
-            String sql = "update tipo_cozinha set tipo = ?, set idTipoCozinha = ?  where idTipoCozinha = ?";
+            String sql = "update tipoCozinha set tipo = ?, set idTipoCozinha = ?  where idTipoCozinha = ?";
             comando = conexao.prepareStatement(sql);
             comando.setString(1, tipoCozinha.getTipo());
             comando.setLong(14, tipoCozinha.getIdTipoCozinha());
@@ -54,7 +54,7 @@ public class TipoCozinhaDAO {
 
         try{
             conexao = BD.getConexao();
-            String sql = "delete from cardapio where idTipoCozinha = ?";
+            String sql = "delete from tipoCozinha where idTipoCozinha = ?";
             comando = conexao.prepareStatement(sql);
             comando.setLong(1, tipoCozinha.getIdTipoCozinha());
             comando.execute();
@@ -67,7 +67,7 @@ public class TipoCozinhaDAO {
 
     }
 
-    public static TipoCozinha obterTipoCulinaria(long idTipoCozinha) throws ClassNotFoundException {
+    public static TipoCozinha obterTipoCozinha(long idTipoCozinha) throws ClassNotFoundException {
         Connection conexao = null;
         PreparedStatement comando = null;
         TipoCozinha tipoCozinha = null;

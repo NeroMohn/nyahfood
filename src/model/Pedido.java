@@ -1,5 +1,10 @@
 package model;
 
+import dao.PedidoDAO;
+
+import java.sql.SQLException;
+import java.util.List;
+
 public class Pedido {
     private Long idPedido;
     private Comida comida;
@@ -82,4 +87,24 @@ public class Pedido {
     public Long getCodComida() { return codComida; }
 
     public void setCodComida(Long codComida) { this.codComida = codComida; }
+
+    public void gravar() throws SQLException, ClassNotFoundException{
+        PedidoDAO.gravar(this);
+    }
+
+    public void alterar() throws SQLException, ClassNotFoundException{
+        PedidoDAO.alterar(this);
+    }
+
+    public void excluir() throws SQLException, ClassNotFoundException{
+        PedidoDAO.excluir(this);
+    }
+
+    public static Pedido obterPedido(int idPedido) throws SQLException, ClassNotFoundException{
+        return PedidoDAO.obterPedido(idPedido);
+    }
+
+    public static List<Cliente> obterTodosPedidos throws SQLException, ClassNotFoundException{
+        return PedidoDAO.obterTodosPedidos();
+    }
 }

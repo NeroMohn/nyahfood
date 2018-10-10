@@ -1,5 +1,10 @@
 package model;
 
+import dao.CompraDAO;
+
+import java.sql.SQLException;
+import java.util.List;
+
 public class Compra {
     private Pedido pedido;
     private double total;
@@ -48,11 +53,27 @@ public class Compra {
         this.idCompra = idCompra;
     }
 
-    public Long getCodPedido() {
-        return codPedido;
+    public Long getCodPedido() { return codPedido; }
+
+    public void setCodPedido(Long codPedido) { this.codPedido = codPedido; }
+
+    public void gravar() throws SQLException, ClassNotFoundException{
+        CompraDAO.gravar(this);
     }
 
-    public void setCodPedido(Long codPedido) {
-        this.codPedido = codPedido;
+    public void alterar() throws SQLException, ClassNotFoundException{
+        CompraDAO.alterar(this);
+    }
+
+    public void excluir() throws SQLException, ClassNotFoundException{
+        CompraDAO.excluir(this);
+    }
+
+    public static Compra obterCompra(int idCompra) throws SQLException, ClassNotFoundException{
+        return CompraDAO.obterCompra(idCompra);
+    }
+
+    public static List<Compra> obterTodasCompras throws SQLException, ClassNotFoundException{
+        return CompraDAO.obterTodasCompras();
     }
 }

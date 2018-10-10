@@ -104,7 +104,7 @@ public class Pedido {
         return PedidoDAO.obterPedido(idPedido);
     }
 
-    public static List<Cliente> obterTodosPedidos throws SQLException, ClassNotFoundException{
+    public static List<Pedido> obterTodosPedidos throws SQLException, ClassNotFoundException{
         return PedidoDAO.obterTodosPedidos();
     }
 }

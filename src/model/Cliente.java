@@ -13,7 +13,7 @@ public class Cliente extends Usuario {
     private Historico historico;
     private Long codHistorico;
 
-    public Cliente(){}
+    public Cliente() {}
 
     public Cliente(Long idCliente, String nome,String cpf, String telefone, String email, String senha, String foto, String CEP, String logradouro,
                    String bairro, String complemento, String cidade, String estado, String numero,

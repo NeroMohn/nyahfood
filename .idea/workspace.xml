@@ -2,17 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="53aaafc5-cd45-4026-9879-e82e2480abe4" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/src/dao/ClienteDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dao/ClienteDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/model/Cliente.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/Cliente.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/model/Comida.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/Comida.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/model/ComidaPedida.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/ComidaPedida.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/model/Compra.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/Compra.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/model/Favorito.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/Favorito.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/model/Historico.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/Historico.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/model/Loja.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/Loja.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/model/Pedido.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/Pedido.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/model/TipoCozinha.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/TipoCozinha.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/model/TipoCulinaria.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/TipoCulinaria.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/controller/PesquisaClienteController.java" beforeDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -41,33 +31,44 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="java" value="19" />
+          <entry key="java" value="24" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="JAVA" value="19" />
+          <entry key="JAVA" value="24" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="java" value="540" />
+          <entry key="dummy" value="6" />
+          <entry key="java" value="615" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="540" />
+          <entry key="JAVA" value="615" />
+          <entry key="PLAIN_TEXT" value="6" />
         </counts>
       </usages-collector>
     </session>
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/controller/PesquisaComidaController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="535">
+              <caret line="34" column="42" selection-start-line="34" selection-start-column="42" selection-end-line="34" selection-end-column="42" />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/controller/PesquisaClienteController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="88">
-              <caret line="13" column="29" lean-forward="true" selection-start-line="13" selection-start-column="29" selection-end-line="13" selection-end-column="29" />
+            <state relative-caret-position="220">
+              <caret line="22" column="8" lean-forward="true" selection-start-line="22" selection-start-column="8" selection-end-line="22" selection-end-column="8" />
             </state>
           </provider>
         </entry>
@@ -78,6 +79,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="FxmlFile" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -89,7 +91,6 @@
       <list>
         <option value="$PROJECT_DIR$/src/dao/ClienteDAO.java" />
         <option value="$PROJECT_DIR$/src/model/Cliente.java" />
-        <option value="$PROJECT_DIR$/src/controller/PesquisaClienteController.java" />
         <option value="$PROJECT_DIR$/src/model/Comida.java" />
         <option value="$PROJECT_DIR$/src/model/ComidaPedida.java" />
         <option value="$PROJECT_DIR$/src/model/Compra.java" />
@@ -99,6 +100,8 @@
         <option value="$PROJECT_DIR$/src/model/Pedido.java" />
         <option value="$PROJECT_DIR$/src/model/TipoCulinaria.java" />
         <option value="$PROJECT_DIR$/src/model/TipoCozinha.java" />
+        <option value="$PROJECT_DIR$/src/controller/PesquisaClienteController.java" />
+        <option value="$PROJECT_DIR$/src/controller/PesquisaComidaController.java" />
       </list>
     </option>
   </component>
@@ -145,7 +148,7 @@
       <list />
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
+  <component name="ProjectFrameBounds" extendedState="1">
     <option name="x" value="200" />
     <option name="y" value="78" />
     <option name="width" value="1360" />
@@ -176,18 +179,6 @@
               <item name="src" type="9f88c78c:ScopeViewTreeModel$FileNode" />
               <item name="controller" type="9f88c78c:ScopeViewTreeModel$FileNode" />
             </path>
-            <path>
-              <item name="nyahfood" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
-              <item name="NyahFood" type="2674bda8:ScopeViewTreeModel$GroupNode" />
-              <item name="src" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-              <item name="dao" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-            </path>
-            <path>
-              <item name="nyahfood" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
-              <item name="NyahFood" type="2674bda8:ScopeViewTreeModel$GroupNode" />
-              <item name="src" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-              <item name="model" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-            </path>
           </expand>
           <select />
         </subPane>
@@ -213,7 +204,7 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1539262181491" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1539263833533" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
   </component>
   <component name="RunDashboard">
@@ -262,33 +253,33 @@
       <option name="presentableId" value="Default" />
       <updated>1539259604975</updated>
       <workItem from="1539259610023" duration="367000" />
-      <workItem from="1539260311511" duration="2330000" />
+      <workItem from="1539260311511" duration="3488000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="2736000" />
+    <option name="totallyTimeSpent" value="3894000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-7" y="-7" width="1550" height="838" extended-state="7" />
+    <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.4983871" visible="true" weight="0.25302014" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.6236786" weight="0.25302014" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
       <window_info id="UI Designer" order="4" />
       <window_info id="Favorites" order="5" side_tool="true" />
       <window_info id="Capture Tool" order="6" />
-      <window_info id="Web" order="7" sideWeight="0.5016129" side_tool="true" visible="true" weight="0.25302014" />
+      <window_info id="Web" order="7" sideWeight="0.37632135" side_tool="true" weight="0.25302014" />
       <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32907802" />
       <window_info anchor="bottom" id="Run" order="2" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Application Servers" order="7" visible="true" weight="0.120567374" />
+      <window_info anchor="bottom" id="Application Servers" order="7" weight="0.120567374" />
       <window_info anchor="bottom" id="Terminal" order="8" />
       <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
       <window_info anchor="bottom" id="Java Enterprise" order="10" />
@@ -304,6 +295,38 @@
       <window_info anchor="right" id="Palette&#9;" order="7" />
       <window_info anchor="right" id="Theme Preview" order="8" />
     </layout>
+    <layout-to-restore>
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.6236786" visible="true" weight="0.25302014" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info id="Designer" order="2" />
+      <window_info id="Image Layers" order="3" />
+      <window_info id="UI Designer" order="4" />
+      <window_info id="Favorites" order="5" side_tool="true" />
+      <window_info id="Capture Tool" order="6" />
+      <window_info id="Web" order="7" sideWeight="0.37632135" side_tool="true" visible="true" weight="0.25302014" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" visible="true" weight="0.32907802" />
+      <window_info anchor="bottom" id="Run" order="2" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Application Servers" order="7" weight="0.120567374" />
+      <window_info anchor="bottom" id="Terminal" order="8" />
+      <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
+      <window_info anchor="bottom" id="Java Enterprise" order="10" />
+      <window_info anchor="bottom" id="Database Changes" order="11" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Version Control" order="12" show_stripe_button="false" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="Palette" order="3" />
+      <window_info anchor="right" id="Capture Analysis" order="4" />
+      <window_info anchor="right" id="Maven Projects" order="5" />
+      <window_info anchor="right" id="Database" order="6" />
+      <window_info anchor="right" id="Palette&#9;" order="7" />
+      <window_info anchor="right" id="Theme Preview" order="8" />
+    </layout-to-restore>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
@@ -409,10 +432,20 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/controller/teste4.java">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/controller/PesquisaComidaController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="535">
+          <caret line="34" column="42" selection-start-line="34" selection-start-column="42" selection-end-line="34" selection-end-column="42" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/controller/PesquisaClienteController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="88">
-          <caret line="13" column="29" lean-forward="true" selection-start-line="13" selection-start-column="29" selection-end-line="13" selection-end-column="29" />
+        <state relative-caret-position="220">
+          <caret line="22" column="8" lean-forward="true" selection-start-line="22" selection-start-column="8" selection-end-line="22" selection-end-column="8" />
         </state>
       </provider>
     </entry>

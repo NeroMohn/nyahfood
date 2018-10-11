@@ -1,6 +1,6 @@
 package controller;
 
-import model.Cliente;
+import model.Comida;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -11,13 +11,13 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.sql.SQLException;
 
-@WebServlet(name = "PesquisaClienteController")
-public class PesquisaClienteController extends HttpServlet {
+@WebServlet(name = "PesquisaComidaController")
+public class PesquisaComidaController extends HttpServlet {
 
     protected void processRequest(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{
         try{
-            request.setAttribute("clientes", Cliente.obterTodosClientes());
-            RequestDispatcher view = request.getRequestDispatcher("/pesquisaCliente.jsp");
+            request.setAttribute("comidas", Comida.obterTodasComidas());
+            RequestDispatcher view = request.getRequestDispatcher("/pesquisaComida.jsp");
             view.forward(request, response);
 
         }catch(ClassNotFoundException e){

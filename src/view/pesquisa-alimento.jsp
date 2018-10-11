@@ -10,26 +10,26 @@
     <title>pesquisa-alimento</title>
   </head>
   <body>
-    <div id="divBusca">
-  <input type="text" id="txtBusca" placeholder="Buscar..."/>
-  <button type="button" >Buscar</button>
-  <p>Preço
-    <select id=Preco>
-    <option>aaaa</option>
-    <option>bbbb</option>
-    <option>ccc</option>
-    <option>dddd</option>
-  </select>
-    </p>
-  <p>Tipo de Comida
-    <select id=TipoComida>
-    <option>aaaa</option>
-    <option>bbbb</option>
-    <option>ccc</option>
-    <option>dddd</option>
-  </select>
-    </p>
-</div>
-  <a href="menu.html"><button type="button" >Voltar</button></a>
+  <h1>Pesquisa Alimento</h1>
+  <table border=1>
+    <tr>
+      <th>Código Comida</th>
+      <th>Nome Comida</th>
+      <th colspan=2>Ação</th>
+    </tr>
+
+    <c:forEach items="${comidas}" var="comida">
+      <tr>
+        <td><c:out value="${comida.idComida}"/></td>
+        <td><c:out value="${comida.nome}"/></td>
+        <td><a href="ManterComidaController?acao=prepararOperacao&operacao==Editar&idComida="<c:out value="${comida.idComida}"/>">Editar</a></td>
+        <td>
+          <a href="ManterComidaController?acao=preparaOperacao&operacao=Excluir&idComida="<c:out value="${comida.idComida}"/>">Excluir</a></td>
+      </tr>
+    </c:forEach>
+  </table>
+  <form action="ManterComidaController?acao=prepararOperacao&operacao=Incluir" method="post">
+    <<input type="submit" name="btnIncluir" value="Incluir">
+  </form>
   </body>
 </html>

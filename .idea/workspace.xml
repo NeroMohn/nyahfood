@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c38716be-5b68-4334-9f30-493e21cda68f" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/src/view/pesquisa-alimento.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/pesquisa-alimento.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/view/pesquisa-loja.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/pesquisa-loja.jsp" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -104,44 +105,44 @@
       <usages-collector id="statistics.spring.boot.run.usages" />
       <usages-collector id="statistics.vcs.git.usages" />
     </session>
+    <session id="505496290">
+      <usages-collector id="statistics.lifecycle.project">
+        <counts>
+          <entry key="project.open.time.35" value="1" />
+          <entry key="project.opened" value="1" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.open">
+        <counts>
+          <entry key="java" value="1" />
+          <entry key="jsp" value="11" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.open">
+        <counts>
+          <entry key="JAVA" value="1" />
+          <entry key="JSP" value="11" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.edit">
+        <counts>
+          <entry key="jsp" value="121" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.edit">
+        <counts>
+          <entry key="JSP" value="121" />
+        </counts>
+      </usages-collector>
+    </session>
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/view/pedido-empresa.jsp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="112">
-              <caret line="7" column="4" selection-start-line="7" selection-start-column="4" selection-end-line="7" selection-end-column="4" />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/view/cadastro-comida.jsp">
+        <entry file="file://$PROJECT_DIR$/src/view/pesquisa-alimento.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="85">
-              <caret line="20" column="62" lean-forward="true" selection-start-line="20" selection-start-column="62" selection-end-line="20" selection-end-column="62" />
-              <folding>
-                <element signature="n#style#0;n#input#0;n#form#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/view/pesquisa-loja.jsp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="266">
-              <caret line="20" column="30" selection-start-line="20" selection-start-column="30" selection-end-line="20" selection-end-column="30" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/view/pesquisaCliente.jsp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="249">
-              <caret line="19" lean-forward="true" selection-start-line="19" selection-end-line="19" />
+            <state relative-caret-position="1020">
+              <caret line="30" column="28" selection-start-line="30" selection-start-column="28" selection-end-line="30" selection-end-column="28" />
             </state>
           </provider>
         </entry>
@@ -195,7 +196,6 @@
         <option value="$PROJECT_DIR$/src/controller/pesquisaCliente.jsp" />
         <option value="$PROJECT_DIR$/src/model/Cliente.java" />
         <option value="$PROJECT_DIR$/src/view/cadastro-comida.jsp" />
-        <option value="$PROJECT_DIR$/src/view/cadastro-loja.jsp" />
         <option value="$PROJECT_DIR$/src/view/cadastro-pessoa.jsp" />
         <option value="$PROJECT_DIR$/src/view/classificar-empresa.jsp" />
         <option value="$PROJECT_DIR$/src/view/duvidas.jsp" />
@@ -205,8 +205,6 @@
         <option value="$PROJECT_DIR$/src/view/login-loja.jsp" />
         <option value="$PROJECT_DIR$/src/view/menu.jsp" />
         <option value="$PROJECT_DIR$/src/view/status-pedido-cliente.jsp" />
-        <option value="$PROJECT_DIR$/src/view/pesquisa-alimento.jsp" />
-        <option value="$PROJECT_DIR$/src/view/pesquisa-loja.jsp" />
         <option value="$PROJECT_DIR$/src/view/promocao.jsp" />
         <option value="$PROJECT_DIR$/src/view/registros-comida.jsp" />
         <option value="$PROJECT_DIR$/src/view/registros-loja.jsp" />
@@ -214,6 +212,9 @@
         <option value="$PROJECT_DIR$/src/view/menu-loja.jsp" />
         <option value="$PROJECT_DIR$/src/view/menu-cliente.jsp" />
         <option value="$PROJECT_DIR$/src/view/pedido-empresa.jsp" />
+        <option value="$PROJECT_DIR$/src/view/cadastro-loja.jsp" />
+        <option value="$PROJECT_DIR$/src/view/pesquisa-loja.jsp" />
+        <option value="$PROJECT_DIR$/src/view/pesquisa-alimento.jsp" />
       </list>
     </option>
   </component>
@@ -235,27 +236,40 @@
     </navigator>
     <panes>
       <pane id="PackagesPane" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
             <path>
               <item name="Nyahfood" type="b2602c69:ProjectViewProjectNode" />
-              <item name="nyahfood" type="462c0819:PsiDirectoryNode" />
+              <item name="NyahFood" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="Nyahfood" type="b2602c69:ProjectViewProjectNode" />
-              <item name="nyahfood" type="462c0819:PsiDirectoryNode" />
+              <item name="NyahFood" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="Nyahfood" type="b2602c69:ProjectViewProjectNode" />
-              <item name="nyahfood" type="462c0819:PsiDirectoryNode" />
+              <item name="NyahFood" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="dao" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Nyahfood" type="b2602c69:ProjectViewProjectNode" />
+              <item name="NyahFood" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="mains" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Nyahfood" type="b2602c69:ProjectViewProjectNode" />
+              <item name="NyahFood" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="model" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="Nyahfood" type="b2602c69:ProjectViewProjectNode" />
-              <item name="nyahfood" type="462c0819:PsiDirectoryNode" />
+              <item name="NyahFood" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="view" type="462c0819:PsiDirectoryNode" />
             </path>
@@ -263,7 +277,7 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
+      <pane id="AndroidView" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -395,14 +409,15 @@
       <workItem from="1539040975364" duration="5044000" />
       <workItem from="1539087329891" duration="4159000" />
       <workItem from="1539216358057" duration="4023000" />
+      <workItem from="1539223825850" duration="666000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="25168000" />
+    <option name="totallyTimeSpent" value="25751000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="147" y="179" width="1391" height="788" extended-state="0" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Image Layers" order="0" />
@@ -410,7 +425,7 @@
       <window_info id="UI Designer" order="2" />
       <window_info id="Learn" order="3" weight="0.32980332" />
       <window_info id="Capture Tool" order="4" />
-      <window_info active="true" content_ui="combo" id="Project" order="5" visible="true" weight="0.2231405" />
+      <window_info active="true" content_ui="combo" id="Project" order="5" visible="true" weight="0.17857143" />
       <window_info id="Structure" order="6" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="7" side_tool="true" />
       <window_info anchor="bottom" id="Terminal" order="0" />
@@ -569,13 +584,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/model/Loja.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/mains/MainLoja.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="527">
@@ -647,23 +655,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/view/cadastro-loja.html" />
-    <entry file="file://$PROJECT_DIR$/src/view/cadastro-comida.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="20" column="62" lean-forward="true" selection-start-line="20" selection-start-column="62" selection-end-line="20" selection-end-column="62" />
-          <folding>
-            <element signature="n#style#0;n#input#0;n#form#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/view/cadastro-loja.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="32">
-          <caret line="2" column="64" selection-start-line="2" selection-start-column="64" selection-end-line="2" selection-end-column="64" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/view/cadastro-pessoa.jsp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="32">
@@ -720,13 +711,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/view/menu-cliente.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="112">
-          <caret line="7" column="75" selection-start-line="7" selection-start-column="75" selection-end-line="7" selection-end-column="75" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/view/status-pedido-cliente.jsp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="224">
@@ -776,24 +760,55 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/view/pesquisa-alimento.jsp">
+    <entry file="file://$PROJECT_DIR$/src/view/menu-cliente.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="112">
-          <caret line="7" column="75" lean-forward="true" selection-start-line="7" selection-start-column="5" selection-end-line="7" selection-end-column="75" />
+        <state relative-caret-position="160">
+          <caret line="7" column="75" selection-start-line="7" selection-start-column="75" selection-end-line="7" selection-end-column="75" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/view/cadastro-comida.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="680">
+          <caret line="20" column="62" lean-forward="true" selection-start-line="20" selection-start-column="62" selection-end-line="20" selection-end-column="62" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/view/cadastro-loja.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="520">
+          <caret line="89" lean-forward="true" selection-start-line="89" selection-end-line="89" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/model/Loja.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/view/pedido-empresa.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="112">
+        <state relative-caret-position="44">
           <caret line="7" column="4" selection-start-line="7" selection-start-column="4" selection-end-line="7" selection-end-column="4" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/view/pesquisa-loja.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="266">
-          <caret line="20" column="30" selection-start-line="20" selection-start-column="30" selection-end-line="20" selection-end-column="30" />
+        <state relative-caret-position="296">
+          <caret line="23" column="44" lean-forward="true" selection-start-line="23" selection-start-column="44" selection-end-line="23" selection-end-column="44" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/view/pesquisa-alimento.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1020">
+          <caret line="30" column="28" selection-start-line="30" selection-start-column="28" selection-end-line="30" selection-end-column="28" />
         </state>
       </provider>
     </entry>

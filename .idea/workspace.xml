@@ -2,28 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c38716be-5b68-4334-9f30-493e21cda68f" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/controller/pesquisaCliente.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/pesquisaCliente.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/view/cadastro-comida.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/view/cadastro-loja.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/view/cadastro-pessoa.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/view/classificar-empresa.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/view/duvidas.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/view/login-admin.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/view/login-cliente.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/view/login-loja.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/view/login-user.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/view/menu-cliente.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/view/menu-loja.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/view/menu.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/view/pedido-empresa.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/view/pesquisa-alimento.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/view/pesquisa-loja.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/view/promocao.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/view/registros-comida.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/view/registros-loja.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/view/registros-usuario.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/view/status-pedido-cliente.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/view/pesquisa-loja.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/pesquisa-loja.jsp" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -138,10 +117,31 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/view/cadastro-comida.jsp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="85">
+              <caret line="20" column="62" lean-forward="true" selection-start-line="20" selection-start-column="62" selection-end-line="20" selection-end-column="62" />
+              <folding>
+                <element signature="n#style#0;n#input#0;n#form#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/view/pesquisa-loja.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="112">
-              <caret line="7" column="75" selection-start-line="7" selection-start-column="75" selection-end-line="7" selection-end-column="75" />
+            <state relative-caret-position="266">
+              <caret line="20" column="30" selection-start-line="20" selection-start-column="30" selection-end-line="20" selection-end-column="30" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/view/pesquisaCliente.jsp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="249">
+              <caret line="19" lean-forward="true" selection-start-line="19" selection-end-line="19" />
             </state>
           </provider>
         </entry>
@@ -251,6 +251,12 @@
               <item name="Nyahfood" type="b2602c69:ProjectViewProjectNode" />
               <item name="nyahfood" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="model" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Nyahfood" type="b2602c69:ProjectViewProjectNode" />
+              <item name="nyahfood" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="view" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
@@ -265,7 +271,7 @@
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1539221307675" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1539223328079" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
@@ -393,10 +399,10 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="25167000" />
+    <option name="totallyTimeSpent" value="25168000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="754" extended-state="6" />
+    <frame x="147" y="179" width="1391" height="788" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Image Layers" order="0" />
@@ -404,7 +410,7 @@
       <window_info id="UI Designer" order="2" />
       <window_info id="Learn" order="3" weight="0.32980332" />
       <window_info id="Capture Tool" order="4" />
-      <window_info active="true" content_ui="combo" id="Project" order="5" visible="true" weight="0.17700455" />
+      <window_info active="true" content_ui="combo" id="Project" order="5" visible="true" weight="0.2231405" />
       <window_info id="Structure" order="6" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="7" side_tool="true" />
       <window_info anchor="bottom" id="Terminal" order="0" />
@@ -637,23 +643,17 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1088">
           <caret line="72" column="37" selection-start-line="72" selection-start-column="37" selection-end-line="72" selection-end-column="37" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/view/cadastro-loja.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="176">
-          <caret line="11" lean-forward="true" selection-start-line="11" selection-end-line="11" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/view/cadastro-loja.html" />
     <entry file="file://$PROJECT_DIR$/src/view/cadastro-comida.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="32">
-          <caret line="2" column="64" selection-start-line="2" selection-start-column="64" selection-end-line="2" selection-end-column="64" />
+        <state relative-caret-position="85">
+          <caret line="20" column="62" lean-forward="true" selection-start-line="20" selection-start-column="62" selection-end-line="20" selection-end-column="62" />
+          <folding>
+            <element signature="n#style#0;n#input#0;n#form#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -764,8 +764,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/view/pesquisaCliente.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="128">
-          <caret line="8" selection-start-line="8" selection-end-line="8" selection-end-column="73" />
+        <state relative-caret-position="249">
+          <caret line="19" lean-forward="true" selection-start-line="19" selection-end-line="19" />
         </state>
       </provider>
     </entry>
@@ -792,8 +792,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/view/pesquisa-loja.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="112">
-          <caret line="7" column="75" selection-start-line="7" selection-start-column="75" selection-end-line="7" selection-end-column="75" />
+        <state relative-caret-position="266">
+          <caret line="20" column="30" selection-start-line="20" selection-start-column="30" selection-end-line="20" selection-end-column="30" />
         </state>
       </provider>
     </entry>

@@ -77,7 +77,7 @@ public class Favorito {
         return FavoritoDAO.obterFavorito(idFavorito);
     }
 
-    public static List<Favorito> obterTodosFavoritos throws SQLException, ClassNotFoundException{
+    public static List<Favorito> obterTodosFavoritos() throws SQLException, ClassNotFoundException{
         return FavoritoDAO.obterTodosFavoritos();
     }
 }

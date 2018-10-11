@@ -73,7 +73,7 @@ public class Compra {
         return CompraDAO.obterCompra(idCompra);
     }
 
-    public static List<Compra> obterTodasCompras throws SQLException, ClassNotFoundException{
+    public static List<Compra> obterTodasCompras() throws SQLException, ClassNotFoundException{
         return CompraDAO.obterTodasCompras();
     }
 }

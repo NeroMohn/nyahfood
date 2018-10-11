@@ -86,7 +86,7 @@ public class TipoCulinaria {
         return TipoCulinariaDAO.obterTipoCulinaria(idTipoCulinaria);
     }
 
-    public static List<TipoCulinaria> obterTodosTiposCulinaria throws SQLException, ClassNotFoundException{
+    public static List<TipoCulinaria> obterTodosTiposCulinaria() throws SQLException, ClassNotFoundException{
         return TipoCulinariaDAO.obterTodosTiposCulinaria();
     }
 }

@@ -48,11 +48,11 @@ public class TipoCozinha {
         TipoCozinhaDAO.excluir(this);
     }
 
-    public static Cliente obterTipoCozinha (int idTipoCozinha) throws SQLException, ClassNotFoundException{
+    public static TipoCozinha obterTipoCozinha (int idTipoCozinha) throws SQLException, ClassNotFoundException{
         return TipoCozinhaDAO.obterTipoCozinha(idTipoCozinha);
     }
 
-    public static List<TipoCozinha> obterTodosTiposCozinha throws SQLException, ClassNotFoundException{
+    public static List<TipoCozinha> obterTodosTiposCozinha() throws SQLException, ClassNotFoundException{
         return TipoCozinhaDAO.obterTodosTiposCozinha();
     }
 }

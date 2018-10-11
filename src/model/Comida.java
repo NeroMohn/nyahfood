@@ -115,7 +115,7 @@ public class Comida {
         return ComidaDAO.obterComida(idComida);
     }
 
-    public static List<Comida> obterTodasComidas throws SQLException, ClassNotFoundException{
+    public static List<Comida> obterTodasComidas() throws SQLException, ClassNotFoundException{
         return ComidaDAO.obterTodasComidas();
     }
 }

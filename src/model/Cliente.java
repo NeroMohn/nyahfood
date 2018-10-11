@@ -21,7 +21,6 @@ public class Cliente extends Usuario {
         super(nome, telefone, email, senha, foto, CEP, logradouro, bairro, complemento, cidade, estado, numero);
         this.idCliente = idCliente;
         this.cpf = cpf;
-        this.historico = historico;
         this.codHistorico = codHistorico;
     }
 
@@ -74,7 +73,7 @@ public class Cliente extends Usuario {
         return ClienteDAO.obterCliente(idCliente);
     }
 
-    public static List<Cliente> obterTodosClientes throws SQLException, ClassNotFoundException{
-        return ClienteDAO.obterTodosCliente();
+    public static List<Cliente> obterTodosClientes() throws SQLException, ClassNotFoundException{
+        return ClienteDAO.obterTodosClientes();
     }
 }

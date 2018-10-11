@@ -80,7 +80,7 @@ public class ComidaPedida {
         return ComidaPedidaDAO.obterComidaPedida(idComidaPedida);
     }
 
-    public static List<ComidaPedida> obterTodasComidasPedidas throws SQLException, ClassNotFoundException{
+    public static List<ComidaPedida> obterTodasComidasPedidas() throws SQLException, ClassNotFoundException{
         return ComidaPedidaDAO.obterTodasComidasPedidas();
     }
 }

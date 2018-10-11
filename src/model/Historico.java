@@ -58,7 +58,7 @@ public class Historico {
         return HistoricoDAO.obterHistorico(idHistorico);
     }
 
-    public static List<Historico> obterTodosHistoricos throws SQLException, ClassNotFoundException{
+    public static List<Historico> obterTodosHistoricos() throws SQLException, ClassNotFoundException{
         return HistoricoDAO.obterTodosHistoricos();
     }
 }

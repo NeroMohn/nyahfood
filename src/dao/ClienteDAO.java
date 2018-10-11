@@ -130,7 +130,7 @@ public class ClienteDAO {
         return cliente;
     }
 
-    public static List<Cliente> obterTodosCliente() throws ClassNotFoundException{
+    public static List<Cliente> obterTodosClientes() throws ClassNotFoundException{
         Connection conexao = null;
         PreparedStatement comando = null;
         Cliente cliente = null;

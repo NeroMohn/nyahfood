@@ -14,15 +14,15 @@ import java.sql.SQLException;
 @WebServlet(name = "PesquisaComidaController")
 public class PesquisaComidaController extends HttpServlet {
 
-    protected void processRequest(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{
-        try{
+    protected void processRequest(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        try {
             request.setAttribute("comidas", Comida.obterTodasComidas());
             RequestDispatcher view = request.getRequestDispatcher("/pesquisaComida.jsp");
             view.forward(request, response);
 
-        }catch(ClassNotFoundException e){
+        } catch (ClassNotFoundException e) {
             throw new ServletException(e);
-        }catch(SQLException e){
+        } catch (SQLException e) {
             throw new ServletException(e);
         }
     }

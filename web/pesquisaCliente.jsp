@@ -21,7 +21,7 @@
 <c:forEach items="${clientes}" var="cliente">
     <tr>
         <td><c:out value="${cliente.idCliente}"/></td>
-        <td><c:out value="${curso.nome}"/></td>
+        <td><c:out value="${cliente.nome}"/></td>
         <td><a href="ManterClienteController?acao=prepararOperacao&operacao==Editar&codCurso="<c:out value="${cliente.idCliente}"/>">Editar</a></td>
         <td>
             <a href="ManterClienteController?acao=preparaOperacao&operacao=Excluir&codCliente="<c:out value="${cliente.idCliente}"/>">Excluir</a></td>

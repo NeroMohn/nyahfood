@@ -132,15 +132,16 @@ public class ClienteDAO {
 
     public static List<Cliente> obterTodosClientes() throws ClassNotFoundException{
         Connection conexao = null;
-        PreparedStatement comando = null;
+        Statement comando = null;
         Cliente cliente = null;
         List<Cliente> clientes = new ArrayList<Cliente>();
         try {
             conexao = BD.getConexao();
+            comando = conexao.createStatement();
             String sql = "SELECT * FROM cliente";
             ResultSet rs = comando.executeQuery(sql);
             rs.first();
-            while (rs.next()) {
+            do {
                 cliente = new Cliente(rs.getLong("idCliente"),
                         rs.getString("nome"),
                         rs.getString("cpf"),
@@ -158,15 +159,17 @@ public class ClienteDAO {
                         null);
                 cliente.setCodHistorico(rs.getLong("codHistorico"));
                 clientes.add(cliente);
-            }
+                
+            }while (rs.next());
         }
-
         catch(SQLException e){
             e.printStackTrace();
         }finally{
             BD.fecharConexao(conexao, comando);
         }
+        
         return clientes;
+        
     }
 
 }

@@ -151,7 +151,7 @@ public class LojaDAO {
             ResultSet rs = comando.executeQuery(sql);
 
             while (rs.next()) {
-                Loja loja = new Loja(rs.getLong("idLoja"),
+            Loja loja = new Loja(rs.getLong("idLoja"),
                         rs.getString("nome"),
                         rs.getString("telefone"),
                         rs.getString("email"),

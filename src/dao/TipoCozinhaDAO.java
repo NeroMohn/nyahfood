@@ -1,7 +1,6 @@
 package dao;
 
 import model.TipoCozinha;
-import model.TipoCulinaria;
 
 import java.sql.*;
 import java.util.ArrayList;

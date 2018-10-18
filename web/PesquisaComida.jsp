@@ -33,9 +33,6 @@
                 DESCONTO
             </td>
             <td>
-                INGREDIENTES
-            </td>
-            <td>
                 TEMPO PREPARO
             </td>
 
@@ -43,34 +40,25 @@
 
 
         </tr>
-        <tr>
-            <td>
-                x Burguer
-            </td>
-            <td>
-                3
-            </td>
-            <td>
-                20.00
-            </td>
-            <td>
-                0
-            </td>
-            <td>
-                Pão,Carne,Queijo,Tomate,Alface
-            </td>
-            <td>
-                10.00 ; 30.00
-            </td>
+         <c:forEach items="${comidas}" var="comida">
+    <tr>
+        <td><c:out value="${comida.nome}"/></td>
+        <td><c:out value="${comida.idComida}"/></td>
+        <td><c:out value="${comida.valor}"/></td>
+        <td><c:out value="${comida.desconto}"/></td>
+        <td><c:out value="${cliente.tempoPreparo}"/></td>
+   
+        <td><a href="ManterComidaController?acao=prepararOperacao&operacao==Editar&codComida="<c:out value="${loja.idLoja}"/>">Editar</a></td>
+        <td>
+            <a href="ManterComidaController?acao=preparaOperacao&operacao=Excluir&codLoja="<c:out value="${loja.idLoja}"/>">Excluir</a></td>
+    </tr>
+</c:forEach>
+</table>
+<form action="ManterLojaController?acao=prepararOperacao&operacao=Incluir" method="post">
+    <<input type="submit" name="btnIncluir" value="Incluir">
 
-            <td>
-                <a href="">alterar</a>
-            </td>
-            <td>
-                <a href="">excluir</a>
-            </td>
-        </tr>
     </table>
+
     <a href="menu-loja.html"><button type="buttom">Menu</button></a>
     <a href="cadastro-comida.html"><button>Cadastrar</button> </a>
 

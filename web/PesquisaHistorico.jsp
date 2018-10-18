@@ -40,6 +40,5 @@
     </table>
     <a href="menu.html"><button type="buttom">Menu</button></a>
     <a href="cadastro-loja.html"><button>Cadastrar</button> </a>
-
     </body>
 </html>

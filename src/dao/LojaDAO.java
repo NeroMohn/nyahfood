@@ -143,15 +143,16 @@ public class LojaDAO {
     public static List<Loja> obterTodasLojas() throws ClassNotFoundException {
         Connection conexao = null;
         Statement comando = null;
+        Loja loja = null;
         List<Loja> lojas = new ArrayList<Loja>();
         try {
             conexao = BD.getConexao();
             comando = conexao.createStatement();
             String sql = "SELECT * FROM loja";
             ResultSet rs = comando.executeQuery(sql);
-
-            while (rs.next()) {
-            Loja loja = new Loja(rs.getLong("idLoja"),
+            rs.first();
+            do {
+            loja = new Loja(rs.getLong("idLoja"),
                         rs.getString("nome"),
                         rs.getString("telefone"),
                         rs.getString("email"),
@@ -169,7 +170,7 @@ public class LojaDAO {
                         rs.getString("nomeGerente"));
 
                 lojas.add(loja);
-            }
+            }while (rs.next());
         } catch (SQLException e) {
             e.printStackTrace();
         } finally {

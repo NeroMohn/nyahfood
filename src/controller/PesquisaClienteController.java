@@ -22,7 +22,7 @@ public class PesquisaClienteController extends HttpServlet {
                 request.setAttribute("vazio", "Mensagem");
             }
             request.setAttribute("clientes", obterTodosClientes);
-            RequestDispatcher view = request.getRequestDispatcher("/pesquisaCliente.jsp");
+            RequestDispatcher view = request.getRequestDispatcher("/PesquisaCliente.jsp");
             view.forward(request, response);
 
         } catch (ClassNotFoundException e) {

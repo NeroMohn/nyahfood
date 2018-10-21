@@ -5,6 +5,7 @@ import model.TipoCozinha;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.sql.SQLException;
+import java.util.List;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -17,8 +18,12 @@ public class PesquisaTipoCozinhaController extends HttpServlet {
 
     protected void processRequest(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         try {
+            List<TipoCozinha> obterTodosTiposCozinha = TipoCozinha.obterTodosTiposCozinha();
+            if(obterTodosTiposCozinha.isEmpty()){
+                 request.setAttribute("vazio", "Mensagem");
+            }
             request.setAttribute("tiposcozinhas", TipoCozinha.obterTodosTiposCozinha());
-            RequestDispatcher view = request.getRequestDispatcher("/pesquisaTipoCozinha.jsp");
+            RequestDispatcher view = request.getRequestDispatcher("/PesquisaTipoCozinha.jsp");
             view.forward(request, response);
 
         } catch (ClassNotFoundException e) {

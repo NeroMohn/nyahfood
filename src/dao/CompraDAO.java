@@ -110,21 +110,23 @@ public class CompraDAO {
     public static List<Compra> obterTodasCompras() throws ClassNotFoundException {
         Connection conexao = null;
         Statement comando = null;
+        Compra compra = null;
         List<Compra> compras = new ArrayList<Compra>();
         try {
             conexao = BD.getConexao();
             comando = conexao.createStatement();
             String sql = "SELECT * FROM compras";
             ResultSet rs = comando.executeQuery(sql);
-            while (rs.next()) {
-                Compra compra = new Compra(rs.getLong("idCompra"),
+            rs.first();
+            do {
+                compra = new Compra(rs.getLong("idCompra"),
                         rs.getDouble("total"),
                         rs.getString("status"),
                         null);
                 compra.setCodPedido(rs.getLong("codPedido"));
                 compras.add(compra);
 
-            }
+            }while (rs.next());
         } catch (SQLException e) {
             e.printStackTrace();
         } finally {

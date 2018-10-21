@@ -90,18 +90,20 @@ public class TipoCozinhaDAO {
     public static List<TipoCozinha> obterTodosTiposCozinha() throws ClassNotFoundException {
         Connection conexao = null;
         Statement comando = null;
+        TipoCozinha tipoCozinha = null;
         List<TipoCozinha> tipoCozinhas = new ArrayList<TipoCozinha>();
         try {
             conexao = BD.getConexao();
             comando = conexao.createStatement();
             String sql = "SELECT * FROM tipoCozinha";
             ResultSet rs = comando.executeQuery(sql);
-
-            while (rs.next()) {
-                TipoCozinha tipoCozinha = new TipoCozinha(rs.getLong("idTipoCozinha"),
+            rs.first();
+            do {
+                tipoCozinha = new TipoCozinha(rs.getLong("idTipoCozinha"),
                         rs.getString("cozinha"));
                 tipoCozinhas.add(tipoCozinha);
-            }
+                
+            }while (rs.next());
         } catch (SQLException e) {
             e.printStackTrace();
         } finally {

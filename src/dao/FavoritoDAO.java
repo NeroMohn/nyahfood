@@ -109,21 +109,22 @@ public class FavoritoDAO {
     public static List<Favorito> obterTodosFavoritos() throws ClassNotFoundException {
         Connection conexao = null;
         Statement comando = null;
+        Favorito favorito = null;
         List<Favorito> favoritos = new ArrayList<Favorito>();
         try {
             conexao = BD.getConexao();
             comando = conexao.createStatement();
             String sql = "SELECT * FROM favorito";
             ResultSet rs = comando.executeQuery(sql);
-
-            while (rs.next()) {
-                Favorito favorito = new Favorito(rs.getLong("idFavorito"),
+            rs.first();
+            do{
+                favorito = new Favorito(rs.getLong("idFavorito"),
                         null, null);
                 favorito.setCodCliente(rs.getLong("codCliente"));
                 favorito.setCodLoja(rs.getLong("codLoja"));
 
                 favoritos.add(favorito);
-            }
+            }while (rs.next());
         } catch (SQLException e) {
             e.printStackTrace();
         } finally {

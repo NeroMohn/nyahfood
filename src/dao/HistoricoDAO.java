@@ -99,19 +99,21 @@ public class HistoricoDAO {
     public static List<Historico> obterTodosHistoricos() throws ClassNotFoundException {
         Connection conexao = null;
         Statement comando = null;
+        Historico historico = null;
         List<Historico> historicos = new ArrayList<Historico>();
         try {
             conexao = BD.getConexao();
             comando = conexao.createStatement();
             String sql = "SELECT * FROM historico";
             ResultSet rs = comando.executeQuery(sql);
-            while (rs.next()) {
-                Historico historico = new Historico(rs.getLong("idHistorico"),
+            rs.first();
+            do{
+                historico = new Historico(rs.getLong("idHistorico"),
                         null);
                 historico.setCodCompra(rs.getLong("codCompra"));
                 historicos.add(historico);
 
-            }
+            }while (rs.next());
         } catch (SQLException e) {
             e.printStackTrace();
         } finally {

@@ -1,47 +1,39 @@
-<%-- 
-    Document   : PesquisaTipoComida
-    Created on : 17/10/2018, 23:27:23
-    Author     : David Rodrigues
---%>
-
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
+
+
 <!DOCTYPE html>
-<html>
+<html lang="en">
     <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Tipo Cozinha</title>
+        <meta http-equiv="Content-Type" content="text/html"; charset="UTF-8">
+        <title>Pesquisa de Tipo Cozinha</title>
     </head>
     <body>
-<table>
-        <tr class="table-header">
-            <td>
-                ID
-            </td>
-            <td>
-                NOME
-            </td>
-            <td colspan="2">Ações</td>
+        <h1>Pesquisa Tipo Cozinha</h1>
+        <table border=1>
+            <tr>
+                <th>Código Tipo Cozinha</th>
+                <th>Tipo</th>
+                <th colspan=2>Ação</th>
+            </tr>
+            <div><c:out value="${vazio}"/></div>
+           
+                <c:forEach items="${tiposcozinhas}" var="tipocozinha">
+                    <tr>
+                        <td><c:out value="${tipocozinha.idTipoCozinha}"/></td>
+                        <td><c:out value="${tipocozinha.tipo}"/></td>
+                        <td><a href="ManterTipoCozinhaController?acao=prepararOperacao&operacao=Editar&IdTipoCozinha=<c:out value="${tipocozinha.idTipocozinha}"/>">Editar</a></td>
+                        <td>
+                            <a href="ManterTipoCozinhaController?acao=preparaOperacao&operacao=Excluir&IdTipoCozinha=<c:out value="${tipocozinha.idTipocozinha}"/>">Excluir</a></td>
+                    </tr>
+                </c:forEach>
 
 
-        </tr>
-         <c:forEach items="${tipoComidas}" var="tipoComida">
-    <tr>
-        <td><c:out value="${tipoComida.idTipoComida}"/></td>
-        <td><c:out value="${tipoComida.comida}"/></td>
-   
-        <td><a href="ManterTipoComidaController?acao=prepararOperacao&operacao==Editar&codTipoComida="<c:out value="${tipoComida.idTipoComida}"/>">Editar</a></td>
-        <td>
-            <a href="ManterTipoComidaController?acao=preparaOperacao&operacao=Excluir&codTipoComida="<c:out value="${tipoComida.idTipoComida}"/>">Excluir</a></td>
-    </tr>
-</c:forEach>
-</table>
-<form action="ManterLojaController?acao=prepararOperacao&operacao=Incluir" method="post">
-    <<input type="submit" name="btnIncluir" value="Incluir">
-
-    </table>
-
-    <a href="menu-loja.html"><button type="buttom">Menu</button></a>
-    <a href="cadastro-comida.html"><button>Cadastrar</button> </a>
-
+        </table>
+        <form action="ManterTipoCozinhaController?acao=prepararOperacao&operacao=Incluir" method="post">
+            <input type="submit" name="btnIncluir" value="Incluir">
+        </form>
+             <a href="index.jsp"><button value="Voltar">Voltar</button></a>
     </body>
 </html>

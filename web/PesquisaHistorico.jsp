@@ -1,44 +1,38 @@
-<%-- 
-    Document   : PesquisaHistorico
-    Created on : 18/10/2018, 00:20:12
-    Author     : rodri
---%>
-
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
+
+
 <!DOCTYPE html>
-<html>
+<html lang="en">
     <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>JSP Page</title>
+        <meta http-equiv="Content-Type" content="text/html"; charset="UTF-8">
+        <title>Pesquisa de Historico</title>
     </head>
     <body>
-        <table>
-        <tr class="table-header">
-            <td>
-                NOME
-            </td>
-            <td>
-                TELEFONE
-            </td>
+        <h1>Pesquisa Historico</h1>
+        <table border=1>
+            <tr>
+                <th>Código Histórico</th>
+                <th>Código Compra</th>
+                <th colspan=2>Ação</th>
+            </tr>
+            <div><c:out value="${vazio}"/></div>
             
-        </tr>
-        <c:forEach items="${historicos}" var="historico">
-    <tr>
-        <td><c:out value="$(historico.idHistorico}"/></td>
-        <td><c:out value="$(historico.codCompra}"/></td>
+                <c:forEach items="${historicos}" var="historico">
+                    <tr>
+                        <td><c:out value="${historico.idHistorico}"/></td>
+                        <td><c:out value="${historico.codCompra}"/></td>
+                        <td><a href="ManterHistoricoController?acao=prepararOperacao&operacao=Editar&IdHistorico=<c:out value="${historico.idHistorico}"/>">Editar</a></td>
+                        <td>
+                            <a href="ManterHistoricoController?acao=preparaOperacao&operacao=Excluir&IdHistorico=<c:out value="${historico.idHistorico}"/>">Excluir</a></td>
+                    </tr>
+                </c:forEach>
 
-        
-        <td><a href="ManterHistoricoController?acao=prepararOperacao&operacao==Editar&codCompra="<c:out value="${loja.idLoja}"/>">Editar</a></td>
-        <td>
-            <a href="ManterHistoricoController?acao=preparaOperacao&operacao=Excluir&codCompra="<c:out value="${loja.idLoja}"/>">Excluir</a></td>
-    </tr>
-</c:forEach>
-</table>
-<form action="ManterLojaController?acao=prepararOperacao&operacao=Incluir" method="post">
-    <<input type="submit" name="btnIncluir" value="Incluir">
-
-    </table>
-    <a href="menu.html"><button type="buttom">Menu</button></a>
-    <a href="cadastro-loja.html"><button>Cadastrar</button> </a>
+        </table>
+        <form action="ManterHistoricoController?acao=prepararOperacao&operacao=Incluir" method="post">
+            <input type="submit" name="btnIncluir" value="Incluir">
+        </form>
+             <a href="index.jsp"><button value="Voltar">Voltar</button></a>
     </body>
 </html>

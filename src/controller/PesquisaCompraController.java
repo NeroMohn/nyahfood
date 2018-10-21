@@ -10,14 +10,19 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.sql.SQLException;
+import java.util.List;
 
-@WebServlet(name = "PesquisaCompraController")
+@WebServlet(name = "PesquisaCompraController", urlPatterns = {"/PesquisaCompraController"})
 public class PesquisaCompraController extends HttpServlet {
 
     protected void processRequest(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         try {
+            List<Compra> obterTodasCompras = Compra.obterTodasCompras();
+            if(obterTodasCompras.isEmpty()){
+                request.setAttribute("vazio", "Mensagem");
+            }
             request.setAttribute("compras", Compra.obterTodasCompras());
-            RequestDispatcher view = request.getRequestDispatcher("/pesquisaCompra.jsp");
+            RequestDispatcher view = request.getRequestDispatcher("/PesquisaCompra.jsp");
             view.forward(request, response);
 
         } catch (ClassNotFoundException e) {

@@ -7,31 +7,31 @@
 <html lang="en">
     <head>
         <meta http-equiv="Content-Type" content="text/html"; charset="UTF-8">
-        <title>Pesquisa de Loja</title>
+        <title>Pesquisa de Compra</title>
     </head>
     <body>
-        <h1>Pesquisa Loja</h1>
+        <h1>Pesquisa Compra</h1>
         <table border=1>
             <tr>
-                <th>Código Loja</th>
-                <th>Nome Loja</th>
+                <th>Código Compra</th>
+                <th>Total</th>
                 <th colspan=2>Ação</th>
             </tr>
             <div><c:out value="${vazio}"/></div>
-  
-                <c:forEach items="${lojas}" var="loja">
+          
+                <c:forEach items="${compras}" var="compra">
                     <tr>
-                        <td><c:out value="${loja.idLoja}"/></td>
-                        <td><c:out value="${loja.nome}"/></td>
-                        <td><a href="ManterLojaController?acao=prepararOperacao&operacao=Editar&IdLoja=<c:out value="${loja.idLoja}"/>">Editar</a></td>
+                        <td><c:out value="${compra.idCompra}"/></td>
+                        <td><c:out value="${compra.total}"/></td>
+                        <td><a href="ManterCompraController?acao=prepararOperacao&operacao=Editar&IdCompra=<c:out value="${compra.idCompra}"/>">Editar</a></td>
                         <td>
-                            <a href="ManterLojaController?acao=preparaOperacao&operacao=Excluir&IdLoja=<c:out value="${loja.idLoja}"/>">Excluir</a></td>
+                            <a href="ManterCompraController?acao=preparaOperacao&operacao=Excluir&IdCompra=<c:out value="${compra.idCompra}"/>">Excluir</a></td>
                     </tr>
                 </c:forEach>
-     
+    
 
         </table>
-        <form action="ManterLojaController?acao=prepararOperacao&operacao=Incluir" method="post">
+        <form action="ManterCompraController?acao=prepararOperacao&operacao=Incluir" method="post">
             <input type="submit" name="btnIncluir" value="Incluir">
         </form>
              <a href="index.jsp"><button value="Voltar">Voltar</button></a>

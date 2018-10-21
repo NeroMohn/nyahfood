@@ -109,14 +109,16 @@ public class PedidoDAO {
     public static List<Pedido> obterTodosPedidos() throws ClassNotFoundException {
         Connection conexao = null;
         Statement comando = null;
+        Pedido pedido = null;
         List<Pedido> pedidos = new ArrayList<Pedido>();
         try {
             conexao = BD.getConexao();
             comando = conexao.createStatement();
             String sql = "SELECT * FROM pedido";
             ResultSet rs = comando.executeQuery(sql);
-            while (rs.next()) {
-                Pedido pedido = new Pedido(rs.getLong("idPedido"),
+            rs.first();
+            do {
+                pedido = new Pedido(rs.getLong("idPedido"),
                         rs.getInt("quantidade"),
                         rs.getDouble("subtotal"),
                         rs.getString("metodoPagamento"),
@@ -126,7 +128,7 @@ public class PedidoDAO {
                 pedido.setCodComida(rs.getLong("codComida"));
                 pedidos.add(pedido);
 
-            }
+            }while (rs.next());
         } catch (SQLException e) {
             e.printStackTrace();
         } finally {

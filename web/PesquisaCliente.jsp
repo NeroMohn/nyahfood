@@ -14,11 +14,10 @@
         <table border=1>
             <tr>
                 <th>Código Cliente</th>
-                <th>Nome Curso</th>
+                <th>Nome Cliente</th>
                 <th colspan=2>Ação</th>
             </tr>
             <div><c:out value="${vazio}"/></div>
-            <c:if test="clientes.isEmpty()">
                 <c:forEach items="${clientes}" var="cliente">
                     <tr>
                         <td><c:out value="${cliente.idCliente}"/></td>
@@ -28,11 +27,12 @@
                             <a href="ManterClienteController?acao=preparaOperacao&operacao=Excluir&IdCliente=<c:out value="${cliente.idCliente}"/>">Excluir</a></td>
                     </tr>
                 </c:forEach>
-            </c:if>
+
 
         </table>
         <form action="ManterClienteController?acao=prepararOperacao&operacao=Incluir" method="post">
             <input type="submit" name="btnIncluir" value="Incluir">
         </form>
+            <a href="index.jsp"><button value="Voltar">Voltar</button></a>
     </body>
 </html>

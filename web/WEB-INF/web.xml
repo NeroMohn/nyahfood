@@ -80,6 +80,14 @@
         <servlet-name>PesquisaTipoCulinariaController</servlet-name>
         <url-pattern>/PesquisaTipoCulinariaController</url-pattern>
     </servlet-mapping>
+ <servlet-mapping>
+        <servlet-name>ManterComidaController</servlet-name>
+        <url-pattern>/ManterComidaController</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>ManterComidaController</servlet-name>
+        <servlet-class>controller.ManterComidaController</servlet-class>
+    </servlet>
     <session-config>
         <session-timeout>
             30

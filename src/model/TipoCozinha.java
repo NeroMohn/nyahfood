@@ -48,7 +48,7 @@ public class TipoCozinha {
         TipoCozinhaDAO.excluir(this);
     }
 
-    public static TipoCozinha obterTipoCozinha (int idTipoCozinha) throws SQLException, ClassNotFoundException{
+    public static TipoCozinha obterTipoCozinha (Long idTipoCozinha) throws SQLException, ClassNotFoundException{
         return TipoCozinhaDAO.obterTipoCozinha(idTipoCozinha);
     }
 

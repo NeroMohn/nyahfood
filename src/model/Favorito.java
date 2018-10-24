@@ -73,7 +73,7 @@ public class Favorito {
         FavoritoDAO.excluir(this);
     }
 
-    public static Favorito obterFavorito(int idFavorito) throws SQLException, ClassNotFoundException{
+    public static Favorito obterFavorito(Long idFavorito) throws SQLException, ClassNotFoundException{
         return FavoritoDAO.obterFavorito(idFavorito);
     }
 

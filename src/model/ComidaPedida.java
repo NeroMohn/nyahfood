@@ -76,7 +76,7 @@ public class ComidaPedida {
         ComidaPedidaDAO.excluir(this);
     }
 
-    public static ComidaPedida obterComidaPedida(int idComidaPedida) throws SQLException, ClassNotFoundException{
+    public static ComidaPedida obterComidaPedida(Long idComidaPedida) throws SQLException, ClassNotFoundException{
         return ComidaPedidaDAO.obterComidaPedida(idComidaPedida);
     }
 

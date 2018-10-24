@@ -82,7 +82,7 @@ public class TipoCulinaria {
         TipoCulinariaDAO.excluir(this);
     }
 
-    public static TipoCulinaria obterTipoCulinaria(int idTipoCulinaria) throws SQLException, ClassNotFoundException{
+    public static TipoCulinaria obterTipoCulinaria(Long idTipoCulinaria) throws SQLException, ClassNotFoundException{
         return TipoCulinariaDAO.obterTipoCulinaria(idTipoCulinaria);
     }
 

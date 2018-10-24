@@ -1,5 +1,5 @@
 <%-- 
-    Document   : manterComida
+    Document   : ManterComida
     Created on : 23/10/2018, 09:40:04
     Author     : rodri
 --%>
@@ -13,7 +13,7 @@
         <title>JSP Page</title>
     </head>
     <body>
-        <h1>Manter Curso - ${operacao}</h1>
+        <h1>Manter Comida - ${operacao}</h1>
         <form action ="ManterComidaController?acao=confirmarOperacao&operacao=${operacao}">
             <table>
                 <tr>
@@ -21,7 +21,7 @@
                         Código da Comida:
                     </td>
                     <td>
-                        <input type="text" name="txtCodComida" value="${comida.codComida}"></input>
+                        <input type="text" name="txtCodComida" value="${comida.idComida}"></input>
                     </td>
                 </tr>
                 <tr>

@@ -69,7 +69,7 @@ public class Compra {
         CompraDAO.excluir(this);
     }
 
-    public static Compra obterCompra(int idCompra) throws SQLException, ClassNotFoundException{
+    public static Compra obterCompra(Long idCompra) throws SQLException, ClassNotFoundException{
         return CompraDAO.obterCompra(idCompra);
     }
 

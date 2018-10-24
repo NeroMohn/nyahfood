@@ -82,7 +82,7 @@ public class Loja extends Usuario {
         LojaDAO.excluir(this);
     }
 
-    public static Loja obterLoja(int idLoja) throws SQLException, ClassNotFoundException{
+    public static Loja obterLoja(Long idLoja) throws SQLException, ClassNotFoundException{
         return LojaDAO.obterLoja(idLoja);
     }
 

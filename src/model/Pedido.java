@@ -100,7 +100,7 @@ public class Pedido {
         PedidoDAO.excluir(this);
     }
 
-    public static Pedido obterPedido(int idPedido) throws SQLException, ClassNotFoundException{
+    public static Pedido obterPedido(Long idPedido) throws SQLException, ClassNotFoundException{
         return PedidoDAO.obterPedido(idPedido);
     }
 

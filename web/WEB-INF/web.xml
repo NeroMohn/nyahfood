@@ -40,6 +40,10 @@
         <servlet-name>PesquisaTipoCulinariaController</servlet-name>
         <servlet-class>controller.PesquisaTipoCulinariaController</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>ManterClienteController</servlet-name>
+        <servlet-class>controller.ManterClienteController</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>PesquisaClienteController</servlet-name>
         <url-pattern>/PesquisaClienteController</url-pattern>
@@ -80,7 +84,7 @@
         <servlet-name>PesquisaTipoCulinariaController</servlet-name>
         <url-pattern>/PesquisaTipoCulinariaController</url-pattern>
     </servlet-mapping>
- <servlet-mapping>
+    <servlet-mapping>
         <servlet-name>ManterComidaController</servlet-name>
         <url-pattern>/ManterComidaController</url-pattern>
     </servlet-mapping>
@@ -88,6 +92,10 @@
         <servlet-name>ManterComidaController</servlet-name>
         <servlet-class>controller.ManterComidaController</servlet-class>
     </servlet>
+    <servlet-mapping>
+        <servlet-name>ManterClienteController</servlet-name>
+        <url-pattern>/ManterClienteController</url-pattern>
+    </servlet-mapping>
     <session-config>
         <session-timeout>
             30

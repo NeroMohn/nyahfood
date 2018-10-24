@@ -69,7 +69,7 @@ public class Cliente extends Usuario {
         ClienteDAO.excluir(this);
     }
 
-    public static Cliente obterCliente(int idCliente) throws SQLException, ClassNotFoundException{
+    public static Cliente obterCliente(Long idCliente) throws SQLException, ClassNotFoundException{
         return ClienteDAO.obterCliente(idCliente);
     }
 

@@ -54,7 +54,7 @@ public class Historico {
         HistoricoDAO.excluir(this);
     }
 
-    public static Historico obterCliente(int idHistorico) throws SQLException, ClassNotFoundException{
+    public static Historico obterCliente(Long idHistorico) throws SQLException, ClassNotFoundException{
         return HistoricoDAO.obterHistorico(idHistorico);
     }
 

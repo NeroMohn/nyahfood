@@ -14,13 +14,13 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import model.Cliente;
+import model.TipoCozinha;
 
 /**
  *
  * @author Yukas
  */
-public class ManterClienteController extends HttpServlet {
+public class ManterTipoCozinhaController extends HttpServlet {
 
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
         throws ServletException, IOException {
@@ -40,15 +40,15 @@ public void prepararOperacao(HttpServletRequest request, HttpServletResponse res
     
     String operacao = request.getParameter("operacao");
         request.setAttribute("operacao", operacao);
-        request.setAttribute("Cliente", Cliente.obterTodosClientes());
+        request.setAttribute("TipoCozinha", TipoCozinha.obterTodosTiposCozinha());
 
         if (!operacao.equals("Incluir")) {
-            Long idCliente = Long.parseLong(request.getParameter("idCliente"));
-            Cliente cliente = Cliente.obterCliente(idCliente);
-            request.setAttribute("cliente", cliente);
+            Long idTipoCozinha = Long.parseLong(request.getParameter("idTipoCozinha"));
+            TipoCozinha tipoCozinha = TipoCozinha.obterTipoCozinha(idTipoCozinha);
+            request.setAttribute("tipoCozinha", tipoCozinha);
 
         }
-        RequestDispatcher view = request.getRequestDispatcher("/ManterCliente.jsp");
+        RequestDispatcher view = request.getRequestDispatcher("/ManterTipoCozinha.jsp");
         view.forward(request, response);
     }   catch (SQLException ex) {
             Logger.getLogger(ManterComidaController.class.getName()).log(Level.SEVERE, null, ex);

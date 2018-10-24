@@ -14,16 +14,16 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import model.Cliente;
+import model.Compra;
 
 /**
  *
  * @author Yukas
  */
-public class ManterClienteController extends HttpServlet {
+public class ManterCompraController extends HttpServlet {
 
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
-        throws ServletException, IOException {
+            throws ServletException, IOException {
         String acao = request.getParameter("acao");
         if (acao.equals("confirmarOperacao")) {
             //     confirmarOperacao(request, response);
@@ -40,15 +40,15 @@ public void prepararOperacao(HttpServletRequest request, HttpServletResponse res
     
     String operacao = request.getParameter("operacao");
         request.setAttribute("operacao", operacao);
-        request.setAttribute("Cliente", Cliente.obterTodosClientes());
+        request.setAttribute("Compra", Compra.obterTodasCompras());
 
         if (!operacao.equals("Incluir")) {
-            Long idCliente = Long.parseLong(request.getParameter("idCliente"));
-            Cliente cliente = Cliente.obterCliente(idCliente);
-            request.setAttribute("cliente", cliente);
+            Long idCompra = Long.parseLong(request.getParameter("idCompra"));
+            Compra compra = Compra.obterCompra(idCompra);
+            request.setAttribute("compra", compra);
 
         }
-        RequestDispatcher view = request.getRequestDispatcher("/ManterCliente.jsp");
+        RequestDispatcher view = request.getRequestDispatcher("/ManterCompra.jsp");
         view.forward(request, response);
     }   catch (SQLException ex) {
             Logger.getLogger(ManterComidaController.class.getName()).log(Level.SEVERE, null, ex);

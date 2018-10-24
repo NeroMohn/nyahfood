@@ -21,7 +21,7 @@
             <table>
             <tr>
                 <td>Código do Cliente:</td>
-                <td><input type="text" name="txtIdCliente" value="${comida.idComida}"></input></td>
+                <td><input type="text" name="txtIdCliente" value="${cliente.idCliente}"></input></td>
             </tr>
             <tr>
                 <td>Nome:</td>
@@ -41,7 +41,7 @@
             </tr>
              <tr>
                 <td>Senha:</td>
-                <td><input type="text" name="txtSenhaCliente" value="${cliente.senha}"></input></td>
+                <td><input type="password" name="txtSenhaCliente" value="${cliente.senha}"></input></td>
             </tr>
              <tr>
                 <td>Foto:</td>

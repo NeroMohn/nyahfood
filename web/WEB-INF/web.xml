@@ -44,6 +44,34 @@
         <servlet-name>ManterClienteController</servlet-name>
         <servlet-class>controller.ManterClienteController</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>ManterComidaPedidaController</servlet-name>
+        <servlet-class>controller.ManterComidaPedidaController</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>ManterCompraController</servlet-name>
+        <servlet-class>controller.ManterCompraController</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>ManterLojaController</servlet-name>
+        <servlet-class>controller.ManterLojaController</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>ManterPedidoController</servlet-name>
+        <servlet-class>controller.ManterPedidoController</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>ManterTipoCozinhaController</servlet-name>
+        <servlet-class>controller.ManterTipoCozinhaController</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>ManterTipoCulinaria</servlet-name>
+        <servlet-class>controller.ManterTipoCulinaria</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>ManterTipoCulinariaController</servlet-name>
+        <servlet-class>controller.ManterTipoCulinariaController</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>PesquisaClienteController</servlet-name>
         <url-pattern>/PesquisaClienteController</url-pattern>
@@ -95,6 +123,34 @@
     <servlet-mapping>
         <servlet-name>ManterClienteController</servlet-name>
         <url-pattern>/ManterClienteController</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ManterComidaPedidaController</servlet-name>
+        <url-pattern>/ManterComidaPedidaController</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ManterCompraController</servlet-name>
+        <url-pattern>/ManterCompraController</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ManterLojaController</servlet-name>
+        <url-pattern>/ManterLojaController</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ManterPedidoController</servlet-name>
+        <url-pattern>/ManterPedidoController</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ManterTipoCozinhaController</servlet-name>
+        <url-pattern>/ManterTipoCozinhaController</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ManterTipoCulinaria</servlet-name>
+        <url-pattern>/ManterTipoCulinaria</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ManterTipoCulinariaController</servlet-name>
+        <url-pattern>/ManterTipoCulinariaController</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

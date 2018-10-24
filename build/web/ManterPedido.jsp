@@ -1,51 +1,48 @@
 <%-- 
-    Document   : ManterCliente
-    Created on : 23/10/2018, 09:34:21
-    Author     : Yukas
+    Document   : ManterPedido
+    Created on : 24/10/2018, 19:06:06
+    Author     : Usuário
 --%>
-
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
-
 <!DOCTYPE html>
 <html>
     <head>
         <title>JSP Page</title>
     </head>
     <body>
-        <h1>Manter Cliente - ${operacao}</h1>
-        
-        <form action ="ManterClienteController?acao=confirmarOperacao&operacao=${operacao}">
+        <h1>Manter Pedido - ${operacao}</h1>
+        <form action ="ManterPedidoController?acao=confirmarOperacao&operacao=${operacao}">
             <table>
-            <tr>
-                <td>Código do Cliente:</td>
-                <td><input type="text" name="txtIdCliente" value="${cliente.idCliente}"></input></td>
+                <tr>
+                <td>Código do Pedido:</td>
+                <td><input type="text" name="txtIdPedido" value="${pedido.idPedido}"></input></td>
             </tr>
             <tr>
-                <td>Nome:</td>
-                <td><input type="text" name="txtNomeCliente" value="${cliente.nome}"></input></td>
+                <td>Comida:</td>
+                <td><input type="text" name="txtComida" value="${cliente.codComida}"></input></td>
             </tr>
             <tr>
-                <td>CPF:</td>
-                <td><input type="text" name="txtCPFCliente" value="${cliente.CPF}"></input></td>
+                <td>Quantidade:</td>
+                <td><input type="text" name="txtQuantidadePedido" value="${pedido.quantidade}"></input></td>
             </tr>
              <tr>
-                <td>Telefone:</td>
-                <td><input type="text" name="txtTelefoneCliente" value="${cliente.telefone}"></input></td>
+                <td>Subtotal:</td>
+                <td><input type="text" name="txtSubtotalPedido" value="${pedido.subtotal}"></input></td>
             </tr>
              <tr>
-                <td>Email:</td>
-                <td><input type="text" name="txtEmailCliente" value="${cliente.email}"></input></td>
+                <td>Metodo Pagamento:</td>
+                <td><input type="text" name="txtMetodoPagamento" value="${pedido.metodoPagamento}"></input></td>
             </tr>
              <tr>
-                <td>Senha:</td>
-                <td><input type="password" name="txtSenhaCliente" value="${cliente.senha}"></input></td>
+                <td>Cupom de Desconto:</td>
+                <td><input type="text" name="txtCupomDesconto" value="${pedido.cupomDesconto}"></input></td>
             </tr>
              <tr>
-                <td>Foto:</td>
-                <td><input type="text" name="txtFotoCliente" value="${cliente.foto}"></input></td>
+                <td>Data:</td>
+                <td><input type="text" name="txtdata" value="${cliente.date}"></input></td>
             </tr>
              <tr>
                 <td>CEP:</td>
@@ -76,6 +73,10 @@
                 <td><input type="text" name="txtNumeroCliente" value="${cliente.numero}"></input></td>
             </tr>
             </table>
+        
         </form>
+    
+    
+    
     </body>
 </html>

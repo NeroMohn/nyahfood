@@ -21,7 +21,7 @@
                         Código da Comida:
                     </td>
                     <td>
-                        <input type="text" name="txtCodComida" value="${comida.idComida}"></input>
+                        <input type="text" name="txtIdComida" value="${comida.idComida}"></input>
                     </td>
                 </tr>
                 <tr>
@@ -31,13 +31,6 @@
                     </td>
                 </tr>
                   <tr>
-                    <td>
-                        Código da Comida:
-                    </td>
-                    <td>
-                        <input type="text" name="txtCodComida" value="${comida.codComida}"></input>
-                    </td>
-                </tr>
                   <tr>
                     <td>
                         Nome Ingrediente:

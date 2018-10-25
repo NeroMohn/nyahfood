@@ -21,23 +21,24 @@
             <table>
             <tr>
                 <td>Código da Compra:</td>
-                <td><input type="text" name="txtIdCompra" value="${compra.idCompra}"></input></td>
+                <td><input type="text" name="txtIdCompra" value="${compra.idCompra}" <c:if test="${operacao != 'Incluir'}"> readonly</c:if>></input></td>
             </tr>
             <tr>
                 <td>Código do Pedido</td>
-                <td><input type="text" name="txtCodPedido" value="${compra.codPedido}"></input></td>
+                <td><input type="text" name="txtCodPedido" value="${compra.codPedido}" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>></input></td>
             </tr>
             <tr>
                 <td>Status:</td>
-                <td><input type="text" name="txtStatus" value="${compra.status}"></input></td>
+                <td><input type="text" name="txtStatus" value="${compra.status}" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>></input></td>
             </tr>
              <tr>
                 <td>Total:</td>
-                <td><input type="text" name="txtTotal" value="${compra.total}"></input></td>
-            </tr>
-
-  
+                <td><input type="text" name="txtTotal" value="${compra.total}" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>></input></td>
+            </tr>  
             </table>
+            
+            <td><input type="submit" name="btnConfirmar" value="Confirmar"></td>
+        
         </form>
     </body>
 </html>

@@ -19,13 +19,15 @@
             <table>
                 <tr>
                 <td>Código do Tipo de Cozinha</td>
-                <td><input type="text" name="txtIdTipoCozinha" value="${tipoCozinha.idTipoCozinha}"></input></td>
+                <td><input type="text" name="txtIdTipoCozinha" value="${tipoCozinha.idTipoCozinha}" <c:if test="${operacao != 'Incluir'}"> readonly</c:if>></input></td>
             </tr>
             <tr>
                 <td>Tipo de Cozinha:</td>
-                <td><input type="text" name="txtTipo" value="${tipoCozinha.tipo}"></input></td>
+                <td><input type="text" name="txtTipo" value="${tipoCozinha.tipo}" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>></input></td>
             </tr>
             </table>
+            
+        <td><input type="submit" name="btnConfirmar" value="Confirmar"></td>
         
         </form>
     

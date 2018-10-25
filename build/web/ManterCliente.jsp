@@ -21,61 +21,63 @@
             <table>
             <tr>
                 <td>Código do Cliente:</td>
-                <td><input type="text" name="txtIdCliente" value="${cliente.idCliente}"></input></td>
+                <td><input type="text" name="txtIdCliente" value="${cliente.idCliente}" <c:if test="${operacao != 'Incluir'}"> readonly</c:if>></input></td>
             </tr>
             <tr>
                 <td>Nome:</td>
-                <td><input type="text" name="txtNomeCliente" value="${cliente.nome}"></input></td>
+                <td><input type="text" name="txtNomeCliente" value="${cliente.nome}" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>></input></td>
             </tr>
             <tr>
                 <td>CPF:</td>
-                <td><input type="text" name="txtCPFCliente" value="${cliente.CPF}"></input></td>
+                <td><input type="text" name="txtCPFCliente" value="${cliente.CPF}" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>></input></td>
             </tr>
              <tr>
                 <td>Telefone:</td>
-                <td><input type="text" name="txtTelefoneCliente" value="${cliente.telefone}"></input></td>
+                <td><input type="text" name="txtTelefoneCliente" value="${cliente.telefone}" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>></input></td>
             </tr>
              <tr>
                 <td>Email:</td>
-                <td><input type="text" name="txtEmailCliente" value="${cliente.email}"></input></td>
+                <td><input type="text" name="txtEmailCliente" value="${cliente.email}" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>></input></td>
             </tr>
              <tr>
                 <td>Senha:</td>
-                <td><input type="password" name="txtSenhaCliente" value="${cliente.senha}"></input></td>
+                <td><input type="password" name="txtSenhaCliente" value="${cliente.senha}" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>></input></td>
             </tr>
              <tr>
                 <td>Foto:</td>
-                <td><input type="text" name="txtFotoCliente" value="${cliente.foto}"></input></td>
+                <td><input type="text" name="txtFotoCliente" value="${cliente.foto}" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>></input></td>
             </tr>
              <tr>
                 <td>CEP:</td>
-                <td><input type="text" name="txtCEPCliente" value="${cliente.CEP}"></input></td>
+                <td><input type="text" name="txtCEPCliente" value="${cliente.CEP}" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>></input></td>
             </tr>
              <tr>
                 <td>Logradouro:</td>
-                <td><input type="text" name="txtLogradouroCliente" value="${cliente.logradouro}"></input></td>
+                <td><input type="text" name="txtLogradouroCliente" value="${cliente.logradouro}" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>></input></td>
             </tr>
              <tr>
                 <td>Bairro:</td>
-                <td><input type="text" name="txtBairroCliente" value="${cliente.bairro}"></input></td>
+                <td><input type="text" name="txtBairroCliente" value="${cliente.bairro}" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>></input></td>
             </tr>
              <tr>
                 <td>Complemento:</td>
-                <td><input type="text" name="txtComplementoCliente" value="${cliente.complemento}"></input></td>
+                <td><input type="text" name="txtComplementoCliente" value="${cliente.complemento}" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>></input></td>
             </tr>
              <tr>
                 <td>Cidade:</td>
-                <td><input type="text" name="txtCidadeCliente" value="${cliente.cidade}"></input></td>
+                <td><input type="text" name="txtCidadeCliente" value="${cliente.cidade}" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>></input></td>
             </tr>
              <tr>
                 <td>Estado:</td>
-                <td><input type="text" name="txtEstadoCliente" value="${cliente.estado}"></input></td>
+                <td><input type="text" name="txtEstadoCliente" value="${cliente.estado}" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>></input></td>
             </tr>
              <tr>
                 <td>Numero:</td>
-                <td><input type="text" name="txtNumeroCliente" value="${cliente.numero}"></input></td>
+                <td><input type="text" name="txtNumeroCliente" value="${cliente.numero}" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>></input></td>
             </tr>
             </table>
+            
+             <td><input type="submit" name="btnConfirmar" value="Confirmar"></td>
         </form>
     </body>
 </html>

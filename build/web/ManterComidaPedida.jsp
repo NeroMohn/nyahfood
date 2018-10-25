@@ -21,27 +21,28 @@
             <table>
             <tr>
                 <td>Código da Comida Pedida:</td>
-                <td><input type="text" name="txtIdComidaPedida" value="${comidaPedida.idComidaPedida}"></input></td>
+                <td><input type="text" name="txtIdComidaPedida" value="${comidaPedida.idComidaPedida}" <c:if test="${operacao != 'Incluir'}"> readonly</c:if>>></input></td>
             </tr>
             <tr>
                 <td>Comida:</td>
-                <td><input type="text" name="txtCodComida" value="${comidaPedida.codComida}"></input></td>
+                <td><input type="text" name="txtCodComida" value="${comidaPedida.codComida}" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>></input></td>
             </tr>
             <tr>
                 <td>Preço Unitário:</td>
-                <td><input type="text" name="txtPrecoUnitario" value="${comidaPedida.precoUnitario}"></input></td>
+                <td><input type="text" name="txtPrecoUnitario" value="${comidaPedida.precoUnitario}" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>></input></td>
             </tr>
              <tr>
                 <td>Quantidade:</td>
-                <td><input type="text" name="txtQuantidadeComidaPedida" value="${comidaPedida.quantidade}"></input></td>
+                <td><input type="text" name="txtQuantidadeComidaPedida" value="${comidaPedida.quantidade}" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>></input></td>
             </tr>
              <tr>
                 <td>Preço Total:</td>
-                <td><input type="text" name="txtPrecoTotal" value="${comidaPedida.precoTotal}"></input></td>
+                <td><input type="text" name="txtPrecoTotal" value="${comidaPedida.precoTotal}" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>></input></td>
             </tr>
-
-  
             </table>
+            
+            <td><input type="submit" name="btnConfirmar" value="Confirmar"></td>
+        
         </form>
     </body>
 </html>

@@ -14,32 +14,26 @@ public class ClienteDAO {
         PreparedStatement comando = null;
         try{
             conexao = BD.getConexao();
-            String sql = "Insert into cliente (idCliente, nome, CPF, email, senha, foto, telefone, logradouro, CEP, numero, bairro, complemento, cidade, estado, codHistorico)"
-                         + "values(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
+            String sql = "Insert into cliente (idCliente, nome, CPF, email, senha, foto, telefone, logradouro, CEP, numero, bairro, complemento, cidade, estado)"
+                         + "values(?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
             comando = conexao.prepareStatement(sql);
             comando.setLong(1, cliente.getIdCliente());
-            comando.setString(2,cliente.getNome());
-            comando.setString(3,cliente.getCpf());
-            comando.setString(4,cliente.getEmail());
-            comando.setString(5,cliente.getSenha());
-            comando.setString(6,cliente.getFoto());
-            comando.setString(7,cliente.getTelefone());
-            comando.setString(8,cliente.getLogradouro());
-            comando.setString(9,cliente.getCEP());
-            comando.setString(10,cliente.getNumero());
-            comando.setString(11,cliente.getBairro());
-            comando.setString(12,cliente.getComplemento());
-            comando.setString(13,cliente.getCidade());
-            comando.setString(14,cliente.getEstado());
-            if(cliente.getCodHistorico() == null){comando.setNull(15, Types.NULL);}
-            else{comando.setLong(15, cliente.getCodHistorico());}
-
+            comando.setString(2 ,cliente.getNome());
+            comando.setString(3, cliente.getCpf());
+            comando.setString(4, cliente.getEmail());
+            comando.setString(5, cliente.getSenha());
+            comando.setString(6, cliente.getFoto());
+            comando.setString(7, cliente.getTelefone());
+            comando.setString(8, cliente.getLogradouro());
+            comando.setString(9, cliente.getCEP());
+            comando.setString(10, cliente.getNumero());
+            comando.setString(11, cliente.getBairro());
+            comando.setString(12, cliente.getComplemento());
+            comando.setString(13, cliente.getCidade());
+            comando.setString(14, cliente.getEstado());
             comando.execute();
             BD.fecharConexao(conexao, comando);
         }catch (SQLException e){throw e;}
-
-
-
     }
 
 
@@ -119,8 +113,7 @@ public class ClienteDAO {
                     rs.getString("complemento"),
                     rs.getString("cidade"),
                     rs.getString("estado"),
-                    rs.getString("numero"),
-                    null);
+                    rs.getString("numero"));
             cliente.setCodHistorico(rs.getLong("codHistorico"));
         }catch(SQLException e){
             e.printStackTrace();
@@ -155,9 +148,7 @@ public class ClienteDAO {
                         rs.getString("complemento"),
                         rs.getString("cidade"),
                         rs.getString("estado"),
-                        rs.getString("numero"),
-                        null);
-                cliente.setCodHistorico(rs.getLong("codHistorico"));
+                        rs.getString("numero"));
                 clientes.add(cliente);
                 
             }while (rs.next());
@@ -171,6 +162,8 @@ public class ClienteDAO {
         return clientes;
         
     }
+    
+    
 
 }
 

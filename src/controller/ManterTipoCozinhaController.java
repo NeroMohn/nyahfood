@@ -20,6 +20,7 @@ import model.TipoCozinha;
  *
  * @author Yukas
  */
+
 public class ManterTipoCozinhaController extends HttpServlet {
 
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
@@ -61,6 +62,31 @@ public void prepararOperacao(HttpServletRequest request, HttpServletResponse res
         }
    
 }
+
+public void confirmarOperacao(HttpServletRequest request, HttpServletResponse response) throws ServletException{
+    String operacao = request.getParameter("operacao");
+    Long idTipoCozinha = Long.parseLong(request.getParameter("txtIdTipoCozinha"));
+    String nome = request.getParameter("txtTipo");
+    
+    try{
+    TipoCozinha tipoCozinha = new TipoCozinha(idTipoCozinha, nome);
+    if(operacao.equals("Incluir")){
+        tipoCozinha.gravar();
+    }
+        RequestDispatcher view =request.getRequestDispatcher("PesquisaTipoCozinhaController");
+        view.forward(request,response);
+}
+         catch (IOException e) {
+            throw new ServletException(e);
+        }catch (SQLException e){
+            throw new ServletException(e);
+        }catch(ClassNotFoundException e){
+            throw new ServletException(e);
+        }catch(ServletException e){
+            throw e;
+        }
+}
+
 
 // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
 /**

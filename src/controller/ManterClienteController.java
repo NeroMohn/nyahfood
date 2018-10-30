@@ -61,6 +61,43 @@ public void prepararOperacao(HttpServletRequest request, HttpServletResponse res
    
 }
 
+    public void confirmarOperacao(HttpServletRequest request, HttpServletResponse response) throws ServletException{
+        String operacao = request.getParameter("operacao");
+        Long idCliente = Long.parseLong(request.getParameter("txtIdCliente"));
+        String nome = request.getParameter("txtNomeCliente");
+        String cpf = request.getParameter("txtCPFCliente");
+        String telefone =  request.getParameter("txtTelefoneCliente");
+        String email =  request.getParameter("txtEmailCliente");
+        String senha =  request.getParameter("txtSenhaCliente");
+        String foto =  request.getParameter("txtFotoCliente");
+        String cep =  request.getParameter("txtCEPCliente");
+        String logradouro =  request.getParameter("txtLogradouroCliente");
+        String bairro =  request.getParameter("txtBairroCliente");
+        String complemento =  request.getParameter("txtComplementoCliente");
+        String cidade =  request.getParameter("txtCidadeCliente");
+        String estado =  request.getParameter("txtEstadoCliente");
+        String numero =  request.getParameter("txtNumeroCliente");
+        
+        try {
+        Cliente cliente = new Cliente(idCliente,nome, cpf, telefone, email, senha, foto, cep, logradouro,
+                bairro, complemento, cidade,estado, numero);
+        if (operacao.equals("Incluir")){
+            cliente.gravar();
+        }
+        RequestDispatcher view =request.getRequestDispatcher("PesquisaClienteController");
+        view.forward(request,response);
+        } catch (IOException e) {
+            throw new ServletException(e);
+        }catch (SQLException e){
+            throw new ServletException(e);
+        }catch(ClassNotFoundException e){
+            throw new ServletException(e);
+        }catch(ServletException e){
+            throw e;
+        }
+    }
+    
+
 // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
 /**
  * Handles the HTTP <code>GET</code> method.

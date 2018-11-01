@@ -15,9 +15,11 @@ public class Cliente extends Usuario {
 
     public Cliente() {}
 
-    public Cliente(Long idCliente, String nome,String cpf, String telefone, 
-            String email, String senha, String foto, String CEP, String logradouro,
-                   String bairro, String complemento, String cidade, String estado, String numero) {
+    public Cliente(Long idCliente, String nome,String cpf,  
+            String email, String senha, String foto,String telefone,
+            String logradouro, String CEP, String numero,
+            String bairro, String complemento, String cidade,
+            String estado) {
         super(nome, telefone, email, senha, foto, CEP, logradouro, bairro, complemento, cidade, estado, numero);
         this.idCliente = idCliente;
         this.cpf = cpf;

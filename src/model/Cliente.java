@@ -10,12 +10,9 @@ public class Cliente extends Usuario {
 
     private Long idCliente;
     private String cpf;
-    private Historico historico;
-    private Long codHistorico;
-
     public Cliente() {}
 
-    public Cliente(Long idCliente, String nome,String cpf,  
+    public Cliente(Long idCliente, String nome,String cpf,
             String email, String senha, String foto,String telefone,
             String logradouro, String CEP, String numero,
             String bairro, String complemento, String cidade,
@@ -39,22 +36,6 @@ public class Cliente extends Usuario {
 
     public void setCpf(String cpf) {
         this.cpf = cpf;
-    }
-
-    public Historico getHistorico() {
-        return historico;
-    }
-
-    public void setHistorico(Historico historico) {
-        this.historico = historico;
-    }
-
-    public Long getCodHistorico() {
-        return codHistorico;
-    }
-
-    public void setCodHistorico(Long codHistorico) {
-        this.codHistorico = codHistorico;
     }
 
     public void gravar() throws SQLException, ClassNotFoundException{

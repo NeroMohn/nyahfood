@@ -43,7 +43,7 @@ public class ClienteDAO {
         try {
             conexao = BD.getConexao();
             String sql = "update cliente set nome = ?, CPF = ?, email = ?, senha = ?, foto = ?, telefone = ?," +
-                    " logradouro = ?, CEP = ?, numero = ?, bairro = ?, complemento = ?, cidade = ?, estado = ?, codHistorico = ? where idCliente = ?";
+                    " logradouro = ?, CEP = ?, numero = ?, bairro = ?, complemento = ?, cidade = ?, estado = ? where idCliente = ?";
             comando = conexao.prepareStatement(sql);
             comando.setString(1,cliente.getNome());
             comando.setString(2,cliente.getCpf());
@@ -58,10 +58,7 @@ public class ClienteDAO {
             comando.setString(11,cliente.getComplemento());
             comando.setString(12,cliente.getCidade());
             comando.setString(13,cliente.getEstado());
-            if(cliente.getCodHistorico() == null){comando.setNull(14, Types.NULL);}
-            else{comando.setLong(14, cliente.getCodHistorico());}
-
-            comando.setLong(15, cliente.getIdCliente());
+            comando.setLong(14, cliente.getIdCliente());
             comando.execute();
             BD.fecharConexao(conexao, comando);
 
@@ -98,7 +95,7 @@ public class ClienteDAO {
             String sql ="SELECT * FROM cliente WHERE idCliente = ?";
             comando = conexao.prepareStatement(sql);
             comando.setLong(1,idCliente);
-            ResultSet rs = comando.executeQuery(sql);
+            ResultSet rs = comando.executeQuery();
             rs.first();
             cliente = new Cliente (rs.getLong("idCliente"),
                     rs.getString("nome"),
@@ -114,7 +111,6 @@ public class ClienteDAO {
                     rs.getString("cidade"),
                     rs.getString("estado"),
                     rs.getString("numero"));
-            cliente.setCodHistorico(rs.getLong("codHistorico"));
         }catch(SQLException e){
             e.printStackTrace();
         }finally{

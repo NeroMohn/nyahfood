@@ -62,6 +62,33 @@ public void prepararOperacao(HttpServletRequest request, HttpServletResponse res
    
 }
 
+public void confirmarOperacao(HttpServletRequest request, HttpServletResponse response) throws ServletException{
+        String operacao = request.getParameter("operacao");
+        Long idComidaPedida = Long.parseLong(request.getParameter("txtIdComidaPedida"));
+        Long codComida = Long.parseLong(request.getParameter("txtCodComida"));
+        Double precoUnitario = Double.parseDouble(request.getParameter("txtPrecoUnitario"));
+        Integer quantidade = Integer.parseInt(request.getParameter("txtQuantidadeComidaPedida"));
+        Double precoTotal = Double.parseDouble(request.getParameter("txtPrecoTotal"));
+        
+        
+        try {
+        ComidaPedida comidaPedida = new ComidaPedida(idComidaPedida,precoUnitario, quantidade, precoTotal, codComida);
+        if (operacao.equals("Incluir")){
+            comidaPedida.gravar();
+        }
+        RequestDispatcher view =request.getRequestDispatcher("PesquisaClienteController");
+        view.forward(request,response);
+        } catch (IOException e) {
+            throw new ServletException(e);
+        }catch (SQLException e){
+            throw new ServletException(e);
+        }catch(ClassNotFoundException e){
+            throw new ServletException(e);
+        }catch(ServletException e){
+            throw e;
+        }
+    }
+
 // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
 /**
  * Handles the HTTP <code>GET</code> method.

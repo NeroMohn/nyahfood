@@ -34,23 +34,24 @@ public class ManterCompraController extends HttpServlet {
             }
         }
     }
+   
 
-public void prepararOperacao(HttpServletRequest request, HttpServletResponse response) {
-        try{
-    
-    String operacao = request.getParameter("operacao");
-        request.setAttribute("operacao", operacao);
-        request.setAttribute("Compra", Compra.obterTodasCompras());
+    public void prepararOperacao(HttpServletRequest request, HttpServletResponse response) {
+        try {
 
-        if (!operacao.equals("Incluir")) {
-            Long idCompra = Long.parseLong(request.getParameter("idCompra"));
-            Compra compra = Compra.obterCompra(idCompra);
-            request.setAttribute("compra", compra);
+            String operacao = request.getParameter("operacao");
+            request.setAttribute("operacao", operacao);
+            request.setAttribute("Compra", Compra.obterTodasCompras());
 
-        }
-        RequestDispatcher view = request.getRequestDispatcher("/ManterCompra.jsp");
-        view.forward(request, response);
-    }   catch (SQLException ex) {
+            if (!operacao.equals("Incluir")) {
+                Long idCompra = Long.parseLong(request.getParameter("idCompra"));
+                Compra compra = Compra.obterCompra(idCompra);
+                request.setAttribute("compra", compra);
+
+            }
+            RequestDispatcher view = request.getRequestDispatcher("/ManterCompra.jsp");
+            view.forward(request, response);
+        } catch (SQLException ex) {
             Logger.getLogger(ManterComidaController.class.getName()).log(Level.SEVERE, null, ex);
         } catch (ClassNotFoundException ex) {
             Logger.getLogger(ManterComidaController.class.getName()).log(Level.SEVERE, null, ex);
@@ -59,20 +60,47 @@ public void prepararOperacao(HttpServletRequest request, HttpServletResponse res
         } catch (IOException ex) {
             Logger.getLogger(ManterComidaController.class.getName()).log(Level.SEVERE, null, ex);
         }
-   
-}
+
+    }
+    
+    public void confirmarOperacao(HttpServletRequest request, HttpServletResponse response) throws ServletException{
+        String operacao = request.getParameter("operacao");
+        Long idCompra = Long.parseLong(request.getParameter("txtIdCompra"));
+        Double total = Double.parseDouble(request.getParameter("txtTotal"));
+        String status = request.getParameter("txtStatus");
+        Long codPedido = Long.parseLong(request.getParameter("txtCoDPedido"));
+       
+       
+        
+        try {
+        Compra compra = new Compra(idCompra,total, status, codPedido);
+        if (operacao.equals("Incluir")){
+            compra.gravar();
+        }
+        RequestDispatcher view =request.getRequestDispatcher("PesquisaClienteController");
+        view.forward(request,response);
+        } catch (IOException e) {
+            throw new ServletException(e);
+        }catch (SQLException e){
+            throw new ServletException(e);
+        }catch(ClassNotFoundException e){
+            throw new ServletException(e);
+        }catch(ServletException e){
+            throw e;
+        }
+    }
 
 // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
-/**
- * Handles the HTTP <code>GET</code> method.
- *
- * @param request servlet request
- * @param response servlet response
- * @throws ServletException if a servlet-specific error occurs
- * @throws IOException if an I/O error occurs
- */
-@Override
-        protected void doGet(HttpServletRequest request, HttpServletResponse response)
+    /**
+     * Handles the HTTP <code>GET</code> method.
+     *
+     * @param request servlet request
+     * @param response servlet response
+     * @throws ServletException if a servlet-specific error occurs
+     * @throws IOException if an I/O error occurs
+     */
+    @Override
+    protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         processRequest(request, response);
     }
@@ -86,7 +114,7 @@ public void prepararOperacao(HttpServletRequest request, HttpServletResponse res
      * @throws IOException if an I/O error occurs
      */
     @Override
-        protected void doPost(HttpServletRequest request, HttpServletResponse response)
+    protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         processRequest(request, response);
     }
@@ -97,8 +125,7 @@ public void prepararOperacao(HttpServletRequest request, HttpServletResponse res
      * @return a String containing servlet description
      */
     @Override
-        public String getServletInfo() {
+    public String getServletInfo() {
         return "Short description";
     }// </editor-fold>
 }
-

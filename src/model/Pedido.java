@@ -27,6 +27,10 @@ public class Pedido {
         setDate(date);
     }
 
+  
+
+ 
+
 
     public Long getIdPedido() {
         return idPedido;

@@ -40,6 +40,10 @@
                 <td>Cupom de Desconto:</td>
                 <td><input type="text" name="txtCupomDesconto" value="${pedido.cupomDesconto}"<c:if test="${operacao == 'Excluir'}"> readonly</c:if>></input></td>
             </tr>
+            <tr>
+                <td>Data:</td>
+                <td><input type="text" name="txtDate" value="${pedido.date}"<c:if test="${operacao == 'Excluir'}"> readonly</c:if>></input></td>
+            </tr>
             </table>
             <td><input type="submit" name="btnConfirmar" value="Confirmar"></td>
         </form>

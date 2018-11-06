@@ -61,6 +61,32 @@ public void prepararOperacao(HttpServletRequest request, HttpServletResponse res
         }
    
 }
+public void confirmarOperacao(HttpServletRequest request, HttpServletResponse response) throws SQLException, ClassNotFoundException{
+    String operacao = request.getParameter("operacao");
+    Long idLoja = Long.parseLong(request.getParameter("txtIdLoja"));
+    String nome = request.getParameter("txtNomeLoja");
+    String telefone = request.getParameter("txtCNPJLoja");
+    String email = request.getParameter("txtTelefoneLoja");
+    String senha = request.getParameter("txtEmailLoja");
+    String foto = request.getParameter("txtSenhaLoja");
+    String CEP = request.getParameter("txtFotoLoja");
+    String logradouro = request.getParameter("txtDescricaoLoja");
+    String bairro = request.getParameter("txtNomeGerenteLoja");
+    String complemento = request.getParameter("txtPagamentosLoja");
+    String cidade = request.getParameter("txtLogradouroLoja");
+    String estado = request.getParameter("txtBairroLoja");
+    String numero = request.getParameter("txtComplementoLoja");
+    String CNPJ = request.getParameter("txtCidadeLoja");
+    String descricao = request.getParameter("txtEstadoLoja");
+    String nomeGerente = request.getParameter("txtNumeroLoja");
+ 
+    
+    
+    Loja loja = new Loja(idLoja, nome, telefone, email, senha, foto, CEP, logradouro, bairro, complemento, cidade, estado, numero, CNPJ, descricao, nomeGerente );
+    if(operacao.equals("Incluir")){
+        loja.gravar();
+    }
+}
 
 // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
 /**

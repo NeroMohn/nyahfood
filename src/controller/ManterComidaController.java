@@ -62,6 +62,33 @@ public void prepararOperacao(HttpServletRequest request, HttpServletResponse res
    
 }
 
+public void confirmarOperacao(HttpServletRequest request, HttpServletResponse response) throws SQLException, ClassNotFoundException{
+    String operacao = request.getParameter("operacao");
+    Long idComida = Long.parseLong(request.getParameter("txtIdComida"));
+    String nome = request.getParameter("txtNome");
+    String ingrediente = request.getParameter("txtIngrediente");
+    String tempoPreparo = request.getParameter("txtTempoPreparo");
+    String foto = request.getParameter("txtFoto");
+    Double preco = Double.parseDouble(request.getParameter("txtPreco"));
+    Double desconto = Double.parseDouble(request.getParameter("txtDesconto"));
+    Long codLoja = Long.parseLong(request.getParameter("txtCodLoja"));
+    
+    Comida comida = new Comida(idComida, nome, ingrediente, tempoPreparo, foto, preco, desconto);
+    
+
+   if (operacao.equals("Incluir")) {
+                comida.gravar();
+            } else {
+                if (operacao.equals("Editar")) {
+                    comida.alterar();
+                } else {
+                    if (operacao.equals("Excluir")) {
+                        comida.excluir();
+                    }
+                }
+            }
+}
+
 // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
 /**
  * Handles the HTTP <code>GET</code> method.

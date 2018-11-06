@@ -11,6 +11,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -20,13 +21,15 @@ import model.Cliente;
  *
  * @author Yukas
  */
+
+@WebServlet (name= "ManterClienteController", urlPatterns = "/controller.ManterClienteController")
 public class ManterClienteController extends HttpServlet {
 
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
         throws ServletException, IOException {
         String acao = request.getParameter("acao");
         if (acao.equals("confirmarOperacao")) {
-            //     confirmarOperacao(request, response);
+                confirmarOperacao(request, response);
         } else {
             if (acao.equals("prepararOperacao")) {
                 prepararOperacao(request, response);
@@ -34,6 +37,7 @@ public class ManterClienteController extends HttpServlet {
             }
         }
     }
+    
 
 public void prepararOperacao(HttpServletRequest request, HttpServletResponse response) {
         try{
@@ -79,11 +83,10 @@ public void prepararOperacao(HttpServletRequest request, HttpServletResponse res
         String estado =  request.getParameter("txtEstadoCliente");
         
         try {
-        Cliente cliente = new Cliente(idCliente,nome, cpf, email, senha, foto, telefone, logradouro, cep,numero,
-                bairro, complemento, cidade,estado);
+        Cliente cliente = new Cliente(idCliente,nome, cpf, email, senha, foto, telefone, logradouro, cep, numero,
+                bairro, complemento, cidade, estado);
         if (operacao.equals("Incluir")){
             cliente.gravar();
-            
         }
         RequestDispatcher view =request.getRequestDispatcher("PesquisaClienteController");
         view.forward(request,response);

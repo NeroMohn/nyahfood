@@ -17,7 +17,7 @@
     <body>
         <h1>Manter Cliente - ${operacao}</h1>
         
-        <form action ="ManterClienteController?acao=confirmarOperacao&operacao=${operacao}">
+        <form action ="ManterClienteController?acao=confirmarOperacao&operacao=${operacao}" method = "post" name="ManterCliente">
             <table>
             <tr>
                 <td>Código do Cliente:</td>

@@ -11,6 +11,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -20,13 +21,20 @@ import model.Comida;
  *
  * @author rodri
  */
+@WebServlet(name = "ManterComidaController",urlPatterns = {"/controller.ManterComidaController"})
 public class ManterComidaController extends HttpServlet {
 
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         String acao = request.getParameter("acao");
         if (acao.equals("confirmarOperacao")) {
-            //     confirmarOperacao(request, response);
+            try {
+                confirmarOperacao(request, response);
+            } catch (SQLException ex) {
+                Logger.getLogger(ManterComidaController.class.getName()).log(Level.SEVERE, null, ex);
+            } catch (ClassNotFoundException ex) {
+                Logger.getLogger(ManterComidaController.class.getName()).log(Level.SEVERE, null, ex);
+            }
         } else {
             if (acao.equals("prepararOperacao")) {
                 prepararOperacao(request, response);

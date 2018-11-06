@@ -21,7 +21,7 @@
             <table>
             <tr>
                 <td>Código do Cliente:</td>
-                <td><input type="text" name="txtIdCliente" value="${cliente.getIdCliente()}" <c:if test="${operacao != 'Incluir'}"> readonly</c:if>></input></td>
+                <td><input type="text" name="txtIdCliente" value="${cliente.idCliente}" <c:if test="${operacao != 'Incluir'}"> readonly</c:if>></input></td>
             </tr>
             <tr>
                 <td>Nome:</td>
@@ -41,7 +41,7 @@
             </tr>
              <tr>
                 <td>Senha:</td>
-                <td><input type="password" name="txtSenhaCliente" value="${cliente.senha}" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>></input></td>
+                <td><input type="password" name="txtSenhaCliente" value="${cliente.getSenha()}" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>></input></td>
             </tr>
              <tr>
                 <td>Foto:</td>

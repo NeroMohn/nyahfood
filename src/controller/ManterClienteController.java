@@ -87,6 +87,8 @@ public void prepararOperacao(HttpServletRequest request, HttpServletResponse res
                 bairro, complemento, cidade, estado);
         if (operacao.equals("Incluir")){
             cliente.gravar();
+        }else if(operacao.equals("Editar")){
+            cliente.alterar();
         }
         RequestDispatcher view =request.getRequestDispatcher("PesquisaClienteController");
         view.forward(request,response);

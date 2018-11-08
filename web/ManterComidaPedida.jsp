@@ -17,7 +17,7 @@
     <body>
         <h1>Manter Comida Pedida - ${operacao}</h1>
         
-        <form action ="ManterComidaPedidaController?acao=confirmarOperacao&operacao=${operacao}">
+        <form action ="ManterComidaPedidaController?acao=confirmarOperacao&operacao=${operacao}"  method = "post" name="ManterComidaPedida">
             <table>
             <tr>
                 <td>Código da Comida Pedida:</td>

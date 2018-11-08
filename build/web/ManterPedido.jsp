@@ -14,7 +14,7 @@
     </head>
     <body>
         <h1>Manter Pedido - ${operacao}</h1>
-        <form action ="ManterPedidoController?acao=confirmarOperacao&operacao=${operacao}">
+        <form action ="ManterPedidoController?acao=confirmarOperacao&operacao=${operacao}"  method = "post" name="ManterPedido">
             <table>
                 <tr>
                 <td>Código do Pedido:</td>

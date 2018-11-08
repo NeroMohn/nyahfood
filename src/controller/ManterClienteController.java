@@ -23,7 +23,6 @@ public class ManterClienteController extends HttpServlet {
         } else {
             if (acao.equals("prepararOperacao")) {
                 prepararOperacao(request, response);
-
             }
         }
     }
@@ -39,7 +38,6 @@ public void prepararOperacao(HttpServletRequest request, HttpServletResponse res
             Long idCliente = Long.parseLong(request.getParameter("idCliente"));
             Cliente cliente = Cliente.obterCliente(idCliente);
             request.setAttribute("cliente", cliente);
-
         }
         RequestDispatcher view = request.getRequestDispatcher("/ManterCliente.jsp");
         view.forward(request, response);
@@ -79,6 +77,9 @@ public void prepararOperacao(HttpServletRequest request, HttpServletResponse res
             cliente.gravar();
         }else if(operacao.equals("Editar")){
             cliente.alterar();
+        } else if (operacao.equals("Excluir")){
+                cliente.excluir();
+            }
         }
         RequestDispatcher view =request.getRequestDispatcher("PesquisaClienteController");
         view.forward(request,response);

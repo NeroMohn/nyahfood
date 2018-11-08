@@ -16,7 +16,7 @@
     <body>
         <h1>Manter Tipo Culinaria - ${operacao}</h1>
         
-        <form action ="ManterTipoCulinariaController?acao=confirmarOperacao&operacao=${operacao}">
+        <form action ="ManterTipoCulinariaController?acao=confirmarOperacao&operacao=${operacao}"  method = "post" name="ManterTipoCulinaria">
             <table>
             <tr>
                 <td>Código do Tipo de Culinaria</td>

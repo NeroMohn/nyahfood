@@ -16,7 +16,7 @@
     <body>
         <h1>Manter Loja - ${operacao}</h1>
         
-        <form action ="ManterLojaController?acao=confirmarOperacao&operacao=${operacao}">
+        <form action ="ManterLojaController?acao=confirmarOperacao&operacao=${operacao}"  method = "post" name="ManterLoja">
             <table>
                         <tr>
                 <td>Código da Loja</td>

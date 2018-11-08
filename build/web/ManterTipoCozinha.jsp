@@ -15,7 +15,7 @@
     </head>
     <body>
         <h1>Manter Tipo Cozinha - ${operacao}</h1>
-        <form action ="ManterTipoCozinhaController?acao=confirmarOperacao&operacao=${operacao}">
+        <form action ="ManterTipoCozinhaController?acao=confirmarOperacao&operacao=${operacao}" method = "post" name="ManterTipoCozinha">
             <table>
                 <tr>
                 <td>Código do Tipo de Cozinha</td>

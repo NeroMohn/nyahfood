@@ -30,8 +30,7 @@ public class ManterClienteController extends HttpServlet {
 
 public void prepararOperacao(HttpServletRequest request, HttpServletResponse response) {
         try{
-    
-    String operacao = request.getParameter("operacao");
+        String operacao = request.getParameter("operacao");
         request.setAttribute("operacao", operacao);
         request.setAttribute("Cliente", Cliente.obterTodosClientes());
         if (!operacao.equals("Incluir")) {
@@ -41,7 +40,7 @@ public void prepararOperacao(HttpServletRequest request, HttpServletResponse res
         }
         RequestDispatcher view = request.getRequestDispatcher("/ManterCliente.jsp");
         view.forward(request, response);
-    }   catch (SQLException ex) {
+        } catch (SQLException ex) {
             Logger.getLogger(ManterClienteController.class.getName()).log(Level.SEVERE, null, ex);
         } catch (ClassNotFoundException ex) {
             Logger.getLogger(ManterClienteController.class.getName()).log(Level.SEVERE, null, ex);
@@ -69,21 +68,23 @@ public void prepararOperacao(HttpServletRequest request, HttpServletResponse res
         String complemento =  request.getParameter("txtComplementoCliente");
         String cidade =  request.getParameter("txtCidadeCliente");
         String estado =  request.getParameter("txtEstadoCliente");
-        
         try {
         Cliente cliente = new Cliente(idCliente,nome, cpf, email, senha, foto, telefone, logradouro, cep, numero,
                 bairro, complemento, cidade, estado);
         if (operacao.equals("Incluir")){
             cliente.gravar();
-        }else if(operacao.equals("Editar")){
-            cliente.alterar();
-        } else if (operacao.equals("Excluir")){
+        }else{ 
+            if(operacao.equals("Editar")){
+                cliente.alterar();
+        } else{ 
+                if (operacao.equals("Excluir")){
                 cliente.excluir();
+                }
             }
         }
         RequestDispatcher view =request.getRequestDispatcher("PesquisaClienteController");
         view.forward(request,response);
-        } catch (IOException e) {
+        }catch (IOException e) {
             throw new ServletException(e);
         }catch (SQLException e){
             throw new ServletException(e);

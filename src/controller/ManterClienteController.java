@@ -57,17 +57,17 @@ public void prepararOperacao(HttpServletRequest request, HttpServletResponse res
         Long idCliente = Long.parseLong(request.getParameter("txtIdCliente"));
         String nome = request.getParameter("txtNomeCliente");
         String cpf = request.getParameter("txtCpfCliente");
+        String telefone =  request.getParameter("txtTelefoneCliente");
         String email =  request.getParameter("txtEmailCliente");
         String senha =  request.getParameter("txtSenhaCliente");
         String foto =  request.getParameter("txtFotoCliente");
-        String telefone =  request.getParameter("txtTelefoneCliente");
-        String logradouro =  request.getParameter("txtLogradouroCliente");
         String cep =  request.getParameter("txtCepCliente");
-        String numero =  request.getParameter("txtNumeroCliente");
+        String logradouro =  request.getParameter("txtLogradouroCliente");
         String bairro =  request.getParameter("txtBairroCliente");
         String complemento =  request.getParameter("txtComplementoCliente");
         String cidade =  request.getParameter("txtCidadeCliente");
         String estado =  request.getParameter("txtEstadoCliente");
+        String numero =  request.getParameter("txtNumeroCliente");
         try {
         Cliente cliente = new Cliente(idCliente,nome, cpf, telefone, email, senha, foto, cep, logradouro, bairro,
                 complemento, cidade, estado, numero);

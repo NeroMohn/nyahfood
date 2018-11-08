@@ -62,15 +62,15 @@ public void prepararOperacao(HttpServletRequest request, HttpServletResponse res
         String foto =  request.getParameter("txtFotoCliente");
         String telefone =  request.getParameter("txtTelefoneCliente");
         String logradouro =  request.getParameter("txtLogradouroCliente");
-        String cep =  request.getParameter("txtCEPCliente");
+        String cep =  request.getParameter("txtCepCliente");
         String numero =  request.getParameter("txtNumeroCliente");
         String bairro =  request.getParameter("txtBairroCliente");
         String complemento =  request.getParameter("txtComplementoCliente");
         String cidade =  request.getParameter("txtCidadeCliente");
         String estado =  request.getParameter("txtEstadoCliente");
         try {
-        Cliente cliente = new Cliente(idCliente,nome, cpf, email, senha, foto, telefone, logradouro, cep, numero,
-                bairro, complemento, cidade, estado);
+        Cliente cliente = new Cliente(idCliente,nome, cpf, telefone, email, senha, foto, cep, logradouro, bairro,
+                complemento, cidade, estado, numero);
         if (operacao.equals("Incluir")){
             cliente.gravar();
         }else{ 

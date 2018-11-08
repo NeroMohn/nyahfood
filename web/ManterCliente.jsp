@@ -37,7 +37,7 @@
             </tr>
              <tr>
                 <td>Email:</td>
-                <td><input type="text" name="txtEmailCliente" value="${cliente.getRmail()}" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>></td>
+                <td><input type="text" name="txtEmailCliente" value="${cliente.getEmail()}" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>></td>
             </tr>
              <tr>
                 <td>Senha:</td>
@@ -49,7 +49,7 @@
             </tr>
              <tr>
                 <td>CEP:</td>
-                <td><input type="text" name="txtCEPCliente" value="${cliente.getCep()}" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>></td>
+                <td><input type="text" name="txtCepCliente" value="${cliente.getCep()}" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>></td>
             </tr>
              <tr>
                 <td>Logradouro:</td>

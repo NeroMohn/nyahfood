@@ -19,14 +19,14 @@ public class Usuario {
 
     }
 
-    public Usuario(String nome, String telefone, String email, String senha, String foto, String CEP,String logradouro,
+    public Usuario(String nome, String telefone, String email, String senha, String foto, String Cep,String logradouro,
                   String bairro,String complemento,String cidade, String estado, String numero) {
         setNome(nome);
         setTelefone(telefone);
         setEmail(email);
         setFoto(foto);
         setSenha(senha);
-        setCEP(CEP);
+        setCep(Cep);
         setLogradouro(logradouro);
         setBairro(bairro);
         setComplemento(complemento);
@@ -79,7 +79,7 @@ public class Usuario {
         return Cep;
     }
 
-    public void setCEP(String Cep) {
+    public void setCep(String Cep) {
         this.Cep = Cep;
     }
 

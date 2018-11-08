@@ -56,7 +56,7 @@ public void prepararOperacao(HttpServletRequest request, HttpServletResponse res
         String operacao = request.getParameter("operacao");
         Long idCliente = Long.parseLong(request.getParameter("txtIdCliente"));
         String nome = request.getParameter("txtNomeCliente");
-        String cpf = request.getParameter("txtCPFCliente");
+        String cpf = request.getParameter("txtCpfCliente");
         String email =  request.getParameter("txtEmailCliente");
         String senha =  request.getParameter("txtSenhaCliente");
         String foto =  request.getParameter("txtFotoCliente");

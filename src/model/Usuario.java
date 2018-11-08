@@ -7,7 +7,7 @@ public class Usuario {
     private String email;
     private String senha;
     private String foto;
-    private String CEP;
+    private String Cep;
     private String logradouro;
     private String bairro;
     private String complemento;
@@ -75,12 +75,12 @@ public class Usuario {
         this.foto = foto;
     }
 
-    public String getCEP() {
-        return CEP;
+    public String getCep() {
+        return Cep;
     }
 
-    public void setCEP(String CEP) {
-        this.CEP = CEP;
+    public void setCEP(String Cep) {
+        this.Cep = Cep;
     }
 
     public String getLogradouro() {

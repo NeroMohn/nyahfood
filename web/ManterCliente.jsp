@@ -25,11 +25,11 @@
             </tr>
             <tr>
                 <td>Nome:</td>
-                <td><input type="text" name="txtNomeCliente" value="${cliente.getNome()}" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>></td>
+                <td><input type="text" name="txtNomeCliente" value="${cliente.nome}" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>></td>
             </tr>
             <tr>
                 <td>CPF:</td>
-                <td><input type="text" name="txtCPFCliente" value="${cliente.getCPF()}" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>></td>
+                <td><input type="text" name="txtCPFCliente" value="${cliente.getCpf()}" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>></td>
             </tr>
              <tr>
                 <td>Telefone:</td>
@@ -49,7 +49,7 @@
             </tr>
              <tr>
                 <td>CEP:</td>
-                <td><input type="text" name="txtCEPCliente" value="${cliente.getCEP()}" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>></td>
+                <td><input type="text" name="txtCEPCliente" value="${cliente.getCep()}" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>></td>
             </tr>
              <tr>
                 <td>Logradouro:</td>

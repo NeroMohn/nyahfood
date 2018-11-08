@@ -29,7 +29,7 @@ public class LojaDAO {
             comando.setString(9,loja.getNumero());
             comando.setString(10,loja.getBairro());
             comando.setString(11,loja.getComplemento());
-            comando.setString(12,loja.getCEP());
+            comando.setString(12,loja.getCep());
             comando.setString(13,loja.getCidade());
             comando.setString(14,loja.getEstado());
             comando.setString(15,loja.getDescricao());
@@ -66,7 +66,7 @@ public class LojaDAO {
             comando.setString(8,loja.getNumero());
             comando.setString(9,loja.getBairro());
             comando.setString(10,loja.getComplemento());
-            comando.setString(11,loja.getCEP());
+            comando.setString(11,loja.getCep());
             comando.setString(12,loja.getCidade());
             comando.setString(13,loja.getEstado());
             comando.setString(14,loja.getDescricao());

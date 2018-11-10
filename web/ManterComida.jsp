@@ -14,7 +14,7 @@
     </head>
     <body>
         <h1>Manter Comida - ${operacao}</h1>
-        <form action ="ManterComidaController?acao=confirmarOperacao&operacao=${operacao}">
+        <form action ="ManterComidaController?acao=confirmarOperacao&operacao=${operacao}" method="post" name="ManterComida">
             <table>
                 <tr>
                     <td>

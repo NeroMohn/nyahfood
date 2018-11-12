@@ -10,10 +10,6 @@ public class MainPedido {
     public static void main(String[] args) throws SQLException, ClassNotFoundException {
 
 
-        Pedido pedido = new Pedido();
-        pedido.setCodComida(1L);
-        pedido.setCupomDesconto("Haha");
-        pedido.setIdPedido(2L);
 
 
         //PedidoDAO.gravar(pedido);  //OK

@@ -6,7 +6,6 @@ import java.sql.SQLException;
 import java.util.List;
 
 public class Compra {
-    private Pedido pedido;
     private double total;
     private String status;
     private Long idCompra;
@@ -15,19 +14,13 @@ public class Compra {
     public Compra(){}
 
     public Compra( Long idCompra, double total, String status,Long codPedido) {
-        this.codPedido = codPedido;
+        this.idCompra = idCompra;
         this.total = total;
         this.status = status;
-        this.idCompra = idCompra;
+        this.codPedido = codPedido;
     }
 
-    public Pedido getPedido() {
-        return pedido;
-    }
-
-    public void setPedido(Pedido pedido) {
-        this.pedido = pedido;
-    }
+   
 
     public double getTotal() {
         return total;

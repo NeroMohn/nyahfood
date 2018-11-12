@@ -11,6 +11,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -20,13 +21,15 @@ import model.Loja;
  *
  * @author Yukas
  */
+
+@WebServlet (name= "ManterLojaController", urlPatterns = "/controller.ManterLojaController")
 public class ManterLojaController extends HttpServlet {
 
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
-        throws ServletException, IOException {
+        throws ServletException, IOException, SQLException, ClassNotFoundException {
         String acao = request.getParameter("acao");
         if (acao.equals("confirmarOperacao")) {
-            //     confirmarOperacao(request, response);
+           confirmarOperacao(request, response);
         } else {
             if (acao.equals("prepararOperacao")) {
                 prepararOperacao(request, response);
@@ -61,31 +64,53 @@ public void prepararOperacao(HttpServletRequest request, HttpServletResponse res
         }
    
 }
-public void confirmarOperacao(HttpServletRequest request, HttpServletResponse response) throws SQLException, ClassNotFoundException{
+public void confirmarOperacao(HttpServletRequest request, HttpServletResponse response) throws SQLException, ClassNotFoundException, ServletException{
     String operacao = request.getParameter("operacao");
     Long idLoja = Long.parseLong(request.getParameter("txtIdLoja"));
     String nome = request.getParameter("txtNomeLoja");
-    String telefone = request.getParameter("txtCNPJLoja");
-    String email = request.getParameter("txtTelefoneLoja");
-    String senha = request.getParameter("txtEmailLoja");
-    String foto = request.getParameter("txtSenhaLoja");
-    String CEP = request.getParameter("txtFotoLoja");
-    String logradouro = request.getParameter("txtDescricaoLoja");
-    String bairro = request.getParameter("txtNomeGerenteLoja");
-    String complemento = request.getParameter("txtPagamentosLoja");
-    String cidade = request.getParameter("txtLogradouroLoja");
-    String estado = request.getParameter("txtBairroLoja");
-    String numero = request.getParameter("txtComplementoLoja");
-    String CNPJ = request.getParameter("txtCidadeLoja");
-    String descricao = request.getParameter("txtEstadoLoja");
-    String nomeGerente = request.getParameter("txtNumeroLoja");
+    String telefone = request.getParameter("txtTelefoneLoja");
+    String email = request.getParameter("txtEmailLoja");
+    String senha = request.getParameter("txtSenhaLoja");
+    String foto = request.getParameter("txtFotoLoja");
+    String Cep = request.getParameter("txtCepLoja");
+    String logradouro = request.getParameter("txtLogradouroLoja");
+    String bairro = request.getParameter("txtBairroLoja");
+    String complemento = request.getParameter("txtComplementoLoja");
+    String cidade = request.getParameter("txtCidadeLoja");
+    String estado = request.getParameter("txtEstadoLoja");
+    String numero = request.getParameter("txtNumeroLoja");
+    String Cnpj = request.getParameter("txtCnpjLoja");
+    String descricao = request.getParameter("txtDescricaoLoja");
+    String nomeGerente = request.getParameter("txtNomeGerenteLoja");
  
     
     
-    Loja loja = new Loja(idLoja, nome, telefone, email, senha, foto, CEP, logradouro, bairro, complemento, cidade, estado, numero, CNPJ, descricao, nomeGerente );
-    if(operacao.equals("Incluir")){
-        loja.gravar();
-    }
+    
+     try {
+             Loja loja = new Loja(idLoja, nome, telefone, email, senha, foto, Cep, logradouro, bairro, complemento, cidade, estado, numero, Cnpj, descricao, nomeGerente);
+          if (operacao.equals("Incluir")){
+            loja.gravar();
+        }else{ 
+            if(operacao.equals("Editar")){
+                loja.alterar();
+        } else{ 
+                if (operacao.equals("Excluir")){
+                loja.excluir();
+                }
+            }
+        }
+          RequestDispatcher view =request.getRequestDispatcher("PesquisaLojaController");
+        view.forward(request,response); 
+     } catch (IOException e) {
+            throw new ServletException(e);
+        }catch (SQLException e){
+            throw new ServletException(e);
+        }catch(ClassNotFoundException e){
+            throw new ServletException(e);
+        }catch(ServletException e){
+            throw e;
+        }
+
 }
 
 // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
@@ -100,7 +125,13 @@ public void confirmarOperacao(HttpServletRequest request, HttpServletResponse re
 @Override
         protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        processRequest(request, response);
+        try {
+            processRequest(request, response);
+        } catch (SQLException ex) {
+            Logger.getLogger(ManterLojaController.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (ClassNotFoundException ex) {
+            Logger.getLogger(ManterLojaController.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
 
     /**
@@ -114,7 +145,13 @@ public void confirmarOperacao(HttpServletRequest request, HttpServletResponse re
     @Override
         protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        processRequest(request, response);
+        try {
+            processRequest(request, response);
+        } catch (SQLException ex) {
+            Logger.getLogger(ManterLojaController.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (ClassNotFoundException ex) {
+            Logger.getLogger(ManterLojaController.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
 
     /**

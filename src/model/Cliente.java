@@ -10,7 +10,7 @@ public class Cliente extends Usuario {
 
     private Long idCliente;
     private String cpf;
-    public Cliente() {}
+ 
 
     public Cliente(Long idCliente, String nome,String cpf,
             String email, String senha, String foto,String telefone,

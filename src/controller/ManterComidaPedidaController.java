@@ -11,6 +11,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -20,13 +21,14 @@ import model.ComidaPedida;
  *
  * @author Yukas
  */
+@WebServlet(name = "ManterComidaPedidaController",urlPatterns = {"/controller.ManterComidaPedidaController"})
 public class ManterComidaPedidaController extends HttpServlet {
 
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         String acao = request.getParameter("acao");
         if (acao.equals("confirmarOperacao")) {
-            //     confirmarOperacao(request, response);
+                 confirmarOperacao(request, response);
         } else {
             if (acao.equals("prepararOperacao")) {
                 prepararOperacao(request, response);
@@ -65,18 +67,26 @@ public void prepararOperacao(HttpServletRequest request, HttpServletResponse res
 public void confirmarOperacao(HttpServletRequest request, HttpServletResponse response) throws ServletException{
         String operacao = request.getParameter("operacao");
         Long idComidaPedida = Long.parseLong(request.getParameter("txtIdComidaPedida"));
-        Long codComida = Long.parseLong(request.getParameter("txtCodComida"));
         Double precoUnitario = Double.parseDouble(request.getParameter("txtPrecoUnitario"));
         Integer quantidade = Integer.parseInt(request.getParameter("txtQuantidadeComidaPedida"));
         Double precoTotal = Double.parseDouble(request.getParameter("txtPrecoTotal"));
+        Long codComida = Long.parseLong(request.getParameter("txtCodComida"));
         
         
         try {
         ComidaPedida comidaPedida = new ComidaPedida(idComidaPedida,precoUnitario, quantidade, precoTotal, codComida);
-        if (operacao.equals("Incluir")){
-            comidaPedida.gravar();
-        }
-        RequestDispatcher view =request.getRequestDispatcher("PesquisaClienteController");
+       if (operacao.equals("Incluir")) {
+                comidaPedida.gravar();
+            } else {
+                if (operacao.equals("Editar")) {
+                    comidaPedida.alterar();
+                } else {
+                    if (operacao.equals("Excluir")) {
+                        comidaPedida.excluir();
+                    }
+                }
+            }
+        RequestDispatcher view =request.getRequestDispatcher("PesquisaComidaPedidaController");
         view.forward(request,response);
         } catch (IOException e) {
             throw new ServletException(e);

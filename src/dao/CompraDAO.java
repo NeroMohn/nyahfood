@@ -43,15 +43,16 @@ public class CompraDAO {
             conexao = BD.getConexao();
             String sql = "update compra set total = ?, status = ?, codPedido = ? where idCompra = ?";
             comando = conexao.prepareStatement(sql);
-            comando.setDouble(1, compra.getTotal());
-            comando.setString(2, compra.getStatus());
+            comando.setLong(1, compra.getIdCompra());
+            comando.setDouble(2, compra.getTotal());
+            comando.setString(3, compra.getStatus());
 
             if (compra.getCodPedido() == null) {
                 comando.setNull(3, Types.NULL);
             } else {
-                comando.setLong(3, compra.getCodPedido());
+                comando.setLong(4, compra.getCodPedido());
             }
-            comando.setLong(4, compra.getIdCompra());
+            
             comando.execute();
             BD.fecharConexao(conexao, comando);
 

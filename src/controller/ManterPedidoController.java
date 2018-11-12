@@ -11,6 +11,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -20,13 +21,15 @@ import model.Pedido;
  *
  * @author Yukas
  */
+@WebServlet (name= "ManterPedidoController", urlPatterns = "/controller.ManterPedidoController")
+
 public class ManterPedidoController extends HttpServlet {
 
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
-        throws ServletException, IOException {
+        throws ServletException, IOException, SQLException, ClassNotFoundException {
         String acao = request.getParameter("acao");
         if (acao.equals("confirmarOperacao")) {
-            //     confirmarOperacao(request, response);
+              confirmarOperacao(request, response);
         } else {
             if (acao.equals("prepararOperacao")) {
                 prepararOperacao(request, response);
@@ -99,7 +102,13 @@ public void confirmarOperacao(HttpServletRequest request, HttpServletResponse re
 @Override
         protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        processRequest(request, response);
+        try {
+            processRequest(request, response);
+        } catch (SQLException ex) {
+            Logger.getLogger(ManterPedidoController.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (ClassNotFoundException ex) {
+            Logger.getLogger(ManterPedidoController.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
 
     /**
@@ -113,7 +122,13 @@ public void confirmarOperacao(HttpServletRequest request, HttpServletResponse re
     @Override
         protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        processRequest(request, response);
+        try {
+            processRequest(request, response);
+        } catch (SQLException ex) {
+            Logger.getLogger(ManterPedidoController.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (ClassNotFoundException ex) {
+            Logger.getLogger(ManterPedidoController.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
 
     /**

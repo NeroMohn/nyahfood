@@ -14,24 +14,23 @@ public class LojaDAO {
         PreparedStatement comando = null;
         try{
             conexao = BD.getConexao();
-            String sql = "Insert into loja (idLoja, nome, telefone, email, senha, foto, cep, logradouro,"+
-                    " bairro, complemento, cidade, estado, numero, cnpj, descricao, nomeGerente)"
+            String sql = "Insert into loja ( idLoja,  nome,  telefone,  email,  senha,  foto,  cep,  logradouro,  bairro,  complemento,  cidade,  estado,  numero,  cnpj,  descricao,  nomeGerente)"
                     + "values(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
             comando = conexao.prepareStatement(sql);
             comando.setLong(1, loja.getIdLoja());
             comando.setString(2,loja.getNome());
-            comando.setString(3,loja.getCNPJ());
+            comando.setString(3,loja.getTelefone());
             comando.setString(4,loja.getEmail());
-            comando.setString(5,loja.getSenha());
+            comando.setString(5,loja.getSenha());         
             comando.setString(6,loja.getFoto());
-            comando.setString(7,loja.getTelefone());
+            comando.setString(7,loja.getCep());
             comando.setString(8,loja.getLogradouro());
-            comando.setString(9,loja.getNumero());
-            comando.setString(10,loja.getBairro());
-            comando.setString(11,loja.getComplemento());
-            comando.setString(12,loja.getCep());
-            comando.setString(13,loja.getCidade());
-            comando.setString(14,loja.getEstado());
+            comando.setString(9,loja.getBairro());
+            comando.setString(10,loja.getComplemento());
+            comando.setString(11,loja.getCidade());
+            comando.setString(12,loja.getEstado());
+            comando.setString(13,loja.getNumero());
+            comando.setString(14,loja.getCnpj());   
             comando.setString(15,loja.getDescricao());
             comando.setString(16,loja.getNomeGerente());
 
@@ -51,28 +50,27 @@ public class LojaDAO {
         PreparedStatement comando = null;
         try {
             conexao = BD.getConexao();
-            String sql = "update loja set nome = ?, cnpj = ?, email = ?, senha = ?, foto = ?, telefone = ?," +
-                    " logradouro = ?, numero = ?, bairro = ?, complemento = ?, cep = ?, cidade = ?, estado = ?, descricao = ?,"+
-                    " nomeGerente = ?, pagamento = ? where idLoja = ?";
+            String sql = "update loja set nome = ?, telefone = ?, email = ?, senha = ?, foto = ?, cep = ?," +
+                    " logradouro = ?, bairro = ?, complemento = ?, cidade = ?, estado = ?, numero = ?,"+
+                    " cnpj = ?, descricao = ?, nomeGerente = ?, where idLoja = ?";
 
             comando = conexao.prepareStatement(sql);
             comando.setString(1,loja.getNome());
-            comando.setString(2,loja.getCNPJ());
+            comando.setString(2,loja.getTelefone());
             comando.setString(3,loja.getEmail());
             comando.setString(4,loja.getSenha());
             comando.setString(5,loja.getFoto());
-            comando.setString(6,loja.getTelefone());
+            comando.setString(6,loja.getCep());
             comando.setString(7,loja.getLogradouro());
-            comando.setString(8,loja.getNumero());
-            comando.setString(9,loja.getBairro());
-            comando.setString(10,loja.getComplemento());
-            comando.setString(11,loja.getCep());
-            comando.setString(12,loja.getCidade());
-            comando.setString(13,loja.getEstado());
+            comando.setString(8,loja.getBairro());
+            comando.setString(9,loja.getComplemento());
+            comando.setString(10,loja.getCidade());
+            comando.setString(11,loja.getEstado());
+            comando.setString(12,loja.getNumero());
+            comando.setString(13,loja.getCnpj());
             comando.setString(14,loja.getDescricao());
-            comando.setString(15,loja.getNomeGerente());
-            comando.setString(16, loja.getPagamento());
-            comando.setLong(17, loja.getIdLoja());
+            comando.setString(15, loja.getNomeGerente());
+            comando.setLong(16, loja.getIdLoja());
 
             comando.execute();
             BD.fecharConexao(conexao, comando);

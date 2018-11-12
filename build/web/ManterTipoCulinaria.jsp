@@ -32,10 +32,11 @@
             </tr>
              <tr>
                 <td>Tipo Cozinha:</td>
-                <td><input type="text" name="txtTelefoneCliente" value="${tipoCulinaria.codTipoCozinha}" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>></input></td>
+                <td><input type="text" name="txtCodTipoCozinha" value="${tipoCulinaria.codTipoCozinha}" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>></input></td>
             </tr>
              
             </table>
+            <td><input type="submit" name="btnConfirmar" value="Confirmar"></td>
         </form>
     </body>
 </html>

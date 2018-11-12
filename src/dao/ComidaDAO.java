@@ -15,7 +15,7 @@ public class ComidaDAO {
         PreparedStatement comando = null;
         try {
             conexao = dao.BD.getConexao();
-            String sql = "insert into comida (idComida, nome, ingrediente,tempoPreparo,foto,preco,desconto,codLoja)" +
+            String sql = "insert into comida (idComida,  nome,  ingrediente,  tempoPreparo,  foto,  preco, desconto, codLoja)"+
                     "values (?,?,?,?,?,?,?,?)";
             comando = conexao.prepareStatement(sql);
             comando.setLong(1, comida.getIdComida());

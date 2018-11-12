@@ -29,31 +29,37 @@
             </tr>
             <tr>
                 <td>CPF:</td>
-                <td><input type="text" name="txtCPFCliente" value="${cliente.getCpf()}" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>></td>
-            </tr>
-             <tr>
-                <td>Telefone:</td>
-                <td><input type="text" name="txtTelefoneCliente" value="${cliente.getTelefone()}" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>></td>
+                <td><input type="text" name="txtCpfCliente" value="${cliente.getCpf()}" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>></td>
             </tr>
              <tr>
                 <td>Email:</td>
                 <td><input type="text" name="txtEmailCliente" value="${cliente.getEmail()}" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>></td>
-            </tr>
+            </tr> 
              <tr>
                 <td>Senha:</td>
                 <td><input type="password" name="txtSenhaCliente" value="${cliente.getSenha()}" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>></td>
             </tr>
-             <tr>
+            <tr>
                 <td>Foto:</td>
                 <td><input type="text" name="txtFotoCliente" value="${cliente.getFoto()}" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>></td>
             </tr>
+            <tr>
+                <td>Telefone:</td>
+                <td><input type="text" name="txtTelefoneCliente" value="${cliente.getTelefone()}" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>></td>
+            </tr>
+            
+             <tr>
+                <td>Logradouro:</td>
+                <td><input type="text" name="txtLogradouroCliente" value="${cliente.getLogradouro()}" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>></td>
+            </tr>
+             
              <tr>
                 <td>CEP:</td>
                 <td><input type="text" name="txtCepCliente" value="${cliente.getCep()}" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>></td>
             </tr>
              <tr>
-                <td>Logradouro:</td>
-                <td><input type="text" name="txtLogradouroCliente" value="${cliente.getLogradouro()}" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>></td>
+                <td>Numero:</td>
+                <td><input type="text" name="txtNumeroCliente" value="${cliente.getNumero()}" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>></td>
             </tr>
              <tr>
                 <td>Bairro:</td>
@@ -71,10 +77,7 @@
                 <td>Estado:</td>
                 <td><input type="text" name="txtEstadoCliente" value="${cliente.getEstado()}" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>></td>
             </tr>
-             <tr>
-                <td>Numero:</td>
-                <td><input type="text" name="txtNumeroCliente" value="${cliente.getNumero()}" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>></td>
-            </tr>
+            
             </table>
             
              <td><input type="submit" name="btnConfirmar" value="Confirmar"></td>

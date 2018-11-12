@@ -22,7 +22,7 @@
             </tr>
             <tr>
                 <td>Comida:</td>
-                <td><input type="text" name="txtComida" value="${cliente.codComida}" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>></input></td>
+                <td><input type="text" name="txtComida" value="${pedido.codComida}" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>></input></td>
             </tr>
             <tr>
                 <td>Quantidade:</td>

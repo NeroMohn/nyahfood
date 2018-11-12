@@ -9,20 +9,18 @@ import java.util.List;
 public class Loja extends Usuario {
 
     private Long idLoja;
-    private String CNPJ;
+    private String cnpj;
     private String descricao;
     private String nomeGerente;
     private String pagamento;
 
 
-    public Loja(){
-        super();
-    }
+ 
 
-    public Loja(Long idLoja, String nome, String telefone, String email, String senha, String foto, String CEP, String logradouro, String bairro, String complemento, String cidade, String estado, String numero, String CNPJ, String descricao, String nomeGerente) {
-        super(nome, telefone, email, senha, foto, CEP, logradouro, bairro, complemento, cidade, estado, numero);
+    public Loja(Long idLoja, String nome, String telefone, String email, String senha, String foto, String cep, String logradouro, String bairro, String complemento, String cidade, String estado, String numero, String cnpj, String descricao, String nomeGerente) {
+        super(nome, telefone, email, senha, foto, cep, logradouro, bairro, complemento, cidade, estado, numero);
         this.idLoja = idLoja;
-        this.CNPJ = CNPJ;
+        this.cnpj = cnpj;
         this.descricao = descricao;
         this.nomeGerente = nomeGerente;
         this.pagamento = pagamento;
@@ -38,12 +36,12 @@ public class Loja extends Usuario {
         this.idLoja = idLoja;
     }
 
-    public String getCNPJ() {
-        return CNPJ;
+    public String getCnpj() {
+        return cnpj;
     }
 
-    public void setCNPJ(String CNPJ) {
-        this.CNPJ = CNPJ;
+    public void setCnpj(String CNPJ) {
+        this.cnpj = CNPJ;
     }
 
     public String getDescricao() {

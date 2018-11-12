@@ -38,12 +38,13 @@ public class ComidaPedidaDAO {
         PreparedStatement comando = null;
         try {
             conexao = BD.getConexao();
-            String sql = "update comidaPedida set precoUnitario = ?, quantidade = ?, precoTotal = ? where idComidaPedida = ? and codComida = ?";
+            String sql = "update comidaPedida set precoUnitario = ?, quantidade = ?, precoTotal = ?, codComida = ? where idComidaPedida = ?";
             comando = conexao.prepareStatement(sql);
-            comando.setDouble(1, comidaPedida.getPrecoUnitario());
-            comando.setInt(2, comidaPedida.getQuantidade());
-            comando.setDouble(3, comidaPedida.getPrecoTotal());
-            comando.setLong(4, comidaPedida.getIdComidaPedida());
+             comando.setLong(1, comidaPedida.getIdComidaPedida());
+            comando.setDouble(2, comidaPedida.getPrecoUnitario());
+            comando.setInt(3, comidaPedida.getQuantidade());
+            comando.setDouble(4, comidaPedida.getPrecoTotal());
+          
             if (comidaPedida.getCodComida() == null) {
                 comando.setNull(5, Types.NULL);
             } else {

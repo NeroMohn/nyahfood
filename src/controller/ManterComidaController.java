@@ -25,20 +25,13 @@ import model.Comida;
 public class ManterComidaController extends HttpServlet {
 
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
+        throws ServletException, IOException, SQLException, ClassNotFoundException {
         String acao = request.getParameter("acao");
         if (acao.equals("confirmarOperacao")) {
-            try {
                 confirmarOperacao(request, response);
-            } catch (SQLException ex) {
-                Logger.getLogger(ManterComidaController.class.getName()).log(Level.SEVERE, null, ex);
-            } catch (ClassNotFoundException ex) {
-                Logger.getLogger(ManterComidaController.class.getName()).log(Level.SEVERE, null, ex);
-            }
         } else {
             if (acao.equals("prepararOperacao")) {
                 prepararOperacao(request, response);
-
             }
         }
     }
@@ -70,7 +63,7 @@ public void prepararOperacao(HttpServletRequest request, HttpServletResponse res
    
 }
 
-public void confirmarOperacao(HttpServletRequest request, HttpServletResponse response) throws SQLException, ClassNotFoundException{
+public void confirmarOperacao(HttpServletRequest request, HttpServletResponse response) throws SQLException, ClassNotFoundException, ServletException{
     String operacao = request.getParameter("operacao");
     Long idComida = Long.parseLong(request.getParameter("txtIdComida"));
     String nome = request.getParameter("txtNome");
@@ -81,7 +74,9 @@ public void confirmarOperacao(HttpServletRequest request, HttpServletResponse re
     Double desconto = Double.parseDouble(request.getParameter("txtDesconto"));
     Long codLoja = Long.parseLong(request.getParameter("txtCodLoja"));
     
-    Comida comida = new Comida(idComida, nome, ingrediente, tempoPreparo, foto, preco, desconto);
+    try{
+    
+        Comida comida = new Comida(idComida, nome, ingrediente, tempoPreparo, foto, preco, desconto, codLoja);
     
 
    if (operacao.equals("Incluir")) {
@@ -95,6 +90,17 @@ public void confirmarOperacao(HttpServletRequest request, HttpServletResponse re
                     }
                 }
             }
+ RequestDispatcher view =request.getRequestDispatcher("PesquisaComidaController");
+        view.forward(request,response);
+        }catch (IOException e) {
+            throw new ServletException(e);
+        }catch (SQLException e){
+            throw new ServletException(e);
+        }catch(ClassNotFoundException e){
+            throw new ServletException(e);
+        }catch(ServletException e){
+            throw e;
+        }
 }
 
 // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
@@ -109,7 +115,13 @@ public void confirmarOperacao(HttpServletRequest request, HttpServletResponse re
 @Override
         protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        processRequest(request, response);
+        try {
+            processRequest(request, response);
+        } catch (SQLException ex) {
+            Logger.getLogger(ManterComidaController.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (ClassNotFoundException ex) {
+            Logger.getLogger(ManterComidaController.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
 
     /**
@@ -123,7 +135,13 @@ public void confirmarOperacao(HttpServletRequest request, HttpServletResponse re
     @Override
         protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        processRequest(request, response);
+        try {
+            processRequest(request, response);
+        } catch (SQLException ex) {
+            Logger.getLogger(ManterComidaController.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (ClassNotFoundException ex) {
+            Logger.getLogger(ManterComidaController.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
 
     /**

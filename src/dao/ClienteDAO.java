@@ -14,23 +14,23 @@ public class ClienteDAO {
         PreparedStatement comando = null;
         try{
             conexao = BD.getConexao();
-            String sql = "Insert into cliente (idCliente, nome, cpf, telefone, email, senha, foto, cep, logradouro, bairro, complemento, cidade, estado, numero)"
+            String sql = "Insert into cliente (idCliente, nome, cpf, email,  senha,  foto, telefone, logradouro,  cep,  numero, bairro,  complemento,  cidade, estado)"
                          + "values(?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
             comando = conexao.prepareStatement(sql);
             comando.setLong(1, cliente.getIdCliente());
             comando.setString(2 ,cliente.getNome());
             comando.setString(3, cliente.getCpf());
-            comando.setString(4, cliente.getTelefone());
-            comando.setString(5, cliente.getEmail());
-            comando.setString(6, cliente.getSenha());
-            comando.setString(7, cliente.getFoto());
-            comando.setString(8, cliente.getCep());
-            comando.setString(9, cliente.getLogradouro());
-            comando.setString(10, cliente.getBairro());
-            comando.setString(11, cliente.getComplemento());
-            comando.setString(12, cliente.getCidade());
-            comando.setString(13, cliente.getEstado());
-            comando.setString(14, cliente.getNumero());
+            comando.setString(4, cliente.getEmail());
+            comando.setString(5, cliente.getSenha());
+            comando.setString(6, cliente.getFoto());
+            comando.setString(7, cliente.getTelefone());
+            comando.setString(8, cliente.getLogradouro());
+            comando.setString(9, cliente.getCep());
+            comando.setString(10, cliente.getNumero());
+            comando.setString(11, cliente.getBairro());
+            comando.setString(12, cliente.getComplemento());
+            comando.setString(13, cliente.getCidade());
+            comando.setString(14, cliente.getEstado());
             comando.execute();
             BD.fecharConexao(conexao, comando);
         }catch (SQLException e){throw e;}
@@ -45,20 +45,20 @@ public class ClienteDAO {
             String sql = "update cliente set nome = ?, cpf = ?, email = ?, senha = ?, foto = ?, telefone = ?," +
                     " logradouro = ?, cep = ?, numero = ?, bairro = ?, complemento = ?, cidade = ?, estado = ? where idCliente = ?";
             comando = conexao.prepareStatement(sql);
-            comando.setString(1 ,cliente.getNome());
-            comando.setString(2, cliente.getCpf());
-            comando.setString(3, cliente.getTelefone());
+            comando.setLong(1, cliente.getIdCliente());
+            comando.setString(2 ,cliente.getNome());
+            comando.setString(3, cliente.getCpf());
             comando.setString(4, cliente.getEmail());
             comando.setString(5, cliente.getSenha());
             comando.setString(6, cliente.getFoto());
-            comando.setString(7, cliente.getCep());
+            comando.setString(7, cliente.getTelefone());
             comando.setString(8, cliente.getLogradouro());
-            comando.setString(9, cliente.getBairro());
-            comando.setString(10, cliente.getComplemento());
-            comando.setString(11, cliente.getCidade());
-            comando.setString(12, cliente.getEstado());
-            comando.setString(13, cliente.getNumero());
-            comando.setLong(14, cliente.getIdCliente());
+            comando.setString(9, cliente.getCep());
+            comando.setString(10, cliente.getNumero());
+            comando.setString(11, cliente.getBairro());
+            comando.setString(12, cliente.getComplemento());
+            comando.setString(13, cliente.getCidade());
+            comando.setString(14, cliente.getEstado());
             comando.execute();
             BD.fecharConexao(conexao, comando);
 
@@ -99,18 +99,18 @@ public class ClienteDAO {
             rs.first();
             cliente = new Cliente (rs.getLong("idCliente"),
                     rs.getString("nome"),
-                    rs.getString("Cpf"),
-                    rs.getString("telefone"),
+                    rs.getString("cpf"),
                     rs.getString("email"),
                     rs.getString("senha"),
                     rs.getString("foto"),
-                    rs.getString("Cep"),
+                    rs.getString("telefone"),
                     rs.getString("logradouro"),
+                    rs.getString("cep"),
+                    rs.getString("numero"),
                     rs.getString("bairro"),
                     rs.getString("complemento"),
                     rs.getString("cidade"),
-                    rs.getString("estado"),
-                    rs.getString("numero"));
+                    rs.getString("estado"));
         }catch(SQLException e){
             e.printStackTrace();
         }finally{
@@ -131,20 +131,20 @@ public class ClienteDAO {
             ResultSet rs = comando.executeQuery(sql);
             rs.first();
             do {
-                cliente = new Cliente(rs.getLong("idCliente"),
-                        rs.getString("nome"),
-                        rs.getString("cpf"),
-                        rs.getString("telefone"),
-                        rs.getString("email"),
-                        rs.getString("senha"),
-                        rs.getString("foto"),
-                        rs.getString("cep"),
-                        rs.getString("logradouro"),
-                        rs.getString("bairro"),
-                        rs.getString("complemento"),
-                        rs.getString("cidade"),
-                        rs.getString("estado"),
-                        rs.getString("numero"));
+                cliente = new Cliente (rs.getLong("idCliente"),
+                    rs.getString("nome"),
+                    rs.getString("cpf"),
+                    rs.getString("email"),
+                    rs.getString("senha"),
+                    rs.getString("foto"),
+                    rs.getString("telefone"),
+                    rs.getString("logradouro"),
+                    rs.getString("cep"),
+                    rs.getString("numero"),
+                    rs.getString("bairro"),
+                    rs.getString("complemento"),
+                    rs.getString("cidade"),
+                    rs.getString("estado"));
                 clientes.add(cliente);
                 
             }while (rs.next());

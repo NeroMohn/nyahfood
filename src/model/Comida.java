@@ -21,7 +21,7 @@ public class Comida {
 
 
     public Comida(Long idComida, String nome, String ingrediente, String tempoPreparo, String foto, double preco,
-                  double desconto) {
+                  double desconto, Long codLoja) {
         setIdComida(idComida);
         setNome(nome);
         setIngrediente(ingrediente);
@@ -29,10 +29,10 @@ public class Comida {
         setFoto(foto);
         setPreco(preco);
         setDesconto(desconto);
+        setCodLoja(codLoja);
 
     }
-    public Comida(long idComida, String nome, String ingrediente, String tempoPreparo, String foto, double preco, double desconto, Object o){
-    }
+    
 
     public Long getIdComida() {
         return idComida;

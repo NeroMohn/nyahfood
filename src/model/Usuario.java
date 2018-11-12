@@ -7,7 +7,7 @@ public class Usuario {
     private String email;
     private String senha;
     private String foto;
-    private String Cep;
+    private String cep;
     private String logradouro;
     private String bairro;
     private String complemento;
@@ -15,25 +15,28 @@ public class Usuario {
     private String estado;
     private String numero;
 
-    public Usuario(){
-
+    public Usuario(String nome,
+            String email, String senha, String foto,String telefone,
+            String logradouro, String cep, String numero,
+            String bairro, String complemento, String cidade,
+            String estado){
+        this.nome = nome;
+        this.telefone = telefone;
+        this.email = email;
+        this.senha = senha;
+        this.foto = foto;
+        this.cep = cep;
+        this.logradouro = logradouro;
+        this.bairro = bairro;
+        this.complemento = complemento;
+        this.cidade = cidade;
+        this.estado = estado;
+        this.numero = numero;
     }
 
-    public Usuario(String nome, String telefone, String email, String senha, String foto, String Cep,String logradouro,
-                  String bairro,String complemento,String cidade, String estado, String numero) {
-        setNome(nome);
-        setTelefone(telefone);
-        setEmail(email);
-        setFoto(foto);
-        setSenha(senha);
-        setCep(Cep);
-        setLogradouro(logradouro);
-        setBairro(bairro);
-        setComplemento(complemento);
-        setCidade(cidade);
-        setEstado(estado);
-        setNumero(numero);
-    }
+ 
+
+   
 
     public String getNome() {
         return nome;
@@ -76,11 +79,11 @@ public class Usuario {
     }
 
     public String getCep() {
-        return Cep;
+        return cep;
     }
 
     public void setCep(String Cep) {
-        this.Cep = Cep;
+        this.cep = Cep;
     }
 
     public String getLogradouro() {

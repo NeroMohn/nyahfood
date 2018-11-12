@@ -11,6 +11,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -20,13 +21,15 @@ import model.Compra;
  *
  * @author Yukas
  */
+@WebServlet (name= "ManterCompraController", urlPatterns = "/controller.ManterCompraController")
+
 public class ManterCompraController extends HttpServlet {
 
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         String acao = request.getParameter("acao");
         if (acao.equals("confirmarOperacao")) {
-            //     confirmarOperacao(request, response);
+            confirmarOperacao(request, response);
         } else {
             if (acao.equals("prepararOperacao")) {
                 prepararOperacao(request, response);
@@ -73,9 +76,17 @@ public class ManterCompraController extends HttpServlet {
        
         
         try {
-        Compra compra = new Compra(idCompra,total, status, codPedido);
-        if (operacao.equals("Incluir")){
+             Compra compra = new Compra(idCompra, total, status, codPedido);
+          if (operacao.equals("Incluir")){
             compra.gravar();
+        }else{ 
+            if(operacao.equals("Editar")){
+                compra.alterar();
+        } else{ 
+                if (operacao.equals("Excluir")){
+                compra.excluir();
+                }
+            }
         }
         RequestDispatcher view =request.getRequestDispatcher("PesquisaClienteController");
         view.forward(request,response);

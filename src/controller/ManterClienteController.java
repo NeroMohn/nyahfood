@@ -32,7 +32,6 @@ public void prepararOperacao(HttpServletRequest request, HttpServletResponse res
         try{
         String operacao = request.getParameter("operacao");
         request.setAttribute("operacao", operacao);
-        request.setAttribute("Cliente", Cliente.obterTodosClientes());
         if (!operacao.equals("Incluir")) {
             Long idCliente = Long.parseLong(request.getParameter("idCliente"));
             Cliente cliente = Cliente.obterCliente(idCliente);
@@ -70,8 +69,8 @@ public void prepararOperacao(HttpServletRequest request, HttpServletResponse res
         String estado =  request.getParameter("txtEstadoCliente");
        
         try {
-        Cliente cliente = new Cliente(idCliente,nome, cpf, telefone, email, senha, foto, cep, logradouro, bairro,
-                complemento, cidade, estado, numero);
+        Cliente cliente = new Cliente(idCliente, nome, cpf, email, senha, foto, telefone, logradouro, cep, numero, bairro,
+                complemento, cidade, estado);
         if (operacao.equals("Incluir")){
             cliente.gravar();
         }else{ 

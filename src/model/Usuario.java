@@ -21,17 +21,17 @@ public class Usuario {
             String bairro, String complemento, String cidade,
             String estado){
         this.nome = nome;
-        this.telefone = telefone;
         this.email = email;
         this.senha = senha;
         this.foto = foto;
-        this.cep = cep;
+        this.telefone = telefone;
         this.logradouro = logradouro;
+        this.cep = cep;
+        this.numero = numero;
         this.bairro = bairro;
         this.complemento = complemento;
         this.cidade = cidade;
         this.estado = estado;
-        this.numero = numero;
     }
 
  

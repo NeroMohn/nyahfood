@@ -17,7 +17,7 @@ public class Cliente extends Usuario {
             String logradouro, String cep, String numero,
             String bairro, String complemento, String cidade,
             String estado) {
-        super(nome, telefone, email, senha, foto, cep, logradouro, bairro, complemento, cidade, estado, numero);
+        super(nome, email, senha, foto, telefone, logradouro, cep, numero, bairro, complemento, cidade, estado);
         this.idCliente = idCliente;
         this.cpf = cpf;
     }

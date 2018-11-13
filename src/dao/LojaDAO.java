@@ -109,7 +109,7 @@ public class LojaDAO {
             conexao = BD.getConexao();
             String sql = "SELECT * FROM loja WHERE idLoja = ?";
             comando = conexao.prepareStatement(sql);
-            comando.setLong(1, loja.getIdLoja());
+            comando.setLong(1, idLoja);
             ResultSet rs = comando.executeQuery(sql);
             rs.first();
             loja = new Loja(rs.getLong("idLoja"),

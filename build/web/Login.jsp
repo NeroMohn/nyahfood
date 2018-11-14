@@ -17,7 +17,7 @@
     <body>
         <h1>Login - ${operacao} </h1>
         
-        <form action="LoginController%ConfirmarOperacao" method="POST">
+        <form action="LoginController?acao=confirmarOperacao&operacao=${operacao}" method="POST">
         </form>
     </body>
 </html>

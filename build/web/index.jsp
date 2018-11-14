@@ -12,6 +12,7 @@
       <a href="PesquisaLojaController">Pesquisa Loja</a><br />
       <a href="PesquisaPedidoController">Pesquisa Pedido</a><br />
       <a href="PesquisaTipoCozinhaController">Pesquisa Tipo Cozinha</a><br />
-      <a href="PesquisaTipoCulinariaController">Pesquisa Tipo Culinaria</a>
+      <a href="PesquisaTipoCulinariaController">Pesquisa Tipo Culinaria</a><br />
+      <a href="LoginController">Login</a>
   </body>
 </html>

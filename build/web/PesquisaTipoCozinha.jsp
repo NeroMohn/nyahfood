@@ -23,9 +23,9 @@
                     <tr>
                         <td><c:out value="${tipocozinha.idTipoCozinha}"/></td>
                         <td><c:out value="${tipocozinha.tipo}"/></td>
-                        <td><a href="ManterTipoCozinhaController?acao=prepararOperacao&operacao=Editar&IdTipoCozinha=<c:out value="${tipocozinha.idTipocozinha}"/>">Editar</a></td>
+                        <td><a href="ManterTipoCozinhaController?acao=prepararOperacao&operacao=Editar&idTipoCozinha=<c:out value="${tipocozinha.idTipocozinha}"/>">Editar</a></td>
                         <td>
-                            <a href="ManterTipoCozinhaController?acao=preparaOperacao&operacao=Excluir&IdTipoCozinha=<c:out value="${tipocozinha.idTipocozinha}"/>">Excluir</a></td>
+                            <a href="ManterTipoCozinhaController?acao=prepararOperacao&operacao=Excluir&idTipoCozinha=<c:out value="${tipocozinha.idTipocozinha}"/>">Excluir</a></td>
                     </tr>
                 </c:forEach>
 

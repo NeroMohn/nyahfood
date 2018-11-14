@@ -94,7 +94,7 @@ public class FavoritoDAO {
             String sql = "SELECT * FROM favorito WHERE idFavorito = ?";
             comando = conexao.prepareStatement(sql);
             comando.setLong(1, idFavorito);
-            ResultSet rs = comando.executeQuery(sql);
+            ResultSet rs = comando.executeQuery();
             rs.first();
             favorito = new Favorito(rs.getLong("idFavorito"),
                     null, null);

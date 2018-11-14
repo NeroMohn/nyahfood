@@ -75,7 +75,7 @@ public class TipoCozinhaDAO {
             String sql = "SELECT * FROM tipoCozinha WHERE idTipoCozinha = ?";
             comando = conexao.prepareStatement(sql);
             comando.setLong(1, idTipoCozinha);
-            ResultSet rs = comando.executeQuery(sql);
+            ResultSet rs = comando.executeQuery();
             rs.first();
             tipoCozinha = new TipoCozinha(rs.getLong("idTipoCozinha"),
                     rs.getString("tipo"));

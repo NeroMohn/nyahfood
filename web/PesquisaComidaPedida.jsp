@@ -25,9 +25,9 @@
                         <td><c:out value="${comidaPedida.idComidaPedida}"/></td>
                         <td><c:out value="${comidaPedida.codComida}"/></td>
                         <td><c:out value="${comidaPedida.precoTotal}"/></td>
-                        <td><a href="ManterComidaPedidaController?acao=prepararOperacao&operacao=Editar&IdComidaPedida=<c:out value="${comidaPedida.idComidaPedida}"/>">Editar</a></td>
+                        <td><a href="ManterComidaPedidaController?acao=prepararOperacao&operacao=Editar&idComidaPedida=<c:out value="${comidaPedida.idComidaPedida}"/>">Editar</a></td>
                         <td>
-                            <a href="ManterComidaPedidaController?acao=preparaOperacao&operacao=Excluir&IdComidaPedida=<c:out value="${comidaPedida.idComidaPedida}"/>">Excluir</a></td>
+                            <a href="ManterComidaPedidaController?acao=prepararOperacao&operacao=Excluir&idComidaPedida=<c:out value="${comidaPedida.idComidaPedida}"/>">Excluir</a></td>
                     </tr>
                 </c:forEach>
 

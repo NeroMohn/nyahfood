@@ -93,7 +93,7 @@ public class CompraDAO {
             String sql = "SELECT * FROM compra WHERE idCompra = ?";
             comando = conexao.prepareStatement(sql);
             comando.setLong(1, idCompra);
-            ResultSet rs = comando.executeQuery(sql);
+            ResultSet rs = comando.executeQuery();
             rs.first();
             compra = new Compra(rs.getLong("idCompra"),
                     rs.getDouble("total"),

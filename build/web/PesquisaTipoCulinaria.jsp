@@ -24,9 +24,9 @@
                         <td><c:out value="${tipoculinaria.idTipoCulinaria}"/></td>
                         <td><c:out value="${tipoculinaria.culinaria}"/></td>
                         <td><c:out value="${tipoculinaria.codLoja}"/></td>
-                        <td><a href="ManterTipoCulinariaController?acao=prepararOperacao&operacao=Editar&IdTipoCulinaria=<c:out value="${tipoculinaria.idTipoCulinaria}"/>">Editar</a></td>
+                        <td><a href="ManterTipoCulinariaController?acao=prepararOperacao&operacao=Editar&idTipoCulinaria=<c:out value="${tipoculinaria.idTipoCulinaria}"/>">Editar</a></td>
                         <td>
-                            <a href="ManterTipoCulinariaController?acao=preparaOperacao&operacao=Excluir&IdTipoCulinaria=<c:out value="${tipoculinaria.idTipoCulinaria}"/>">Excluir</a></td>
+                            <a href="ManterTipoCulinariaController?acao=prepararOperacao&operacao=Excluir&idTipoCulinaria=<c:out value="${tipoculinaria.idTipoCulinaria}"/>">Excluir</a></td>
                     </tr>
                 </c:forEach>
 

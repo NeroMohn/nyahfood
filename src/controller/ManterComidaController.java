@@ -41,7 +41,6 @@ public void prepararOperacao(HttpServletRequest request, HttpServletResponse res
     
     String operacao = request.getParameter("operacao");
         request.setAttribute("operacao", operacao);
-        request.setAttribute("Comida", Comida.obterTodasComidas());
 
         if (!operacao.equals("Incluir")) {
             Long idComida = Long.parseLong(request.getParameter("idComida"));

@@ -25,9 +25,9 @@
                         <td><c:out value="${pedido.idPedido}"/></td>
                         <td><c:out value="${pedido.codComida}"/></td>
                         <td><c:out value="${pedido.date}"/></td>
-                        <td><a href="ManterPedidoController?acao=prepararOperacao&operacao=Editar&IdPedido=<c:out value="${pedido.idPedido}"/>">Editar</a></td>
+                        <td><a href="ManterPedidoController?acao=prepararOperacao&operacao=Editar&idPedido=<c:out value="${pedido.idPedido}"/>">Editar</a></td>
                         <td>
-                            <a href="ManterPedidoController?acao=preparaOperacao&operacao=Excluir&IdPedido=<c:out value="${pedido.idPedido}"/>">Excluir</a></td>
+                            <a href="ManterPedidoController?acao=prepararOperacao&operacao=Excluir&idPedido=<c:out value="${pedido.idPedido}"/>">Excluir</a></td>
                     </tr>
                 </c:forEach>
 

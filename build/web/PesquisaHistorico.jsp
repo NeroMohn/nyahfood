@@ -23,9 +23,9 @@
                     <tr>
                         <td><c:out value="${historico.idHistorico}"/></td>
                         <td><c:out value="${historico.codCompra}"/></td>
-                        <td><a href="ManterHistoricoController?acao=prepararOperacao&operacao=Editar&IdHistorico=<c:out value="${historico.idHistorico}"/>">Editar</a></td>
+                        <td><a href="ManterHistoricoController?acao=prepararOperacao&operacao=Editar&idHistorico=<c:out value="${historico.idHistorico}"/>">Editar</a></td>
                         <td>
-                            <a href="ManterHistoricoController?acao=preparaOperacao&operacao=Excluir&IdHistorico=<c:out value="${historico.idHistorico}"/>">Excluir</a></td>
+                            <a href="ManterHistoricoController?acao=prepararOperacao&operacao=Excluir&idHistorico=<c:out value="${historico.idHistorico}"/>">Excluir</a></td>
                     </tr>
                 </c:forEach>
 

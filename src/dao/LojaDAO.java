@@ -110,7 +110,7 @@ public class LojaDAO {
             String sql = "SELECT * FROM loja WHERE idLoja = ?";
             comando = conexao.prepareStatement(sql);
             comando.setLong(1, idLoja);
-            ResultSet rs = comando.executeQuery(sql);
+            ResultSet rs = comando.executeQuery();
             rs.first();
             loja = new Loja(rs.getLong("idLoja"),
                     rs.getString("nome"),

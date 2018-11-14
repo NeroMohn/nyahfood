@@ -83,7 +83,7 @@ public class HistoricoDAO {
             String sql = "SELECT * FROM historico WHERE idHistorico = ?";
             comando = conexao.prepareStatement(sql);
             comando.setLong(1, idHistorico);
-            ResultSet rs = comando.executeQuery(sql);
+            ResultSet rs = comando.executeQuery();
             rs.first();
             historico = new Historico(rs.getLong("idHistorico"),
                     null);

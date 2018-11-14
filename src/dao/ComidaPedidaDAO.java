@@ -91,7 +91,7 @@ public class ComidaPedidaDAO {
             String sql = "SELECT * FROM comidaPedida WHERE idComidaPedida = ?";
             comando = conexao.prepareStatement(sql);
             comando.setLong(1, idComidaPedida);
-            ResultSet rs = comando.executeQuery(sql);
+            ResultSet rs = comando.executeQuery();
             rs.first();
             comidaPedida = new ComidaPedida(rs.getLong("idComidaPedida"),
                     rs.getDouble("precoUnitario"),

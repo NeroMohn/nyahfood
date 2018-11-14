@@ -25,7 +25,7 @@
                         <td><c:out value="${loja.nome}"/></td>
                         <td><a href="ManterLojaController?acao=prepararOperacao&operacao=Editar&idLoja=<c:out value="${loja.idLoja}"/>">Editar</a></td>
                         <td>
-                            <a href="ManterLojaController?acao=preparaOperacao&operacao=Excluir&idLoja=<c:out value="${loja.idLoja}"/>">Excluir</a></td>
+                            <a href="ManterLojaController?acao=prepararOperacao&operacao=Excluir&idLoja=<c:out value="${loja.idLoja}"/>">Excluir</a></td>
                     </tr>
                 </c:forEach>
      

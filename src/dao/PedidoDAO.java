@@ -88,7 +88,7 @@ public class PedidoDAO {
             String sql = "SELECT * FROM pedido WHERE idPedido = ?";
             comando = conexao.prepareStatement(sql);
             comando.setLong(1, idPedido);
-            ResultSet rs = comando.executeQuery(sql);
+            ResultSet rs = comando.executeQuery();
             rs.first();
             pedido = new Pedido(rs.getLong("idPedido"),
                     rs.getInt("quantidade"),

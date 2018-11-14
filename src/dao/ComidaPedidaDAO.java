@@ -40,16 +40,15 @@ public class ComidaPedidaDAO {
             conexao = BD.getConexao();
             String sql = "update comidaPedida set precoUnitario = ?, quantidade = ?, precoTotal = ?, codComida = ? where idComidaPedida = ?";
             comando = conexao.prepareStatement(sql);
-             comando.setLong(1, comidaPedida.getIdComidaPedida());
-            comando.setDouble(2, comidaPedida.getPrecoUnitario());
-            comando.setInt(3, comidaPedida.getQuantidade());
-            comando.setDouble(4, comidaPedida.getPrecoTotal());
-          
+            comando.setDouble(1, comidaPedida.getPrecoUnitario());
+            comando.setInt(2, comidaPedida.getQuantidade());
+            comando.setDouble(3, comidaPedida.getPrecoTotal());
             if (comidaPedida.getCodComida() == null) {
-                comando.setNull(5, Types.NULL);
+                comando.setNull(4, Types.NULL);
             } else {
-                comando.setLong(5, comidaPedida.getCodComida());
+                comando.setLong(4, comidaPedida.getCodComida());
             }
+            comando.setLong(5, comidaPedida.getIdComidaPedida());
 
             comando.execute();
             BD.fecharConexao(conexao, comando);
@@ -115,7 +114,7 @@ public class ComidaPedidaDAO {
         try {
             conexao = BD.getConexao();
             comando = conexao.createStatement();
-            String sql = "SELECT * FROM comida";
+            String sql = "SELECT * FROM comidaPedida";
             ResultSet rs = comando.executeQuery(sql);
             rs.first();
             do{

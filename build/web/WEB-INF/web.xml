@@ -10,7 +10,7 @@
     </servlet>
     <servlet>
         <servlet-name>PesquisaComidaPedida</servlet-name>
-        <servlet-class>controller.PesquisaComidaPedida</servlet-class>
+        <servlet-class>controller.PesquisaComidaPedidaController</servlet-class>
     </servlet>
     <servlet>
         <servlet-name>PesquisaCompraController</servlet-name>

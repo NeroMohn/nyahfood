@@ -12,7 +12,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>JSP Page</title>
+        <title>Manter Cliente</title>
     </head>
     <body>
         <h1>Manter Cliente - ${operacao}</h1>

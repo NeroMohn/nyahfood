@@ -1,4 +1,4 @@
-package model;
+    package model;
 
 
 import dao.ClienteDAO;
@@ -52,6 +52,9 @@ public class Cliente extends Usuario {
 
     public static Cliente obterCliente(Long idCliente) throws SQLException, ClassNotFoundException{
         return ClienteDAO.obterCliente(idCliente);
+    }
+    public static Cliente obterCliente(String email) throws SQLException, ClassNotFoundException{
+        return ClienteDAO.obterCliente(email);
     }
 
     public static List<Cliente> obterTodosClientes() throws SQLException, ClassNotFoundException{

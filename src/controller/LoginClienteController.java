@@ -4,30 +4,25 @@ package controller;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.sql.SQLException;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import model.Cliente;
 
 /**
  *
  * @author rodri
  */
-@WebServlet(name = "LoginController", urlPatterns = {"/LoginController"})
-public class LoginController extends HttpServlet {
+@WebServlet(name = "LoginClienteController", urlPatterns = {"/LoginClienteController"})
+public class LoginClienteController extends HttpServlet {
 
+
+ 
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
-        String acao = request.getParameter("acao");
-        if(acao.equals("confirmarOperacao")){
-            confirmarOperacao(request, response);
-        }else if(acao.equals("prepararOperacao")){
-            prepararOperacao(request, response);
-        }
-        
+            throws ServletException, IOException, SQLException, ClassNotFoundException {
+            logar(request, response);           
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
@@ -69,20 +64,15 @@ public class LoginController extends HttpServlet {
         return "Short description";
     }// </editor-fold>
 
-    private void confirmarOperacao(HttpServletRequest request, HttpServletResponse response) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    private void prepararOperacao(HttpServletRequest request, HttpServletResponse response) {
-        try{
-            String operacao = request.getParameter("operacao");
-            if(operacao.equals("cliente")){
-                request.setAttribute(operacao, this);
-            }
+    private void logar(HttpServletRequest request, HttpServletResponse response) throws SQLException, ClassNotFoundException {
+        String login = request.getParameter("login");
+        String senha = request.getParameter("senha");
+        Cliente cliente = Cliente.obterCliente(login);
+        if(senha.equals(cliente.getSenha())){
             
-        }catch (SQLException | ClassNotFoundException | ServletException | IOException ex) {
-            Logger.getLogger(LoginController.class.getName()).log(Level.SEVERE, null, ex);
-        }
+            
+        }        
     }
+    //login = (String) request.getSession().getAttribute(login);
 
 }

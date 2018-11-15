@@ -158,8 +158,38 @@ public class ClienteDAO {
         return clientes;
         
     }
-    
-    
 
+    public static Cliente obterCliente(String email) throws ClassNotFoundException{
+        Connection conexao = null;
+        PreparedStatement comando = null;
+        Cliente cliente = null;
+        try{
+            conexao = BD.getConexao();
+            String sql ="SELECT * FROM cliente WHERE email = ?";
+            comando = conexao.prepareStatement(sql);
+            comando.setString(1,email);
+            ResultSet rs = comando.executeQuery();
+            rs.first();
+            cliente = new Cliente (rs.getLong("idCliente"),
+                    rs.getString("nome"),
+                    rs.getString("cpf"),
+                    rs.getString("email"),
+                    rs.getString("senha"),
+                    rs.getString("foto"),
+                    rs.getString("telefone"),
+                    rs.getString("logradouro"),
+                    rs.getString("cep"),
+                    rs.getString("numero"),
+                    rs.getString("bairro"),
+                    rs.getString("complemento"),
+                    rs.getString("cidade"),
+                    rs.getString("estado"));
+        }catch(SQLException e){
+            e.printStackTrace();
+        }finally{
+            BD.fecharConexao(conexao, comando);
+        }
+        return cliente;
+    }
 }
 

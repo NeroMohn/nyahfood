@@ -27,7 +27,7 @@ public class LoginClienteController extends HttpServlet {
             String acao = request.getParameter("acao");
             if(acao.equals("preparar")){
                 prepararOperacao(request, response);
-            }else{
+            }else if (acao.equals("logar")){
                 logar(request, response);   
             }
     }

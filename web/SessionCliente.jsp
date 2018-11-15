@@ -16,6 +16,7 @@
     <%
   String senha = null;
   String login = null;
+  String tipo = 
   
   //Pega os valores login e senha passados na Servlet
   login = (String) request.getSession().getAttribute("loginUsuario");
@@ -25,7 +26,7 @@
   session.putValue("login", login);
   session.putValue("senha", senha);
   //chama a Página Principal do sistema!
-  out.println("<script>document.location.href='index.jsp'");
+  out.println("<script>document.location.href='index.jsp'</script>");
 %>
     </body>
 </html>

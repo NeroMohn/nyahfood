@@ -17,7 +17,7 @@
     <body>
         <h1>Login - Cliente </h1>
         
-        <form action="LoginClienteController" method="POST" name="LoginCliente">
+        <form action="LoginClienteController?acao=logar" method="POST" name="LoginCliente">
             <label for="log">Login (Email) </label>
             <input type="email" name="login" id="log" value=""><br>
             <label for="pass">Senha) </label>

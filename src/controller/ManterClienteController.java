@@ -37,7 +37,7 @@ public void prepararOperacao(HttpServletRequest request, HttpServletResponse res
             Cliente cliente = Cliente.obterCliente(idCliente);
             request.setAttribute("cliente", cliente);
         }
-        RequestDispatcher view = request.getRequestDispatcher("/ManterCliente.jsp");
+        RequestDispatcher view = request.getRequestDispatcher("/ManterCliente.jsp");    
         view.forward(request, response);
         } catch (SQLException ex) {
             Logger.getLogger(ManterClienteController.class.getName()).log(Level.SEVERE, null, ex);

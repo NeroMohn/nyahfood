@@ -24,8 +24,12 @@ public class LoginClienteController extends HttpServlet {
  
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException, SQLException, ClassNotFoundException {
+            String acao = request.getParameter("acao");
+            if(acao.equals("preparar")){
+                prepararOperacao(request, response);
+            }else{
                 logar(request, response);   
-            
+            }
     }
 
     @Override
@@ -80,6 +84,17 @@ public class LoginClienteController extends HttpServlet {
                 Logger.getLogger(LoginClienteController.class.getName()).log(Level.SEVERE, null, ex);
             }
         }    
+    }
+
+    private void prepararOperacao(HttpServletRequest request, HttpServletResponse response) {
+        RequestDispatcher view = request.getRequestDispatcher("/LoginCliente.jsp");    
+        try {
+            view.forward(request, response);
+        } catch (ServletException ex) {
+            Logger.getLogger(LoginClienteController.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (IOException ex) {
+            Logger.getLogger(LoginClienteController.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
 
 }

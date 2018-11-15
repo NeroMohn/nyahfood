@@ -15,9 +15,14 @@
         <title>Login - Cliente</title>
     </head>
     <body>
-        <h1>Login - ${operacao} </h1>
+        <h1>Login - Cliente </h1>
         
-        <form action="LoginController?acao=confirmarOperacao&operacao=${operacao}" method="POST">
+        <form action="LoginClienteController" method="POST" name="LoginCliente">
+            <label for="log">Login (Email) </label>
+            <input type="email" name="login" id="log" value=""><br>
+            <label for="pass">Senha) </label>
+            <input type="password" name="senha" id="pass" value=""><br>
+            <input type="submit" name="login" value="Logar">
         </form>
     </body>
 </html>

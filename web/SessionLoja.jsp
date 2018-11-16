@@ -16,7 +16,7 @@
     <%
   String senha = null;
   String login = null;
-  String tipo = "1";
+  String tipo = "2";
   
   //Pega os valores login e senha passados na Servlet
   login = (String) request.getSession().getAttribute("loginUsuario");

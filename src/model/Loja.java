@@ -83,6 +83,10 @@ public class Loja extends Usuario {
     public static Loja obterLoja(Long idLoja) throws SQLException, ClassNotFoundException{
         return LojaDAO.obterLoja(idLoja);
     }
+    
+    public static Loja obterLoja(String email) throws SQLException, ClassNotFoundException{
+        return LojaDAO.obterLoja(email);
+    }
 
     public static List<Loja> obterTodasLojas() throws SQLException, ClassNotFoundException{
         return LojaDAO.obterTodasLojas();

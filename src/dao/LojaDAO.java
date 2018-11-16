@@ -176,5 +176,41 @@ public class LojaDAO {
         }
         return lojas;
     }
+    
+    public static Loja obterLoja(String email) throws ClassNotFoundException {
+        Connection conexao = null;
+        PreparedStatement comando = null;
+        Loja loja = null;
+        try {
+            conexao = BD.getConexao();
+            String sql = "SELECT * FROM loja WHERE email = ?";
+            comando = conexao.prepareStatement(sql);
+            comando.setString(1, email);
+            ResultSet rs = comando.executeQuery();
+            rs.first();
+            loja = new Loja(rs.getLong("idLoja"),
+                    rs.getString("nome"),
+                    rs.getString("telefone"),
+                    rs.getString("email"),
+                    rs.getString("senha"),
+                    rs.getString("foto"),
+                    rs.getString("cep"),
+                    rs.getString("logradouro"),
+                    rs.getString("bairro"),
+                    rs.getString("complemento"),
+                    rs.getString("cidade"),
+                    rs.getString("estado"),
+                    rs.getString("numero"),
+                    rs.getString("cnpj"),
+                    rs.getString("descricao"),
+                    rs.getString("nomeGerente")
+            );
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } finally {
+            BD.fecharConexao(conexao, comando);
+        }
+        return loja;
+    } 
 
 }

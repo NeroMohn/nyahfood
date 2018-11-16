@@ -65,9 +65,13 @@ public class LoginClienteController extends HttpServlet {
     private void logar(HttpServletRequest request, HttpServletResponse response) throws SQLException, ClassNotFoundException, ServletException, IOException, IOException {
         String login = request.getParameter("login");
         String senha = request.getParameter("senha");
+        String tipo = "1";
         Cliente cliente = Cliente.obterCliente(login);
         if(senha.equals(cliente.getSenha())&& login.equals(cliente.getEmail())){
             try {
+                /*session.putValue("login", login);
+                session.putValue("senha", senha);
+                session.putValue("tipo", tipo);*/
                 RequestDispatcher view = request.getRequestDispatcher("/SessionCliente.jsp");       
                 view.forward(request, response);
             } catch (IOException ex) {

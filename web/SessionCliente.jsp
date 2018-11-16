@@ -19,8 +19,8 @@
   String tipo = "1";
   
   //Pega os valores login e senha passados na Servlet
-  login = (String) request.getSession().getAttribute("loginUsuario");
-  senha = (String) request.getSession().getAttribute("senhaUsuario");
+  login = (String) request.getSession().getAttribute("login");
+  senha = (String) request.getSession().getAttribute("senha");
 
 //passando os valores de login e senha para a Session!
   session.putValue("login", login);

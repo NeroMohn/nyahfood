@@ -20,7 +20,7 @@
         <form action="LoginClienteController?acao=logar" method="POST" name="LoginCliente">
             <label for="log">Login (Email) </label>
             <input type="email" name="login" id="log" value=""><br>
-            <label for="pass">Senha) </label>
+            <label for="pass">Senha</label>
             <input type="password" name="senha" id="pass" value=""><br>
             <input type="submit" name="login" value="Logar">
         </form>

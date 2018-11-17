@@ -74,7 +74,7 @@ public class LoginClienteController extends HttpServlet {
                 session.putValue("tipo", tipo);*/
                 RequestDispatcher view = request.getRequestDispatcher("/SessionCliente.jsp");       
                 view.forward(request, response);
-            } catch (IOException ex) {
+            } catch (IOException ex) {  
                 Logger.getLogger(LoginClienteController.class.getName()).log(Level.SEVERE, null, ex);
             }
         }else if(login.equals(cliente.getEmail())){

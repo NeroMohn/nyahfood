@@ -15,6 +15,6 @@
       <a href="PesquisaTipoCulinariaController">Pesquisa Tipo Culinaria</a><br />
       <a href="LoginClienteController?acao=preparar">Login</a>
       
-      <input type ="text" value="<%=session.getAttribute("loginUsuario")%>"
+      <input type ="text" value="<%=session.getAttribute("login")%>"
   </body>
 </html>

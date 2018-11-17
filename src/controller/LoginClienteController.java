@@ -11,6 +11,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.websocket.Session;
 import model.Cliente;
 
 /**
@@ -69,9 +70,10 @@ public class LoginClienteController extends HttpServlet {
         Cliente cliente = Cliente.obterCliente(login);
         if(senha.equals(cliente.getSenha())&& login.equals(cliente.getEmail())){
             try {
-                /*session.putValue("login", login);
-                session.putValue("senha", senha);
-                session.putValue("tipo", tipo);*/
+                request.getSession().setAttribute("login", login);
+                request.getSession().setAttribute("senha", senha);
+                request.getSession().setAttribute("tipo", tipo);
+                request.getSession().setAttribute("id", cliente.getIdCliente());
                 RequestDispatcher view = request.getRequestDispatcher("/SessionCliente.jsp");       
                 view.forward(request, response);
             } catch (IOException ex) {  

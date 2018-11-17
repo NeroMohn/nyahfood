@@ -41,14 +41,20 @@ public class ManterCompraController extends HttpServlet {
 
     public void prepararOperacao(HttpServletRequest request, HttpServletResponse response) {
         try {
-
             String operacao = request.getParameter("operacao");
             request.setAttribute("operacao", operacao); 
             if (!operacao.equals("Incluir")) {
+                if(!request.getSession().getAttribute("login").equals(null)&
+                        !request.getSession().getAttribute("senha").equals(null)&
+                        !request.getSession().getAttribute("tipo").equals(null)&
+                        !request.getSession().getAttribute("login").equals("")&
+                        !request.getSession().getAttribute("senha").equals("")||
+                        !request.getSession().getAttribute("tipo").equals("")||
+                        request.getSession().getAttribute("tipo").equals("1")){
                 Long idCompra = Long.parseLong(request.getParameter("idCompra"));
                 Compra compra = Compra.obterCompra(idCompra);
                 request.setAttribute("compra", compra);
-
+                }
             }
             RequestDispatcher view = request.getRequestDispatcher("/ManterCompra.jsp");
             view.forward(request, response);

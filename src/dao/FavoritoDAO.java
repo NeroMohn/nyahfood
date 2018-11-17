@@ -13,19 +13,19 @@ public class FavoritoDAO {
         PreparedStatement comando = null;
         try {
             conexao = BD.getConexao();
-            String sql = "Insert into favorito (idFavorito, codCliente, codLoja)"
-                    + "values(?,?,?)";
+            String sql = "Insert into favorito (codCliente, codLoja)"
+                    + "values(?,?)";
             comando = conexao.prepareStatement(sql);
-            comando.setLong(1, favorito.getIdFavorito());
+         
             if (favorito.getCodCliente() == null) {
-                comando.setNull(2, Types.NULL);
+                comando.setNull(1, Types.NULL);
             } else {
-                comando.setLong(2, favorito.getCodCliente());
+                comando.setLong(1, favorito.getCodCliente());
             }
             if (favorito.getCodLoja() == null) {
-                comando.setNull(3, Types.NULL);
+                comando.setNull(2, Types.NULL);
             } else {
-                comando.setLong(3, favorito.getCodLoja());
+                comando.setLong(2, favorito.getCodLoja());
             }
 
             comando.execute();

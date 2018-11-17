@@ -64,7 +64,7 @@ public void prepararOperacao(HttpServletRequest request, HttpServletResponse res
 
 public void confirmarOperacao(HttpServletRequest request, HttpServletResponse response) throws SQLException, ClassNotFoundException, ServletException{
     String operacao = request.getParameter("operacao");
-    Long idComida = Long.parseLong(request.getParameter("txtIdComida"));
+   // Long idComida = Long.parseLong(request.getParameter("txtIdComida"));
     String nome = request.getParameter("txtNome");
     String ingrediente = request.getParameter("txtIngrediente");
     String tempoPreparo = request.getParameter("txtTempoPreparo");
@@ -75,7 +75,7 @@ public void confirmarOperacao(HttpServletRequest request, HttpServletResponse re
     
     try{
     
-        Comida comida = new Comida(idComida, nome, ingrediente, tempoPreparo, foto, preco, desconto, codLoja);
+        Comida comida = new Comida(null, nome, ingrediente, tempoPreparo, foto, preco, desconto, codLoja);
     
 
    if (operacao.equals("Incluir")) {

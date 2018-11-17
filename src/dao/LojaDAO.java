@@ -14,25 +14,25 @@ public class LojaDAO {
         PreparedStatement comando = null;
         try{
             conexao = BD.getConexao();
-            String sql = "Insert into loja ( idLoja,  nome,  telefone,  email,  senha,  foto,  cep,  logradouro,  bairro,  complemento,  cidade,  estado,  numero,  cnpj,  descricao,  nomeGerente)"
-                    + "values(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
+            String sql = "Insert into loja ( nome,  telefone,  email,  senha,  foto,  cep,  logradouro,  bairro,  complemento,  cidade,  estado,  numero,  cnpj,  descricao,  nomeGerente)"
+                    + "values(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
             comando = conexao.prepareStatement(sql);
-            comando.setLong(1, loja.getIdLoja());
-            comando.setString(2,loja.getNome());
-            comando.setString(3,loja.getTelefone());
-            comando.setString(4,loja.getEmail());
-            comando.setString(5,loja.getSenha());         
-            comando.setString(6,loja.getFoto());
-            comando.setString(7,loja.getCep());
-            comando.setString(8,loja.getLogradouro());
-            comando.setString(9,loja.getBairro());
-            comando.setString(10,loja.getComplemento());
-            comando.setString(11,loja.getCidade());
-            comando.setString(12,loja.getEstado());
-            comando.setString(13,loja.getNumero());
-            comando.setString(14,loja.getCnpj());   
-            comando.setString(15,loja.getDescricao());
-            comando.setString(16,loja.getNomeGerente());
+           
+            comando.setString(1,loja.getNome());
+            comando.setString(2,loja.getTelefone());
+            comando.setString(3,loja.getEmail());
+            comando.setString(4,loja.getSenha());         
+            comando.setString(5,loja.getFoto());
+            comando.setString(6,loja.getCep());
+            comando.setString(7,loja.getLogradouro());
+            comando.setString(8,loja.getBairro());
+            comando.setString(9,loja.getComplemento());
+            comando.setString(10,loja.getCidade());
+            comando.setString(11,loja.getEstado());
+            comando.setString(12,loja.getNumero());
+            comando.setString(13,loja.getCnpj());   
+            comando.setString(14,loja.getDescricao());
+            comando.setString(15,loja.getNomeGerente());
 
 
 

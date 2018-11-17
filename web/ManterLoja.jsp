@@ -20,7 +20,7 @@
             <table>
                         <tr>
                 <td>Código da Loja</td>
-                <td><input type="text" name="txtIdLoja" value="${loja.idLoja}" <c:if test="${operacao != 'Incluir'}"> readonly</c:if>></input></td>
+                <td><input type="hidden" name="txtIdLoja" value="${loja.idLoja}" <c:if test="${operacao != 'Incluir'}"> readonly</c:if>></input></td>
             </tr>
             <tr>
                 <td>Nome:</td>

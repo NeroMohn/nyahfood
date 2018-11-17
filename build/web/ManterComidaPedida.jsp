@@ -21,7 +21,7 @@
             <table>
             <tr>
                 <td>Código da Comida Pedida:</td>
-                <td><input type="text" name="txtIdComidaPedida" value="${comidaPedida.idComidaPedida}" <c:if test="${operacao != 'Incluir'}"> readonly</c:if>></td>
+                <td><input type="hidden" name="txtIdComidaPedida" value="${comidaPedida.idComidaPedida}" <c:if test="${operacao != 'Incluir'}"> readonly</c:if>></td>
             </tr>
              <tr>
                 <td>Preço Unitário:</td>

@@ -72,7 +72,7 @@ public class ManterCompraController extends HttpServlet {
     
     public void confirmarOperacao(HttpServletRequest request, HttpServletResponse response) throws ServletException{
         String operacao = request.getParameter("operacao");
-        Long idCompra = Long.parseLong(request.getParameter("txtIdCompra"));
+        //Long idCompra = Long.parseLong(request.getParameter("txtIdCompra"));
         Double total = Double.parseDouble(request.getParameter("txtTotal"));
         String status = request.getParameter("txtStatus");
         Long codPedido = Long.parseLong(request.getParameter("txtCodPedido"));
@@ -80,7 +80,7 @@ public class ManterCompraController extends HttpServlet {
        
         
         try {
-             Compra compra = new Compra(idCompra, total, status, codPedido);
+             Compra compra = new Compra(null, total, status, codPedido);
           if (operacao.equals("Incluir")){
             compra.gravar();
         }else{ 

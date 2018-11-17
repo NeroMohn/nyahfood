@@ -66,11 +66,11 @@ public void prepararOperacao(HttpServletRequest request, HttpServletResponse res
 
 public void confirmarOperacao(HttpServletRequest request, HttpServletResponse response) throws ServletException{
     String operacao = request.getParameter("operacao");
-    Long idTipoCozinha = Long.parseLong(request.getParameter("txtIdTipoCozinha"));
+   // Long idTipoCozinha = Long.parseLong(request.getParameter("txtIdTipoCozinha"));
     String nome = request.getParameter("txtTipo");
     
     try{
-    TipoCozinha tipoCozinha = new TipoCozinha(idTipoCozinha, nome);
+    TipoCozinha tipoCozinha = new TipoCozinha(null, nome);
     if(operacao.equals("Incluir")){
         tipoCozinha.gravar();
     }

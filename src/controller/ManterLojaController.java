@@ -66,7 +66,7 @@ public void prepararOperacao(HttpServletRequest request, HttpServletResponse res
 }
 public void confirmarOperacao(HttpServletRequest request, HttpServletResponse response) throws SQLException, ClassNotFoundException, ServletException{
     String operacao = request.getParameter("operacao");
-    Long idLoja = Long.parseLong(request.getParameter("txtIdLoja"));
+   // Long idLoja = Long.parseLong(request.getParameter("txtIdLoja"));
     String nome = request.getParameter("txtNomeLoja");
     String telefone = request.getParameter("txtTelefoneLoja");
     String email = request.getParameter("txtEmailLoja");
@@ -87,7 +87,7 @@ public void confirmarOperacao(HttpServletRequest request, HttpServletResponse re
     
     
      try {
-             Loja loja = new Loja(idLoja, nome, telefone, email, senha, foto, Cep, logradouro, bairro, complemento, cidade, estado, numero, Cnpj, descricao, nomeGerente);
+             Loja loja = new Loja(null, nome, telefone, email, senha, foto, Cep, logradouro, bairro, complemento, cidade, estado, numero, Cnpj, descricao, nomeGerente);
           if (operacao.equals("Incluir")){
             loja.gravar();
         }else{ 

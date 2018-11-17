@@ -18,7 +18,7 @@
             <table>
                 <tr>
                 <td>Código do Pedido:</td>
-                <td><input type="text" name="txtIdPedido" value="${pedido.idPedido}" <c:if test="${operacao != 'Incluir'}"> readonly</c:if>></input></td>
+                <td><input type="hidden" name="txtIdPedido" value="${pedido.idPedido}" <c:if test="${operacao != 'Incluir'}"> readonly</c:if>></input></td>
             </tr>
             <tr>
                 <td>Comida:</td>

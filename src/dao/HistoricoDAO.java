@@ -13,14 +13,14 @@ public class HistoricoDAO {
         PreparedStatement comando = null;
         try {
             conexao = BD.getConexao();
-            String sql = "Insert into historico (idHistorico, codCompra)"
-                    + "values(?,?)";
+            String sql = "Insert into historico ( codCompra)"
+                    + "values(?)";
             comando = conexao.prepareStatement(sql);
-            comando.setLong(1, historico.getIdHistorico());
+           
             if (historico.getCodCompra() == null) {
-                comando.setNull(2, Types.NULL);
+                comando.setNull(1, Types.NULL);
             } else {
-                comando.setLong(2, historico.getCodCompra());
+                comando.setLong(1, historico.getCodCompra());
             }
 
             comando.execute();

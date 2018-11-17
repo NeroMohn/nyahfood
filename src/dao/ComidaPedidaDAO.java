@@ -13,17 +13,17 @@ public class ComidaPedidaDAO {
         PreparedStatement comando = null;
         try {
             conexao = BD.getConexao();
-            String sql = "Insert into comidaPedida (idComidaPedida, precoUnitario, quantidade, precoTotal, codComida)"
-                    + "values(?,?,?,?,?)";
+            String sql = "Insert into comidaPedida ( precoUnitario, quantidade, precoTotal, codComida)"
+                    + "values(?,?,?,?)";
             comando = conexao.prepareStatement(sql);
-            comando.setLong(1, comidaPedida.getIdComidaPedida());
-            comando.setDouble(2, comidaPedida.getPrecoUnitario());
-            comando.setInt(3, comidaPedida.getQuantidade());
-            comando.setDouble(4, comidaPedida.getPrecoTotal());
+      
+            comando.setDouble(1, comidaPedida.getPrecoUnitario());
+            comando.setInt(2, comidaPedida.getQuantidade());
+            comando.setDouble(3, comidaPedida.getPrecoTotal());
             if (comidaPedida.getCodComida() == null) {
-                comando.setNull(5, Types.NULL);
+                comando.setNull(4, Types.NULL);
             } else {
-                comando.setLong(5, comidaPedida.getCodComida());
+                comando.setLong(4, comidaPedida.getCodComida());
             }
 
             comando.execute();

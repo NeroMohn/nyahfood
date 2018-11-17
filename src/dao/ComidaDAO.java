@@ -15,20 +15,20 @@ public class ComidaDAO {
         PreparedStatement comando = null;
         try {
             conexao = dao.BD.getConexao();
-            String sql = "insert into comida (idComida,  nome,  ingrediente,  tempoPreparo,  foto,  preco, desconto, codLoja)"+
-                    "values (?,?,?,?,?,?,?,?)";
+            String sql = "insert into comida (  nome,  ingrediente,  tempoPreparo,  foto,  preco, desconto, codLoja)"+
+                    "values (?,?,?,?,?,?,?)";
             comando = conexao.prepareStatement(sql);
-            comando.setLong(1, comida.getIdComida());
-            comando.setString(2, comida.getNome());
-            comando.setString(3, comida.getIngrediente());
-            comando.setString(4, comida.getTempoPreparo());
-            comando.setString(5, comida.getFoto());
-            comando.setDouble(6, comida.getPreco());
-            comando.setDouble(7, comida.getDesconto());
+          
+            comando.setString(1, comida.getNome());
+            comando.setString(2, comida.getIngrediente());
+            comando.setString(3, comida.getTempoPreparo());
+            comando.setString(4, comida.getFoto());
+            comando.setDouble(5, comida.getPreco());
+            comando.setDouble(6, comida.getDesconto());
             if (comida.getCodLoja() == null) {
-                comando.setNull(8, Types.NULL);
+                comando.setNull(7, Types.NULL);
             } else {
-                comando.setLong(8, comida.getCodLoja());
+                comando.setLong(7, comida.getCodLoja());
             }
             comando.execute();
             BD.fecharConexao(conexao, comando);

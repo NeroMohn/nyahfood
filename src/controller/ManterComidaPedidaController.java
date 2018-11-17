@@ -65,7 +65,7 @@ public void prepararOperacao(HttpServletRequest request, HttpServletResponse res
 
 public void confirmarOperacao(HttpServletRequest request, HttpServletResponse response) throws ServletException{
         String operacao = request.getParameter("operacao");
-        Long idComidaPedida = Long.parseLong(request.getParameter("txtIdComidaPedida"));
+       // Long idComidaPedida = Long.parseLong(request.getParameter("txtIdComidaPedida"));
         Double precoUnitario = Double.parseDouble(request.getParameter("txtPrecoUnitario"));
         Integer quantidade = Integer.parseInt(request.getParameter("txtQuantidadeComidaPedida"));
         Double precoTotal = Double.parseDouble(request.getParameter("txtPrecoTotal"));
@@ -73,7 +73,7 @@ public void confirmarOperacao(HttpServletRequest request, HttpServletResponse re
         
         
         try {
-        ComidaPedida comidaPedida = new ComidaPedida(idComidaPedida,precoUnitario, quantidade, precoTotal, codComida);
+        ComidaPedida comidaPedida = new ComidaPedida(null,precoUnitario, quantidade, precoTotal, codComida);
        if (operacao.equals("Incluir")) {
                 comidaPedida.gravar();
             } else {

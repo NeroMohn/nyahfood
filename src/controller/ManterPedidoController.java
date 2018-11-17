@@ -66,7 +66,7 @@ public void prepararOperacao(HttpServletRequest request, HttpServletResponse res
 }
 public void confirmarOperacao(HttpServletRequest request, HttpServletResponse response) throws SQLException, ClassNotFoundException{
     String operacao = request.getParameter("operacao");
-    Long idPedido = Long.parseLong(request.getParameter("txtIdPedido"));
+    //Long idPedido = Long.parseLong(request.getParameter("txtIdPedido"));
     Long comida = Long.parseLong(request.getParameter("txtComida"));
     Integer quantidade = Integer.parseInt("txtQuantidadePedido");
     Double subtotal = Double.parseDouble("txtSubtotalPedido");
@@ -75,7 +75,7 @@ public void confirmarOperacao(HttpServletRequest request, HttpServletResponse re
     String date = request.getParameter("txtDate");
     
     
-    Pedido pedido = new Pedido(idPedido, quantidade, subtotal, metodoPagamento, cupomDesconto, date, comida);
+    Pedido pedido = new Pedido(null, quantidade, subtotal, metodoPagamento, cupomDesconto, date, comida);
     
 
    if (operacao.equals("Incluir")) {

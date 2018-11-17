@@ -13,20 +13,20 @@ public class PedidoDAO {
         PreparedStatement comando = null;
         try {
             conexao = BD.getConexao();
-            String sql = "Insert into pedido (idPedido, codComida, quantidade,subtotal,metodoPagamento, cupomDesconto, date)"
-                    + "values(?,?,?,?,?,?,?)";
+            String sql = "Insert into pedido (codComida, quantidade,subtotal,metodoPagamento, cupomDesconto, date)"
+                    + "values(?,?,?,?,?,?)";
             comando = conexao.prepareStatement(sql);
-            comando.setLong(1, pedido.getIdPedido());
+            
             if (pedido.getCodComida() == null) {
-                comando.setNull(2, Types.NULL);
+                comando.setNull(1, Types.NULL);
             } else {
-                comando.setLong(2, pedido.getCodComida());
+                comando.setLong(1, pedido.getCodComida());
             }
-            comando.setInt(3, pedido.getQuantidade());
-            comando.setDouble(4, pedido.getSubtotal());
-            comando.setString(5, pedido.getMetodoPagamento());
-            comando.setString(6, pedido.getCupomDesconto());
-            comando.setString(7, pedido.getDate());
+            comando.setInt(2, pedido.getQuantidade());
+            comando.setDouble(3, pedido.getSubtotal());
+            comando.setString(4, pedido.getMetodoPagamento());
+            comando.setString(5, pedido.getCupomDesconto());
+            comando.setString(6, pedido.getDate());
             comando.execute();
             BD.fecharConexao(conexao, comando);
         } catch (SQLException e) {

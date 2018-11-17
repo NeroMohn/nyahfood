@@ -21,7 +21,7 @@
             <table>
             <tr>
                 <td>Código da Compra:</td>
-                <td><input type="text" name="txtIdCompra" value="${compra.idCompra}" <c:if test="${operacao != 'Incluir'}"> readonly</c:if>></input></td>
+                <td><input type="hidden" name="txtIdCompra" value="${compra.idCompra}" <c:if test="${operacao != 'Incluir'}"> readonly</c:if>></input></td>
             </tr>
             <tr>
                 <td>Código do Pedido</td>

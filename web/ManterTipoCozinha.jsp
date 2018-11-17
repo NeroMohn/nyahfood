@@ -19,7 +19,7 @@
             <table>
                 <tr>
                 <td>Código do Tipo de Cozinha</td>
-                <td><input type="text" name="txtIdTipoCozinha" value="${tipoCozinha.idTipoCozinha}" <c:if test="${operacao != 'Incluir'}"> readonly</c:if>></input></td>
+                <td><input type="hidden" name="txtIdTipoCozinha" value="${tipoCozinha.idTipoCozinha}" <c:if test="${operacao != 'Incluir'}"> readonly</c:if>></input></td>
             </tr>
             <tr>
                 <td>Tipo de Cozinha:</td>

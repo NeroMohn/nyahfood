@@ -47,16 +47,16 @@
                 <td>Telefone:</td>
                 <td><input type="text" name="txtTelefoneCliente" value="${cliente.telefone}" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>></td>
             </tr>
+             <tr>
+                <td>CEP:</td>
+                <td><input type="text" name="txtCepCliente" value="${cliente.cep}" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>></td>
+            </tr>
             
              <tr>
                 <td>Logradouro:</td>
                 <td><input type="text" name="txtLogradouroCliente" value="${cliente.logradouro}" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>></td>
             </tr>
-             
-             <tr>
-                <td>CEP:</td>
-                <td><input type="text" name="txtCepCliente" value="${cliente.cep}" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>></td>
-            </tr>
+                   
              <tr>
                 <td>Numero:</td>
                 <td><input type="text" name="txtNumeroCliente" value="${cliente.numero}" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>></td>

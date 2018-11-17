@@ -14,10 +14,10 @@ public class TipoCozinhaDAO {
         PreparedStatement comando = null;
         try{
             conexao = BD.getConexao();
-            String sql = "Insert into tipoCozinha (idTipoCozinha, tipo)"
-                    + "values(?,?)";
+            String sql = "Insert into tipoCozinha (tipo)"
+                    + "values(?)";
             comando = conexao.prepareStatement(sql);
-            comando.setLong(1, tipoCozinha.getIdTipoCozinha());
+         
             comando.setString(2,tipoCozinha.getTipo());
             comando.execute();
             BD.fecharConexao(conexao, comando);

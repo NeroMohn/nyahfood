@@ -14,17 +14,17 @@ public class CompraDAO {
         PreparedStatement comando = null;
         try {
             conexao = BD.getConexao();
-            String sql = "Insert into compra (idCompra, total, status, codPedido)"
-                    + "values(?,?,?,?)";
+            String sql = "Insert into compra ( total, status, codPedido)"
+                    + "values(?,?,?)";
             comando = conexao.prepareStatement(sql);
-            comando.setLong(1, compra.getIdCompra());
-            comando.setDouble(2, compra.getTotal());
-            comando.setString(3, compra.getStatus());
+           
+            comando.setDouble(1, compra.getTotal());
+            comando.setString(2, compra.getStatus());
 
             if (compra.getCodPedido() == null) {
-                comando.setNull(4, Types.NULL);
+                comando.setNull(3, Types.NULL);
             } else {
-                comando.setLong(4, compra.getCodPedido());
+                comando.setLong(3, compra.getCodPedido());
             }
             comando.execute();
             BD.fecharConexao(conexao, comando);

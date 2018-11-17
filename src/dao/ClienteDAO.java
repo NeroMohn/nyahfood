@@ -14,23 +14,22 @@ public class ClienteDAO {
         PreparedStatement comando = null;
         try{
             conexao = BD.getConexao();
-            String sql = "Insert into cliente (idCliente, nome, cpf, email,  senha,  foto, telefone, logradouro,  cep,  numero, bairro,  complemento,  cidade, estado)"
-                         + "values(?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
+            String sql = "Insert into cliente (nome, cpf, email,  senha,  foto, telefone, logradouro,  cep,  numero, bairro,  complemento,  cidade, estado)"
+                         + "values(?,?,?,?,?,?,?,?,?,?,?,?,?)";
             comando = conexao.prepareStatement(sql);
-            comando.setLong(1, cliente.getIdCliente());
-            comando.setString(2 ,cliente.getNome());
-            comando.setString(3, cliente.getCpf());
-            comando.setString(4, cliente.getEmail());
-            comando.setString(5, cliente.getSenha());
-            comando.setString(6, cliente.getFoto());
-            comando.setString(7, cliente.getTelefone());
-            comando.setString(8, cliente.getLogradouro());
-            comando.setString(9, cliente.getCep());
-            comando.setString(10, cliente.getNumero());
-            comando.setString(11, cliente.getBairro());
-            comando.setString(12, cliente.getComplemento());
-            comando.setString(13, cliente.getCidade());
-            comando.setString(14, cliente.getEstado());
+            comando.setString(1 ,cliente.getNome());
+            comando.setString(2, cliente.getCpf());
+            comando.setString(3, cliente.getEmail());
+            comando.setString(4, cliente.getSenha());
+            comando.setString(5, cliente.getFoto());
+            comando.setString(6, cliente.getTelefone());
+            comando.setString(7, cliente.getLogradouro());
+            comando.setString(8, cliente.getCep());
+            comando.setString(9, cliente.getNumero());
+            comando.setString(10, cliente.getBairro());
+            comando.setString(11, cliente.getComplemento());
+            comando.setString(12, cliente.getCidade());
+            comando.setString(13, cliente.getEstado());
             comando.execute();
             BD.fecharConexao(conexao, comando);
         }catch (SQLException e){throw e;}

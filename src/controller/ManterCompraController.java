@@ -50,7 +50,7 @@ public class ManterCompraController extends HttpServlet {
                         !request.getSession().getAttribute("login").equals("")&
                         !request.getSession().getAttribute("senha").equals("")||
                         !request.getSession().getAttribute("tipo").equals("")||
-                        request.getSession().getAttribute("tipo").equals("1")){
+                        request.getSession().getAttribute("tipo").equals("2")){
                 Long idCompra = Long.parseLong(request.getParameter("idCompra"));
                 Compra compra = Compra.obterCompra(idCompra);
                 request.setAttribute("compra", compra);

@@ -21,7 +21,7 @@
             <table>
             <tr>
                 <td>Código do Cliente:</td>
-                <td><input type="text" name="txtIdCliente" value="${cliente.idCliente}" <c:if test="${operacao != 'Incluir'}"> readonly</c:if>></td>
+                <td><input type="hidden" name="txtIdCliente" value="${null}" <c:if test="${operacao != 'Incluir'}"> readonly</c:if>></td>
             </tr>
             <tr>
                 <td>Nome:</td>

@@ -18,8 +18,7 @@ public class LogoutController extends HttpServlet {
 
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-            request.session.invalidade();       
-
+            
         }
     }
 
@@ -51,6 +50,10 @@ public class LogoutController extends HttpServlet {
             throws ServletException, IOException {
         processRequest(request, response);
     }
+
+    protected void deslogar(HttpServletRequest request, HttpServletResponse response){
+
+}
 
     /**
      * Returns a short description of the servlet.

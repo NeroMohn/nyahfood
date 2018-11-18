@@ -16,6 +16,65 @@
 <html>
 <head>
 <title>NyahFood</title>
+<!--Cep automático-->
+<script type="text/javascript" >
+    function limpa_formulário_cep() {
+            document.getElementById('rua').value=("");
+            document.getElementById('bairro').value=("");
+            document.getElementById('cidade').value=("");
+            document.getElementById('uf').value=("");
+    }
+
+    function meu_callback(conteudo) {
+        if (!("erro" in conteudo)) {
+            //Atualiza os campos com os valores.
+            document.getElementById('rua').value=(conteudo.logradouro);
+            document.getElementById('bairro').value=(conteudo.bairro);
+            document.getElementById('cidade').value=(conteudo.localidade);
+            document.getElementById('uf').value=(conteudo.uf);
+        } //end if.
+        else {
+            //CEP não Encontrado.
+            limpa_formulário_cep();
+            alert("CEP não encontrado.");
+        }
+    }
+        
+    function pesquisacep(valor) {
+        //Nova variável "cep" somente com dígitos.
+        var cep = valor.replace(/\D/g, '');
+        //Verifica se campo cep possui valor informado.
+        if (cep != "") {
+            var validacep = /^[0-9]{8}$/; //expressão para validação do cep
+
+            //Valida o formato do CEP.
+            if(validacep.test(cep)) {
+                //Preenche os campos com "..." enquanto consulta webservice.
+                document.getElementById('rua').value="...";
+                document.getElementById('bairro').value="...";
+                document.getElementById('cidade').value="...";
+                document.getElementById('uf').value="...";
+                //Cria um elemento javascript.
+                var script = document.createElement('script');
+                //Sincroniza com o callback.
+                script.src = 'https://viacep.com.br/ws/'+cep+'/json/?callback=meu_callback';
+                //Insere script no documento e carrega o conteúdo.
+                document.body.appendChild(script);
+            } //end if.
+            else {
+                //cep é inválido.
+                limpa_formulário_cep();
+                alert("Formato de CEP inválido.");
+            }
+        } //end if.
+        else {
+            //cep sem valor, limpa formulário.
+            limpa_formulário_cep();
+        }
+    }
+    </script>
+
+
 <link href="css/bootstrap.css" rel='stylesheet' type='text/css' />
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
 <script src="js/jquery.min.js"></script>
@@ -44,6 +103,7 @@
 			});
 		</script>
 <script src="js/simpleCart.min.js"> </script>	
+
 </head>
 <body>
     <!-- header-section-starts -->
@@ -123,21 +183,20 @@
             </tr>
              <tr>
                 <td>CEP:</td>
-                <td><input type="text" name="txtCepCliente" value="${cliente.cep}" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>></td>
+                <td><input type="text" name="txtCepCliente" id="cep"  onblur="pesquisacep(this.value);" value="${cliente.cep}" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>></td>
             </tr>
             
              <tr>
                 <td>Logradouro:</td>
-                <td><input type="text" name="txtLogradouroCliente" value="${cliente.logradouro}" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>></td>
+                <td><input type="text" name="txtLogradouroCliente" id="rua" value="${cliente.logradouro}" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>></td>
             </tr>
-                   
+			<tr>
+                <td>Bairro:</td>
+                <td><input type="text" name="txtBairroCliente" id="bairro" value="${cliente.bairro}" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>></td>
+            </tr>
              <tr>
                 <td>Numero:</td>
                 <td><input type="text" name="txtNumeroCliente" value="${cliente.numero}" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>></td>
-            </tr>
-             <tr>
-                <td>Bairro:</td>
-                <td><input type="text" name="txtBairroCliente" value="${cliente.bairro}" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>></td>
             </tr>
              <tr>
                 <td>Complemento:</td>
@@ -145,11 +204,11 @@
             </tr>
              <tr>
                 <td>Cidade:</td>
-                <td><input type="text" name="txtCidadeCliente" value="${cliente.cidade}" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>></td>
+                <td><input type="text" name="txtCidadeCliente" id="cidade" value="${cliente.cidade}" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>></td>
             </tr>
              <tr>
                 <td>Estado:</td>
-                <td><input type="text" name="txtEstadoCliente" value="${cliente.estado}" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>></td>
+                <td><input type="text" name="txtEstadoCliente" id="uf" value="${cliente.estado}" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>></td>
             </tr>
             
             </table>

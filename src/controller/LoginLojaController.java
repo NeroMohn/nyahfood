@@ -65,6 +65,7 @@ public class LoginLojaController extends HttpServlet {
     private void logar(HttpServletRequest request, HttpServletResponse response) throws SQLException, ClassNotFoundException, ServletException, IOException, IOException {
         String login = request.getParameter("login");
         String senha = request.getParameter("senha");
+        String tipo = "2";
         Loja loja = Loja.obterLoja(login);
         if(senha.equals(loja.getSenha())&& login.equals(loja.getEmail())){
             try {

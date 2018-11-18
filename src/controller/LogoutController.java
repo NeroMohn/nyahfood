@@ -3,6 +3,9 @@ package controller;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -18,8 +21,20 @@ public class LogoutController extends HttpServlet {
 
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-            
+            deslogar(request, response);
         }
+
+    private void deslogar(HttpServletRequest request, HttpServletResponse response) {
+        try {
+            request.getSession().invalidate();
+            RequestDispatcher view =request.getRequestDispatcher("index.jsp");
+            view.forward(request,response);
+        } catch (ServletException ex) {
+            Logger.getLogger(LogoutController.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (IOException ex) {
+            Logger.getLogger(LogoutController.class.getName()).log(Level.SEVERE, null, ex);
+        }
+
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
@@ -51,18 +66,8 @@ public class LogoutController extends HttpServlet {
         processRequest(request, response);
     }
 
-    protected void deslogar(HttpServletRequest request, HttpServletResponse response){
-
-}
-
-    /**
-     * Returns a short description of the servlet.
-     *
-     * @return a String containing servlet description
-     */
     @Override
     public String getServletInfo() {
         return "Short description";
-    }// </editor-fold>
-
+    }
 }

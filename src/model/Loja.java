@@ -27,6 +27,14 @@ public class Loja extends Usuario {
 
     }
 
+    public Loja(String nome, String telefone, String email, String senha, String foto, String Cep, String logradouro, String bairro, String complemento, String cidade, String estado, String numero, String Cnpj, String descricao, String nomeGerente) {
+        super(nome, telefone, email, senha, foto, Cep, logradouro, bairro, complemento, cidade, estado, numero);
+        this.cnpj = cnpj;
+        this.descricao = descricao;
+        this.nomeGerente = nomeGerente;
+        this.pagamento = pagamento;
+    }
+
 
     public Long getIdLoja() {
         return idLoja;

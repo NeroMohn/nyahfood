@@ -66,7 +66,6 @@ public void prepararOperacao(HttpServletRequest request, HttpServletResponse res
 }
 public void confirmarOperacao(HttpServletRequest request, HttpServletResponse response) throws SQLException, ClassNotFoundException, ServletException{
     String operacao = request.getParameter("operacao");
-   // Long idLoja = Long.parseLong(request.getParameter("txtIdLoja"));
     String nome = request.getParameter("txtNomeLoja");
     String telefone = request.getParameter("txtTelefoneLoja");
     String email = request.getParameter("txtEmailLoja");
@@ -87,14 +86,19 @@ public void confirmarOperacao(HttpServletRequest request, HttpServletResponse re
     
     
      try {
-             Loja loja = new Loja(null, nome, telefone, email, senha, foto, Cep, logradouro, bairro, complemento, cidade, estado, numero, Cnpj, descricao, nomeGerente);
           if (operacao.equals("Incluir")){
+            Loja loja = new Loja ( nome, telefone, email, senha, foto, Cep, logradouro, bairro, complemento, cidade, estado, numero, Cnpj, descricao, nomeGerente);
             loja.gravar();
         }else{ 
             if(operacao.equals("Editar")){
+                Long idLoja = Long.parseLong(request.getParameter("txtIdLoja"));
+                Loja loja = new Loja (idLoja, nome, telefone, email, senha, foto, Cep, logradouro, bairro, complemento, cidade, estado, numero, Cnpj, descricao, nomeGerente);
                 loja.alterar();
         } else{ 
                 if (operacao.equals("Excluir")){
+                Long idLoja = Long.parseLong(request.getParameter("txtIdLoja"));
+                Loja loja = new Loja (idLoja, nome, telefone, email, senha, foto, Cep, logradouro, bairro, complemento, cidade, estado, numero, Cnpj, descricao, nomeGerente);
+                
                 loja.excluir();
                 }
             }

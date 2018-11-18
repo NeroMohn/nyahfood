@@ -127,7 +127,7 @@
 			   <div class="col-md-6 login-left wow fadeInLeft" data-wow-delay="0.4s">
 			  	 <h3>CRIE SUA CONTA</h3>
 				 <p>É rapido e grátis. Crie sua conta e peça sua comida onde estiver e quando quiser.</p>
-				 <a class="acount-btn" href="register.html">Criar Conta</a>
+				 <a class="acount-btn" href="">Criar Conta</a>
 			   </div>
 			   <div class="col-md-6 login-right wow fadeInRight" data-wow-delay="0.4s">
 			  	<h3>Já está registrado?</h3>

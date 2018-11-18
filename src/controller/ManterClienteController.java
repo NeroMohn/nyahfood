@@ -53,7 +53,7 @@ public void prepararOperacao(HttpServletRequest request, HttpServletResponse res
 
     public void confirmarOperacao(HttpServletRequest request, HttpServletResponse response) throws ServletException{
         String operacao = request.getParameter("operacao");
-        //Long idCliente = Long.parseLong(request.getParameter("txtIdCliente"));
+        Long idCliente = Long.parseLong(request.getParameter("txtIdCliente"));
         String nome = request.getParameter("txtNomeCliente");
         String cpf = request.getParameter("txtCpfCliente");
         String email =  request.getParameter("txtEmailCliente");
@@ -69,7 +69,7 @@ public void prepararOperacao(HttpServletRequest request, HttpServletResponse res
         String estado =  request.getParameter("txtEstadoCliente");
        
         try {
-        Cliente cliente = new Cliente(null, nome, cpf, email, senha, foto, telefone, logradouro, cep, numero, bairro,
+        Cliente cliente = new Cliente(idCliente , nome, cpf, email, senha, foto, telefone, logradouro, cep, numero, bairro,
                 complemento, cidade, estado);
         if (operacao.equals("Incluir")){
             cliente.gravar();

@@ -18,6 +18,7 @@ public class LojaDAO {
                     + "values(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
             comando = conexao.prepareStatement(sql);
            
+          
             comando.setString(1,loja.getNome());
             comando.setString(2,loja.getTelefone());
             comando.setString(3,loja.getEmail());

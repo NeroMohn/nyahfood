@@ -13,21 +13,9 @@
         <title>JSP Page</title>
     </head>
     <body>
-    <%
-  String senha = null;
-  String login = null;
-  String tipo = "1";
-  
-  //Pega os valores login e senha passados na Servlet
-  login = (String) request.getSession().getAttribute("login");
-  senha = (String) request.getSession().getAttribute("senha");
-
-//passando os valores de login e senha para a Session!
-  session.putValue("login", login);
-  session.putValue("senha", senha);
-  session.putValue("tipo", tipo);
-  //chama a Página Principal do sistema!
-  out.println("<script>document.location.href='index.jsp'</script>");
-%>
+        <div id = "logado">
+            Logado com sucesso! :3
+        </div>
+        <a href="index.jsp"><button>Voltar para a página principal</button></a>
     </body>
 </html>

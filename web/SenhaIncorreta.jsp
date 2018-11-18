@@ -1,11 +1,10 @@
 <%-- 
-    Document   : SessionCliente
-    Created on : 15/11/2018, 18:13:04
+    Document   : SenhaIncorreta
+    Created on : 17/11/2018, 20:58:38
     Author     : rodri
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
-
 <!DOCTYPE html>
 <html>
     <head>
@@ -13,9 +12,9 @@
         <title>JSP Page</title>
     </head>
     <body>
-        <div id = "logado">
-            Logado com sucesso! :3
+        <div>
+        Senha incorreta ;-;
+        <a href="LoginClienteController?acao=preparar">Tentar novamente</a>
         </div>
-        <a href="index.jsp"><button>Voltar para a página principal</button></a>
     </body>
 </html>

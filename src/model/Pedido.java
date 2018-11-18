@@ -7,7 +7,6 @@ import java.util.List;
 
 public class Pedido {
     private Long idPedido;
-    private Comida comida;
     private int quantidade;
     private double subtotal;
     private String metodoPagamento;
@@ -15,9 +14,7 @@ public class Pedido {
     private String date;
     private Long codComida;
 
-    public Pedido(){};
-
-    public Pedido(Long idPedido, int quantidade, double subtotal, String metodoPagamento, String cupomDesconto, String date, Long codComida) {
+    public Pedido(Long idPedido,  Long codComida,int quantidade, double subtotal, String metodoPagamento, String cupomDesconto, String date) {
         setIdPedido(idPedido);
         setCodComida(codComida);
         setQuantidade(quantidade);
@@ -26,6 +23,19 @@ public class Pedido {
         setCupomDesconto(cupomDesconto);
         setDate(date);
     }
+    
+    public Pedido( Long codComida , int quantidade, double subtotal, String metodoPagamento, String cupomDesconto, String date) {
+   
+        setCodComida(codComida);
+        setQuantidade(quantidade);
+        setSubtotal(subtotal);
+        setMetodoPagamento(metodoPagamento);
+        setCupomDesconto(cupomDesconto);
+        setDate(date);
+    }
+
+
+  
 
   
 
@@ -40,13 +50,7 @@ public class Pedido {
         this.idPedido = idPedido;
     }
 
-    public Comida getComida() {
-        return comida;
-    }
 
-    public void setComida(Comida comida) {
-        this.comida = comida;
-    }
 
     public int getQuantidade() {
         return quantidade;

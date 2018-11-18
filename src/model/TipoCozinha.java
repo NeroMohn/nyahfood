@@ -14,6 +14,11 @@ public class TipoCozinha {
         this.idTipoCozinha = idTipoCozinha;
         this.tipo = tipo;
     }
+    
+     public TipoCozinha( String tipo) {
+    
+        this.tipo = tipo;
+    }
 
     public TipoCozinha() {
 

@@ -20,10 +20,14 @@ public class TipoCulinaria {
         this.codTipoCozinha = codTipoCozinha;
     }
 
-    public TipoCulinaria() {
-
+    public TipoCulinaria( String culinaria, Long codLoja, Long codTipoCozinha) {
+       
+        this.culinaria = culinaria;
+        this.codLoja = codLoja;
+        this.codTipoCozinha = codTipoCozinha;
     }
-
+    
+    
     public long getIdTipoCulinaria() {
         return idTipoCulinaria;
     }

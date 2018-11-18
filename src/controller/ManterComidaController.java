@@ -39,9 +39,8 @@ public class ManterComidaController extends HttpServlet {
 public void prepararOperacao(HttpServletRequest request, HttpServletResponse response) {
         try{
     
-    String operacao = request.getParameter("operacao");
+        String operacao = request.getParameter("operacao");
         request.setAttribute("operacao", operacao);
-
         if (!operacao.equals("Incluir")) {
             Long idComida = Long.parseLong(request.getParameter("idComida"));
             Comida comida = Comida.obterComida(idComida);
@@ -64,7 +63,6 @@ public void prepararOperacao(HttpServletRequest request, HttpServletResponse res
 
 public void confirmarOperacao(HttpServletRequest request, HttpServletResponse response) throws SQLException, ClassNotFoundException, ServletException{
     String operacao = request.getParameter("operacao");
-   // Long idComida = Long.parseLong(request.getParameter("txtIdComida"));
     String nome = request.getParameter("txtNome");
     String ingrediente = request.getParameter("txtIngrediente");
     String tempoPreparo = request.getParameter("txtTempoPreparo");
@@ -75,20 +73,26 @@ public void confirmarOperacao(HttpServletRequest request, HttpServletResponse re
     
     try{
     
-        Comida comida = new Comida(null, nome, ingrediente, tempoPreparo, foto, preco, desconto, codLoja);
-    
-
-   if (operacao.equals("Incluir")) {
-                comida.gravar();
-            } else {
-                if (operacao.equals("Editar")) {
-                    comida.alterar();
-                } else {
-                    if (operacao.equals("Excluir")) {
-                        comida.excluir();
-                    }
+      if (operacao.equals("Incluir")){
+            Comida comida = new Comida( nome,  ingrediente,  tempoPreparo,  foto,  preco,
+                   desconto,  codLoja);
+            comida.gravar();
+        }else{ 
+            if(operacao.equals("Editar")){
+                Long idComida = Long.parseLong(request.getParameter("txtIdComida"));
+                Comida comida = new Comida(idComida,nome,  ingrediente,  tempoPreparo,  foto,  preco,
+                   desconto,  codLoja);
+                comida.alterar();
+        } else{ 
+                if (operacao.equals("Excluir")){
+                Long idComida = Long.parseLong(request.getParameter("txtIdComida"));
+                Comida comida = new Comida(idComida,nome,  ingrediente,  tempoPreparo,  foto,  preco,
+                   desconto,  codLoja);
+                comida.excluir();
                 }
             }
+      }
+      
  RequestDispatcher view =request.getRequestDispatcher("PesquisaComidaController");
         view.forward(request,response);
         }catch (IOException e) {

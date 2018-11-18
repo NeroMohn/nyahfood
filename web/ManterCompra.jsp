@@ -20,7 +20,7 @@
         <form action ="ManterCompraController?acao=confirmarOperacao&operacao=${operacao}" method = "post" name="ManterCompra" >
             <table>
             <tr>
-                <td>Código da Compra:</td>
+               
                 <td><input type="hidden" name="txtIdCompra" value="${compra.idCompra}" <c:if test="${operacao != 'Incluir'}"> readonly</c:if>></input></td>
             </tr>
             <tr>

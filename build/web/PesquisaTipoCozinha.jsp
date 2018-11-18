@@ -6,7 +6,7 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <meta http-equiv="Content-Type" content="text/html"; charset="UTF-8">
+        <meta http-equiv="Content-Type" content="text/html" charset="UTF-8">
         <title>Pesquisa de Tipo Cozinha</title>
     </head>
     <body>

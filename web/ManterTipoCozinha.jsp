@@ -18,7 +18,7 @@
         <form action ="ManterTipoCozinhaController?acao=confirmarOperacao&operacao=${operacao}" method = "post" name="ManterTipoCozinha">
             <table>
                 <tr>
-                <td>Código do Tipo de Cozinha</td>
+               
                 <td><input type="hidden" name="txtIdTipoCozinha" value="${tipoCozinha.idTipoCozinha}" <c:if test="${operacao != 'Incluir'}"> readonly</c:if>></input></td>
             </tr>
             <tr>

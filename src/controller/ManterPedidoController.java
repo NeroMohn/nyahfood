@@ -66,29 +66,34 @@ public void prepararOperacao(HttpServletRequest request, HttpServletResponse res
 }
 public void confirmarOperacao(HttpServletRequest request, HttpServletResponse response) throws SQLException, ClassNotFoundException{
     String operacao = request.getParameter("operacao");
-    //Long idPedido = Long.parseLong(request.getParameter("txtIdPedido"));
-    Long comida = Long.parseLong(request.getParameter("txtComida"));
-    Integer quantidade = Integer.parseInt("txtQuantidadePedido");
-    Double subtotal = Double.parseDouble("txtSubtotalPedido");
+    Long codComida = Long.parseLong(request.getParameter("txtCodComida"));
+    Integer quantidade = Integer.parseInt(request.getParameter("txtQuantidadePedido"));
+    Double subtotal = Double.parseDouble(request.getParameter("txtSubtotalPedido"));
     String metodoPagamento = request.getParameter("txtMetodoPagamento");
     String cupomDesconto = request.getParameter("txtCupomDesconto");
     String date = request.getParameter("txtDate");
     
     
-    Pedido pedido = new Pedido(null, quantidade, subtotal, metodoPagamento, cupomDesconto, date, comida);
+ 
     
 
-   if (operacao.equals("Incluir")) {
-                pedido.gravar();
-            } else {
-                if (operacao.equals("Editar")) {
-                    pedido.alterar();
-                } else {
-                    if (operacao.equals("Excluir")) {
-                        pedido.excluir();
-                    }
+    if (operacao.equals("Incluir")){
+            Pedido pedido = new Pedido (  codComida, quantidade,   subtotal,  metodoPagamento,  cupomDesconto,  date);
+            pedido.gravar();
+        }else{ 
+            if(operacao.equals("Editar")){
+                Long idPedido = Long.parseLong(request.getParameter("txtIdPedido"));
+              Pedido pedido = new Pedido ( idPedido, codComida, quantidade,   subtotal,  metodoPagamento,  cupomDesconto,  date);
+                pedido.alterar();
+        } else{ 
+                if (operacao.equals("Excluir")){
+                 Long idPedido = Long.parseLong(request.getParameter("txtIdPedido"));
+                Pedido pedido = new Pedido ( idPedido, codComida, quantidade,   subtotal,  metodoPagamento,  cupomDesconto,  date);
+                
+                pedido.excluir();
                 }
             }
+        }
 }
 // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
 /**

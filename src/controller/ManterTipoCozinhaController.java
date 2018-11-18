@@ -40,10 +40,9 @@ public class ManterTipoCozinhaController extends HttpServlet {
 public void prepararOperacao(HttpServletRequest request, HttpServletResponse response) {
         try{
     
-    String operacao = request.getParameter("operacao");
-        request.setAttribute("operacao", operacao);
-        request.setAttribute("TipoCozinha", TipoCozinha.obterTodosTiposCozinha());
 
+        String operacao = request.getParameter("operacao");
+        request.setAttribute("operacao", operacao);  
         if (!operacao.equals("Incluir")) {
             Long idTipoCozinha = Long.parseLong(request.getParameter("idTipoCozinha"));
             TipoCozinha tipoCozinha = TipoCozinha.obterTipoCozinha(idTipoCozinha);
@@ -67,12 +66,25 @@ public void prepararOperacao(HttpServletRequest request, HttpServletResponse res
 public void confirmarOperacao(HttpServletRequest request, HttpServletResponse response) throws ServletException{
     String operacao = request.getParameter("operacao");
    // Long idTipoCozinha = Long.parseLong(request.getParameter("txtIdTipoCozinha"));
-    String nome = request.getParameter("txtTipo");
+    String tipo = request.getParameter("txtTipo");
     
     try{
-    TipoCozinha tipoCozinha = new TipoCozinha(null, nome);
-    if(operacao.equals("Incluir")){
-        tipoCozinha.gravar();
+       if (operacao.equals("Incluir")){
+            TipoCozinha tipoCozinha = new TipoCozinha (tipo);
+            tipoCozinha.gravar();
+        }else{ 
+            if(operacao.equals("Editar")){
+                Long idTipoCozinha = Long.parseLong(request.getParameter("txtIdTipoCozinha"));
+                TipoCozinha tipoCozinha = new TipoCozinha (idTipoCozinha, tipo);
+                tipoCozinha.alterar();
+        } else{ 
+                if (operacao.equals("Excluir")){
+                Long idTipoCozinha = Long.parseLong(request.getParameter("txtIdLoja"));
+                TipoCozinha tipoCozinha = new TipoCozinha (idTipoCozinha, tipo);
+                
+                tipoCozinha.excluir();
+                }
+            }
     }
         RequestDispatcher view =request.getRequestDispatcher("PesquisaTipoCozinhaController");
         view.forward(request,response);

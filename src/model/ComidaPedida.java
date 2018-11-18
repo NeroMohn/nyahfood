@@ -23,6 +23,14 @@ public class ComidaPedida {
         setQuantidade(quantidade);
         setCodComida(codComida);
     }
+    
+      public ComidaPedida( double precoUnitario, int quantidade, double precoTotal,Long codComida) {
+       
+        setPrecoTotal(precoTotal);
+        setPrecoUnitario(precoUnitario);
+        setQuantidade(quantidade);
+        setCodComida(codComida);
+    }
 
     public Long getIdComidaPedida() {
         return idComidaPedida;

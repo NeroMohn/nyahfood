@@ -72,7 +72,6 @@ public class ManterCompraController extends HttpServlet {
     
     public void confirmarOperacao(HttpServletRequest request, HttpServletResponse response) throws ServletException{
         String operacao = request.getParameter("operacao");
-        //Long idCompra = Long.parseLong(request.getParameter("txtIdCompra"));
         Double total = Double.parseDouble(request.getParameter("txtTotal"));
         String status = request.getParameter("txtStatus");
         Long codPedido = Long.parseLong(request.getParameter("txtCodPedido"));
@@ -80,18 +79,22 @@ public class ManterCompraController extends HttpServlet {
        
         
         try {
-             Compra compra = new Compra(null, total, status, codPedido);
           if (operacao.equals("Incluir")){
+            Compra compra = new Compra(  total,  status, codPedido);
             compra.gravar();
         }else{ 
             if(operacao.equals("Editar")){
+                Long idCompra = Long.parseLong(request.getParameter("txtIdCompra"));
+                Compra compra = new Compra(  idCompra,  total,  status, codPedido);
                 compra.alterar();
         } else{ 
                 if (operacao.equals("Excluir")){
+                Long idCompra = Long.parseLong(request.getParameter("txtIdCompra"));
+                Compra compra = new Compra ( idCompra,  total,  status, codPedido);
                 compra.excluir();
                 }
             }
-        }
+      }
         RequestDispatcher view =request.getRequestDispatcher("PesquisaCompraController");
         view.forward(request,response);
         } catch (IOException e) {

@@ -71,14 +71,14 @@ public void confirmarOperacao(HttpServletRequest request, HttpServletResponse re
     String email = request.getParameter("txtEmailLoja");
     String senha = request.getParameter("txtSenhaLoja");
     String foto = request.getParameter("txtFotoLoja");
-    String Cep = request.getParameter("txtCepLoja");
+    String cep = request.getParameter("txtCepLoja");
     String logradouro = request.getParameter("txtLogradouroLoja");
     String bairro = request.getParameter("txtBairroLoja");
     String complemento = request.getParameter("txtComplementoLoja");
     String cidade = request.getParameter("txtCidadeLoja");
     String estado = request.getParameter("txtEstadoLoja");
     String numero = request.getParameter("txtNumeroLoja");
-    String Cnpj = request.getParameter("txtCnpjLoja");
+    String cnpj = request.getParameter("txtCnpjLoja");
     String descricao = request.getParameter("txtDescricaoLoja");
     String nomeGerente = request.getParameter("txtNomeGerenteLoja");
  
@@ -87,17 +87,17 @@ public void confirmarOperacao(HttpServletRequest request, HttpServletResponse re
     
      try {
           if (operacao.equals("Incluir")){
-            Loja loja = new Loja ( nome, telefone, email, senha, foto, Cep, logradouro, bairro, complemento, cidade, estado, numero, Cnpj, descricao, nomeGerente);
+            Loja loja = new Loja ( nome, telefone, email, senha, foto, cep, logradouro, bairro, complemento, cidade, estado, numero, cnpj, descricao, nomeGerente);
             loja.gravar();
         }else{ 
             if(operacao.equals("Editar")){
                 Long idLoja = Long.parseLong(request.getParameter("txtIdLoja"));
-                Loja loja = new Loja (idLoja, nome, telefone, email, senha, foto, Cep, logradouro, bairro, complemento, cidade, estado, numero, Cnpj, descricao, nomeGerente);
+                Loja loja = new Loja (idLoja, nome, telefone, email, senha, foto, cep, logradouro, bairro, complemento, cidade, estado, numero, cnpj, descricao, nomeGerente);
                 loja.alterar();
         } else{ 
                 if (operacao.equals("Excluir")){
                 Long idLoja = Long.parseLong(request.getParameter("txtIdLoja"));
-                Loja loja = new Loja (idLoja, nome, telefone, email, senha, foto, Cep, logradouro, bairro, complemento, cidade, estado, numero, Cnpj, descricao, nomeGerente);
+                Loja loja = new Loja (idLoja, nome, telefone, email, senha, foto, cep, logradouro, bairro, complemento, cidade, estado, numero, cnpj, descricao, nomeGerente);
                 
                 loja.excluir();
                 }

@@ -17,12 +17,12 @@
         <form action ="ManterPedidoController?acao=confirmarOperacao&operacao=${operacao}"  method = "post" name="ManterPedido">
             <table>
                 <tr>
-                <td>Código do Pedido:</td>
+              
                 <td><input type="hidden" name="txtIdPedido" value="${pedido.idPedido}" <c:if test="${operacao != 'Incluir'}"> readonly</c:if>></input></td>
             </tr>
             <tr>
                 <td>Comida:</td>
-                <td><input type="text" name="txtComida" value="${pedido.codComida}" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>></input></td>
+                <td><input type="text" name="txtCodComida" value="${pedido.codComida}" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>></input></td>
             </tr>
             <tr>
                 <td>Quantidade:</td>

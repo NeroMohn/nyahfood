@@ -18,7 +18,7 @@ public class TipoCozinhaDAO {
                     + "values(?)";
             comando = conexao.prepareStatement(sql);
          
-            comando.setString(2,tipoCozinha.getTipo());
+            comando.setString(1,tipoCozinha.getTipo());
             comando.execute();
             BD.fecharConexao(conexao, comando);
         }catch (SQLException e){throw e;}
@@ -36,7 +36,7 @@ public class TipoCozinhaDAO {
             String sql = "update tipoCozinha set tipo = ?, set idTipoCozinha = ?  where idTipoCozinha = ?";
             comando = conexao.prepareStatement(sql);
             comando.setString(1, tipoCozinha.getTipo());
-            comando.setLong(14, tipoCozinha.getIdTipoCozinha());
+            comando.setLong(2, tipoCozinha.getIdTipoCozinha());
             comando.execute();
             BD.fecharConexao(conexao, comando);
 

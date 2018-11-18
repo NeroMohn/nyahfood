@@ -19,6 +19,13 @@ public class Compra {
         this.status = status;
         this.codPedido = codPedido;
     }
+    
+    public Compra( double total, String status,Long codPedido) {
+        
+        this.total = total;
+        this.status = status;
+        this.codPedido = codPedido;
+    }
 
    
 

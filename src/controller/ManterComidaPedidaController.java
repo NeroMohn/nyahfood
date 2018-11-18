@@ -73,18 +73,22 @@ public void confirmarOperacao(HttpServletRequest request, HttpServletResponse re
         
         
         try {
-        ComidaPedida comidaPedida = new ComidaPedida(null,precoUnitario, quantidade, precoTotal, codComida);
-       if (operacao.equals("Incluir")) {
-                comidaPedida.gravar();
-            } else {
-                if (operacao.equals("Editar")) {
-                    comidaPedida.alterar();
-                } else {
-                    if (operacao.equals("Excluir")) {
-                        comidaPedida.excluir();
-                    }
+      if (operacao.equals("Incluir")){
+            ComidaPedida comidaPedida = new ComidaPedida(  precoUnitario,  quantidade,  precoTotal, codComida);
+            comidaPedida.gravar();
+        }else{ 
+            if(operacao.equals("Editar")){
+                Long idComidaPedida = Long.parseLong(request.getParameter("txtIdComidaPedida"));
+                 ComidaPedida comidaPedida = new ComidaPedida( idComidaPedida,  precoUnitario,  quantidade,  precoTotal, codComida);
+                comidaPedida.alterar();
+        } else{ 
+                if (operacao.equals("Excluir")){
+                Long idComidaPedida = Long.parseLong(request.getParameter("txtIdComidaPedida"));
+                 ComidaPedida comidaPedida = new ComidaPedida( idComidaPedida,  precoUnitario,  quantidade,  precoTotal, codComida);
+                comidaPedida.excluir();
                 }
             }
+      }
         RequestDispatcher view =request.getRequestDispatcher("PesquisaComidaPedidaController");
         view.forward(request,response);
         } catch (IOException e) {

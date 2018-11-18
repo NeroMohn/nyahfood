@@ -15,14 +15,23 @@ public class Comida {
     private double desconto;
     private Long codLoja;
 
-    public Comida(){
-
-    }
-
-
+   
     public Comida(Long idComida, String nome, String ingrediente, String tempoPreparo, String foto, double preco,
                   double desconto, Long codLoja) {
         setIdComida(idComida);
+        setNome(nome);
+        setIngrediente(ingrediente);
+        setTempoPreparo(tempoPreparo);
+        setFoto(foto);
+        setPreco(preco);
+        setDesconto(desconto);
+        setCodLoja(codLoja);
+
+    }
+    
+      public Comida(String nome, String ingrediente, String tempoPreparo, String foto, double preco,
+                  double desconto, Long codLoja) {
+     
         setNome(nome);
         setIngrediente(ingrediente);
         setTempoPreparo(tempoPreparo);

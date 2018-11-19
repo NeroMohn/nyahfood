@@ -10,6 +10,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import static javax.swing.text.html.CSS.getAttribute;
 import model.Cliente;
 
 @WebServlet (name= "ManterClienteController", urlPatterns = "/controller.ManterClienteController")
@@ -74,7 +75,7 @@ public void prepararOperacao(HttpServletRequest request, HttpServletResponse res
             cliente.gravar();
         }else{ 
             if(operacao.equals("Editar")){
-                Long idCliente = Long.parseLong(request.getParameter("txtIdCliente"));
+                Long idCliente = Long.parseLong((String) request.getSession().getAttribute("id"));
                 Cliente cliente = new Cliente(idCliente, nome, cpf, email, senha, foto, telefone, logradouro, cep, numero, bairro,
                 complemento, cidade, estado);
                 cliente.alterar();

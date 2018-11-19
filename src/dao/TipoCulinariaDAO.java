@@ -18,10 +18,16 @@ public class TipoCulinariaDAO {
             comando = conexao.prepareStatement(sql);
            
             comando.setString(1, tipoCulinaria.getCulinaria());
-            if(tipoCulinaria.getCodLoja() == null){comando.setNull(2, Types.NULL);}
-            else{comando.setLong(2, tipoCulinaria.getCodLoja());}
-            if(tipoCulinaria.getCodTipoCozinha() == null){comando.setNull(3, Types.NULL);}
-            else{comando.setLong(3, tipoCulinaria.getCodTipoCozinha());}
+            if(tipoCulinaria.getCodLoja()== null){
+                comando.setNull(2, Types.NULL);
+            }
+            else{
+                comando.setLong(2, tipoCulinaria.getCodLoja());
+            }
+            if(tipoCulinaria.getCodTipoCozinha()== null){
+                comando.setNull(3, Types.NULL);}
+            else{
+                comando.setLong(3, tipoCulinaria.getCodTipoCozinha());}
 
             comando.execute();
             BD.fecharConexao(conexao, comando);
@@ -35,13 +41,19 @@ public class TipoCulinariaDAO {
         PreparedStatement comando = null;
         try {
             conexao = BD.getConexao();
-            String sql = "update tipoCulinaria set culinaria = ?, loja = ?, tipoCozinha = ? where idTipoCulinaria = ?";
+            String sql = "update tipoCulinaria set culinaria = ?, codLoja = ?, codTipoCozinha = ? where idTipoCulinaria = ?";
             comando = conexao.prepareStatement(sql);
             comando.setString(1, tipoCulinaria.getCulinaria());
-            if(tipoCulinaria.getLoja() == null){comando.setNull(2, Types.NULL);}
-            else{comando.setLong(2, tipoCulinaria.getLoja().getIdLoja());}
-            if(tipoCulinaria.getTipocozinha() == null){comando.setNull(3, Types.NULL);}
-            else{comando.setLong(3, tipoCulinaria.getTipocozinha().getIdTipoCozinha());}
+            if(tipoCulinaria.getCodLoja()== null){
+                comando.setNull(2, Types.NULL);
+            }
+            else{
+                comando.setLong(2, tipoCulinaria.getCodLoja());
+            }
+            if(tipoCulinaria.getCodTipoCozinha()== null){
+                comando.setNull(3, Types.NULL);}
+            else{
+                comando.setLong(3, tipoCulinaria.getCodTipoCozinha());}
             comando.setLong(4, tipoCulinaria.getIdTipoCulinaria());
 
             comando.execute();
@@ -109,9 +121,9 @@ public class TipoCulinariaDAO {
             rs.first();
             do {
                 tipoCulinaria = new TipoCulinaria(rs.getLong("idTipoCulinaria"),
-                        rs.getString("culinaria"), null, null);
-                tipoCulinaria.setCodTipoCozinha(rs.getLong("codCozinha"));
+                rs.getString("culinaria"), null, null);
                 tipoCulinaria.setCodLoja(rs.getLong("codLoja"));
+                tipoCulinaria.setCodTipoCozinha(rs.getLong("codTipoCozinha"));
 
                 tipoCulinarias.add(tipoCulinaria);
             

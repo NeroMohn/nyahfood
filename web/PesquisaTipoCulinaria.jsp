@@ -19,7 +19,7 @@
                 <th colspan=2>Ação</th>
             </tr>
             <div><c:out value="${vazio}"/></div>
-                <c:forEach items="${tiposculinaria}" var="tipoculinaria">
+                <c:forEach items="${tiposculinarias}" var="tipoculinaria">
                     <tr>
                         <td><c:out value="${tipoculinaria.idTipoCulinaria}"/></td>
                         <td><c:out value="${tipoculinaria.culinaria}"/></td>

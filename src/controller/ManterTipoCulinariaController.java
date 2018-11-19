@@ -67,7 +67,6 @@ public void prepararOperacao(HttpServletRequest request, HttpServletResponse res
 
 public void confirmarOperacao(HttpServletRequest request, HttpServletResponse response) throws ServletException{
     String operacao = request.getParameter("operacao");
-    //Long idTipoCulinaria = Long.parseLong(request.getParameter("txtIdTipoCulinaria"));
     String culinaria = request.getParameter("txtCulinaria");
     Long codLoja = Long.parseLong(request.getParameter("txtCodLoja"));
     Long codTipoCozinha = Long.parseLong(request.getParameter("txtCodTipoCozinha"));

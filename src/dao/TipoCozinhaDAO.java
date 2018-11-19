@@ -33,7 +33,7 @@ public class TipoCozinhaDAO {
         PreparedStatement comando = null;
         try {
             conexao = BD.getConexao();
-            String sql = "update tipoCozinha set tipo = ?, set idTipoCozinha = ?  where idTipoCozinha = ?";
+            String sql = "update tipoCozinha set tipo = ? where idTipoCozinha = ?";
             comando = conexao.prepareStatement(sql);
             comando.setString(1, tipoCozinha.getTipo());
             comando.setLong(2, tipoCozinha.getIdTipoCozinha());
@@ -100,10 +100,10 @@ public class TipoCozinhaDAO {
             rs.first();
             do {
                 tipoCozinha = new TipoCozinha(rs.getLong("idTipoCozinha"),
-                        rs.getString("cozinha"));
-                tipoCozinhas.add(tipoCozinha);
-                
-            }while (rs.next());
+                rs.getString("tipo"));
+                tipoCozinhas.add(tipoCozinha);  
+            }
+            while (rs.next());
         } catch (SQLException e) {
             e.printStackTrace();
         } finally {

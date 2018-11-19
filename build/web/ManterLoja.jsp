@@ -76,8 +76,7 @@
         
         <form action ="ManterLojaController?acao=confirmarOperacao&operacao=${operacao}"  method = "post" name="ManterLoja">
             <table>
-                        <tr>
-                <!--<td>Código da Loja</td>-->
+            <tr>
                 <td><input type="hidden" name="txtIdLoja" value="${loja.idLoja}" <c:if test="${operacao != 'Incluir'}"> readonly</c:if>></input></td>
             </tr>
             <tr>
@@ -89,20 +88,34 @@
                 <td><input type="text" name="txtNomeGerenteLoja" value="${loja.nomeGerente}" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>></input></td>
             </tr>
             <tr>
-                <td>CNPJ:</td>
-                <td><input type="text" name="txtCnpjLoja" value="${loja.cnpj}" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>></input></td>
-            </tr>  
-             <tr>
-                <td>Telefone:</td>
-                <td><input type="text" name="txtTelefoneLoja" value="${loja.telefone}" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>></input></td>
-            </tr>
-           <tr>
                 <td>Email:</td>
                 <td><input type="text" name="txtEmailLoja" value="${loja.email}" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>></input></td>
             </tr>
             <tr>
                 <td>Senha:</td>
                 <td><input type="password" name="txtSenhaLoja" value="${loja.senha}" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>></input></td>
+            </tr>
+            <tr>
+                <td>Telefone:</td>
+                <td><input type="text" name="txtTelefoneLoja" value="${loja.telefone}" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>></input></td>
+            </tr>
+            <tr>
+                <td>CNPJ:</td>
+                <td><input type="text" name="txtCnpjLoja" value="${loja.cnpj}" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>></input></td>
+            </tr>
+            <tr>
+                <td>Descrição:</td>
+                <td><input type="text" name="txtDescricaoLoja" value="${loja.descricao}" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>></input></td>
+            </tr>
+            <tr>
+                <td>Pagamento:</td>
+                <td>
+                    <select name="optPagamentoLoja" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>>
+                            <option value="Dinheiro" <c:if test="${loja.pagamento == 'Dinheiro'}"> selected</c:if>>Dinheiro</option>
+                            <option value="Cartao Credito" <c:if test="${loja.pagamento == 'Cartao Credito'}"> selected</c:if>>Cartão - Crédito</option>
+                            <option value="Cartao Debito" <c:if test="${loja.pagamento == 'Cartao Debito'}"> selected</c:if>>Cartão - Débito</option>
+                    </select>
+                </td>
             </tr>
             <tr>
                 <td>Foto:</td>
@@ -134,20 +147,7 @@
              <tr>
                 <td>Estado:</td>
                 <td><input type="text" name="txtEstadoLoja" id="uf" value="${loja.estado}"<c:if test="${operacao == 'Excluir'}"> readonly</c:if>></input></td>
-            </tr>
-            <tr>
-                <td>Descrição:</td>
-                <td><input type="text" name="txtDescricaoLoja" value="${loja.descricao}" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>></input></td>
-            </tr>
-            <tr>
-                <td>Pagamentos:</td>
-                <td><input type="text" name="txtPagamentosLoja" value="${loja.pagamento}" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>></input></td>
-            </tr>
-             
-           
-            
-             
-           
+            </tr>           
             </table>
             <td><input type="submit" name="btnConfirmar" value="Confirmar"></td>
         </form>

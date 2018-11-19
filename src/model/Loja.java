@@ -17,21 +17,21 @@ public class Loja extends Usuario {
 
  
 
-    public Loja(Long idLoja, String nome, String telefone, String email, String senha, String foto, String cep, String logradouro, String bairro, String complemento, String cidade, String estado, String numero, String cnpj, String descricao, String nomeGerente) {
-        super(nome, telefone, email, senha, foto, cep, logradouro, bairro, complemento, cidade, estado, numero);
+    public Loja(Long idLoja, String nome, String nomeGerente, String email, String senha, String telefone, String cnpj,String descricao,String pagamento,String foto,String cep, String logradouro, String bairro,String numero, String complemento, String cidade, String estado) {
+        super(nome, email, senha, telefone, foto, cep, logradouro, bairro, numero, complemento, cidade, estado);
         this.idLoja = idLoja;
+        this.nomeGerente = nomeGerente;
         this.cnpj = cnpj;
         this.descricao = descricao;
-        this.nomeGerente = nomeGerente;
         this.pagamento = pagamento;
 
     }
 
-    public Loja(String nome, String telefone, String email, String senha, String foto, String Cep, String logradouro, String bairro, String complemento, String cidade, String estado, String numero, String Cnpj, String descricao, String nomeGerente) {
-        super(nome, telefone, email, senha, foto, Cep, logradouro, bairro, complemento, cidade, estado, numero);
+    public Loja(String nome, String nomeGerente, String email, String senha, String telefone, String cnpj,String descricao,String pagamento,String foto,String cep, String logradouro, String bairro,String numero, String complemento, String cidade, String estado) {
+        super(nome, email, senha, telefone, foto, cep, logradouro, bairro, numero, complemento, cidade, estado);
+        this.nomeGerente = nomeGerente;
         this.cnpj = cnpj;
         this.descricao = descricao;
-        this.nomeGerente = nomeGerente;
         this.pagamento = pagamento;
     }
 

@@ -67,37 +67,39 @@ public void prepararOperacao(HttpServletRequest request, HttpServletResponse res
 public void confirmarOperacao(HttpServletRequest request, HttpServletResponse response) throws SQLException, ClassNotFoundException, ServletException{
     String operacao = request.getParameter("operacao");
     String nome = request.getParameter("txtNomeLoja");
-    String telefone = request.getParameter("txtTelefoneLoja");
+    String nomeGerente = request.getParameter("txtNomeGerenteLoja");
     String email = request.getParameter("txtEmailLoja");
     String senha = request.getParameter("txtSenhaLoja");
+    String telefone = request.getParameter("txtTelefoneLoja");
+    String cnpj = request.getParameter("txtCnpjLoja");
+    String descricao = request.getParameter("txtDescricaoLoja");
+    String pagamento = request.getParameter("optPagamentoLoja");
     String foto = request.getParameter("txtFotoLoja");
     String cep = request.getParameter("txtCepLoja");
     String logradouro = request.getParameter("txtLogradouroLoja");
     String bairro = request.getParameter("txtBairroLoja");
+    String numero = request.getParameter("txtNumeroLoja");
     String complemento = request.getParameter("txtComplementoLoja");
     String cidade = request.getParameter("txtCidadeLoja");
     String estado = request.getParameter("txtEstadoLoja");
-    String numero = request.getParameter("txtNumeroLoja");
-    String cnpj = request.getParameter("txtCnpjLoja");
-    String descricao = request.getParameter("txtDescricaoLoja");
-    String nomeGerente = request.getParameter("txtNomeGerenteLoja");
+
  
     
     
     
      try {
           if (operacao.equals("Incluir")){
-            Loja loja = new Loja ( nome, telefone, email, senha, foto, cep, logradouro, bairro, complemento, cidade, estado, numero, cnpj, descricao, nomeGerente);
+            Loja loja = new Loja ( nome, nomeGerente, email, senha, telefone,cnpj, descricao, pagamento, foto, cep, logradouro, bairro, numero, complemento, cidade, estado);
             loja.gravar();
         }else{ 
             if(operacao.equals("Editar")){
                 Long idLoja = Long.parseLong(request.getParameter("txtIdLoja"));
-                Loja loja = new Loja (idLoja, nome, telefone, email, senha, foto, cep, logradouro, bairro, complemento, cidade, estado, numero, cnpj, descricao, nomeGerente);
+                Loja loja = new Loja (idLoja, nome, nomeGerente, email, senha, telefone, cnpj, descricao, pagamento, foto, cep, logradouro, bairro, numero, complemento, cidade, estado);
                 loja.alterar();
         } else{ 
                 if (operacao.equals("Excluir")){
                 Long idLoja = Long.parseLong(request.getParameter("txtIdLoja"));
-                Loja loja = new Loja (idLoja, nome, telefone, email, senha, foto, cep, logradouro, bairro, complemento, cidade, estado, numero, cnpj, descricao, nomeGerente);
+                Loja loja = new Loja (idLoja, nome, nomeGerente, email, senha, telefone, cnpj, descricao, pagamento, foto, cep, logradouro, bairro, numero, complemento, cidade, estado);
                 
                 loja.excluir();
                 }

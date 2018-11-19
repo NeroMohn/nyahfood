@@ -14,28 +14,28 @@ public class LojaDAO {
         PreparedStatement comando = null;
         try{
             conexao = BD.getConexao();
-            String sql = "Insert into loja ( nome,  telefone,  email,  senha,  foto,  cep,  logradouro,  bairro,  complemento,  cidade,  estado,  numero,  cnpj,  descricao,  nomeGerente)"
-                    + "values(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
+            String sql = "Insert into loja ( nome, nomeGerente, email, senha, telefone, cnpj, descricao, pagamento, foto, cep, logradouro, bairro, numero, complemento, cidade, estado)"
+                    + "values(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
             comando = conexao.prepareStatement(sql);
            
           
             comando.setString(1,loja.getNome());
-            comando.setString(2,loja.getTelefone());
+            comando.setString(2,loja.getNomeGerente());
             comando.setString(3,loja.getEmail());
-            comando.setString(4,loja.getSenha());         
-            comando.setString(5,loja.getFoto());
-            comando.setString(6,loja.getCep());
-            comando.setString(7,loja.getLogradouro());
-            comando.setString(8,loja.getBairro());
-            comando.setString(9,loja.getComplemento());
-            comando.setString(10,loja.getCidade());
-            comando.setString(11,loja.getEstado());
-            comando.setString(12,loja.getNumero());
-            comando.setString(13,loja.getCnpj());   
-            comando.setString(14,loja.getDescricao());
-            comando.setString(15,loja.getNomeGerente());
-
-
+            comando.setString(4,loja.getSenha());
+            comando.setString(5,loja.getTelefone());
+            comando.setString(6,loja.getCnpj());
+            comando.setString(7,loja.getDescricao());
+            comando.setString(8,loja.getPagamento());
+            comando.setString(9,loja.getFoto());
+            comando.setString(10,loja.getCep());
+            comando.setString(11,loja.getLogradouro());
+            comando.setString(12,loja.getBairro());
+            comando.setString(13,loja.getNumero());
+            comando.setString(14,loja.getComplemento());
+            comando.setString(15,loja.getCidade());
+            comando.setString(16,loja.getEstado());
+            
 
             comando.execute();
             BD.fecharConexao(conexao, comando);
@@ -51,27 +51,28 @@ public class LojaDAO {
         PreparedStatement comando = null;
         try {
             conexao = BD.getConexao();
-            String sql = "update loja set nome = ?, telefone = ?, email = ?, senha = ?, foto = ?, cep = ?," +
-                    " logradouro = ?, bairro = ?, complemento = ?, cidade = ?, estado = ?, numero = ?,"+
-                    " cnpj = ?, descricao = ?, nomeGerente = ?, where idLoja = ?";
+            String sql = "update loja set nome = ?, nomeGerente = ?, email = ?, senha = ?, telefone = ?, cnpj = ?," +
+                    " descricao = ?, pagamento = ?, foto = ?, cep = ?, logradouro = ?, bairro = ?,"+
+                     "numero = ?, complemento = ?, cidade = ?, estado = ? where idLoja = ?";
 
             comando = conexao.prepareStatement(sql);
             comando.setString(1,loja.getNome());
-            comando.setString(2,loja.getTelefone());
+            comando.setString(2,loja.getNomeGerente());
             comando.setString(3,loja.getEmail());
             comando.setString(4,loja.getSenha());
-            comando.setString(5,loja.getFoto());
-            comando.setString(6,loja.getCep());
-            comando.setString(7,loja.getLogradouro());
-            comando.setString(8,loja.getBairro());
-            comando.setString(9,loja.getComplemento());
-            comando.setString(10,loja.getCidade());
-            comando.setString(11,loja.getEstado());
-            comando.setString(12,loja.getNumero());
-            comando.setString(13,loja.getCnpj());
-            comando.setString(14,loja.getDescricao());
-            comando.setString(15, loja.getNomeGerente());
-            comando.setLong(16, loja.getIdLoja());
+            comando.setString(5,loja.getTelefone());
+            comando.setString(6,loja.getCnpj());
+            comando.setString(7,loja.getDescricao());
+            comando.setString(8,loja.getPagamento());
+            comando.setString(9,loja.getFoto());
+            comando.setString(10,loja.getCep());
+            comando.setString(11,loja.getLogradouro());
+            comando.setString(12,loja.getBairro());
+            comando.setString(13,loja.getNumero());
+            comando.setString(14,loja.getComplemento());
+            comando.setString(15,loja.getCidade());
+            comando.setString(16,loja.getEstado());
+            comando.setLong(17, loja.getIdLoja());
 
             comando.execute();
             BD.fecharConexao(conexao, comando);
@@ -115,21 +116,21 @@ public class LojaDAO {
             rs.first();
             loja = new Loja(rs.getLong("idLoja"),
                     rs.getString("nome"),
-                    rs.getString("telefone"),
+                    rs.getString("nomeGerente"),
                     rs.getString("email"),
                     rs.getString("senha"),
+                    rs.getString("telefone"),
+                    rs.getString("cnpj"),
+                    rs.getString("descricao"),
+                    rs.getString("pagamento"),
                     rs.getString("foto"),
                     rs.getString("cep"),
                     rs.getString("logradouro"),
                     rs.getString("bairro"),
+                    rs.getString("numero"),
                     rs.getString("complemento"),
                     rs.getString("cidade"),
-                    rs.getString("estado"),
-                    rs.getString("numero"),
-                    rs.getString("cnpj"),
-                    rs.getString("descricao"),
-                    rs.getString("nomeGerente")
-            );
+                    rs.getString("estado"));
 
         } catch (SQLException e) {
             e.printStackTrace();
@@ -152,22 +153,22 @@ public class LojaDAO {
             rs.first();
             do {
             loja = new Loja(rs.getLong("idLoja"),
-                        rs.getString("nome"),
-                        rs.getString("telefone"),
-                        rs.getString("email"),
-                        rs.getString("senha"),
-                        rs.getString("foto"),
-                        rs.getString("cep"),
-                        rs.getString("logradouro"),
-                        rs.getString("bairro"),
-                        rs.getString("complemento"),
-                        rs.getString("cidade"),
-                        rs.getString("estado"),
-                        rs.getString("numero"),
-                        rs.getString("cnpj"),
-                        rs.getString("descricao"),
-                        rs.getString("nomeGerente"));
-
+                    rs.getString("nome"),
+                    rs.getString("nomeGerente"),
+                    rs.getString("email"),
+                    rs.getString("senha"),
+                    rs.getString("telefone"),
+                    rs.getString("cnpj"),
+                    rs.getString("descricao"),
+                    rs.getString("pagamento"),
+                    rs.getString("foto"),
+                    rs.getString("cep"),
+                    rs.getString("logradouro"),
+                    rs.getString("bairro"),
+                    rs.getString("numero"),
+                    rs.getString("complemento"),
+                    rs.getString("cidade"),
+                    rs.getString("estado"));
                 lojas.add(loja);
             }while (rs.next());
         } catch (SQLException e) {
@@ -191,21 +192,21 @@ public class LojaDAO {
             rs.first();
             loja = new Loja(rs.getLong("idLoja"),
                     rs.getString("nome"),
-                    rs.getString("telefone"),
+                    rs.getString("nomeGerente"),
                     rs.getString("email"),
                     rs.getString("senha"),
+                    rs.getString("telefone"),
+                    rs.getString("cnpj"),
+                    rs.getString("descricao"),
+                    rs.getString("pagamento"),
                     rs.getString("foto"),
                     rs.getString("cep"),
                     rs.getString("logradouro"),
                     rs.getString("bairro"),
+                    rs.getString("numero"),
                     rs.getString("complemento"),
                     rs.getString("cidade"),
-                    rs.getString("estado"),
-                    rs.getString("numero"),
-                    rs.getString("cnpj"),
-                    rs.getString("descricao"),
-                    rs.getString("nomeGerente")
-            );
+                    rs.getString("estado"));
         } catch (SQLException e) {
             e.printStackTrace();
         } finally {

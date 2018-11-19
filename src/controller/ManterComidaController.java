@@ -38,17 +38,22 @@ public class ManterComidaController extends HttpServlet {
 
 public void prepararOperacao(HttpServletRequest request, HttpServletResponse response) {
         try{
-    
+        String tipo = (String) request.getSession().getAttribute("tipo");
         String operacao = request.getParameter("operacao");
         request.setAttribute("operacao", operacao);
+        if(tipo == "2"){
         if (!operacao.equals("Incluir")) {
             Long idComida = Long.parseLong(request.getParameter("idComida"));
             Comida comida = Comida.obterComida(idComida);
             request.setAttribute("comida", comida);
-
         }
-        RequestDispatcher view = request.getRequestDispatcher("/ManterComida.jsp");
+        RequestDispatcher view = request.getRequestDispatcher("ManterComidaController?acao=confirmarOperacao");
         view.forward(request, response);
+        }else{
+        RequestDispatcher view = request.getRequestDispatcher("AcessoNegadoController");//PRECISA SER FEITA
+        view.forward(request, response);
+        }
+        
     }   catch (SQLException ex) {
             Logger.getLogger(ManterComidaController.class.getName()).log(Level.SEVERE, null, ex);
         } catch (ClassNotFoundException ex) {

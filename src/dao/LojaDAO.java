@@ -14,11 +14,12 @@ public class LojaDAO {
         PreparedStatement comando = null;
         try{
             conexao = BD.getConexao();
-            String sql = "Insert into loja ( nome, nomeGerente, email, senha, telefone, cnpj, descricao, pagamento, foto, cep, logradouro, bairro, numero, complemento, cidade, estado)"
+            String sql = "Insert into loja ( nome, nomeGerente, email, senha,"
+                    + " telefone, cnpj, descricao, pagamento, foto, cep, "
+                    + "logradouro, bairro, numero, complemento, cidade, estado)"
                     + "values(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
             comando = conexao.prepareStatement(sql);
-           
-          
+                    
             comando.setString(1,loja.getNome());
             comando.setString(2,loja.getNomeGerente());
             comando.setString(3,loja.getEmail());

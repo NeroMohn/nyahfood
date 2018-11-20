@@ -18,7 +18,7 @@ public class Loja extends Usuario {
  
 
     public Loja(Long idLoja, String nome, String nomeGerente, String email, String senha, String telefone, String cnpj,String descricao,String pagamento,String foto,String cep, String logradouro, String bairro,String numero, String complemento, String cidade, String estado) {
-        super(nome, email, senha, telefone, foto, cep, logradouro, bairro, numero, complemento, cidade, estado);
+        super(nome, email, senha, foto, telefone, logradouro, cep, numero, bairro, complemento, cidade, estado);
         this.idLoja = idLoja;
         this.nomeGerente = nomeGerente;
         this.cnpj = cnpj;
@@ -28,7 +28,7 @@ public class Loja extends Usuario {
     }
 
     public Loja(String nome, String nomeGerente, String email, String senha, String telefone, String cnpj,String descricao,String pagamento,String foto,String cep, String logradouro, String bairro,String numero, String complemento, String cidade, String estado) {
-        super(nome, email, senha, telefone, foto, cep, logradouro, bairro, numero, complemento, cidade, estado);
+        super(nome, email, senha, foto, telefone, logradouro, cep, numero, bairro, complemento, cidade, estado);
         this.nomeGerente = nomeGerente;
         this.cnpj = cnpj;
         this.descricao = descricao;

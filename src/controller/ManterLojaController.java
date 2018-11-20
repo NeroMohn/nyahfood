@@ -6,6 +6,7 @@
 package controller;
 
 import java.io.IOException;
+import static java.lang.Long.parseLong;
 import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -82,20 +83,17 @@ public void confirmarOperacao(HttpServletRequest request, HttpServletResponse re
     String complemento = request.getParameter("txtComplementoLoja");
     String cidade = request.getParameter("txtCidadeLoja");
     String estado = request.getParameter("txtEstadoLoja");
-
- 
-    
-    
-    
      try {
           if (operacao.equals("Incluir")){
             Loja loja = new Loja ( nome, nomeGerente, email, senha, telefone,cnpj, descricao, pagamento, foto, cep, logradouro, bairro, numero, complemento, cidade, estado);
             loja.gravar();
         }else{ 
             if(operacao.equals("Editar")){
-                Long idLoja = Long.parseLong(request.getParameter("txtIdLoja"));
+                if(request.getSession().getAttribute("id")!=null){
+                String idLoja1 = (String)request.getSession().getAttribute("id");
+                Long idLoja = parseLong(idLoja1);
                 Loja loja = new Loja (idLoja, nome, nomeGerente, email, senha, telefone, cnpj, descricao, pagamento, foto, cep, logradouro, bairro, numero, complemento, cidade, estado);
-                loja.alterar();
+                loja.alterar();}
         } else{ 
                 if (operacao.equals("Excluir")){
                 Long idLoja = Long.parseLong(request.getParameter("txtIdLoja"));

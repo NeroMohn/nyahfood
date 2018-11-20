@@ -23,10 +23,6 @@
                 <td><input type="hidden" name="txtIdTipoCulinaria" value="${tipoCulinaria.idTipoCulinaria}" <c:if test="${operacao != 'Incluir'}"> readonly</c:if>></input></td>
             </tr>
             <tr>
-                <td>Culinaria:</td>
-                <td><input type="text" name="txtCulinaria" value="${tipoCulinaria.culinaria}" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>></input></td>
-            </tr>
-            <tr>
                 <td>Loja:</td>
                 <td><input type="text" name="txtCodLoja" value="${tipoCulinaria.codLoja}" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>></input></td>
             </tr>

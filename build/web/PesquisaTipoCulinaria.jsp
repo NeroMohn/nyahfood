@@ -22,7 +22,6 @@
                 <c:forEach items="${tiposculinarias}" var="tipoculinaria">
                     <tr>
                         <td><c:out value="${tipoculinaria.idTipoCulinaria}"/></td>
-                        <td><c:out value="${tipoculinaria.culinaria}"/></td>
                         <td><c:out value="${tipoculinaria.codLoja}"/></td>
                         <td><a href="ManterTipoCulinariaController?acao=prepararOperacao&operacao=Editar&idTipoCulinaria=<c:out value="${tipoculinaria.idTipoCulinaria}"/>">Editar</a></td>
                         <td>

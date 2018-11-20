@@ -67,25 +67,24 @@ public void prepararOperacao(HttpServletRequest request, HttpServletResponse res
 
 public void confirmarOperacao(HttpServletRequest request, HttpServletResponse response) throws ServletException{
     String operacao = request.getParameter("operacao");
-    String culinaria = request.getParameter("txtCulinaria");
     Long codLoja = Long.parseLong(request.getParameter("txtCodLoja"));
     Long codTipoCozinha = Long.parseLong(request.getParameter("txtCodTipoCozinha"));
     
     try{
     
       if (operacao.equals("Incluir")){
-            TipoCulinaria tipoCulinaria = new TipoCulinaria(  culinaria,  codLoja,  codTipoCozinha);
+            TipoCulinaria tipoCulinaria = new TipoCulinaria(codLoja,  codTipoCozinha);
             tipoCulinaria.gravar();
         }else{ 
             if(operacao.equals("Editar")){
                 Long idTipoCulinaria = Long.parseLong(request.getParameter("txtIdTipoCulinaria"));
-                 TipoCulinaria tipoCulinaria = new TipoCulinaria(  idTipoCulinaria, culinaria,  codLoja,  codTipoCozinha);
+                 TipoCulinaria tipoCulinaria = new TipoCulinaria(  idTipoCulinaria, codLoja,  codTipoCozinha);
                    
                 tipoCulinaria.alterar();
         } else{ 
                 if (operacao.equals("Excluir")){
                 Long idTipoCulinaria = Long.parseLong(request.getParameter("txtIdTipoCulinaria"));
-                 TipoCulinaria tipoCulinaria = new TipoCulinaria( idTipoCulinaria, culinaria,  codLoja,  codTipoCozinha);
+                 TipoCulinaria tipoCulinaria = new TipoCulinaria( idTipoCulinaria, codLoja,  codTipoCozinha);
                 tipoCulinaria.excluir();
                 }
             }

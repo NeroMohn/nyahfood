@@ -1,0 +1,150 @@
+
+
+<!DOCTYPE html>
+<html>
+<head>
+<title>NyahFood</title>
+<link href="css/bootstrap.css" rel='stylesheet' type='text/css' />
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script src="js/jquery.min.js"></script>
+<!-- Custom Theme files -->
+<link href="css/style.css" rel="stylesheet" type="text/css" media="all" />
+<!-- Custom Theme files -->
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+<!--webfont-->
+<link href='//fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600,700,900,200italic,300italic,400italic,600italic,700italic,900italic' rel='stylesheet' type='text/css'>
+<link href='//fonts.googleapis.com/css?family=Lobster+Two:400,400italic,700,700italic' rel='stylesheet' type='text/css'>
+<!--Animation-->
+<script src="js/wow.min.js"></script>
+<link href="css/animate.css" rel='stylesheet' type='text/css' />
+<script>
+	new WOW().init();
+</script>
+<script type="text/javascript" src="js/move-top.js"></script>
+<script type="text/javascript" src="js/easing.js"></script>
+<script type="text/javascript">
+			jQuery(document).ready(function($) {
+				$(".scroll").click(function(event){		
+					event.preventDefault();
+					$('html,body').animate({scrollTop:$(this.hash).offset().top},1200);
+				});
+			});
+		</script>
+<script src="js/simpleCart.min.js"> </script>	
+</head>
+<body>
+    <!-- header-section-starts -->
+	<div class="header">
+		<div class="container">
+			<div class="top-header">
+				<div class="logo">
+					<a href="Home.jsp"><h1>NyahFood</h1></a>
+				</div>
+				<div class="queries">
+					
+				</div>
+				<div class="clearfix"></div>
+			</div>
+		</div>
+			<div class="menu-bar">
+			<div class="container">
+				<div class="top-menu">
+					<ul>
+						<li class="active"><a href="Home.jsp" class="scroll">Inicio</a></li>|
+						<li><a href="Restaurantes.jsp">Restaurantes</a></li>
+						<li><a href="contact.html">Contato</a></li>
+						<div class="clearfix"></div>
+					</ul>
+				</div>
+				<div class="login-section">
+					<ul>                                                                                                                             
+                                          <li><a  href="LoginLojaController?acao=preparar">Login Loja</a></li>
+                                            <li><a href="LoginClienteController?acao=preparar">Login Cliente</a></li>
+                                          
+                                               |
+                                            <li><a href="ManterLojaController?acao=prepararOperacao&operacao=Incluir">Registrar Loja</a> </li>
+                                            <li><a href="ManterClienteController?acao=prepararOperacao&operacao=Incluir">Registrar Usuário</a> </li>
+                                            <div class="clearfix"></div>
+					</ul>
+				</div>
+				<div class="clearfix"></div>
+			</div>
+		</div>
+	<!-- header-section-ends -->
+	<div class="contact-section-page">
+		<div class="contact-head">
+		    <div class="container">
+				<h3>Contato</h3>
+				<p>Inicio/Contato</p>
+			</div>
+		</div>
+		<div class="contact_top">
+			 		<div class="container">
+			 			<div class="col-md-6 contact_left wow fadeInRight" data-wow-delay="0.4s">
+			 				<h4>Formulario para Contato</h4>
+			 				<p>Digite aqui oque deseja e responderemos o mais rapido possivel.</p>
+							  <form>
+								 <div class="form_details">
+					                 <input type="text" class="text" value="Name" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Name';}">
+									 <input type="text" class="text" value="Email Address" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Email Address';}">
+									 <input type="text" class="text" value="Subject" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Motivo Contato';}">
+									 <textarea value="Message" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Message';}">Message</textarea>
+									 <div class="clearfix"> </div>
+									 <div class="sub-button wow swing animated" data-wow-delay= "0.4s">
+									 	<input name="submit" type="submit" value="Enviar Mensagem">
+									 </div>
+						          </div>
+						       </form>
+					        </div>
+					        <div class="col-md-6 company-right wow fadeInLeft" data-wow-delay="0.4s">
+					        	<div class="contact-map">
+			<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1578265.0941403757!2d-98.9828708842255!3d39.41170802696131!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x54eab584e432360b%3A0x1c3bb99243deb742!2sUnited+States!5e0!3m2!1sen!2sin!4v1407515822047"> </iframe>
+		</div>
+      
+	  <div class="company-right">
+					        	<div class="company_ad">
+							     		<h3>Contatos</h3>
+							     		<span>Contatos Alternativos.</span>
+			      						<address>
+											 <p>email:<a href="mailto:info@example.com">info@display.com</a></p>
+											 <p>phone:  +255 55 55 777</p>
+									   		<p>997, Rua Bernardo Mascarenhas</p>
+									   		<p>Bairro Fabrica, Juiz de Fora</p>
+									 	 	
+							   			</address>
+							   		</div>
+									</div>	
+
+			
+							
+							 </div>
+						</div>
+					</div>
+
+	</div>
+	<!-- footer-section-starts -->
+	<div class="footer">
+		<div class="container">
+			<p class="wow fadeInLeft" data-wow-delay="0.4s">&copy; 2018 NyahFood</p>		</div>
+	</div>
+	<!-- footer-section-ends -->
+	  <script type="text/javascript">
+						$(document).ready(function() {
+							/*
+							var defaults = {
+					  			containerID: 'toTop', // fading element id
+								containerHoverID: 'toTopHover', // fading element hover id
+								scrollSpeed: 1200,
+								easingType: 'linear' 
+					 		};
+							*/
+							
+							$().UItoTop({ easingType: 'easeOutQuart' });
+							
+						});
+					</script>
+				<a href="#" id="toTop" style="display: block;"> <span id="toTopHover" style="opacity: 1;"> </span></a>
+
+</body>
+</html>

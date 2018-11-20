@@ -448,3 +448,6 @@ ASALocalRun/
 .idea/workspace.xml
 /nbproject/private/
 /dist/
+/docs/SalvarImagem/build/
+/docs/SalvarImagem/dist/
+/docs/SalvarImagem/nbproject/private/

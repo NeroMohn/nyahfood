@@ -42,16 +42,16 @@ public void prepararOperacao(HttpServletRequest request, HttpServletResponse res
         String operacao = request.getParameter("operacao");
         request.setAttribute("operacao", operacao);
         request.setAttribute("tipo",tipo);
-        if(tipo == "2"){
+        if(tipo != "2"){
+            RequestDispatcher view = request.getRequestDispatcher("AcessoNegadoController");//PRECISA SER FEITA
+            view.forward(request, response);
+        }else{
         if (!operacao.equals("Incluir")) {
             Long idComida = Long.parseLong(request.getParameter("idComida"));
             Comida comida = Comida.obterComida(idComida);
             request.setAttribute("comida", comida);
         }
         RequestDispatcher view = request.getRequestDispatcher("ManterComida.jsp");
-        view.forward(request, response);
-        }else{
-        RequestDispatcher view = request.getRequestDispatcher("AcessoNegadoController");//PRECISA SER FEITA
         view.forward(request, response);
         }
         

@@ -79,7 +79,7 @@ public class LoginClienteController extends HttpServlet {
             } catch (IOException ex) {  
                 Logger.getLogger(LoginClienteController.class.getName()).log(Level.SEVERE, null, ex);
             }
-        }else if(login.equals(cliente.getEmail())){
+        }else if(login.equals(cliente.getEmail())&&!senha.equals(cliente.getSenha())){
             RequestDispatcher view = request.getRequestDispatcher("/SenhaIncorreta.jsp");       
             view.forward(request, response);
         }else{

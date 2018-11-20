@@ -152,14 +152,6 @@
                         <input type="text" name="txtDesconto" value="${comida.desconto}" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>>
                     </td>
                 </tr>
-                  <tr>
-                    <td>
-                        Código Loja:
-                    </td>
-                    <td>
-                        <input type="text" name="txtCodLoja" value="${comida.codLoja}" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>>
-                    </td>
-                </tr>
                  
             </table>
 

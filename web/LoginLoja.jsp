@@ -140,7 +140,7 @@
 			  	<h3>Já está registrado?</h3>
 				<p>Se você já está registrado é só logar.</p>
 				
-                                <form action=action="LoginLojaController?acao=logar" method="POST" name="LoginLoja">
+                                <form action="LoginLojaController?acao=logar" method="POST" name="LoginLoja">
 				  <div>
 					<span>Email Address<label for="log">*</label></span>
 					<input type="email" name="login" id="log" value="">

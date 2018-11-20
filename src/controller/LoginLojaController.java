@@ -84,7 +84,7 @@ public class LoginLojaController extends HttpServlet {
             } catch (IOException ex) {  
                 Logger.getLogger(LoginClienteController.class.getName()).log(Level.SEVERE, null, ex);
             }
-        }else if(login.equals(loja.getEmail())&&!senha.equals(cliente.getSenha())){
+        }else if(login.equals(loja.getEmail())&&!senha.equals(loja.getSenha())){
             try{
             RequestDispatcher view = request.getRequestDispatcher("/SenhaIncorreta.jsp");       
             view.forward(request, response);

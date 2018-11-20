@@ -1,6 +1,7 @@
 package controller;
 
 import java.io.IOException;
+import static java.lang.Long.parseLong;
 import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -75,7 +76,8 @@ public void prepararOperacao(HttpServletRequest request, HttpServletResponse res
             cliente.gravar();
         }else{ 
             if(operacao.equals("Editar")){
-                Long idCliente = Long.parseLong((String) request.getSession().getAttribute("id"));
+                String idCliente1 =request.getSession().getAttribute("id").toString();
+                Long idCliente = parseLong(idCliente1);
                 Cliente cliente = new Cliente(idCliente, nome, cpf, email, senha, foto, telefone, logradouro, cep, numero, bairro,
                 complemento, cidade, estado);
                 cliente.alterar();

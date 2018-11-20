@@ -67,29 +67,33 @@ public class LoginLojaController extends HttpServlet {
         String senha = request.getParameter("senha");
         String tipo = "2";
         Loja loja = Loja.obterLoja(login);
-        if(senha.equals(loja.getSenha())&& login.equals(loja.getEmail())){
+        if(loja == null){
+            try{
+                RequestDispatcher view = request.getRequestDispatcher("/LoginIncorreto.jsp");       
+                view.forward(request, response);
+            } catch (IOException ex) {  
+                Logger.getLogger(LoginClienteController.class.getName()).log(Level.SEVERE, null, ex);
+            }}else if(senha.equals(loja.getSenha())&& login.equals(loja.getEmail())){
             try {
                 request.getSession().setAttribute("login", login);
                 request.getSession().setAttribute("senha", senha);
                 request.getSession().setAttribute("tipo", tipo);
                 request.getSession().setAttribute("id", loja.getIdLoja());
-                RequestDispatcher view = request.getRequestDispatcher("/SessionLoja.jsp");       
+                RequestDispatcher view = request.getRequestDispatcher("/SessionCliente.jsp");       
                 view.forward(request, response);
-            } catch (IOException ex) {
-                Logger.getLogger(LoginLojaController.class.getName()).log(Level.SEVERE, null, ex);
+            } catch (IOException ex) {  
+                Logger.getLogger(LoginClienteController.class.getName()).log(Level.SEVERE, null, ex);
             }
-        }else if(login.equals(loja.getEmail())){
+        }else if(login.equals(loja.getEmail())&&!senha.equals(cliente.getSenha())){
+            try{
             RequestDispatcher view = request.getRequestDispatcher("/SenhaIncorreta.jsp");       
             view.forward(request, response);
-        }else{
-            try {
-                RequestDispatcher view = request.getRequestDispatcher("/LoginIncorreto.jsp");       
-                view.forward(request, response);
-            } catch (IOException ex) {
-                Logger.getLogger(LoginLojaController.class.getName()).log(Level.SEVERE, null, ex);
+            } catch (IOException ex) {  
+                Logger.getLogger(LoginClienteController.class.getName()).log(Level.SEVERE, null, ex);
             }
-        }    
+        }
     }
+                
 
     private void prepararOperacao(HttpServletRequest request, HttpServletResponse response) {
         RequestDispatcher view = request.getRequestDispatcher("/LoginLoja.jsp");    

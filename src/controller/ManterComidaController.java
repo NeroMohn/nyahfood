@@ -74,7 +74,7 @@ public void confirmarOperacao(HttpServletRequest request, HttpServletResponse re
     String foto = request.getParameter("txtFoto");
     Double preco = Double.parseDouble(request.getParameter("txtPreco"));
     Double desconto = Double.parseDouble(request.getParameter("txtDesconto"));
-    Long codLoja = Long.parseLong(request.getParameter("txtCodLoja"));
+    Long codLoja = Long.parseLong(request.getSession().getAttribute("id").toString());
     
     try{
     

@@ -111,7 +111,7 @@
 		<div class="container">
 			<div class="top-header">
 				<div class="logo">
-					<a href="index.html"><h1>NyahFood</h1></a>
+					<a href="Home.jsp"><h1>NyahFood</h1></a>
 				</div>
 				<div class="queries">
 					<p>Duvidas? Ligue para nós, é grátis!<span>0800-0000-7777 </span><label>(11AM à 11PM)</label></p>
@@ -124,17 +124,20 @@
 			<div class="container">
 				<div class="top-menu">
 					<ul>
-						<li class="active"><a href="#Home" class="scroll">Inicio</a></li>|
-						<li><a href="restaurants.html">Restaurantes</a></li>
+						<li class="active"><a href="Home.jsp" >Inicio</a></li>|
+						<li><a href="Restaurantes.jsp">Restaurantes</a></li>
 						<li><a href="contact.html">Contato</a></li>
 						<div class="clearfix"></div>
 					</ul>
-				</div>
-				<div class="login-section">
-					<ul>
-						<li><a href="login.html">Login</a>  </li> |
-						<li><a href="register.html">Register</a> </li>
-						<div class="clearfix"></div>
+				 
+                            <div class="login-section">
+					<ul>                                                                                                                             
+                                          <li><a  href="LoginLojaController?acao=preparar">Login Loja</a></li>
+                                            <li><a href="LoginClienteController?acao=preparar">Login Cliente</a></li>                       
+                                               |
+                                            <li><a href="ManterLojaController?acao=prepararOperacao&operacao=Incluir">Registrar Loja</a> </li>
+                                            <li><a href="ManterClienteController?acao=prepararOperacao&operacao=Incluir">Registrar Usuário</a> </li>
+                                            <div class="clearfix"></div>
 					</ul>
 				</div>
 				<div class="clearfix"></div>

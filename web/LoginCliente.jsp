@@ -49,7 +49,7 @@
 		<div class="container">
 			<div class="top-header">
 				<div class="logo">
-					<a href="index.html"><h1>NyahFood</h1></a>
+					<a href="Home.jsp"><h1>NyahFood</h1></a>
 				</div>
 				<div class="queries">
 					<p>Duvidas? Ligue para nós, é grátis!<span>0800-0000-7777 </span><label>(11AM à 11PM)</label></p>
@@ -62,17 +62,26 @@
 			<div class="container">
 				<div class="top-menu">
 					<ul>
-						<li class="active"><a href="index.jsp" class="scroll">Inicio</a></li>|
-						<li><a href="restaurants.html">Restaurantes</a></li>
+						<li class="active"><a href="Home.jsp" class="scroll">Inicio</a></li>|
+						<li><a href="Restaurantes.jsp">Restaurantes</a></li>
 						<li><a href="contact.html">Contato</a></li>
 						<div class="clearfix"></div>
 					</ul>
 				</div>
-				<div class="login-section">
-					<ul>
-						<li><a href="login.html">Login</a>  </li> |
-						<li><a href="register.html">Register</a> </li>
-						<div class="clearfix"></div>
+				
+                            
+
+                            
+                            
+                            
+                            <div class="login-section">
+					<ul>                                                                                                                             
+                                          <li><a  href="LoginLojaController?acao=preparar">Login Loja</a></li>
+                                            <li><a href="LoginClienteController?acao=preparar">Login Cliente</a></li>                       
+                                               |
+                                            <li><a href="ManterLojaController?acao=prepararOperacao&operacao=Incluir">Registrar Loja</a> </li>
+                                            <li><a href="ManterClienteController?acao=prepararOperacao&operacao=Incluir">Registrar Usuário</a> </li>
+                                            <div class="clearfix"></div>
 					</ul>
 				</div>
 				<div class="clearfix"></div>
@@ -111,7 +120,7 @@
 			    <div class="dreamcrub">
 			   	 <ul class="breadcrumbs">
                     <li class="home">
-                       <a href="index.jsp" title="Go to Home Page">Inicio</a>&nbsp;
+                       <a href="Home.jsp" title="Go to Home Page">Inicio</a>&nbsp;
                        <span>&gt;</span>
                     </li>
                     <li class="women">
@@ -119,7 +128,7 @@
                     </li>
                 </ul>
                 <ul class="previous">
-                	<li><a href="index.jsp">Voltar para inicio</a></li>
+                	<li><a href="Home.jsp">Voltar para inicio</a></li>
                 </ul>
                 <div class="clearfix"></div>
 			   </div>
@@ -127,7 +136,8 @@
 			   <div class="col-md-6 login-left wow fadeInLeft" data-wow-delay="0.4s">
 			  	 <h3>CRIE SUA CONTA</h3>
 				 <p>É rapido e grátis. Crie sua conta e peça sua comida onde estiver e quando quiser.</p>
-				 <a class="acount-btn" href="">Criar Conta</a>
+				 <a class="acount-btn" href="ManterClienteController?acao=prepararOperacao&operacao=Incluir">Criar Conta Usuário</a>
+                                  <a class="acount-btn" href="ManterLojaController?acao=prepararOperacao&operacao=Incluir">Criar Conta Loja</a>
 			   </div>
 			   <div class="col-md-6 login-right wow fadeInRight" data-wow-delay="0.4s">
 			  	<h3>Já está registrado?</h3>

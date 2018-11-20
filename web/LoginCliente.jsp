@@ -62,7 +62,7 @@
 			<div class="container">
 				<div class="top-menu">
 					<ul>
-						<li class="active"><a href="#Home" class="scroll">Inicio</a></li>|
+						<li class="active"><a href="index.jsp" class="scroll">Inicio</a></li>|
 						<li><a href="restaurants.html">Restaurantes</a></li>
 						<li><a href="contact.html">Contato</a></li>
 						<div class="clearfix"></div>
@@ -111,7 +111,7 @@
 			    <div class="dreamcrub">
 			   	 <ul class="breadcrumbs">
                     <li class="home">
-                       <a href="index.html" title="Go to Home Page">Inicio</a>&nbsp;
+                       <a href="index.jsp" title="Go to Home Page">Inicio</a>&nbsp;
                        <span>&gt;</span>
                     </li>
                     <li class="women">
@@ -119,7 +119,7 @@
                     </li>
                 </ul>
                 <ul class="previous">
-                	<li><a href="index.html">Voltar para inicio</a></li>
+                	<li><a href="index.jsp">Voltar para inicio</a></li>
                 </ul>
                 <div class="clearfix"></div>
 			   </div>

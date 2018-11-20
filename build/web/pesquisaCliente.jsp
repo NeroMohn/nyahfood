@@ -42,7 +42,7 @@
 		<div class="container">
 			<div class="top-header">
 				<div class="logo">
-					<a href="index.html"><h1>NyahFood</h1></a>
+					<a href="index.jsp"><h1>NyahFood</h1></a>
 				</div>
 				<div class="queries">
 					<p>Duvidas? Ligue para nós, é grátis!<span>0800-0000-7777 </span><label>(11AM à 11PM)</label></p>
@@ -55,7 +55,7 @@
 			<div class="container">
 				<div class="top-menu">
 					<ul>
-						<li class="active"><a href="#Home" class="scroll">Inicio</a></li>|
+						<li class="active"><a href="index.jsp" class="scroll">Inicio</a></li>|
 						<li><a href="restaurants.html">Restaurantes</a></li>
 						<li><a href="contact.html">Contato</a></li>
 						<div class="clearfix"></div>

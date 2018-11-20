@@ -76,8 +76,7 @@ public void prepararOperacao(HttpServletRequest request, HttpServletResponse res
             cliente.gravar();
         }else{ 
             if(operacao.equals("Editar")){
-                String idCliente1 =request.getSession().getAttribute("id").toString();
-                Long idCliente = parseLong(idCliente1);
+                Long idCliente =parseLong(request.getSession().getAttribute("id").toString());
                 Cliente cliente = new Cliente(idCliente, nome, cpf, email, senha, foto, telefone, logradouro, cep, numero, bairro,
                 complemento, cidade, estado);
                 cliente.alterar();

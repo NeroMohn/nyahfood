@@ -28,6 +28,21 @@
 <!--Animation-->
 <script src="js/wow.min.js"></script>
 <link href="css/animate.css" rel='stylesheet' type='text/css' />
+
+<script>
+    
+    function confereEmail(){
+    var confirmacao = documento.getElementById("log").value();
+    String regex = "[a-z._-]+@[a-z.]+"
+    Pattern pattern = Pattern.compile(regex); 
+    Matcher matcher = pattern.matcher(confirmacao); 
+    if (matcher.find() && matcher.group().equals(confirmacao)){ 		    
+    }else{
+    alert("Insira um email válido");		    
+    }
+        
+    }
+    
 <script>
 	new WOW().init();
 </script>
@@ -145,11 +160,11 @@
 				
                                 <form action="LoginClienteController?acao=logar" method="POST" name="LoginCliente">
 				  <div>
-					<span>Email Address<label for="log">*</label></span>
-					<input type="email" name="login" id="log" value="">
+					<span>Email<label for="log">*</label></span>
+					<input type="email" onBlur="confereEmail()" name="login" id="log" value="">
 				  </div>
 				  <div>
-                                      <span>Password <label for="pass">*</label></span>
+                                      <span>Senha <label for="pass">*</label></span>
 					 <input type="password" name="senha" id="pass" value="">
 				  </div>
 					<div>						

@@ -68,7 +68,7 @@ public class LoginClienteController extends HttpServlet {
         String senha = request.getParameter("senha");
         String tipo = "1";
         Cliente cliente = Cliente.obterCliente(login);
-        if(senha.equals(cliente.getSenha())&& login.equals(cliente.getEmail())){
+        if( cliente !=null && senha.equals(cliente.getSenha())&& login.equals(cliente.getEmail())){
             try {
                 request.getSession().setAttribute("login", login);
                 request.getSession().setAttribute("senha", senha);
@@ -79,18 +79,14 @@ public class LoginClienteController extends HttpServlet {
             } catch (IOException ex) {  
                 Logger.getLogger(LoginClienteController.class.getName()).log(Level.SEVERE, null, ex);
             }
-        }else if(login.equals(cliente.getEmail())&&!senha.equals(cliente.getSenha())){
+        }else if(cliente !=null && login.equals(cliente.getEmail())&&!senha.equals(cliente.getSenha())){
             RequestDispatcher view = request.getRequestDispatcher("/SenhaIncorreta.jsp");       
             view.forward(request, response);
-        }else{
-            try {
+        }else if(login == null){
                 RequestDispatcher view = request.getRequestDispatcher("/LoginIncorreto.jsp");       
                 view.forward(request, response);
-            } catch (IOException ex) {
-                Logger.getLogger(LoginClienteController.class.getName()).log(Level.SEVERE, null, ex);
-            }
-        }    
-    }
+        }
+        }
 
     private void prepararOperacao(HttpServletRequest request, HttpServletResponse response) {
         RequestDispatcher view = request.getRequestDispatcher("/LoginCliente.jsp");    

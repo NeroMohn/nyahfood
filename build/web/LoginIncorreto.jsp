@@ -14,6 +14,6 @@
     <body>
         <h1>Login Inválido ;-;</h1>
         <h2>Tente novamente</h2>
-        <a href="/index">VOLTAR</a>
+        <a href="/index.jsp">VOLTAR</a>
     </body>
 </html>

@@ -83,16 +83,11 @@
 						<div class="clearfix"></div>
 					</ul>
 				</div>
-				
-                            
-
-                            
-                            
-                            
-                            <div class="login-section">
+				<div class="login-section">
 					<ul>                                                                                                                             
                                           <li><a  href="LoginLojaController?acao=preparar">Login Loja</a></li>
-                                            <li><a href="LoginClienteController?acao=preparar">Login Cliente</a></li>                       
+                                            <li><a href="LoginClienteController?acao=preparar">Login Cliente</a></li>
+                                            <li><a href="index.jsp">Login ADM</a></li>
                                                |
                                             <li><a href="ManterLojaController?acao=prepararOperacao&operacao=Incluir">Registrar Loja</a> </li>
                                             <li><a href="ManterClienteController?acao=prepararOperacao&operacao=Incluir">Registrar Usuário</a> </li>

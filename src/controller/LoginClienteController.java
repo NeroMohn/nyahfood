@@ -77,7 +77,6 @@ public class LoginClienteController extends HttpServlet {
             }}else if(senha.equals(cliente.getSenha())&& login.equals(cliente.getEmail())){
             try {
                 request.getSession().setAttribute("login", login);
-                request.getSession().setAttribute("senha", senha);
                 request.getSession().setAttribute("tipo", tipo);
                 request.getSession().setAttribute("id", cliente.getIdCliente());
                 RequestDispatcher view = request.getRequestDispatcher("/SessionCliente.jsp");       

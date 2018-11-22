@@ -1,4 +1,5 @@
 
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -38,10 +39,11 @@
 		<div class="container">
 			<div class="top-header">
 				<div class="logo">
-					<a href="Home.jsp"><h1>NyahFood</h1></a>
+					<a href="index.jsp"><h1>NyahFood</h1></a>
 				</div>
 				<div class="queries">
-					<p>Duvidas? Ligue para nós, é grátis!<span>0800-0000-7777 </span><label>(11AM à 11PM)</label></p>
+					<p>Duvidas? Ligue para nós, é grátis!<span>0800-0000-7777 </span><label>(11AM à 11PM) </label> </p>  
+                                       
 				</div>
 
 				<div class="clearfix"></div>
@@ -54,17 +56,45 @@
 						<li class="active"><a href="index.jsp" class="scroll">Inicio</a></li>|
 						<li><a href="Restaurantes.jsp">Restaurantes</a></li>
 						<li><a href="contact.html">Contato</a></li>
+                                                <% if (session.getAttribute("tipo") == "1") { %>
+                                                    <li><a href="contact.html">Pedir Comida</a></li>
+                                            <% } %>
+                                                
+                                                
+                                                
 						<div class="clearfix"></div>
 					</ul>
 				</div>
 				<div class="login-section">
-					<ul>                                                                                                                             
-                                          <li><a  href="LoginLojaController?acao=preparar">Login Loja</a></li>
-                                            <li><a href="LoginClienteController?acao=preparar">Login Cliente</a></li>
-                                            <li><a href="LoginAdmin.jsp">Login ADM</a></li>
+					<ul>                      
+                                              <% if (session.getAttribute("tipo") == null) { %>
+                                               <li><a  href="LoginLojaController?acao=preparar">Login Loja</a></li>
+                                            <% } else {%>
+                                               
+                                            <% } %>
+                                                
+                                         
+                                              <% if (session.getAttribute("tipo") == null) { %>
+                                               <li><a href="LoginClienteController?acao=preparar">Login Cliente</a></li>
+                                            <% } else {%>
+                                               
+                                            <% } %>
+                                       
+                                   
                                                |
                                             <li><a href="ManterLojaController?acao=prepararOperacao&operacao=Incluir">Registrar Loja</a> </li>
                                             <li><a href="ManterClienteController?acao=prepararOperacao&operacao=Incluir">Registrar Usuário</a> </li>
+                                            
+                                            <% if (session.getAttribute("tipo") == null) { %>
+                                            
+                                            <% } else {%>
+                                                <li id="BemVindo">Bem-Vindo <%=session.getAttribute("login")%></li>
+                                                <li ><a href="LogoutController" id="Logout">Deslogar</a></li>
+                                            <% } %>
+                                        
+                                         
+                                   
+                                            
                                             <div class="clearfix"></div>
 					</ul>
 				</div>

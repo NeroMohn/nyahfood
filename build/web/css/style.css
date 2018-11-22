@@ -5,6 +5,8 @@ License: Creative Commons Attribution 3.0 Unported
 License URL: http://creativecommons.org/licenses/by/3.0/
 --*/
 
+
+
 #adm{
     font-size: 40px;
 }
@@ -3493,7 +3495,7 @@ a.morebtn{
 	.footer p {
 		font-size: 14px;
 	}
-	..footer {
+	.footer {
 		padding: 1.5em 0;
 	}
 	.contact-section-grid {

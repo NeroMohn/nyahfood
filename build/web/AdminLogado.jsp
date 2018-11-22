@@ -1,12 +1,4 @@
 
-
-<%@page contentType="text/html" pageEncoding="UTF-8"%>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
-
-
-
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -39,6 +31,7 @@
 			});
 		</script>
 <script src="js/simpleCart.min.js"> </script>	
+
 <script src="jquery-3.2.1.min.js"></script>
                <script>
                       $(function(){ 
@@ -49,7 +42,10 @@
 </head>
 <body>
     <!-- header-section-starts -->
-	<div id="header"></div>
+
+		<div id="header"></div>
+		
+                
 					<div class="main-search">
 						<form action="search.html">
 							<input type="text" value="Search" onFocus="this.value = '';" onBlur="if (this.value == '') {this.value = 'Search';}" class="text"/>
@@ -76,58 +72,23 @@
 	</div>
 	<!-- header-section-ends -->
 	<!-- content-section-starts -->
-	<div class="content">
-	<div class="container">
-		<div class="login-page">
-			    <div class="dreamcrub">
-			   	 <ul class="breadcrumbs">
-                    <li class="home">
-                       <a href="Home.jsp" title="Go to Home Page">Inicio</a>&nbsp;
-                       <span>&gt;</span>
-                    </li>
-                    <li class="women">
-                       Login
-                    </li>
-                </ul>
-                <ul class="previous">
-                	<li><a href="Home.jsp">Voltar para inicio</a></li>
-                </ul>
-                <div class="clearfix"></div>
-			   </div>
-			   <div class="account_grid">
-			   <div class="col-md-6 login-left wow fadeInLeft" data-wow-delay="0.4s">
-			  	 <h3>CRIE SUA CONTA</h3>
-				 <p>É rapido e grátis. Crie sua conta e peça sua comida onde estiver e quando quiser.</p>
-				 <a class="acount-btn" href="ManterClienteController?acao=prepararOperacao&operacao=Incluir">Criar Conta Usuário</a>
-                                  <a class="acount-btn" href="ManterLojaController?acao=prepararOperacao&operacao=Incluir">Criar Conta Loja</a>
-			   </div>
-			   <div class="col-md-6 login-right wow fadeInRight" data-wow-delay="0.4s">
-			  	<h3>Já está registrado?</h3>
-				<p>Se você já está registrado é só logar.</p>
-				
-                                <form action="LoginLojaController?acao=logar" method="POST" name="LoginLoja">
-				  <div>
-					<span>Email Address<label for="log">*</label></span>
-					<input type="email" name="login" id="log" value="">
-				  </div>
-				  <div>
-                                      <span>Password <label for="pass">*</label></span>
-					 <input type="password" name="senha" id="pass" value="">
-				  </div>
-					<div>						
-					</div>
-				  <a class="forgot" href="#">Esqueceu sua senha?</a>
-				   <input type="submit" name="login" value="Logar">
-
-			    </form>
-                                                                                                                                                                                       
-                                
-			   </div>	
-			   <div class="clearfix"> </div>
-			 </div>
-		   </div>
+        <div  class="container text-center" id="adm"> 
+            
+            <a href="PesquisaClienteController">Pesquisa Cliente</a><br />
+      <a href="PesquisaComidaController">Pesquisa Comida</a><br />
+      <a href="PesquisaComidaPedidaController">Pesquisa Comida Pedida</a><br />
+      <a href="PesquisaCompraController">Pesquisa Compra</a><br />
+      <a href="PesquisaLojaController">Pesquisa Loja</a><br />
+      <a href="PesquisaPedidoController">Pesquisa Pedido</a><br />
+      <a href="PesquisaTipoCozinhaController">Pesquisa Tipo Cozinha</a><br />
+      <a href="PesquisaTipoCulinariaController">Pesquisa Tipo Culinaria</a><br />
+      <a href="LoginClienteController?acao=preparar">Login</a> <br>
+      <a href="LogoutController">Logout</a>
+      <input type ="text" value="<%=session.getAttribute("login")%>"
+        </div>
 </div>
-		<div class="special-offers-section">
+
+                <div class="special-offers-section">
 			<div class="container">
 				<div class="special-offers-section-head text-center dotted-line">
 					<h4>Best Ofertas</h4>
@@ -143,7 +104,7 @@
 									</div>
 									<div class="offer-text">
 										<h4>Frago Frito</h4>
-										<p>O melhor frango já frito que você irá comer. </p>
+										<p>O melhor frango j� frito que voc� ir� comer. </p>
 										<input type="button" value="Pedir">
 										<span></span>
 									</div>
@@ -156,8 +117,8 @@
 										<img src="images/p2.jpg" class="img-responsive" alt=""/>
 									</div>
 									<div class="offer-text">
-										<h4>Sopa pra nóis</h4>
-										<p>A melhor sopa já feita que você irá comer. </p>
+										<h4>Sopa pra n�is</h4>
+										<p>A melhor sopa j� feita que voc� ir� comer. </p>
 										<input type="button" value="Pedir">
 										<span></span>
 									</div>
@@ -171,7 +132,7 @@
 									</div>
 									<div class="offer-text">
 										<h4>Frago Frito</h4>
-										<p>O melhor frango já frito que você irá comer com outro tempero. </p>
+										<p>O melhor frango j� frito que voc� ir� comer com outro tempero. </p>
 										<input type="button" value="Pedir">
 										<span></span>
 									</div>
@@ -186,7 +147,7 @@
 									</div>
 									<div class="offer-text">
 										<h4>Frago Frito de Novo</h4>
-										<p>Só existe frango frito nesse delivery. </p>
+										<p>S� existe frango frito nesse delivery. </p>
 										<input type="button" value="Pedir">
 										<span></span>
 									</div>

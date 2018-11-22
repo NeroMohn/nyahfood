@@ -1,3 +1,13 @@
+<%-- 
+    Document   : LoginCliente
+    Created on : 14/11/2018, 14:22:37
+    Author     : rodri
+--%>
+
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
+
 
 <!DOCTYPE html>
 <html>
@@ -20,6 +30,7 @@
 <script>
 	new WOW().init();
 </script>
+<script src="js/simpleCart.min.js"> </script>	
 <script type="text/javascript" src="js/move-top.js"></script>
 <script type="text/javascript" src="js/easing.js"></script>
 <script type="text/javascript">
@@ -30,7 +41,6 @@
 				});
 			});
 		</script>
-<script src="js/simpleCart.min.js"> </script>	
 </head>
 <body>
     <!-- header-section-starts -->
@@ -41,141 +51,195 @@
 					<a href="Home.jsp"><h1>NyahFood</h1></a>
 				</div>
 				<div class="queries">
-					<p>Duvidas? Ligue para nÛs, È gr·tis!<span>0800-0000-7777 </span><label>(11AM ‡ 11PM)</label></p>
+					<p>Duvidas? Ligue para n√≥s, √© gr√°tis!<span>0800-0000-7777 </span><label>(11AM √† 11PM)</label></p>
 				</div>
 
 				<div class="clearfix"></div>
 			</div>
 		</div>
-		<div class="menu-bar">
+			<div class="menu-bar">
 			<div class="container">
 				<div class="top-menu">
 					<ul>
-						<li class="active"><a href="Home.jsp" >Inicio</a></li>|
+						<li class="active"><a href="Home.jsp" class="scroll">Inicio</a></li>|
 						<li><a href="Restaurantes.jsp">Restaurantes</a></li>
 						<li><a href="contact.html">Contato</a></li>
 						<div class="clearfix"></div>
 					</ul>
-				 
-                            <div class="login-section">
+				</div>
+				<div class="login-section">
 					<ul>                                                                                                                             
                                           <li><a  href="LoginLojaController?acao=preparar">Login Loja</a></li>
-                                            <li><a href="LoginClienteController?acao=preparar">Login Cliente</a></li>                       
+                                            <li><a href="LoginClienteController?acao=preparar">Login Cliente</a></li>
+                                            <li><a href="index.jsp">Login ADM</a></li>
                                                |
                                             <li><a href="ManterLojaController?acao=prepararOperacao&operacao=Incluir">Registrar Loja</a> </li>
-                                            <li><a href="ManterClienteController?acao=prepararOperacao&operacao=Incluir">Registrar Usu·rio</a> </li>
+                                            <li><a href="ManterClienteController?acao=prepararOperacao&operacao=Incluir">Registrar Usu√°rio</a> </li>
                                             <div class="clearfix"></div>
 					</ul>
 				</div>
 				<div class="clearfix"></div>
 			</div>
 		</div>
-		
-					<div class="main-search">
-						<form action="search.html">
-							<input type="text" value="Search" onFocus="this.value = '';" onBlur="if (this.value == '') {this.value = 'Search';}" class="text"/>
-							<input type="submit" value=""/>
-						</form>
-						<div class="close"><img src="images/cross.png" /></div>
+		<div class="banner wow fadeInUp" data-wow-delay="0.4s" id="Home">
+		    <div class="container">
+				<div class="banner-info">
+					<div class="banner-info-head text-center wow fadeInLeft" data-wow-delay="0.5s">
+						<h1>Mais de 5 Restaurantes</h1>
+						<div class="line">
+							<h2> Esperando voc√™!</h2>
+						</div>
 					</div>
-					<div class="srch"><button></button></div>
-					<script type="text/javascript">
-                        $('.main-search').hide();
-                        $('button').click(function (){
-                                $('.main-search').show();
-                                $('.main-search text').focus();
-                            }
-                        );
-                        $('.close').click(function(){
-                            $('.main-search').hide();
-                        });
-					</script>
-
+					<div class="form-list wow fadeInRight" data-wow-delay="0.5s">
+						<form>
+						  <ul class="navmain">
+							<li><span>Location Name</span>
+							 <input type="text" class="text" value="Secunderabad" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Secunderabad';}">
+							</li>
+							<li><span>Restaurant Name</span>
+							 <input type="text" class="text" value="Swagath Grand" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Swagath Grand';}">
+							</li>
+							<li><span>Cuisine Name</span>
+							 <input type="text" class="text" value="Chicken Biriyani" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Chicken Biriyani';}">
+						    </li>
+						  </ul>
+						</form>
+						</div>
+					<!-- start search-->
+		 <div class="main-search">
+	        <form action="search.html">
+	           <input type="text" value="Search" onFocus="this.value = '';" onBlur="if (this.value == '') {this.value = 'Search';}" class="text"/>
+	            <input type="submit" value=""/>
+	        </form>
+	        <div class="close"><img src="images/cross.png" /></div>
+	    </div>
+	    <div class="srch"><button></button></div>
+		<script type="text/javascript">
+	         $('.main-search').hide();
+	        $('button').click(function (){
+	            $('.main-search').show();
+	            $('.main-search text').focus();
+	        }
+	        );
+	        $('.close').click(function(){
+	            $('.main-search').hide();
+	        });
+	    </script>
+					
 				</div>
 			</div>
 		</div>
 	</div>
 	<!-- header-section-ends -->
 	<!-- content-section-starts -->
-        <div  class="container text-center" id="adm"> 
-            
-            <a href="PesquisaClienteController">Pesquisa Cliente</a><br />
-      <a href="PesquisaComidaController">Pesquisa Comida</a><br />
-      <a href="PesquisaComidaPedidaController">Pesquisa Comida Pedida</a><br />
-      <a href="PesquisaCompraController">Pesquisa Compra</a><br />
-      <a href="PesquisaLojaController">Pesquisa Loja</a><br />
-      <a href="PesquisaPedidoController">Pesquisa Pedido</a><br />
-      <a href="PesquisaTipoCozinhaController">Pesquisa Tipo Cozinha</a><br />
-      <a href="PesquisaTipoCulinariaController">Pesquisa Tipo Culinaria</a><br />
-      <a href="LoginClienteController?acao=preparar">Login</a> <br>
-      <a href="LogoutController">Logout</a>
-      <input type ="text" value="<%=session.getAttribute("login")%>"
-        </div>
-</div>
-
-                <div class="special-offers-section">
+	<div class="content">
+		<div class="ordering-section" id="Order">
+			<div class="container">
+				<div class="ordering-section-head text-center wow bounceInRight" data-wow-delay="0.4s">
+					<h3>Pedir comida nunca foi t√£o f√°cil</h3>
+					<div class="dotted-line">
+						<h4>Apenas siga 4 passos </h4>
+					</div>
+				</div>
+				<div class="ordering-section-grids">
+					<div class="col-md-3 ordering-section-grid">
+						<div class="ordering-section-grid-process wow fadeInRight" data-wow-delay="0.4s">
+							<i class="one"></i><br>
+							<i class="one-icon"></i>
+							<p>Escolha <span>Seu Restaurante</span></p>
+							<label></label>
+						</div>
+					</div>
+					<div class="col-md-3 ordering-section-grid">
+						<div class="ordering-section-grid-process wow fadeInRight" data-wow-delay="0.4s">
+							<i class="two"></i><br>
+							<i class="two-icon"></i>
+							<p>Escolha  <span>Sua comida</span></p>
+							<label></label>
+						</div>
+					</div>
+					<div class="col-md-3 ordering-section-grid">
+						<div class="ordering-section-grid-process wow fadeInRight" data-wow-delay="0.4s">
+							<i class="three"></i><br>
+							<i class="three-icon"></i>
+							<p>Pague   <span> na entrega </span></p>
+							<label></label>
+						</div>
+					</div>
+					<div class="col-md-3 ordering-section-grid">
+						<div class="ordering-section-grid-process wow fadeInRight" data-wow-delay="0.4s">
+							<i class="four"></i><br>
+							<i class="four-icon"></i>
+							<p>Desfrute <span>sua comida </span></p>
+						</div>
+					</div>
+					<div class="clearfix"></div>
+				</div>
+			</div>
+		</div>
+		<div class="special-offers-section">
 			<div class="container">
 				<div class="special-offers-section-head text-center dotted-line">
 					<h4>Best Ofertas</h4>
 				</div>
 				<div class="special-offers-section-grids">
-					<div class="m_3"><span class="middle-dotted-line"> </span> </div>
-					<div class="container">
-						<ul id="flexiselDemo3">
-							<li>
-								<div class="offer">
-									<div class="offer-image">
-										<img src="images/p1.jpg" class="img-responsive" alt=""/>
-									</div>
-									<div class="offer-text">
-										<h4>Frago Frito</h4>
-										<p>O melhor frango j· frito que vocÍ ir· comer. </p>
-										<input type="button" value="Pedir">
-										<span></span>
-									</div>
-									<div class="clearfix"></div>
+				 <div class="m_3"><span class="middle-dotted-line"> </span> </div>
+				   <div class="container">
+					  <ul id="flexiselDemo3">
+						<li>
+							<div class="offer">
+								<div class="offer-image">	
+									<img src="images/p1.jpg" class="img-responsive" alt=""/>
 								</div>
-							</li>
-							<li>
-								<div class="offer">
-									<div class="offer-image">
-										<img src="images/p2.jpg" class="img-responsive" alt=""/>
-									</div>
-									<div class="offer-text">
-										<h4>Sopa pra nÛis</h4>
-										<p>A melhor sopa j· feita que vocÍ ir· comer. </p>
-										<input type="button" value="Pedir">
-										<span></span>
-									</div>
-									<div class="clearfix"></div>
+								<div class="offer-text">
+									<h4>Frago Frito</h4>
+									<p>O melhor frango j√° frito que voc√™ ir√° comer. </p>
+									<input type="button" value="Pedir">
+									<span></span>
 								</div>
-							</li>
-							<li>
-								<div class="offer">
-									<div class="offer-image">
-										<img src="images/p1.jpg" class="img-responsive" alt=""/>
-									</div>
-									<div class="offer-text">
-										<h4>Frago Frito</h4>
-										<p>O melhor frango j· frito que vocÍ ir· comer com outro tempero. </p>
-										<input type="button" value="Pedir">
-										<span></span>
-									</div>
-
-									<div class="clearfix"></div>
+								<div class="clearfix"></div>
+							</div>
+						</li>
+						<li>
+							<div class="offer">
+								<div class="offer-image">	
+									<img src="images/p2.jpg" class="img-responsive" alt=""/>
 								</div>
-							</li>
-							<li>
-								<div class="offer">
-									<div class="offer-image">
-										<img src="images/p2.jpg" class="img-responsive" alt=""/>
-									</div>
-									<div class="offer-text">
-										<h4>Frago Frito de Novo</h4>
-										<p>SÛ existe frango frito nesse delivery. </p>
-										<input type="button" value="Pedir">
-										<span></span>
-									</div>
+								<div class="offer-text">
+									<h4>Sopa pra n√≥is</h4>
+									<p>A melhor sopa j√° feita que voc√™ ir√° comer. </p>
+									<input type="button" value="Pedir">
+									<span></span>
+								</div>
+								<div class="clearfix"></div>
+							</div>
+						</li>
+						<li>
+							<div class="offer">
+								<div class="offer-image">	
+									<img src="images/p1.jpg" class="img-responsive" alt=""/>
+								</div>
+								<div class="offer-text">
+									<h4>Frago Frito</h4>
+									<p>O melhor frango j√° frito que voc√™ ir√° comer com outro tempero. </p>
+									<input type="button" value="Pedir">
+									<span></span>
+								</div>
+								
+								<div class="clearfix"></div>
+								</div>
+						</li>
+						<li>
+							<div class="offer">
+								<div class="offer-image">	
+									<img src="images/p2.jpg" class="img-responsive" alt=""/>
+								</div>
+								<div class="offer-text">
+									<h4>Frago Frito de Novo</h4>
+									<p>S√≥ existe frango frito nesse delivery. </p>
+									<input type="button" value="Pedir">
+									<span></span>
+								</div>
 								
 								<div class="clearfix"></div>
 								</div>
@@ -187,7 +251,7 @@
 						$("#flexiselDemo3").flexisel({
 							visibleItems: 3,
 							animationSpeed: 1000,
-							autoPlay: true,
+							autoPlay: false,
 							autoPlaySpeed: 3000,    		
 							pauseOnHover: true,
 							enableResponsiveBreakpoints: true,
@@ -214,8 +278,142 @@
 			</div>
 		</div>
 		</div>
-<div class="clearfix"></div>
-
+		<div class="popular-restaurents" id="Popular-Restaurants">
+			<div class="container">
+				<div class="col-md-4 top-restaurents">
+					<div class="top-restaurent-head">
+						<h3>Top's Restaurantes</h3>
+					</div>
+					<div class="top-restaurent-grids">
+						<div class="top-restaurent-logos">
+							<div class="res-img-1 wow bounceIn" data-wow-delay="0.4s">
+								<img src="images/restaurent-1.jpg" class="img-responsive" alt="" />
+							</div>
+							<div class="res-img-2 wow bounceIn" data-wow-delay="0.4s">
+							    <img src="images/restaurent-2.jpg" class="img-responsive" alt="" />
+							</div>
+							<div class="res-img-1 wow bounceIn" data-wow-delay="0.4s">
+							    <img src="images/restaurent-3.jpg" class="img-responsive" alt="" />
+							</div>
+							<div class="res-img-2 wow bounceIn" data-wow-delay="0.4s">
+							    <img src="images/restaurent-4.jpg" class="img-responsive" alt="" />
+							</div>
+							<div class="res-img-1 nth-grid1 wow bounceIn" data-wow-delay="0.4s">
+							    <img src="images/restaurent-5.jpg" class="img-responsive" alt="" />
+							</div>
+							<div class="res-img-2 nth-grid1 wow bounceIn" data-wow-delay="0.4s">
+							    <img src="images/restaurent-6.jpg" class="img-responsive" alt="" />
+							</div>
+							<div class="clearfix"></div>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-8 top-cuisines">
+					<div class="top-cuisine-head">
+						<h3>Top's Comidas</h3>
+					</div>
+					<div class="top-cuisine-grids">
+						<div class="top-cuisine-grid wow bounceIn" data-wow-delay="0.4s">
+						    <a href=""><img src="images/cuisine1.jpg" class="img-responsive" alt="" /> </a>
+							<label>Pizza</label>
+					    </div>
+						<div class="top-cuisine-grid wow bounceIn" data-wow-delay="0.4s">
+						    <a href=""><img src="images/cuisine2.jpg" class="img-responsive" alt="" /> </a>
+							<label>Lanche</label>
+					    </div>
+						<div class="top-cuisine-grid wow bounceIn" data-wow-delay="0.4s">
+						    <a href=""><img src="images/cuisine3.jpg" class="img-responsive" alt="" /> </a>
+							<label>Omelete</label>
+					    </div>
+						<div class="top-cuisine-grid nth-grid wow bounceIn" data-wow-delay="0.4s">
+						    <a href=""><img src="images/cuisine4.jpg" class="img-responsive" alt="" /> </a>
+							<label>Dod√≥</label>
+					    </div>
+						<div class="top-cuisine-grid nth-grid1 wow bounceIn" data-wow-delay="0.4s">
+						    <a href=""><img src="images/cuisine5.jpg" class="img-responsive" alt="" /> </a>
+							<label>Bife Boi</label>
+					    </div>
+						<div class="top-cuisine-grid nth-grid1 wow bounceIn" data-wow-delay="0.4s">
+						    <a href=""><img src="images/cuisine6.jpg" class="img-responsive" alt="" /> </a>
+							<label>Sonho</label>
+					    </div>
+						<div class="top-cuisine-grid nth-grid1 wow bounceIn" data-wow-delay="0.4s">
+						    <a href=""><img src="images/cuisine7.jpg" class="img-responsive" alt="" /> </a>
+							<label>Pizza</label>
+					    </div>
+						<div class="top-cuisine-grid nth-grid nth-grid1 wow bounceIn" data-wow-delay="0.4s">
+						    <a href=""><img src="images/cuisine8.jpg" class="img-responsive" alt="" /> </a>
+							<label>Salada</label>
+					    </div>
+						<div class="clearfix"></div>
+					</div>
+				</div>
+				<div class="clearfix"></div>
+			</div>
+		</div>
+		<div class="service-section">
+			<div class="service-section-top-row">
+				<div class="container">
+					<div class="service-section-top-row-grids wow bounceInLeft" data-wow-delay="0.4s">
+					<div class="col-md-3 service-section-top-row-grid1">
+						<h3>Aproveite sua comida em qualquer lugar!</h3>
+					</div>
+					<div class="col-md-2 service-section-top-row-grid2">
+						<ul>
+							<li><i class="arrow"></i></li>
+							<li class="lists">No seu servi√ßo</li>
+						</ul>
+						<ul>
+							<li><i class="arrow"></i></li>
+							<li class="lists">Em sua casa</li>
+						</ul>
+						<ul>
+							<li><i class="arrow"></i></li>
+							<li class="lists"> Na casa de amigos </li>
+						</ul>
+					</div>
+					<div class="col-md-5 service-section-top-row-grid3">
+						<img src="images/lunch.png" class="img-responsive" alt="" />
+					</div>
+					<div class="col-md-2 service-section-top-row-grid4 wow swing animated" data-wow-delay= "0.4s">
+						<a href="order.html"><input type="submit" value="Pedir Agora"></a>
+					</div>
+					<div class="clearfix"></div>
+					</div>
+				</div>
+			</div>
+			<div class="service-section-bottom-row">
+				<div class="container">
+					<div class="col-md-4 service-section-bottom-grid wow bounceIn "data-wow-delay="0.2s">
+						<div class="icon">
+							<img src="images/icon1.jpg" class="img-responsive" alt="" />
+						</div>
+						<div class="icon-data">
+							<h4>100% Garantia</h4>
+							<p>Comida pedida √© comida entregue. </p>
+						</div>
+						<div class="clearfix"></div>
+					</div>
+					<div class="col-md-4 service-section-bottom-grid wow bounceIn "data-wow-delay="0.2s">
+						<div class="icon">
+							<img src="images/icon2.jpg" class="img-responsive" alt="" />
+						</div>
+						<div class="icon-data">
+							<h4>Totalmente Seguro</h4>
+							<p>Seus dados nunca ser√£o repassados para outros!</p>
+						</div>
+						<div class="clearfix"></div>
+					</div>
+					<div class="col-md-4 service-section-bottom-grid wow bounceIn "data-wow-delay="0.2s">
+						<div class="icon">
+							<img src="images/icon3.jpg" class="img-responsive" alt="" />
+						</div>
+						<div class="icon-data">
+							<h4>Acompanhe seu pedido</h4>
+							<p>Acompanhe em tempo real seu pedido. </p>
+						</div>
+						<div class="clearfix"></div>
+					</div>
 					<div class="clearfix"></div>
 				</div>
 			</div>
@@ -225,7 +423,7 @@
 	<!-- footer-section-starts -->
 	<div class="footer">
 		<div class="container">
-			<p class="wow fadeInLeft" data-wow-delay="0.4s">&copy; 2018 NyahFood</p>		</div>
+			<p class="wow fadeInLeft" data-wow-delay="0.4s">&copy; 2018 NyahFood</p>
 		</div>
 	</div>
 	<!-- footer-section-ends -->

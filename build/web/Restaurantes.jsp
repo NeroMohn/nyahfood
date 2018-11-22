@@ -43,43 +43,17 @@
 			});
 		</script>		
 <script src="js/simpleCart.min.js"> </script>	
+<script src="jquery-3.2.1.min.js"></script>
+               <script>
+                      $(function(){ 
+                                $("#header").load("Header.jsp");
+                               
+                       });
+                 </script>
 </head>
 <body>
     <!-- header-section-starts -->
-	<div class="header">
-		<div class="container">
-			<div class="top-header">
-				<div class="logo">
-					<a href="index.html"><h1>NyahFood</h1></a>
-				</div>
-				<div class="queries">
-					<p>Duvidas? Ligue para nós, é grátis!<span>0800-0000-7777 </span><label>(11AM à 11PM)</label></p>
-				</div>
-				<div class="clearfix"></div>
-			</div>
-		</div>
-			<div class="menu-bar">
-			<div class="container">
-				<div class="top-menu">
-					<ul>
-						<li><a href="index.html">Inicio</a></li>|
-						<li class="active"><a href="restaurants.html">Restaurantes</a></li>
-						<li><a href="contact.html">Contato</a></li>
-						<div class="clearfix"></div>
-					</ul>
-				</div>
-				<div class="login-section">
-					<ul>
-						<li><a href="login.html">Login</a>  </li> |
-						<li><a href="register.html">Register</a> </li> |
-						<div class="clearfix"></div>
-					</ul>
-				</div>
-				<div class="clearfix"></div>
-			</div>
-		</div>		
-				</div>
-
+	<div id="header"></div>
 
 	<!-- header-section-ends -->
 	<!-- content-section-starts -->

@@ -53,7 +53,7 @@
 			<div class="container">
 				<div class="top-menu">
 					<ul>
-						<li class="active"><a href="index.jsp" class="scroll">Inicio</a></li>|
+						<li class="active"><a href="index.jsp">Inicio</a></li>|
 						<li><a href="Restaurantes.jsp">Restaurantes</a></li>
 						<li><a href="contact.html">Contato</a></li>
                                                 <% if (session.getAttribute("tipo") == "1") { %>
@@ -79,14 +79,16 @@
                                          
                                               <% if (session.getAttribute("tipo") == null) { %>
                                                <li><a href="LoginClienteController?acao=preparar">Login Cliente</a></li>
+                                               <li><a href="ManterLojaController?acao=prepararOperacao&operacao=Incluir">Registrar Loja</a> </li>
+                                                <li><a href="ManterClienteController?acao=prepararOperacao&operacao=Incluir">Registrar Usuário</a> </li>
                                             <% } else {%>
                                                
                                             <% } %>
                                        
                                    
                                                |
-                                            <li><a href="ManterLojaController?acao=prepararOperacao&operacao=Incluir">Registrar Loja</a> </li>
-                                            <li><a href="ManterClienteController?acao=prepararOperacao&operacao=Incluir">Registrar Usuário</a> </li>
+                                           
+                                           
                                             
                                             <% if (session.getAttribute("tipo") == null) { %>
                                             

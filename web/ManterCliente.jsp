@@ -123,7 +123,7 @@
 	   <div class="container">
 		  <div class="register">
 		  	
-                        <h1>Cadastro</h1>
+                        <h1>Cadastro Cliente</h1>
         
         <form action ="ManterClienteController?acao=confirmarOperacao&operacao=${operacao}" method = "post" name="ManterCliente">
             <table>

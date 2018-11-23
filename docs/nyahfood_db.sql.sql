@@ -89,7 +89,7 @@ CREATE TABLE IF NOT EXISTS `tipopagamento` (
 
 
 -- ****************************** `pagamento` ;
-CREATE TABLE IF NOT EXISTS `tipopagamento` (
+CREATE TABLE IF NOT EXISTS `pagamento` (
   `idPagamento`      bigint(20)     NOT NULL auto_increment,
   `codLoja`  	bigint(20)      NOT NULL, 
   `codTipoPagamento`  	bigint(20)      NOT NULL,

@@ -59,7 +59,6 @@ public void prepararOperacao(HttpServletRequest request, HttpServletResponse res
         String cpf = request.getParameter("txtCpfCliente");
         String email =  request.getParameter("txtEmailCliente");
         String senha =  request.getParameter("txtSenhaCliente");
-        String foto =  request.getParameter("txtFotoCliente");
         String telefone =  request.getParameter("txtTelefoneCliente");
         String logradouro =  request.getParameter("txtLogradouroCliente");
         String cep =  request.getParameter("txtCepCliente");
@@ -71,19 +70,19 @@ public void prepararOperacao(HttpServletRequest request, HttpServletResponse res
        
         try {
         if (operacao.equals("Incluir")){
-            Cliente cliente = new Cliente( nome, cpf, email, senha, foto, telefone, logradouro, cep, numero, bairro,
+            Cliente cliente = new Cliente( nome, cpf, email, senha, telefone, logradouro, cep, numero, bairro,
                 complemento, cidade, estado);
             cliente.gravar();
         }else{ 
             if(operacao.equals("Editar")){
                 Long idCliente =parseLong(request.getSession().getAttribute("id").toString());
-                Cliente cliente = new Cliente(idCliente, nome, cpf, email, senha, foto, telefone, logradouro, cep, numero, bairro,
+                Cliente cliente = new Cliente(idCliente, nome, cpf, email, senha, telefone, logradouro, cep, numero, bairro,
                 complemento, cidade, estado);
                 cliente.alterar();
         } else{ 
                 if (operacao.equals("Excluir")){
                 Long idCliente = Long.parseLong(request.getParameter("txtIdCliente"));
-                Cliente cliente = new Cliente(idCliente, nome, cpf, email, senha, foto, telefone, logradouro, cep, numero, bairro,
+                Cliente cliente = new Cliente(idCliente, nome, cpf, email, senha, telefone, logradouro, cep, numero, bairro,
                 complemento, cidade, estado);
                 cliente.excluir();
                 }

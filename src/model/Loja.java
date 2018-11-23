@@ -8,31 +8,34 @@ import java.util.List;
 
 public class Loja extends Usuario {
 
+
     private Long idLoja;
     private String cnpj;
     private String descricao;
     private String nomeGerente;
     private String pagamento;
+    private String foto;
+    private Long codTipoCozinha;
+    
 
-
- 
-
-    public Loja(Long idLoja, String nome, String nomeGerente, String email, String senha, String telefone, String cnpj,String descricao,String pagamento,String foto,String cep, String logradouro, String bairro,String numero, String complemento, String cidade, String estado) {
-        super(nome, email, senha, foto, telefone, logradouro, cep, numero, bairro, complemento, cidade, estado);
+    public Loja(Long idLoja, String nome, String nomeGerente, String email, String senha, String telefone, String cnpj,String descricao,Long codTipoCozinha,String foto,String cep, String logradouro, String bairro,String numero, String complemento, String cidade, String estado) {
+        super(nome, email, senha, telefone, logradouro, cep, numero, bairro, complemento, cidade, estado);
         this.idLoja = idLoja;
         this.nomeGerente = nomeGerente;
+        this.foto = foto;
         this.cnpj = cnpj;
         this.descricao = descricao;
-        this.pagamento = pagamento;
+        this.codTipoCozinha = codTipoCozinha;
 
     }
 
-    public Loja(String nome, String nomeGerente, String email, String senha, String telefone, String cnpj,String descricao,String pagamento,String foto,String cep, String logradouro, String bairro,String numero, String complemento, String cidade, String estado) {
-        super(nome, email, senha, foto, telefone, logradouro, cep, numero, bairro, complemento, cidade, estado);
+    public Loja(String nome, String nomeGerente, String email, String senha, String telefone, String cnpj,String descricao,Long codTipoCozinha,String foto,String cep, String logradouro, String bairro,String numero, String complemento, String cidade, String estado) {
+        super(nome, email, senha, telefone, logradouro, cep, numero, bairro, complemento, cidade, estado);
         this.nomeGerente = nomeGerente;
+        this.foto = foto;
         this.cnpj = cnpj;
         this.descricao = descricao;
-        this.pagamento = pagamento;
+        this.codTipoCozinha = codTipoCozinha;
     }
 
 
@@ -74,6 +77,22 @@ public class Loja extends Usuario {
 
     public void setPagamento(String pagamento) {
         this.pagamento = pagamento;
+    }
+    
+    public String getFoto() {
+        return foto;
+    }
+
+    public void setFoto(String foto) {
+        this.foto = foto;
+    }
+
+    public Long getCodTipoCozinha() {
+        return codTipoCozinha;
+    }
+
+    public void setCodTipoCozinha(Long codTipoCozinha) {
+        this.codTipoCozinha = codTipoCozinha;
     }
 
     public void gravar() throws SQLException, ClassNotFoundException{

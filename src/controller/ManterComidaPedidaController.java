@@ -66,25 +66,25 @@ public void prepararOperacao(HttpServletRequest request, HttpServletResponse res
 public void confirmarOperacao(HttpServletRequest request, HttpServletResponse response) throws ServletException{
         String operacao = request.getParameter("operacao");
        // Long idComidaPedida = Long.parseLong(request.getParameter("txtIdComidaPedida"));
-        Double precoUnitario = Double.parseDouble(request.getParameter("txtPrecoUnitario"));
-        Integer quantidade = Integer.parseInt(request.getParameter("txtQuantidadeComidaPedida"));
-        Double precoTotal = Double.parseDouble(request.getParameter("txtPrecoTotal"));
+        Integer quantidade = Integer.parseInt(request.getParameter("txtQuantidade"));
+        Double total = Double.parseDouble(request.getParameter("txtTotal"));
         Long codComida = Long.parseLong(request.getParameter("txtCodComida"));
+        Long codPedido = Long.parseLong(request.getParameter("txtCodPedido"));
         
         
         try {
       if (operacao.equals("Incluir")){
-            ComidaPedida comidaPedida = new ComidaPedida(  precoUnitario,  quantidade,  precoTotal, codComida);
+            ComidaPedida comidaPedida = new ComidaPedida(  quantidade, total, codComida, codPedido);
             comidaPedida.gravar();
         }else{ 
             if(operacao.equals("Editar")){
                 Long idComidaPedida = Long.parseLong(request.getParameter("txtIdComidaPedida"));
-                 ComidaPedida comidaPedida = new ComidaPedida( idComidaPedida,  precoUnitario,  quantidade,  precoTotal, codComida);
+                 ComidaPedida comidaPedida = new ComidaPedida( idComidaPedida,  quantidade, total, codComida, codPedido);
                 comidaPedida.alterar();
         } else{ 
                 if (operacao.equals("Excluir")){
                 Long idComidaPedida = Long.parseLong(request.getParameter("txtIdComidaPedida"));
-                 ComidaPedida comidaPedida = new ComidaPedida( idComidaPedida,  precoUnitario,  quantidade,  precoTotal, codComida);
+                 ComidaPedida comidaPedida = new ComidaPedida( idComidaPedida,  quantidade, total, codComida, codPedido);
                 comidaPedida.excluir();
                 }
             }

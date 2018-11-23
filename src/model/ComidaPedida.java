@@ -8,44 +8,34 @@ import java.util.List;
 public class ComidaPedida {
 
     private Long idComidaPedida;
-    private Comida comida;
-    private double precoUnitario;
     private int quantidade;
-    private double precoTotal;
+    private double total;
     private Long codComida;
+    private Long codPedido;
 
     public ComidaPedida(){}
 
-    public ComidaPedida(Long idComidaPedida, double precoUnitario, int quantidade, double precoTotal,Long codComida) {
+    public ComidaPedida(Long idComidaPedida, int quantidade, double total, Long codComida, Long codPedido) {
         setIdComidaPedida(idComidaPedida);
-        setPrecoTotal(precoTotal);
-        setPrecoUnitario(precoUnitario);
         setQuantidade(quantidade);
+        setTotal(total);
         setCodComida(codComida);
+        setCodPedido(codPedido);
     }
     
-      public ComidaPedida( double precoUnitario, int quantidade, double precoTotal,Long codComida) {
+      public ComidaPedida(int quantidade, double total, Long codComida, Long codPedido) {
        
-        setPrecoTotal(precoTotal);
-        setPrecoUnitario(precoUnitario);
         setQuantidade(quantidade);
+        setTotal(total);
         setCodComida(codComida);
+        setCodPedido(codPedido);
     }
-
     public Long getIdComidaPedida() {
         return idComidaPedida;
     }
 
     public void setIdComidaPedida(Long idComidaPedida) {
         this.idComidaPedida = idComidaPedida;
-    }
-
-    public double getPrecoUnitario() {
-        return precoUnitario;
-    }
-
-    public void setPrecoUnitario(double precoUnitario) {
-        this.precoUnitario = precoUnitario;
     }
 
     public int getQuantidade() {
@@ -56,21 +46,29 @@ public class ComidaPedida {
         this.quantidade = quantidade;
     }
 
-    public double getPrecoTotal() {
-        return precoTotal;
+    public double getTotal() {
+        return total;
     }
 
-    public void setPrecoTotal(double precoTotal) {
-        this.precoTotal = precoTotal;
+    public void setTotal(double total) {
+        this.total = total;
     }
 
-    public Comida getComida() { return comida; }
+    public Long getCodComida() {
+        return codComida;
+    }
 
-    public void setComida(Comida comida) { this.comida = comida; }
+    public void setCodComida(Long codComida) {
+        this.codComida = codComida;
+    }
 
-    public Long getCodComida() { return codComida; }
+    public Long getCodPedido() {
+        return codPedido;
+    }
 
-    public void setCodComida(Long codComida) { this.codComida = codComida; }
+    public void setCodPedido(Long codPedido) {
+        this.codPedido = codPedido;
+    }
 
     public void gravar() throws SQLException, ClassNotFoundException{
         ComidaPedidaDAO.gravar(this);

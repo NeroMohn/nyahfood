@@ -132,20 +132,20 @@
                 <td><input type="hidden" name="txtIdComidaPedida" value="${comidaPedida.idComidaPedida}" <c:if test="${operacao != 'Incluir'}"> readonly</c:if>></td>
             </tr>
              <tr>
-                <td>Preço Unitário:</td>
-                <td><input type="text" name="txtPrecoUnitario" value="${comidaPedida.precoUnitario}" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>></td>
-            </tr>
-             <tr>
                 <td>Quantidade:</td>
-                <td><input type="text" name="txtQuantidadeComidaPedida" value="${comidaPedida.quantidade}" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>></td>
+                <td><input type="text" name="txtQuantidade" value="${comidaPedida.quantidade}" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>></td>
             </tr>
              <tr>
-                <td>Preço Total:</td>
-                <td><input type="text" name="txtPrecoTotal" value="${comidaPedida.precoTotal}" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>></td>
+                <td>Total:</td>
+                <td><input type="text" name="txtTotal" value="${comidaPedida.total}" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>></td>
             </tr>
-             <tr>
+            <tr>
                 <td>Comida:</td>
                 <td><input type="text" name="txtCodComida" value="${comidaPedida.codComida}" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>></td>
+            </tr>
+            <tr>
+                <td>Pedido:</td>
+                <td><input type="text" name="txtCodPedido" value="${comidaPedida.codPedido}" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>></td>
             </tr>
             </table>
             

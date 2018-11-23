@@ -9,19 +9,19 @@ public class Comida{
     private Long idComida;
     private String nome;
     private String ingrediente;
-    private String tempoPreparo;
+    private int tempoEstimado;
     private String foto;
     private double preco;
     private double desconto;
     private Long codLoja;
 
    
-    public Comida(Long idComida, String nome, String ingrediente, String tempoPreparo, String foto, double preco,
+    public Comida(Long idComida, String nome, String ingrediente, int tempoEstimado, String foto, double preco,
                   double desconto, Long codLoja) {
         setIdComida(idComida);
         setNome(nome);
         setIngrediente(ingrediente);
-        setTempoPreparo(tempoPreparo);
+        setTempoEstimado(tempoEstimado);
         setFoto(foto);
         setPreco(preco);
         setDesconto(desconto);
@@ -29,12 +29,12 @@ public class Comida{
 
     }
     
-      public Comida(String nome, String ingrediente, String tempoPreparo, String foto, double preco,
+      public Comida(String nome, String ingrediente, int tempoEstimado, String foto, double preco,
                   double desconto, Long codLoja) {
      
         setNome(nome);
         setIngrediente(ingrediente);
-        setTempoPreparo(tempoPreparo);
+        setTempoEstimado(tempoEstimado);
         setFoto(foto);
         setPreco(preco);
         setDesconto(desconto);
@@ -67,12 +67,12 @@ public class Comida{
         this.ingrediente = ingrediente;
     }
 
-    public String getTempoPreparo() {
-        return tempoPreparo;
+    public int getTempoEstimado() {
+        return tempoEstimado;
     }
 
-    public void setTempoPreparo(String tempoPreparo) {
-        this.tempoPreparo = tempoPreparo;
+    public void setTempoEstimado(int tempoEstimado) {
+        this.tempoEstimado = tempoEstimado;
     }
 
     public String getFoto() {

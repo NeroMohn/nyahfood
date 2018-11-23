@@ -155,13 +155,13 @@
                 <td>Descrição:</td>
                 <td><input type="text" name="txtDescricaoLoja" value="${loja.descricao}" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>></input></td>
             </tr>
-            <tr>
-                <td>Pagamento:</td>
+             <tr>
+                <td>Tipo Cozinha:</td>
                 <td>
-                    <select name="optPagamentoLoja" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>>
-                            <option value="Dinheiro" <c:if test="${loja.pagamento == 'Dinheiro'}"> selected</c:if>>Dinheiro</option>
-                            <option value="Cartao Credito" <c:if test="${loja.pagamento == 'Cartao Credito'}"> selected</c:if>>Cartão - Crédito</option>
-                            <option value="Cartao Debito" <c:if test="${loja.pagamento == 'Cartao Debito'}"> selected</c:if>>Cartão - Débito</option>
+                    <select name="optTipoCozinha" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>>
+                        <c:forEach items="${nome}" var="nome">
+                            <option value="${tipoCozinha.nome}" <c:if test="${loja.codTipoCozinha == tipoCozinha.idTipoCozinha}"> selected</c:if>>${tipoCozinha.nome}</option>  
+                        </c:forEach>
                     </select>
                 </td>
             </tr>

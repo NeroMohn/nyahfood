@@ -13,17 +13,21 @@ public class ComidaPedidaDAO {
         PreparedStatement comando = null;
         try {
             conexao = BD.getConexao();
-            String sql = "Insert into comidaPedida ( precoUnitario, quantidade, precoTotal, codComida)"
+            String sql = "Insert into comidaPedida ( quantidade, total, codComida, codPedido)"
                     + "values(?,?,?,?)";
             comando = conexao.prepareStatement(sql);
       
-            comando.setDouble(1, comidaPedida.getPrecoUnitario());
-            comando.setInt(2, comidaPedida.getQuantidade());
-            comando.setDouble(3, comidaPedida.getPrecoTotal());
+            comando.setInt(1, comidaPedida.getQuantidade());
+            comando.setDouble(2, comidaPedida.getTotal());
             if (comidaPedida.getCodComida() == null) {
+                comando.setNull(3, Types.NULL);
+            } else {
+                comando.setLong(3, comidaPedida.getCodComida());
+            }
+            if (comidaPedida.getCodPedido() == null) {
                 comando.setNull(4, Types.NULL);
             } else {
-                comando.setLong(4, comidaPedida.getCodComida());
+                comando.setLong(4, comidaPedida.getCodPedido());
             }
 
             comando.execute();
@@ -38,15 +42,19 @@ public class ComidaPedidaDAO {
         PreparedStatement comando = null;
         try {
             conexao = BD.getConexao();
-            String sql = "update comidaPedida set precoUnitario = ?, quantidade = ?, precoTotal = ?, codComida = ? where idComidaPedida = ?";
+            String sql = "update comidaPedida set quantidade = ?, total = ?, codComida = ?, codPedido = ? where idComidaPedida = ?";
             comando = conexao.prepareStatement(sql);
-            comando.setDouble(1, comidaPedida.getPrecoUnitario());
-            comando.setInt(2, comidaPedida.getQuantidade());
-            comando.setDouble(3, comidaPedida.getPrecoTotal());
+            comando.setInt(1, comidaPedida.getQuantidade());
+            comando.setDouble(2, comidaPedida.getTotal());
             if (comidaPedida.getCodComida() == null) {
+                comando.setNull(3, Types.NULL);
+            } else {
+                comando.setLong(3, comidaPedida.getCodComida());
+            }
+            if (comidaPedida.getCodPedido() == null) {
                 comando.setNull(4, Types.NULL);
             } else {
-                comando.setLong(4, comidaPedida.getCodComida());
+                comando.setLong(4, comidaPedida.getCodPedido());
             }
             comando.setLong(5, comidaPedida.getIdComidaPedida());
 
@@ -93,11 +101,11 @@ public class ComidaPedidaDAO {
             ResultSet rs = comando.executeQuery();
             rs.first();
             comidaPedida = new ComidaPedida(rs.getLong("idComidaPedida"),
-                    rs.getDouble("precoUnitario"),
                     rs.getInt("quantidade"),
-                    rs.getDouble("precoTotal"),
-                    null);
+                    rs.getDouble("total"),
+                    null, null);
             comidaPedida.setCodComida(rs.getLong("codComida"));
+            comidaPedida.setCodPedido(rs.getLong("codPedido"));
         } catch (SQLException e) {
             e.printStackTrace();
         } finally {
@@ -119,12 +127,11 @@ public class ComidaPedidaDAO {
             rs.first();
             do{
                 comidaPedida = new ComidaPedida(rs.getLong("idComidaPedida"),
-                        rs.getDouble("precoUnitario"),
                         rs.getInt("quantidade"),
-                        rs.getDouble("precoTotal"),
-                        null);
+                        rs.getDouble("total"),
+                        null, null);
                 comidaPedida.setCodComida(rs.getLong("codComida"));
-                comidaspedidas.add(comidaPedida);
+                comidaPedida.setCodPedido(rs.getLong("codPedido"));
 
             }while (rs.next());
         } catch (SQLException e) {

@@ -97,7 +97,7 @@
                         Tempo Preparo:
                     </td>
                     <td>
-                        <input type="text" name="txtTempoPreparo" value="${comida.tempoPreparo}" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>>
+                        <input type="text" name="txtTempoEstimado" value="${comida.tempoEstimado}" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>>
                     </td>
                 </tr>
                   <tr>

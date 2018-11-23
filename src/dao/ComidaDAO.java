@@ -15,13 +15,13 @@ public class ComidaDAO {
         PreparedStatement comando = null;
         try {
             conexao = dao.BD.getConexao();
-            String sql = "insert into comida (  nome,  ingrediente,  tempoPreparo,  foto,  preco, desconto, codLoja)"+
+            String sql = "insert into comida (  nome,  ingrediente,  tempoEstimado,  foto,  preco, desconto, codLoja)"+
                     "values (?,?,?,?,?,?,?)";
             comando = conexao.prepareStatement(sql);
           
             comando.setString(1, comida.getNome());
             comando.setString(2, comida.getIngrediente());
-            comando.setString(3, comida.getTempoPreparo());
+            comando.setInt(3, comida.getTempoEstimado());
             comando.setString(4, comida.getFoto());
             comando.setDouble(5, comida.getPreco());
             comando.setDouble(6, comida.getDesconto());
@@ -45,12 +45,12 @@ public class ComidaDAO {
         PreparedStatement comando = null;
         try {
             conexao = BD.getConexao();
-            String sql = "update comida set nome = ?, ingrediente = ?, tempoPreparo = ?, foto = ?, preco = ?, desconto = ?," +
+            String sql = "update comida set nome = ?, ingrediente = ?, tempoEstimado = ?, foto = ?, preco = ?, desconto = ?," +
                     "codLoja = ? where idComida = ?";
             comando = conexao.prepareStatement(sql);
             comando.setString(1, comida.getNome());
             comando.setString(2, comida.getIngrediente());
-            comando.setString(3, comida.getTempoPreparo());
+            comando.setInt(3, comida.getTempoEstimado());
             comando.setString(4, comida.getFoto());
             comando.setDouble(5, comida.getPreco());
             comando.setDouble(6, comida.getDesconto());
@@ -99,7 +99,7 @@ public class ComidaDAO {
             comida = new Comida(rs.getLong("idComida"),
                     rs.getString("nome"),
                     rs.getString("ingrediente"),
-                    rs.getString("tempoPreparo"),
+                    rs.getInt("tempoEstimado"),
                     rs.getString("foto"),
                     rs.getDouble("preco"),
                     rs.getDouble("desconto"),
@@ -128,7 +128,7 @@ public class ComidaDAO {
                 comida = new Comida(rs.getLong("idComida"),
                         rs.getString("nome"),
                         rs.getString("ingrediente"),
-                        rs.getString("tempoPreparo"),
+                        rs.getInt("tempoEstimado"),
                         rs.getString("foto"),
                         rs.getDouble("preco"),
                         rs.getDouble("desconto"),

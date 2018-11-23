@@ -74,7 +74,7 @@ public void confirmarOperacao(HttpServletRequest request, HttpServletResponse re
     String telefone = request.getParameter("txtTelefoneLoja");
     String cnpj = request.getParameter("txtCnpjLoja");
     String descricao = request.getParameter("txtDescricaoLoja");
-    String pagamento = request.getParameter("optPagamentoLoja");
+    Long codTipoCozinha = Long.parseLong(request.getParameter("optTipoCozinha"));
     String foto = request.getParameter("txtFotoLoja");
     String cep = request.getParameter("txtCepLoja");
     String logradouro = request.getParameter("txtLogradouroLoja");
@@ -85,19 +85,19 @@ public void confirmarOperacao(HttpServletRequest request, HttpServletResponse re
     String estado = request.getParameter("txtEstadoLoja");
      try {
           if (operacao.equals("Incluir")){
-            Loja loja = new Loja ( nome, nomeGerente, email, senha, telefone,cnpj, descricao, pagamento, foto, cep, logradouro, bairro, numero, complemento, cidade, estado);
+            Loja loja = new Loja ( nome, nomeGerente, email, senha, telefone,cnpj, descricao, codTipoCozinha, foto, cep, logradouro, bairro, numero, complemento, cidade, estado);
             loja.gravar();
         }else{ 
             if(operacao.equals("Editar")){
                 if(request.getSession().getAttribute("id")!=null){
                 String idLoja1 = (String)request.getSession().getAttribute("id");
                 Long idLoja = parseLong(idLoja1);
-                Loja loja = new Loja (idLoja, nome, nomeGerente, email, senha, telefone, cnpj, descricao, pagamento, foto, cep, logradouro, bairro, numero, complemento, cidade, estado);
+                Loja loja = new Loja (idLoja, nome, nomeGerente, email, senha, telefone, cnpj, descricao, codTipoCozinha, foto, cep, logradouro, bairro, numero, complemento, cidade, estado);
                 loja.alterar();}
         } else{ 
                 if (operacao.equals("Excluir")){
                 Long idLoja = Long.parseLong(request.getParameter("txtIdLoja"));
-                Loja loja = new Loja (idLoja, nome, nomeGerente, email, senha, telefone, cnpj, descricao, pagamento, foto, cep, logradouro, bairro, numero, complemento, cidade, estado);
+                Loja loja = new Loja (idLoja, nome, nomeGerente, email, senha, telefone, cnpj, descricao, codTipoCozinha, foto, cep, logradouro, bairro, numero, complemento, cidade, estado);
                 
                 loja.excluir();
                 }

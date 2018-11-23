@@ -6,7 +6,6 @@ public class Usuario {
     private String telefone;
     private String email;
     private String senha;
-    private String foto;
     private String cep;
     private String logradouro;
     private String bairro;
@@ -16,14 +15,13 @@ public class Usuario {
     private String numero;
 
     public Usuario(String nome,
-            String email, String senha, String foto,String telefone,
+            String email, String senha,String telefone,
             String logradouro, String cep, String numero,
             String bairro, String complemento, String cidade,
             String estado){
         this.nome = nome;
         this.email = email;
         this.senha = senha;
-        this.foto = foto;
         this.telefone = telefone;
         this.logradouro = logradouro;
         this.cep = cep;
@@ -68,14 +66,6 @@ public class Usuario {
 
     public void setSenha(String senha) {
         this.senha = senha;
-    }
-
-    public String getFoto() {
-        return foto;
-    }
-
-    public void setFoto(String foto) {
-        this.foto = foto;
     }
 
     public String getCep() {

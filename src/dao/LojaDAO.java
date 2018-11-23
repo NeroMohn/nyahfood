@@ -15,7 +15,7 @@ public class LojaDAO {
         try{
             conexao = BD.getConexao();
             String sql = "Insert into loja ( nome, nomeGerente, email, senha,"
-                    + " telefone, cnpj, descricao, pagamento, foto, cep, "
+                    + " telefone, cnpj, descricao, codTipoCozinha, foto, cep, "
                     + "logradouro, bairro, numero, complemento, cidade, estado)"
                     + "values(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
             comando = conexao.prepareStatement(sql);
@@ -27,7 +27,11 @@ public class LojaDAO {
             comando.setString(5,loja.getTelefone());
             comando.setString(6,loja.getCnpj());
             comando.setString(7,loja.getDescricao());
-            comando.setString(8,loja.getPagamento());
+            if (loja.getCodTipoCozinha() == null) {
+                comando.setNull(8, Types.NULL);
+            } else {
+                comando.setLong(8, loja.getCodTipoCozinha());
+            }
             comando.setString(9,loja.getFoto());
             comando.setString(10,loja.getCep());
             comando.setString(11,loja.getLogradouro());
@@ -53,7 +57,7 @@ public class LojaDAO {
         try {
             conexao = BD.getConexao();
             String sql = "update loja set nome = ?, nomeGerente = ?, email = ?, senha = ?, telefone = ?, cnpj = ?," +
-                    " descricao = ?, pagamento = ?, foto = ?, cep = ?, logradouro = ?, bairro = ?,"+
+                    " descricao = ?, codTipoCozinha = ?, foto = ?, cep = ?, logradouro = ?, bairro = ?,"+
                      "numero = ?, complemento = ?, cidade = ?, estado = ? where idLoja = ?";
 
             comando = conexao.prepareStatement(sql);
@@ -64,7 +68,11 @@ public class LojaDAO {
             comando.setString(5,loja.getTelefone());
             comando.setString(6,loja.getCnpj());
             comando.setString(7,loja.getDescricao());
-            comando.setString(8,loja.getPagamento());
+            if (loja.getCodTipoCozinha() == null) {
+                comando.setNull(8, Types.NULL);
+            } else {
+                comando.setLong(8, loja.getCodTipoCozinha());
+            }
             comando.setString(9,loja.getFoto());
             comando.setString(10,loja.getCep());
             comando.setString(11,loja.getLogradouro());
@@ -123,7 +131,7 @@ public class LojaDAO {
                     rs.getString("telefone"),
                     rs.getString("cnpj"),
                     rs.getString("descricao"),
-                    rs.getString("pagamento"),
+                    null,
                     rs.getString("foto"),
                     rs.getString("cep"),
                     rs.getString("logradouro"),
@@ -132,7 +140,7 @@ public class LojaDAO {
                     rs.getString("complemento"),
                     rs.getString("cidade"),
                     rs.getString("estado"));
-
+            loja.setCodTipoCozinha(rs.getLong("codTipoCozinha"));
         } catch (SQLException e) {
             e.printStackTrace();
         } finally {
@@ -161,7 +169,7 @@ public class LojaDAO {
                     rs.getString("telefone"),
                     rs.getString("cnpj"),
                     rs.getString("descricao"),
-                    rs.getString("pagamento"),
+                    null,
                     rs.getString("foto"),
                     rs.getString("cep"),
                     rs.getString("logradouro"),
@@ -170,7 +178,9 @@ public class LojaDAO {
                     rs.getString("complemento"),
                     rs.getString("cidade"),
                     rs.getString("estado"));
-                lojas.add(loja);
+            loja.setCodTipoCozinha(rs.getLong("codTipoCozinha"));
+            
+            lojas.add(loja);
             }while (rs.next());
         } catch (SQLException e) {
             e.printStackTrace();
@@ -199,7 +209,7 @@ public class LojaDAO {
                     rs.getString("telefone"),
                     rs.getString("cnpj"),
                     rs.getString("descricao"),
-                    rs.getString("pagamento"),
+                    null,
                     rs.getString("foto"),
                     rs.getString("cep"),
                     rs.getString("logradouro"),
@@ -208,6 +218,7 @@ public class LojaDAO {
                     rs.getString("complemento"),
                     rs.getString("cidade"),
                     rs.getString("estado"));
+            loja.setCodTipoCozinha(rs.getLong("codTipoCozinha"));
         } catch (SQLException e) {
             e.printStackTrace();
         } finally {

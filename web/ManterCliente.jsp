@@ -148,10 +148,6 @@
                 <td><input type="password" name="txtSenhaCliente" value="${cliente.senha}" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>></td>
             </tr>
             <tr>
-                <td>Foto:</td>
-                <td><input type="text" name="txtFotoCliente" value="${cliente.foto}" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>></td>
-            </tr>
-            <tr>
                 <td>Telefone:</td>
                 <td><input type="text" name="txtTelefoneCliente" value="${cliente.telefone}" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>></td>
             </tr>

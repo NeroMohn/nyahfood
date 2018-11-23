@@ -1,25 +1,29 @@
--- ****************** NYAHFOOD DATABASE *******************;
+﻿-- ****************** NYAHFOOD DATABASE *******************;
 -- ********************************************************;
 
 -- Primeiro "destroi" as tabelas com chave estrangeira, e depois as sem chaves estrangeiras (a ordem � inversa ao de criar);
 -- A ordem de cria��o depende das depend�ncias das tabelas;
 
 
-DROP TABLE IF EXISTS `tipoculinaria`;
-
-DROP TABLE IF EXISTS `tipocozinha`;
-
-DROP TABLE IF EXISTS `compra`;
-
-DROP TABLE IF EXISTS `pedido`;
-
-DROP TABLE IF EXISTS `favorito`;
+DROP TABLE IF EXISTS `administrador`;
 
 DROP TABLE IF EXISTS `comidapedida`;
 
+DROP TABLE IF EXISTS `pedido`;
+
+DROP TABLE IF EXISTS `cupomdesconto`;
+
+DROP TABLE IF EXISTS `favorito`;
+
 DROP TABLE IF EXISTS `comida`;
 
+DROP TABLE IF EXISTS `pagamento`;
+
+DROP TABLE IF EXISTS `tipopagamento`;
+
 DROP TABLE IF EXISTS `loja`;
+
+DROP TABLE IF EXISTS `tipocozinha`;
 
 DROP TABLE IF EXISTS `cliente`;
 
@@ -31,7 +35,6 @@ CREATE TABLE IF NOT EXISTS `cliente` (
   `cpf`       	varchar(45) NOT NULL,
   `email`       varchar(45) NOT NULL,
   `senha`       varchar(45) NOT NULL,
-  `foto` 	varchar(45) NOT NULL,
   `telefone`    varchar(45) NOT NULL,
   `logradouro`  varchar(45) NOT NULL,
   `cep`       	varchar(45) NOT NULL,
@@ -42,6 +45,15 @@ CREATE TABLE IF NOT EXISTS `cliente` (
   `estado`      varchar(45) NOT NULL,
   PRIMARY KEY (`idCliente`)
 );
+
+-- ****************************** `tipocozinha` ;
+
+CREATE TABLE IF NOT EXISTS `tipocozinha` (
+  `idTipoCozinha`      bigint(20)     NOT NULL auto_increment,
+  `nome`        varchar(45) 	NOT NULL,
+  PRIMARY KEY (`idTipoCozinha`)
+  );
+
 
 -- ****************************** `loja` ;
 
@@ -60,19 +72,40 @@ CREATE TABLE IF NOT EXISTS `loja` (
   `cidade`      varchar(45) NOT NULL,
   `estado`      varchar(45) NOT NULL,
   `cnpj`        varchar(45) NOT NULL,
-  `descricao`   varchar(45) NOT NULL,
+  `descricao`   varchar(100) NOT NULL,
   `nomeGerente` varchar(45) NOT NULL,
-  `pagamento`   varchar(45) NOT NULL,
-  PRIMARY KEY (`idLoja`)
+  `codTipoCozinha`  	bigint(20)      NOT NULL,
+  PRIMARY KEY (`idLoja`),
+  FOREIGN KEY (`codTipoCozinha`) REFERENCES tipocozinha (`idTipoCozinha`)
 );
+
+
+-- ****************************** `tipopagamento` ;
+CREATE TABLE IF NOT EXISTS `tipopagamento` (
+  `idTipoPagamento`      bigint(20)     NOT NULL auto_increment,
+  `nome`        varchar(45) 	NOT NULL,
+  PRIMARY KEY (`idTipoPagamento`)
+  );
+
+
+-- ****************************** `pagamento` ;
+CREATE TABLE IF NOT EXISTS `tipopagamento` (
+  `idPagamento`      bigint(20)     NOT NULL auto_increment,
+  `codLoja`  	bigint(20)      NOT NULL, 
+  `codTipoPagamento`  	bigint(20)      NOT NULL,
+  PRIMARY KEY (`idPagamento`),
+  FOREIGN KEY (`codLoja`) REFERENCES loja (`idLoja`),
+  FOREIGN KEY (`codTipoPagamento`) REFERENCES tipopagamento (`idTipoPagamento`)
+  );
+
 
 -- ****************************** `comida` ;
 
 CREATE TABLE IF NOT EXISTS `comida` (
   `idComida`	    bigint(20)     NOT NULL auto_increment,
   `nome`	    varchar(45) 	NOT NULL,
-  `ingrediente`     varchar(45) 	NOT NULL,
-  `tempoPreparo`    varchar(45)     NOT NULL,
+  `ingrediente`     varchar(150) 	NOT NULL,
+  `tempoEstimado`   int     NOT NULL,
   `foto`  	varchar(45)     NOT NULL,
   `preco`  	double	        NOT NULL,
   `desconto`  	double          NOT NULL,
@@ -81,17 +114,6 @@ CREATE TABLE IF NOT EXISTS `comida` (
   FOREIGN KEY (`codLoja`) REFERENCES loja (`idLoja`)
 );
 
--- ****************************** `comidapedida` ;
-
-CREATE TABLE IF NOT EXISTS `comidapedida` (
-  `idComidaPedida`  bigint(11)     NOT NULL auto_increment,
-  `precoUnitario`   double	 NOT NULL,
-  `quantidade`      int(20)	 NOT NULL,
-  `precoTotal`      double	 NOT NULL,
-  `codComida`       bigint(20) NOT NULL,
-  PRIMARY KEY (`idComidaPedida`),
-  FOREIGN KEY (`codComida`) REFERENCES comida (`idComida`)
-);
 
 -- ****************************** `favorito` ;
 
@@ -104,46 +126,51 @@ CREATE TABLE IF NOT EXISTS `favorito` (
   FOREIGN KEY (`codLoja`) REFERENCES loja (`idLoja`)
 );
 
+
+-- ****************************** `cupomdesconto` ;
+
+CREATE TABLE IF NOT EXISTS `cupomdesconto` (
+  `idCupomDesconto`      bigint(20)     NOT NULL auto_increment,
+  `nome`        varchar(45) 	NOT NULL,
+  `valor`       double 		NOT NULL,
+  `ativo`       tinyint 	NOT NULL,
+  PRIMARY KEY (`idCupomDesconto`)
+  );
+
 -- ****************************** `pedido` ;
 
 CREATE TABLE IF NOT EXISTS `pedido` (
   `idPedido`       bigint(20)     NOT NULL auto_increment,
-  `quantidade`     int(20) 	NOT NULL,
-  `subtotal`       double	NOT NULL,
-  `metodoPagamento`        varchar(45) NOT NULL,
-  `cupomDesconto`        varchar(45) NOT NULL,
-  `date`  	varchar(45)	     NOT NULL,
-  `codComida`     bigint(20) 	NOT NULL,
+  `total`       double		NOT NULL,
+  `metodoPagamento`        varchar(45) 	NOT NULL,
+  `date`  	datetime	     NOT NULL,
+  `codCliente`     bigint(20) 	NOT NULL,
+  `codCupomDesconto`     bigint(20) 	NOT NULL,
   PRIMARY KEY (`idPedido`),
-  FOREIGN KEY  (`codComida`) REFERENCES comida (`idComida`)
+  FOREIGN KEY  (`codCliente`) REFERENCES cliente (`idCliente`),
+  FOREIGN KEY  (`codCupomDesconto`) REFERENCES cupomdesconto (`idCupomDesconto`)
 );
 
--- ****************************** `compra` ;
+-- ****************************** `comidapedida` ;
 
-CREATE TABLE IF NOT EXISTS `compra` (
-  `idCompra`    bigint(20)     NOT NULL auto_increment,
-  `status`     	varchar(45) NOT NULL,
-  `total`     	double	 NOT NULL,
-  `codPedido`   bigint(20) NOT NULL,
-  PRIMARY KEY (`idCompra`),
+CREATE TABLE IF NOT EXISTS `comidapedida` (
+  `idComidaPedida`  bigint(20)     NOT NULL auto_increment,
+  `quantidade`      int	 NOT NULL,
+  `total`      double	 NOT NULL,
+  `codComida`       bigint(20) NOT NULL,
+  `codPedido`       bigint(20) NOT NULL,
+  PRIMARY KEY (`idComidaPedida`),
+  FOREIGN KEY (`codComida`) REFERENCES comida (`idComida`),
   FOREIGN KEY (`codPedido`) REFERENCES pedido (`idPedido`)
 );
 
--- ****************************** `tipocozinha` ;
+-- ****************************** `administrador` ;
 
-CREATE TABLE IF NOT EXISTS `tipocozinha` (
-  `idTipoCozinha`      bigint(20)     NOT NULL auto_increment,
-  `tipo`        varchar(45) 	NOT NULL,
-  PRIMARY KEY (`idTipoCozinha`)
-  );
-
--- ****************************** `tipoculinaria` ;
-
-CREATE TABLE IF NOT EXISTS `tipoculinaria` (
-  `idTipoCulinaria`       bigint(20)     NOT NULL auto_increment,
-  `codLoja`   		  bigint(20) NOT NULL,
-  `codTipoCozinha`   	  bigint(20) NOT NULL,
-  PRIMARY KEY (`idTipoCulinaria`),
-  FOREIGN KEY (`codLoja`) REFERENCES loja (`idLoja`),
-  FOREIGN KEY (`codTipoCozinha`) REFERENCES tipocozinha (`idTipoCozinha`)
+CREATE TABLE IF NOT EXISTS `administrador` (
+  `idAdministrador`	bigint(20)     NOT NULL auto_increment,
+  `login`    	varchar(45) NOT NULL,
+  `nome`       	varchar(45) NOT NULL,
+  `senha`       varchar(45) NOT NULL,
+  PRIMARY KEY (`idAdministrador`)
 );
+

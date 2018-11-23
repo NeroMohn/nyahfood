@@ -48,7 +48,7 @@
                <script>
                       $(function(){ 
                                 $("#header").load("Header.jsp");
-                               
+                                $("#UploadImagem").load("UploadImagem.jsp")
                        });
                  </script>
 </head>
@@ -102,11 +102,16 @@
                 </tr>
                   <tr>
                     <td>
-                        Foto Comida:
+                        Foto Comida:  
                     </td>
                     <td>
-                        <input type="text" name="txtFoto" value="${comida.foto}" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>>
+                       
+                        <div id="UploadImagem">
+                     
+                             <input  type="text" name="txtFoto" value="${comida.foto}" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>>
+                    </div>
                     </td>
+               
                 </tr>
                   <tr>
                     <td>

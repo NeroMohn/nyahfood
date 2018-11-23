@@ -60,7 +60,7 @@
                                                     <li><a href="contact.html">Pedir Comida</a></li>
                                             <% } %>
                                                      <% if (session.getAttribute("tipo") == "2") { %>
-                                                    <li><a href="contact.html">Cadastrar Comida</a></li>
+                                                    <li><a href="ManterComidaController?acao=prepararOperacao&operacao=Incluir">Cadastrar Comida</a></li>
                                             <% } %>
                                                 
                                                 

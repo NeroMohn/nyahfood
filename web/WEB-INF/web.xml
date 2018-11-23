@@ -72,6 +72,14 @@
         <servlet-name>ManterTipoCulinariaController</servlet-name>
         <servlet-class>controller.ManterTipoCulinariaController</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>PesquisaCupomDescontoController</servlet-name>
+        <servlet-class>controller.PesquisaCupomDescontoController</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>ManterCupomDescontoController</servlet-name>
+        <servlet-class>controller.ManterCupomDescontoController</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>PesquisaClienteController</servlet-name>
         <url-pattern>/PesquisaClienteController</url-pattern>
@@ -151,6 +159,14 @@
     <servlet-mapping>
         <servlet-name>ManterTipoCulinariaController</servlet-name>
         <url-pattern>/ManterTipoCulinariaController</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>PesquisaCupomDescontoController</servlet-name>
+        <url-pattern>/PesquisaCupomDescontoController</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ManterCupomDescontoController</servlet-name>
+        <url-pattern>/ManterCupomDescontoController</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

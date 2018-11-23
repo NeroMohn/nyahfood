@@ -15,18 +15,17 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import model.Compra;
+import model.CupomDesconto;
 
 /**
  *
  * @author Yukas
  */
-@WebServlet (name= "ManterCompraController", urlPatterns = "/controller.ManterCompraController")
-
-public class ManterCompraController extends HttpServlet {
+@WebServlet (name= "ManterCupomDescontoController", urlPatterns = "/controller.ManterCupomDescontoController")
+public class ManterCupomDescontoController extends HttpServlet {
 
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
-        throws ServletException, IOException {
+            throws ServletException, IOException {
         String acao = request.getParameter("acao");
         if (acao.equals("confirmarOperacao")) {
             confirmarOperacao(request, response);
@@ -37,65 +36,56 @@ public class ManterCompraController extends HttpServlet {
             }
         }
     }
-   
 
     public void prepararOperacao(HttpServletRequest request, HttpServletResponse response) {
         try {
-            String operacao = request.getParameter("operacao");
-            request.setAttribute("operacao", operacao); 
-            if (!operacao.equals("Incluir")) {
-                if(!request.getSession().getAttribute("login").equals(null)&
-                        !request.getSession().getAttribute("senha").equals(null)&
-                        !request.getSession().getAttribute("tipo").equals(null)&
-                        !request.getSession().getAttribute("login").equals("")&
-                        !request.getSession().getAttribute("senha").equals("")||
-                        !request.getSession().getAttribute("tipo").equals("")||
-                        request.getSession().getAttribute("tipo").equals("2")){
-                Long idCompra = Long.parseLong(request.getParameter("idCompra"));
-                Compra compra = Compra.obterCompra(idCompra);
-                request.setAttribute("compra", compra);
-                }
-            }
-            RequestDispatcher view = request.getRequestDispatcher("/ManterCompra.jsp");
-            view.forward(request, response);
+        String operacao = request.getParameter("operacao");
+        request.setAttribute("operacao", operacao);
+        if (!operacao.equals("Incluir")) {
+            Long idCupomDesconto = Long.parseLong(request.getParameter("idCupomDesconto"));
+            CupomDesconto cupomDesconto = CupomDesconto.obterCupomDesconto(idCupomDesconto);
+            request.setAttribute("cupomDesconto", cupomDesconto);
+        }
+        RequestDispatcher view = request.getRequestDispatcher("/ManterCupomDesconto.jsp");    
+        view.forward(request, response);
         } catch (SQLException ex) {
-            Logger.getLogger(ManterCompraController.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(ManterCupomDescontoController.class.getName()).log(Level.SEVERE, null, ex);
         } catch (ClassNotFoundException ex) {
-            Logger.getLogger(ManterCompraController.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(ManterCupomDescontoController.class.getName()).log(Level.SEVERE, null, ex);
         } catch (ServletException ex) {
-            Logger.getLogger(ManterCompraController.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(ManterCupomDescontoController.class.getName()).log(Level.SEVERE, null, ex);
         } catch (IOException ex) {
-            Logger.getLogger(ManterCompraController.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(ManterCupomDescontoController.class.getName()).log(Level.SEVERE, null, ex);
         }
 
     }
     
     public void confirmarOperacao(HttpServletRequest request, HttpServletResponse response) throws ServletException{
         String operacao = request.getParameter("operacao");
-        Double total = Double.parseDouble(request.getParameter("txtTotal"));
-        String status = request.getParameter("txtStatus");
-        Long codPedido = Long.parseLong(request.getParameter("txtCodPedido"));
+        String nome = request.getParameter("nome");
+        Double valor = Double.parseDouble(request.getParameter("valor"));
+        Integer ativo = Integer.parseInt(request.getParameter("ativo"));
        
        
         
         try {
           if (operacao.equals("Incluir")){
-            Compra compra = new Compra(  total,  status, codPedido);
-            compra.gravar();
+            CupomDesconto cupomDesconto = new CupomDesconto(  nome, valor, ativo);
+            cupomDesconto.gravar();
         }else{ 
             if(operacao.equals("Editar")){
-                Long idCompra = Long.parseLong(request.getParameter("txtIdCompra"));
-                Compra compra = new Compra(  idCompra,  total,  status, codPedido);
-                compra.alterar();
+                Long idCupomDesconto = Long.parseLong(request.getParameter("txtIdCupomDesconto"));
+                CupomDesconto cupomDesconto = new CupomDesconto(  idCupomDesconto, nome, valor, ativo);
+                cupomDesconto.alterar();
         } else{ 
                 if (operacao.equals("Excluir")){
-                Long idCompra = Long.parseLong(request.getParameter("txtIdCompra"));
-                Compra compra = new Compra ( idCompra,  total,  status, codPedido);
-                compra.excluir();
+                Long idCupomDesconto = Long.parseLong(request.getParameter("txtIdCupomDesconto"));
+                CupomDesconto cupomDesconto = new CupomDesconto ( idCupomDesconto, nome, valor, ativo);
+                cupomDesconto.excluir();
                 }
             }
       }
-        RequestDispatcher view =request.getRequestDispatcher("PesquisaCompraController");
+        RequestDispatcher view =request.getRequestDispatcher("PesquisaCupomDescontoController");
         view.forward(request,response);
         } catch (IOException e) {
             throw new ServletException(e);
@@ -107,16 +97,7 @@ public class ManterCompraController extends HttpServlet {
             throw e;
         }
     }
-
-// <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
-    /**
-     * Handles the HTTP <code>GET</code> method.
-     *
-     * @param request servlet request
-     * @param response servlet response
-     * @throws ServletException if a servlet-specific error occurs
-     * @throws IOException if an I/O error occurs
-     */
+    
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
@@ -146,4 +127,5 @@ public class ManterCompraController extends HttpServlet {
     public String getServletInfo() {
         return "Short description";
     }// </editor-fold>
+
 }

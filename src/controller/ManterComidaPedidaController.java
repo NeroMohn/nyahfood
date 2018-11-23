@@ -52,13 +52,13 @@ public void prepararOperacao(HttpServletRequest request, HttpServletResponse res
         RequestDispatcher view = request.getRequestDispatcher("/ManterComidaPedida.jsp");
         view.forward(request, response);
     }   catch (SQLException ex) {
-            Logger.getLogger(ManterComidaController.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(ManterComidaPedidaController.class.getName()).log(Level.SEVERE, null, ex);
         } catch (ClassNotFoundException ex) {
-            Logger.getLogger(ManterComidaController.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(ManterComidaPedidaController.class.getName()).log(Level.SEVERE, null, ex);
         } catch (ServletException ex) {
-            Logger.getLogger(ManterComidaController.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(ManterComidaPedidaController.class.getName()).log(Level.SEVERE, null, ex);
         } catch (IOException ex) {
-            Logger.getLogger(ManterComidaController.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(ManterComidaPedidaController.class.getName()).log(Level.SEVERE, null, ex);
         }
    
 }

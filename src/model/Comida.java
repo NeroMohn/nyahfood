@@ -5,7 +5,7 @@ import dao.ComidaDAO;
 import java.sql.SQLException;
 import java.util.List;
 
-public class Comida {
+public class Comida{
     private Long idComida;
     private String nome;
     private String ingrediente;

@@ -5,6 +5,7 @@
  */
 package controller;
 
+import java.io.File;
 import java.io.IOException;
 import java.io.PrintWriter;
 import javax.servlet.ServletException;
@@ -79,9 +80,10 @@ public class Upload extends HttpServlet {
         sb.append(String.format("%8s", temp).replace(" ", "0"));
     }
 
-    System.out.println(sb.toString());
-    String contextPath = request.getContextPath();
-      
+   //String endereco = "jdbc:mysql://localhost/nyahfood_db/" + loja.getIdLoja() + ".jpg" ;
+   
+   // File outputfile = new File("C:\\Users\\Public\\Documents"+"imagem.jpg");
+    
         
         
     }

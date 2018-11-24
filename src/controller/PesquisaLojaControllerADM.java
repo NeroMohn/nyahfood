@@ -1,6 +1,6 @@
 package controller;
 
-import model.Pedido;
+import model.Loja;
 
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -13,17 +13,17 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-@WebServlet(name = "PesquisaPedidoController", urlPatterns = {"/PesquisaPedidoController"})
-public class PesquisaPedidoController extends HttpServlet {
+@WebServlet(name = "PesquisaLojaControllerADM", urlPatterns = {"/PesquisaLojaControllerADM"})
+public class PesquisaLojaControllerADM extends HttpServlet {
 
     protected void processRequest(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         try {
-            List<Pedido> obterTodosPedidos = Pedido.obterTodosPedidos();
-            if(obterTodosPedidos.isEmpty()){
-                 request.setAttribute("vazio", "Mensagem");
+            List<Loja> obterTodasLojas = Loja.obterTodasLojas();
+            if(obterTodasLojas.isEmpty()){
+                request.setAttribute("vazio", "Mensagem");
             }
-            request.setAttribute("pedidos", Pedido.obterTodosPedidos());
-            RequestDispatcher view = request.getRequestDispatcher("/PesquisaPedido.jsp");
+            request.setAttribute("lojas", Loja.obterTodasLojas());
+            RequestDispatcher view = request.getRequestDispatcher("/PesquisaLojaADM.jsp");
             view.forward(request, response);
 
         } catch (ClassNotFoundException e) {

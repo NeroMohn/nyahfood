@@ -54,7 +54,7 @@ public class Adm {
         this.senha = senha;
     }
     
-    public static Adm obterAdm(String email) throws SQLException{
-        return AdmDAO.obterAdm(email);
+    public static Adm obterAdm(String login) throws SQLException,ClassNotFoundException{
+        return AdmDAO.obterAdm(login);
     }
 }

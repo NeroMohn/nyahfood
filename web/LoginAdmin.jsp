@@ -79,7 +79,7 @@
 <div class="box">
 <h1>Login</h1>
 
-<input type="email" name="login" value="" id="log" onFocus="field_focus(this, 'email');" onblur="field_blur(this, 'email');" class="email" />
+<input type="text" name="login" value="" id="log" onFocus="field_focus(this, 'email');" onblur="field_blur(this, 'email');" class="email" />
   
 <input type="password" name="senha" value="" id="pass" onFocus="field_focus(this, 'email');" onblur="field_blur(this, 'email');" class="email" />
   

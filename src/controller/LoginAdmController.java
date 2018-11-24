@@ -22,8 +22,8 @@ import model.Adm;
  *
  * @author rodri
  */
-@WebServlet(name = "LoginAdminController", urlPatterns = {"/LoginAdminController"})
-public class LoginAdminController extends HttpServlet {
+@WebServlet(name = "LoginAdmController", urlPatterns = {"/LoginAdmController"})
+public class LoginAdmController extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -61,9 +61,9 @@ public class LoginAdminController extends HttpServlet {
         try {
             processRequest(request, response);
         } catch (ClassNotFoundException ex) {
-            Logger.getLogger(LoginAdminController.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(LoginAdmController.class.getName()).log(Level.SEVERE, null, ex);
         } catch (SQLException ex) {
-            Logger.getLogger(LoginAdminController.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(LoginAdmController.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
 
@@ -81,9 +81,9 @@ public class LoginAdminController extends HttpServlet {
         try {
             processRequest(request, response);
         } catch (ClassNotFoundException ex) {
-            Logger.getLogger(LoginAdminController.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(LoginAdmController.class.getName()).log(Level.SEVERE, null, ex);
         } catch (SQLException ex) {
-            Logger.getLogger(LoginAdminController.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(LoginAdmController.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
 
@@ -122,7 +122,7 @@ public class LoginAdminController extends HttpServlet {
             
 
 } catch (IOException ex) {  
-                Logger.getLogger(LoginAdminController.class
+                Logger.getLogger(LoginAdmController.class
 .getName()).log(Level.SEVERE, null, ex);
             }
         }else if(login.equals(adm.getLogin())&&!senha.equals(adm.getSenha())){
@@ -130,19 +130,19 @@ public class LoginAdminController extends HttpServlet {
             RequestDispatcher view = request.getRequestDispatcher("/SenhaIncorreta.jsp");       
             view.forward(request, response);            
             } catch (IOException ex) {  
-                Logger.getLogger(LoginAdminController.class.getName()).log(Level.SEVERE, null, ex);
+                Logger.getLogger(LoginAdmController.class.getName()).log(Level.SEVERE, null, ex);
             }
         }
     }
         private void prepararOperacao(HttpServletRequest request, HttpServletResponse response) {
-            RequestDispatcher view = request.getRequestDispatcher("/LoginAdmin.jsp");    
+            RequestDispatcher view = request.getRequestDispatcher("/LoginAdm.jsp");    
         try {
             view.forward(request, response);
         } catch (ServletException ex) {
-            Logger.getLogger(LoginAdminController.class
+            Logger.getLogger(LoginAdmController.class
             .getName()).log(Level.SEVERE, null, ex);
         } catch (IOException ex) {
-            Logger.getLogger(LoginAdminController.class
+            Logger.getLogger(LoginAdmController.class
             .getName()).log(Level.SEVERE, null, ex);
         }
     }

@@ -3,6 +3,7 @@ package model;
 
 import dao.AdmDAO;
 import java.sql.SQLException;
+import java.util.List;
 
 /**
  *
@@ -53,8 +54,11 @@ public class Adm {
     public void setSenha(String senha) {
         this.senha = senha;
     }
-    
-    public static Adm obterAdm(String login) throws SQLException,ClassNotFoundException{
-        return AdmDAO.obterAdm(login);
+
+    public static Adm obterAdm(String login) throws SQLException{
+        Adm adm = AdmDAO.obterAdm(login);
+        return adm;
     }
+    
+
 }

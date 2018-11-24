@@ -6,7 +6,6 @@
 package controller;
 
 import java.io.IOException;
-import java.io.PrintWriter;
 import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -17,7 +16,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import model.Adm;
-import model.Cliente;
+
 
 /**
  *
@@ -102,7 +101,8 @@ public class LoginAdmController extends HttpServlet {
         String login = request.getParameter("login");
         String senha = request.getParameter("senha");
         String tipo = "3";
-        Adm adm = new Adm.obterAdm(login);
+        Adm adm = null;
+        adm = Adm.obterAdm(login);
         if(adm == null){
             try{
                 RequestDispatcher view = request.getRequestDispatcher("/LoginIncorreto.jsp");       
@@ -117,12 +117,12 @@ public class LoginAdmController extends HttpServlet {
                 request.getSession().setAttribute("login", login);
                 request.getSession().setAttribute("tipo", tipo);
                 request.getSession().setAttribute("id", adm.getId());
-                RequestDispatcher view = request.getRequestDispatcher("/SessionCliente.jsp");       
+                RequestDispatcher view = request.getRequestDispatcher("/SessionAdm.jsp");       
                 view.forward(request, response);
             
 
 } catch (IOException ex) {  
-                Logger.getLogger(LoginClienteController.class
+                Logger.getLogger(LoginAdmController.class
 .getName()).log(Level.SEVERE, null, ex);
             }
         }else if(login.equals(adm.getLogin())&&!senha.equals(adm.getSenha())){
@@ -130,25 +130,20 @@ public class LoginAdmController extends HttpServlet {
             RequestDispatcher view = request.getRequestDispatcher("/SenhaIncorreta.jsp");       
             view.forward(request, response);            
             } catch (IOException ex) {  
-                Logger.getLogger(LoginClienteController.class
-                .getName()).log(Level.SEVERE, null, ex);
+                Logger.getLogger(LoginAdmController.class.getName()).log(Level.SEVERE, null, ex);
             }
         }
     }
         private void prepararOperacao(HttpServletRequest request, HttpServletResponse response) {
-            RequestDispatcher view = request.getRequestDispatcher("/LoginCliente.jsp");    
+            RequestDispatcher view = request.getRequestDispatcher("/LoginAdm.jsp");    
         try {
             view.forward(request, response);
-        
-
-} catch (ServletException ex) {
-            Logger.getLogger(LoginClienteController.class
-.getName()).log(Level.SEVERE, null, ex);
-        
-
-} catch (IOException ex) {
-            Logger.getLogger(LoginClienteController.class
-.getName()).log(Level.SEVERE, null, ex);
+        } catch (ServletException ex) {
+            Logger.getLogger(LoginAdmController.class
+            .getName()).log(Level.SEVERE, null, ex);
+        } catch (IOException ex) {
+            Logger.getLogger(LoginAdmController.class
+            .getName()).log(Level.SEVERE, null, ex);
         }
     }
 }

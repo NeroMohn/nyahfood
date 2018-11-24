@@ -13,17 +13,17 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-@WebServlet(name = "PesquisaPedidoController", urlPatterns = {"/PesquisaPedidoController"})
-public class PesquisaPedidoController extends HttpServlet {
+@WebServlet(name = "PesquisaPedidoControllerADM", urlPatterns = {"/PesquisaPedidoControllerADM"})
+public class PesquisaPedidoControllerADM extends HttpServlet {
 
     protected void processRequest(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         try {
             List<Pedido> obterTodosPedidos = Pedido.obterTodosPedidos();
             if(obterTodosPedidos.isEmpty()){
-                 request.setAttribute("vazio", "Mensagem");
+                 request.setAttribute("vazio", "");
             }
             request.setAttribute("pedidos", Pedido.obterTodosPedidos());
-            RequestDispatcher view = request.getRequestDispatcher("/PesquisaPedido.jsp");
+            RequestDispatcher view = request.getRequestDispatcher("/PesquisaPedidoADM.jsp");
             view.forward(request, response);
 
         } catch (ClassNotFoundException e) {

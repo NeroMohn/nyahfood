@@ -80,6 +80,14 @@
         <servlet-name>ManterCupomDescontoController</servlet-name>
         <servlet-class>controller.ManterCupomDescontoController</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>PesquisaTipoPagamentoController</servlet-name>
+        <servlet-class>controller.PesquisaTipoPagamentoController</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>ManterTipoPagamentoController</servlet-name>
+        <servlet-class>controller.ManterTipoPagamentoController</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>PesquisaClienteController</servlet-name>
         <url-pattern>/PesquisaClienteController</url-pattern>
@@ -167,6 +175,14 @@
     <servlet-mapping>
         <servlet-name>ManterCupomDescontoController</servlet-name>
         <url-pattern>/ManterCupomDescontoController</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>PesquisaTipoPagamentoController</servlet-name>
+        <url-pattern>/PesquisaTipoPagamentoController</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ManterTipoPagamentoController</servlet-name>
+        <url-pattern>/ManterTipoPagamentoController</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

@@ -61,8 +61,8 @@
                                                 <li><a href="contact.html">Contato</a></li>
                                                 <% if (session.getAttribute("tipo") == "1") { %>
                                                     <li><a href="Restaurantes.jsp">Pedir Comida</a></li>
-                                                    <li><a href="PesquisaPedido.jsp">Historico</a></li>
-                                                    <li><a href="PesquisaCompra.jsp">Acompanhar Pedido</a></li>
+                                                    <li><a href="PesquisaPedidoCliente.jsp">Historico</a></li>
+                                                    <li><a href="PesquisaCompraCliente.jsp">Acompanhar Pedido</a></li>
                                             <% } %>
                                                      <% if (session.getAttribute("tipo") == "2") { %>
                                                     <li><a href="ManterComidaController?acao=prepararOperacao&operacao=Incluir">Cadastrar Comida</a></li>

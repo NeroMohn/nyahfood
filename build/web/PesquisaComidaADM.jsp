@@ -1,20 +1,12 @@
-<%-- 
-    Document   : ManterComida
-    Created on : 20/11/2018, 03:31:34
-    Author     : rodri
---%>
-
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
-
 
 
 <!DOCTYPE html>
 <html>
 <head>
 <title>NyahFood</title>
-
 <link href="css/bootstrap.css" rel='stylesheet' type='text/css' />
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
 <script src="js/jquery.min.js"></script>
@@ -43,12 +35,11 @@
 			});
 		</script>
 <script src="js/simpleCart.min.js"> </script>	
-
 <script src="jquery-3.2.1.min.js"></script>
                <script>
                       $(function(){ 
                                 $("#header").load("Header.jsp");
-                                $("#UploadImagem").load("UploadImagem.jsp")
+                               
                        });
                  </script>
 </head>
@@ -56,92 +47,75 @@
     <!-- header-section-starts -->
 	<div id="header"></div>
 		
-				
+					<div class="main-search">
+						<form action="search.html">
+							<input type="text" value="Search" onFocus="this.value = '';" onBlur="if (this.value == '') {this.value = 'Search';}" class="text"/>
+							<input type="submit" value=""/>
+						</form>
+						<div class="close"><img src="images/cross.png" /></div>
+					</div>
+					<div class="srch"><button></button></div>
+					<script type="text/javascript">
+                        $('.main-search').hide();
+                        $('button').click(function (){
+                                $('.main-search').show();
+                                $('.main-search text').focus();
+                            }
+                        );
+                        $('.close').click(function(){
+                            $('.main-search').hide();
+                        });
+					</script>
+
+				</div>
+			</div>
+		</div>
+	</div>
 	<!-- header-section-ends -->
 	<!-- content-section-starts -->
-	<div class="content">
-	<div class="main">
-	   <div class="container">
-		  <div class="register">
-		  	
-                      <div class="special-offers-section-head text-center dotted-line"> <div class="special-offers-section" > <h1>Cadastro Comida</h1></br> </div></div>
-        	
-         <form action ="ManterComidaController?acao=confirmarOperacao&operacao=${operacao}"  method = "post" name="ManterComida">
+        <div  class="container text-center"> 
+           <h1>Pesquisa Comida</h1>
+           <br>
+        <table border=1  class=" col-lg-12 ">
+            <tr>
+                <td>Código Comida</td>
+                <td>Nome Comida</td>
+                 <td>Ingrediente Comida</td>
+                <td>Tempo Estimado Comida</td>
+                 <td>Foto Comida</td>
+                <td>Preço Comida</td>
+                 <td>Desconto Comida</td>
+                <td>Cod. Loja Comida</td>
+                <td colspan=2>Ação</td>
+            </tr>
+            <div><c:out value="${vazio}"/></div>
+                <c:forEach items="${comidas}" var="comida">
+                    <tr>
+                        <td><c:out value="${comida.idComida}"/></td>
+                        <td><c:out value="${comida.nome}"/></td>
+                         <td><c:out value="${comida.ingrediente}"/></td>
+                        <td><c:out value="${comida.tempoEstimado}"/></td>
+                         <td><c:out value="${comida.foto}"/></td>
+                        <td><c:out value="${comida.preco}"/></td>
+                         <td><c:out value="${comida.desconto}"/></td>
+                        <td><c:out value="${comida.codLoja}"/></td>
+                        <td><a href="ManterComidaController?acao=prepararOperacao&operacao=Editar&idComida=<c:out value="${comida.idComida}"/>">Editar</a></td>
+                        <td>
+                            <a href="ManterComidaController?acao=prepararOperacao&operacao=Excluir&idComida=<c:out value="${comida.idComida}"/>">Excluir</a></td>
+                    </tr>
+                </c:forEach>
 
 
-             <table>
-                
-                <tr>
-                  
-                    <td>
-                        <input type="hidden" name="txtIdComida" value="${comida.idComida}" <c:if test="${operacao != 'Incluir'}"> readonly</c:if>>
-                    </td>
-                </tr>
-                <tr>
-                    <td>Nome da comida:
-                    </td>
-                    <td><input type="text" name="txtNome" value="${comida.nome}" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>>
-                    </td>
-                </tr>
-                  <tr>
-                  <tr>
-                    <td>
-                        Nome Ingrediente:
-                    </td>
-                    <td>
-                        <input type="text" name="txtIngrediente" value="${comida.ingrediente}" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>>
-                    </td>
-                </tr>
-                  <tr>
-                    <td>
-                        Tempo Preparo:
-                    </td>
-                    <td>
-                        <input type="text" name="txtTempoEstimado" value="${comida.tempoEstimado}" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>>
-                    </td>
-                </tr>
-                  <tr>
-                    <td>
-                        Foto Comida:  
-                    </td>
-                    <td>
-
-                             <input  type="text" name="txtFoto" value="${comida.foto}" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>>
-                   
-                    </td>
-               
-                </tr>
-                  <tr>
-                    <td>
-                        Preço:
-                    </td>
-                    <td>
-                        <input type="text" name="txtPreco" value="${comida.preco}" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>>
-                    </td>
-                </tr>
-                  <tr>
-                    <td>
-                        Desconto:
-                    </td>
-                    <td>
-                        <input type="text" name="txtDesconto" value="${comida.desconto}" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>>
-                    </td>
-                </tr>
-                 
-            </table>
-
-                    <div class="special-offers-section-head text-center dotted-line">   <td><input type="submit" name="btnConfirmar" value="Confirmar"></td></div>
-                      
+        </table>
+                 <div id="botaoInclui">
+        <form action="ManterComidaController?acao=prepararOperacao&operacao=Incluir" method="post">
+            <input type="submit" name="btnIncluir" value="Incluir">
         </form>
-          
-                      
-                      
-                      
-				</div>
-		   </div>
-	     </div>
-	    </div>
-		<div class="special-offers-section">
+                 </div>
+                <br>
+             </div>
+        </div>
+                <div class="special-offers-section">
 			<div class="container">
 				<div class="special-offers-section-head text-center dotted-line">
 					<h4>Best Ofertas</h4>
@@ -242,6 +216,7 @@
 			</div>
 		</div>
 		</div>
+<div class="clearfix"></div>
 
 					<div class="clearfix"></div>
 				</div>
@@ -250,7 +225,7 @@
 	</div>
 	<!-- content-section-ends -->
 	<!-- footer-section-starts -->
-	<div class="footer"> 
+	<div class="footer">
 		<div class="container">
 			<p class="wow fadeInLeft" data-wow-delay="0.4s">&copy; 2018 NyahFood</p>		</div>
 		</div>

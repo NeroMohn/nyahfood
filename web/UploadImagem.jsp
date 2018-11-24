@@ -7,14 +7,22 @@
         <script type="text/javascript" scr="https://code.jquery.com/jquery-3.1.1.min.js"></script>
     </head>
     <body>
+        
       <div id="UploadImagem">
         <form enctype="application/x-www-form-urlencoded">
         <input type="file" id="file" name="file" onchange="uploadFile();" />
       
         <img alt="imagem" src="" id="target" width="200" height="200"><br> 
         </form>
+     
       </div>
     </body>
+    
+    
+    
+    
+    
+    
     <script type="text/javascript">
         
         function uploadFile(){

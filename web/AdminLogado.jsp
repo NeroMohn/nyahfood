@@ -43,28 +43,10 @@
 <body>
     <!-- header-section-starts -->
 
-		<div id="header"></div>
+		
 		
                 
-					<div class="main-search">
-						<form action="search.html">
-							<input type="text" value="Search" onFocus="this.value = '';" onBlur="if (this.value == '') {this.value = 'Search';}" class="text"/>
-							<input type="submit" value=""/>
-						</form>
-						<div class="close"><img src="images/cross.png" /></div>
-					</div>
-					<div class="srch"><button></button></div>
-					<script type="text/javascript">
-                        $('.main-search').hide();
-                        $('button').click(function (){
-                                $('.main-search').show();
-                                $('.main-search text').focus();
-                            }
-                        );
-                        $('.close').click(function(){
-                            $('.main-search').hide();
-                        });
-					</script>
+					<
 
 				</div>
 			</div>
@@ -72,19 +54,26 @@
 	</div>
 	<!-- header-section-ends -->
 	<!-- content-section-starts -->
-        <div  class="container text-center" id="adm"> 
-            
-            <a href="PesquisaClienteController">Pesquisa Cliente</a><br />
-      <a href="PesquisaComidaController">Pesquisa Comida</a><br />
-      <a href="PesquisaComidaPedidaController">Pesquisa Comida Pedida</a><br />
-      <a href="PesquisaCompraController">Pesquisa Compra</a><br />
-      <a href="PesquisaLojaController">Pesquisa Loja</a><br />
-      <a href="PesquisaPedidoController">Pesquisa Pedido</a><br />
+        <div class="container text-center" id="adm" > 
+                <h1> Bem-Vindo! <%=session.getAttribute("login")%> </h1>
+            <table class="container text-center" id="adm">
+               
+                <br>
+                   <tr> <td>    <a href="PesquisaClienteControllerADM">Pesquisa Clientes</a><br /> </td> </tr>
+    <!--  <a href="PesquisaComidaController">Pesquisa Comida</a><br />
+     <a href="PesquisaComidaPedidaController">Pesquisa Comida Pedida</a><br />
+      <a href="PesquisaCompraController">Pesquisa Compra</a><br /> -->
+     <tr> <td>  <a href="PesquisaLojaControllerADM">Pesquisa Lojas</a><br /></td> </tr>
+     <tr> <td>  <a href="PesquisaComidaControllerADM">Pesquisa Comidas</a><br /></td> </tr>
+     <tr> <td>  <a href="PesquisaPedidoControllerADM">Pesquisa Pedidos</a><br /></td> </tr>
+     <!--
       <a href="PesquisaTipoCozinhaController">Pesquisa Tipo Cozinha</a><br />
       <a href="PesquisaTipoCulinariaController">Pesquisa Tipo Culinaria</a><br />
       <a href="LoginClienteController?acao=preparar">Login</a> <br>
       <a href="LogoutController">Logout</a>
-      <input type ="text" value="<%=session.getAttribute("login")%>"
+    
+     
+            </table>
         </div>
 </div>
 

@@ -5,6 +5,8 @@
  */
 package controller;
 
+import static com.sun.corba.se.spi.presentation.rmi.StubAdapter.request;
+import java.io.File;
 import java.io.IOException;
 import java.sql.SQLException;
 import java.util.logging.Level;
@@ -15,6 +17,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.xml.bind.DatatypeConverter;
 import model.Comida;
 
 /**
@@ -66,6 +69,8 @@ public void prepararOperacao(HttpServletRequest request, HttpServletResponse res
         }
    
 }
+
+
 
 public void confirmarOperacao(HttpServletRequest request, HttpServletResponse response) throws SQLException, ClassNotFoundException, ServletException{
     String operacao = request.getParameter("operacao");

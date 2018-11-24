@@ -77,7 +77,7 @@
 	<!-- header-section-ends -->
 	<!-- content-section-starts -->
         <div  class="container text-center"> 
-          <h1>Pesquisa Compra</h1>
+          <h1>Acompanhar Pedido</h1>
           <br>
         <table border=1 id="tablePesquisa" class=" col-lg-12 ">
             <tr>

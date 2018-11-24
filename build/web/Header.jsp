@@ -85,8 +85,8 @@
                                          
                                               <% if (session.getAttribute("tipo") == null) { %>
                                                <li><a href="LoginClienteController?acao=preparar">Login Cliente</a></li>
-                                               <li><a href="ManterLojaController?acao=prepararOperacao&operacao=Incluir">Registrar Loja</a> </li>
-                                                <li><a href="ManterClienteController?acao=prepararOperacao&operacao=Incluir">Registrar Usuário</a> </li>
+                                               <li><a href="CadastroLojaController?acao=prepararOperacao&operacao=Incluir">Registrar Loja</a> </li>
+                                                <li><a href="CadastroClienteController?acao=prepararOperacao&operacao=Incluir">Registrar Usuário</a> </li>
                                             <% } else {%>
                                                
                                             <% } %>

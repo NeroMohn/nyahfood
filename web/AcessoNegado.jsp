@@ -12,8 +12,7 @@
         <title>JSP Page</title>
     </head>
     <body>
-<h1>Acesso Negado ;-;</h1>
-        <h2>Apenas Lojas podem cadastrar comidas</h2>
+        <img scr="images/Acesso.png">
         <a href="/nyahfood/index.jsp">VOLTAR</a>
     </body>
 </html>

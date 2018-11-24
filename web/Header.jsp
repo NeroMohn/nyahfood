@@ -53,8 +53,9 @@
 			<div class="container">
 				<div class="top-menu">
 					<ul>
-                                            
+                                                
 						<li class="active"><a href="index.jsp">Inicio</a></li>|
+                                                
 						 <% if (session.getAttribute("tipo") == null) { %>
                                                 <li><a href="Restaurantes.jsp">Restaurantes</a></li>
                                                  <% } %>
@@ -68,7 +69,11 @@
                                                     <li><a href="ManterComidaController?acao=prepararOperacao&operacao=Incluir">Cadastrar Comida</a></li>
                                                     <li><a href="PesquisaComidaPedida.jsp">Pedidos</a></li>
                                             <% } %>
-                                                
+                                                 <% if (session.getAttribute("tipo") == "3") { %>
+                                                    <li><a href="AdminLogado.jsp">ADIMINISTRADOR</a></li>
+                                                   
+                                                    
+                                            <% } %>
                                                 
                                                 
 						<div class="clearfix"></div>

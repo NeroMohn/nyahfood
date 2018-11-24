@@ -112,6 +112,13 @@
                  </script>
 </head>
 <body>
+    <% if (session.getAttribute("tipo") != "3") { %>
+     <img src="images/Acesso.png">
+    
+       <% } %>
+    
+
+		 <% if (session.getAttribute("tipo") == "3") { %>
     <!-- header-section-starts -->
 	<div id="header"></div>
 		
@@ -323,6 +330,7 @@
 						});
 					</script>
 				<a href="#" id="toTop" style="display: block;"> <span id="toTopHover" style="opacity: 1;"> </span></a>
+                                  <% } %>
 
 </body>
 </html>

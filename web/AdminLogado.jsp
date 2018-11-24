@@ -42,10 +42,15 @@
 </head>
 <body>
     <!-- header-section-starts -->
+    
+     <% if (session.getAttribute("tipo") != "3") { %>
+     <img src="images/Acesso.png">
+    
+       <% } %>
+    
 
-		
-		
-               
+		 <% if (session.getAttribute("tipo") == "3") { %>
+
 
 				</div>
 			</div>
@@ -62,16 +67,18 @@
     <!--  <a href="PesquisaComidaController">Pesquisa Comida</a><br />
      <a href="PesquisaComidaPedidaController">Pesquisa Comida Pedida</a><br />
       <a href="PesquisaCompraController">Pesquisa Compra</a><br /> -->
+     
      <tr> <td>  <a href="PesquisaLojaControllerADM">Pesquisa Lojas</a><br /></td> </tr>
      <tr> <td>  <a href="PesquisaComidaControllerADM">Pesquisa Comidas</a><br /></td> </tr>
      <tr> <td>  <a href="PesquisaPedidoControllerADM">Pesquisa Pedidos</a><br /></td> </tr>
+     <tr> <td>  <a href="PesquisaTipoCozinhaController">Pesquisa Tipo Cozinha</a><br /></td> </tr>
      <!--
       <a href="PesquisaTipoCozinhaController">Pesquisa Tipo Cozinha</a><br />
       <a href="PesquisaTipoCulinariaController">Pesquisa Tipo Culinaria</a><br />
       <a href="LoginClienteController?acao=preparar">Login</a> <br>
-      <a href="LogoutController">Logout</a>
+      <a href="LogoutController">Logout</a> -->
     
-     
+       <% } %>
             </table>
         </div>
 </div>

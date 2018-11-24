@@ -48,6 +48,13 @@
 </head>
 <body>
     <!-- header-section-starts -->
+     <% if (session.getAttribute("tipo") != "3") { %>
+     <img src="images/Acesso.png">
+    
+       <% } %>
+    
+
+		 <% if (session.getAttribute("tipo") == "3") { %>
 	<div id="header"></div>
 					<div class="main-search">
 						<form action="search.html">
@@ -78,7 +85,7 @@
         <div  class="container text-center"> 
            <h1>Pesquisa Tipo Cozinha</h1>
            <br>
-        <table border=1 id="tablePesquisa" class=" col-lg-12 ">
+        <table border=1  class=" col-lg-12 ">
             <tr>
                 <td>Código Tipo Cozinha</td>
                 <td>Tipo</td>
@@ -238,6 +245,7 @@
 						});
 					</script>
 				<a href="#" id="toTop" style="display: block;"> <span id="toTopHover" style="opacity: 1;"> </span></a>
+                                   <% } %>
 
 </body>
 </html>

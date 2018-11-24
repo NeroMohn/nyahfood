@@ -48,6 +48,13 @@
 </head>
 <body>
     <!-- header-section-starts -->
+    <% if (session.getAttribute("tipo") != "2") { %>
+     <img src="images/Acesso.png">
+    
+       <% } %>
+    
+
+		 <% if (session.getAttribute("tipo") == "2") { %>
 	<div id="header"></div>
 		
 					<div class="main-search">
@@ -242,6 +249,8 @@
 						});
 					</script>
 				<a href="#" id="toTop" style="display: block;"> <span id="toTopHover" style="opacity: 1;"> </span></a>
+                                    <% } %>
+    
 
 </body>
 </html>

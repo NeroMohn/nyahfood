@@ -122,7 +122,7 @@
 		  	
                       <div class="special-offers-section-head text-center dotted-line"> <div class="special-offers-section" > <h1>Cadastrar Loja</h1></br> </div></div>
         	
-               <form action ="ManterLojaController?acao=confirmarOperacao&operacao=${operacao}"  method = "post" name="ManterLoja">
+               <form action ="CadastroLojaController?acao=confirmarOperacao&operacao=${operacao}"  method = "post" name="ManterLoja">
             <table>
             <tr>
                 <td><input type="hidden" name="txtIdLoja" value="${loja.idLoja}" <c:if test="${operacao != 'Incluir'}"> readonly</c:if>></input></td>
@@ -159,12 +159,16 @@
                 <td>Tipo Cozinha:</td>
                 <td>
                     <select name="optTipoCozinha" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>>
-                        <c:forEach items="${nome}" var="nome">
-                            <option value="${tipoCozinha.nome}" <c:if test="${loja.codTipoCozinha == tipoCozinha.idTipoCozinha}"> selected</c:if>>${tipoCozinha.nome}</option>  
+                        
+                    <c:forEach items="${tipoCozinha}" var="tipoCozinha">
+                            <option value="${tipoCozinha.nome}" <c:if test="${loja.codTipoCozinha == tipoCozinha.idTipoCozinha}"> selected</c:if>>${tipoCozinha.nome}</option>
                         </c:forEach>
                     </select>
                 </td>
-            </tr>
+                
+               
+                </tr>
+               
             <tr>
                 <td>Foto:</td>
                 <td><input type="text" name="txtFotoLoja" value="${loja.foto}" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>></input></td>

@@ -22,7 +22,7 @@ import model.Adm;
  *
  * @author rodri
  */
-@WebServlet(name = "LoginAdmController", urlPatterns = {"/LoginAdmController"})
+@WebServlet(name = "LoginAdmController", urlPatterns = {"/LoginAdmController", "/LoginAdmin"})
 public class LoginAdmController extends HttpServlet {
 
     /**
@@ -37,12 +37,11 @@ public class LoginAdmController extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException, ClassNotFoundException, SQLException {
         String acao = request.getParameter("acao");
-        if (acao.equals("preparar")) {
-            prepararOperacao(request, response);
-        } else if (acao.equals("logar")) {
+        if (acao.equals("logar")) {
             logar(request, response);
+        }else if (acao == null){
+        prepararOperacao(request,response);    
         }
-
     }
 
 
@@ -134,16 +133,17 @@ public class LoginAdmController extends HttpServlet {
             }
         }
     }
-        private void prepararOperacao(HttpServletRequest request, HttpServletResponse response) {
-            RequestDispatcher view = request.getRequestDispatcher("/LoginAdm.jsp");    
+
+    private void prepararOperacao(HttpServletRequest request, HttpServletResponse response) {
+        RequestDispatcher view = request.getRequestDispatcher("/LoginAdmin.jsp");    
         try {
             view.forward(request, response);
         } catch (ServletException ex) {
-            Logger.getLogger(LoginAdmController.class
-            .getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(LoginClienteController.class.getName()).log(Level.SEVERE, null, ex);
         } catch (IOException ex) {
-            Logger.getLogger(LoginAdmController.class
-            .getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(LoginClienteController.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
+    7
 }
+

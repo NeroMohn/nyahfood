@@ -75,7 +75,7 @@
     
 <link href='https://fonts.googleapis.com/css?family=Open+Sans:700,600' rel='stylesheet' type='text/css'>
 
- <form action="LoginAdminController?acao=logar" method="POST" name="LoginAdmin">
+ <form action="LoginAdmController?acao=logar" method="POST" name="LoginAdmin">
 <div class="box">
 <h1>Login</h1>
 

@@ -91,7 +91,7 @@
                 <c:forEach items="${pedidos}" var="pedido">
                     <tr>
                         <td><c:out value="${pedido.idPedido}"/></td>
-                        <td><c:out value="${pedido.codComida}"/></td>
+                        <td><c:out value="${pedido.total}"/></td>
                         <td><c:out value="${pedido.date}"/></td>
                         <td><a href="ManterPedidoController?acao=prepararOperacao&operacao=Editar&idPedido=<c:out value="${pedido.idPedido}"/>">Editar</a></td>
                         <td>

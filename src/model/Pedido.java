@@ -6,41 +6,30 @@ import java.sql.SQLException;
 import java.util.List;
 
 public class Pedido {
+
     private Long idPedido;
-    private int quantidade;
-    private double subtotal;
+    private double total;
     private String metodoPagamento;
-    private String cupomDesconto;
     private String date;
-    private Long codComida;
+    private Long codCliente;
+    private Long codCupomDesconto;
 
-    public Pedido(Long idPedido,  Long codComida,int quantidade, double subtotal, String metodoPagamento, String cupomDesconto, String date) {
+    public Pedido(Long idPedido, double total, String metodoPagamento, String date, Long codCliente, Long codCupomDesconto) {
         setIdPedido(idPedido);
-        setCodComida(codComida);
-        setQuantidade(quantidade);
-        setSubtotal(subtotal);
+        setTotal(total);
         setMetodoPagamento(metodoPagamento);
-        setCupomDesconto(cupomDesconto);
         setDate(date);
-    }
-    
-    public Pedido( Long codComida , int quantidade, double subtotal, String metodoPagamento, String cupomDesconto, String date) {
-   
-        setCodComida(codComida);
-        setQuantidade(quantidade);
-        setSubtotal(subtotal);
-        setMetodoPagamento(metodoPagamento);
-        setCupomDesconto(cupomDesconto);
-        setDate(date);
+        setCodCliente(codCliente);
+        setCodCupomDesconto(codCupomDesconto);
     }
 
-
-  
-
-  
-
- 
-
+    public Pedido(double total, String metodoPagamento, String date, Long codComida, Long codCupomDesconto) {
+        setTotal(total);
+        setMetodoPagamento(metodoPagamento);
+        setDate(date);
+        setCodCliente(codCliente);
+        setCodCupomDesconto(codCupomDesconto);
+    }
 
     public Long getIdPedido() {
         return idPedido;
@@ -50,22 +39,12 @@ public class Pedido {
         this.idPedido = idPedido;
     }
 
-
-
-    public int getQuantidade() {
-        return quantidade;
+    public double getTotal() {
+        return total;
     }
 
-    public void setQuantidade(int quantidade) {
-        this.quantidade = quantidade;
-    }
-
-    public double getSubtotal() {
-        return subtotal;
-    }
-
-    public void setSubtotal(double subtotal) {
-        this.subtotal = subtotal;
+    public void setTotal(double total) {
+        this.total = total;
     }
 
     public String getMetodoPagamento() {
@@ -76,14 +55,6 @@ public class Pedido {
         this.metodoPagamento = metodoPagamento;
     }
 
-    public String getCupomDesconto() {
-        return cupomDesconto;
-    }
-
-    public void setCupomDesconto(String cupomDesconto) {
-        this.cupomDesconto = cupomDesconto;
-    }
-
     public String getDate() {
         return date;
     }
@@ -92,27 +63,39 @@ public class Pedido {
         this.date = date;
     }
 
-    public Long getCodComida() { return codComida; }
+    public Long getCodCliente() {
+        return codCliente;
+    }
 
-    public void setCodComida(Long codComida) { this.codComida = codComida; }
+    public void setCodCliente(Long codCliente) {
+        this.codCliente = codCliente;
+    }
 
-    public void gravar() throws SQLException, ClassNotFoundException{
+    public Long getCodCupomDesconto() {
+        return codCupomDesconto;
+    }
+
+    public void setCodCupomDesconto(Long codCupomDesconto) {
+        this.codCupomDesconto = codCupomDesconto;
+    }
+
+    public void gravar() throws SQLException, ClassNotFoundException {
         PedidoDAO.gravar(this);
     }
 
-    public void alterar() throws SQLException, ClassNotFoundException{
+    public void alterar() throws SQLException, ClassNotFoundException {
         PedidoDAO.alterar(this);
     }
 
-    public void excluir() throws SQLException, ClassNotFoundException{
+    public void excluir() throws SQLException, ClassNotFoundException {
         PedidoDAO.excluir(this);
     }
 
-    public static Pedido obterPedido(Long idPedido) throws SQLException, ClassNotFoundException{
+    public static Pedido obterPedido(Long idPedido) throws SQLException, ClassNotFoundException {
         return PedidoDAO.obterPedido(idPedido);
     }
 
-    public static List<Pedido> obterTodosPedidos() throws SQLException, ClassNotFoundException{
+    public static List<Pedido> obterTodosPedidos() throws SQLException, ClassNotFoundException {
         return PedidoDAO.obterTodosPedidos();
     }
 }

@@ -66,30 +66,26 @@ public void prepararOperacao(HttpServletRequest request, HttpServletResponse res
 }
 public void confirmarOperacao(HttpServletRequest request, HttpServletResponse response) throws SQLException, ClassNotFoundException{
     String operacao = request.getParameter("operacao");
-    Long codComida = Long.parseLong(request.getParameter("txtCodComida"));
-    Integer quantidade = Integer.parseInt(request.getParameter("txtQuantidadePedido"));
-    Double subtotal = Double.parseDouble(request.getParameter("txtSubtotalPedido"));
+    Double total = Double.parseDouble(request.getParameter("txtTotal"));
     String metodoPagamento = request.getParameter("txtMetodoPagamento");
-    String cupomDesconto = request.getParameter("txtCupomDesconto");
     String date = request.getParameter("txtDate");
+    Long codCliente = Long.parseLong(request.getParameter("txtCodCliente"));
+    Long codCupomDesconto = Long.parseLong(request.getParameter("txtCodCupomDesconto"));
     
-    
- 
     
 
     if (operacao.equals("Incluir")){
-            Pedido pedido = new Pedido (  codComida, quantidade,   subtotal,  metodoPagamento,  cupomDesconto,  date);
+            Pedido pedido = new Pedido ( total, metodoPagamento, date, codCliente, codCupomDesconto);
             pedido.gravar();
         }else{ 
             if(operacao.equals("Editar")){
                 Long idPedido = Long.parseLong(request.getParameter("txtIdPedido"));
-              Pedido pedido = new Pedido ( idPedido, codComida, quantidade,   subtotal,  metodoPagamento,  cupomDesconto,  date);
+              Pedido pedido = new Pedido ( idPedido, total, metodoPagamento, date, codCliente, codCupomDesconto);
                 pedido.alterar();
         } else{ 
                 if (operacao.equals("Excluir")){
                  Long idPedido = Long.parseLong(request.getParameter("txtIdPedido"));
-                Pedido pedido = new Pedido ( idPedido, codComida, quantidade,   subtotal,  metodoPagamento,  cupomDesconto,  date);
-                
+                Pedido pedido = new Pedido ( idPedido, total, metodoPagamento, date, codCliente, codCupomDesconto);       
                 pedido.excluir();
                 }
             }

@@ -132,28 +132,24 @@
                 <td><input type="hidden" name="txtIdPedido" value="${pedido.idPedido}" <c:if test="${operacao != 'Incluir'}"> readonly</c:if>></input></td>
             </tr>
             <tr>
-                <td>Comida:</td>
-                <td><input type="text" name="txtCodComida" value="${pedido.codComida}" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>></input></td>
-            </tr>
-            <tr>
-                <td>Quantidade:</td>
-                <td><input type="text" name="txtQuantidadePedido" value="${pedido.quantidade}" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>></input></td>
-            </tr>
-             <tr>
-                <td>Subtotal:</td>
-                <td><input type="text" name="txtSubtotalPedido" value="${pedido.subtotal}"<c:if test="${operacao == 'Excluir'}"> readonly</c:if>></input></td>
+                <td>Total:</td>
+                <td><input type="text" name="txtTotal" value="${pedido.total}" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>></input></td>
             </tr>
              <tr>
                 <td>Metodo Pagamento:</td>
                 <td><input type="text" name="txtMetodoPagamento" value="${pedido.metodoPagamento}"<c:if test="${operacao == 'Excluir'}"> readonly</c:if>></input></td>
             </tr>
-             <tr>
-                <td>Cupom de Desconto:</td>
-                <td><input type="text" name="txtCupomDesconto" value="${pedido.cupomDesconto}"<c:if test="${operacao == 'Excluir'}"> readonly</c:if>></input></td>
-            </tr>
             <tr>
                 <td>Data:</td>
                 <td><input type="text" name="txtDate" value="${pedido.date}"<c:if test="${operacao == 'Excluir'}"> readonly</c:if>></input></td>
+            </tr>
+            <tr>
+                <td>Cliente:</td>
+                <td><input type="text" name="txtCodCliente" value="${pedido.codCliente}"<c:if test="${operacao == 'Excluir'}"> readonly</c:if>></input></td>
+            </tr>
+            <tr>
+                <td>Cupom Desconto:</td>
+                <td><input type="text" name="txtCodCupomDesconto" value="${pedido.codCupomDesconto}"<c:if test="${operacao == 'Excluir'}"> readonly</c:if>></input></td>
             </tr>
             </table>
             <td><input type="submit" name="btnConfirmar" value="Confirmar"></td>

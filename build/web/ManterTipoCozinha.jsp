@@ -132,7 +132,7 @@
             </tr>
             <tr>
                 <td>Tipo de Cozinha:</td>
-                <td><input type="text" name="txtTipo" value="${tipoCozinha.tipo}" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>></input></td>
+                <td><input type="text" name="txtNome" value="${tipoCozinha.nome}" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>></input></td>
             </tr>
             </table>
             

@@ -89,7 +89,7 @@
                 <c:forEach items="${tiposcozinhas}" var="tipocozinha">
                     <tr>
                         <td><c:out value="${tipocozinha.idTipoCozinha}"/></td>
-                        <td><c:out value="${tipocozinha.tipo}"/></td>
+                        <td><c:out value="${tipocozinha.nome}"/></td>
                         <td><a href="ManterTipoCozinhaController?acao=prepararOperacao&operacao=Editar&idTipoCozinha=<c:out value="${tipocozinha.idTipoCozinha}"/>">Editar</a></td>
                         <td>
                             <a href="ManterTipoCozinhaController?acao=prepararOperacao&operacao=Excluir&idTipoCozinha=<c:out value="${tipocozinha.idTipoCozinha}"/>">Excluir</a></td>

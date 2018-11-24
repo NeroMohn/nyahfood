@@ -65,21 +65,21 @@ public void prepararOperacao(HttpServletRequest request, HttpServletResponse res
 
 public void confirmarOperacao(HttpServletRequest request, HttpServletResponse response) throws ServletException{
     String operacao = request.getParameter("operacao");
-    String tipo = request.getParameter("txtTipo");
+    String nome = request.getParameter("txtNome");
     
     try{
        if (operacao.equals("Incluir")){
-            TipoCozinha tipoCozinha = new TipoCozinha (tipo);
+            TipoCozinha tipoCozinha = new TipoCozinha (nome);
             tipoCozinha.gravar();
         }else{ 
             if(operacao.equals("Editar")){
                 Long idTipoCozinha = Long.parseLong(request.getParameter("txtIdTipoCozinha"));
-                TipoCozinha tipoCozinha = new TipoCozinha (idTipoCozinha, tipo);
+                TipoCozinha tipoCozinha = new TipoCozinha (idTipoCozinha, nome);
                 tipoCozinha.alterar();
         } else{ 
                 if (operacao.equals("Excluir")){
                 Long idTipoCozinha = Long.parseLong(request.getParameter("txtIdTipoCozinha"));
-                TipoCozinha tipoCozinha = new TipoCozinha (idTipoCozinha, tipo);
+                TipoCozinha tipoCozinha = new TipoCozinha (idTipoCozinha, nome);
                 
                 tipoCozinha.excluir();
                 }

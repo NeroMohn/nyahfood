@@ -13,20 +13,23 @@ public class PedidoDAO {
         PreparedStatement comando = null;
         try {
             conexao = BD.getConexao();
-            String sql = "Insert into pedido (codComida, quantidade, subtotal,metodoPagamento, cupomDesconto, date)"
+            String sql = "Insert into pedido (total, metodoPagamento, date, CoodCliente, codCupomDesconto)"
                     + "values(?,?,?,?,?,?)";
             comando = conexao.prepareStatement(sql);
             
-            if (pedido.getCodComida() == null) {
-                comando.setNull(1, Types.NULL);
+            comando.setDouble(1, pedido.getTotal());
+            comando.setString(2, pedido.getMetodoPagamento());
+            comando.setString(3, pedido.getDate());
+            if (pedido.getCodCliente()== null) {
+                comando.setNull(4, Types.NULL);
             } else {
-                comando.setLong(1, pedido.getCodComida());
+                comando.setLong(4, pedido.getCodCliente());
             }
-            comando.setInt(2, pedido.getQuantidade());
-            comando.setDouble(3, pedido.getSubtotal());
-            comando.setString(4, pedido.getMetodoPagamento());
-            comando.setString(5, pedido.getCupomDesconto());
-            comando.setString(6, pedido.getDate());
+            if (pedido.getCodCupomDesconto()== null) {
+                comando.setNull(5, Types.NULL);
+            } else {
+                comando.setLong(5, pedido.getCodCupomDesconto());
+            }
             comando.execute();
             BD.fecharConexao(conexao, comando);
         } catch (SQLException e) {
@@ -39,20 +42,24 @@ public class PedidoDAO {
         PreparedStatement comando = null;
         try {
             conexao = BD.getConexao();
-            String sql = "update pedido set codComida = ?, quantidade = ?,subtotal = ?,metodoPagamento = ?, "
-                    + "cupomDesconto = ?,date = ? where idPedido = ?";
+            String sql = "update pedido set total = ?, metodoPagamento = ?,date = ?,codCliente = ?, "
+                    + "codCupomDesconto = ? where idPedido = ?";
             comando = conexao.prepareStatement(sql);
-            if (pedido.getCodComida() == null) {
-                comando.setNull(1, Types.NULL);
+            
+            comando.setDouble(1, pedido.getTotal());
+            comando.setString(2, pedido.getMetodoPagamento());
+            comando.setString(3, pedido.getDate());
+            if (pedido.getCodCliente()== null) {
+                comando.setNull(4, Types.NULL);
             } else {
-                comando.setLong(1, pedido.getCodComida());
+                comando.setLong(4, pedido.getCodCliente());
             }
-            comando.setInt(2, pedido.getQuantidade());
-            comando.setDouble(3, pedido.getSubtotal());
-            comando.setString(4, pedido.getMetodoPagamento());
-            comando.setString(5, pedido.getCupomDesconto());
-            comando.setString(6, pedido.getDate());
-            comando.setLong(7, pedido.getIdPedido());
+            if (pedido.getCodCupomDesconto()== null) {
+                comando.setNull(5, Types.NULL);
+            } else {
+                comando.setLong(5, pedido.getCodCupomDesconto());
+            }
+            comando.setLong(6, pedido.getIdPedido());
             comando.execute();
             BD.fecharConexao(conexao, comando);
 
@@ -91,13 +98,12 @@ public class PedidoDAO {
             ResultSet rs = comando.executeQuery();
             rs.first();
             pedido = new Pedido(rs.getLong("idPedido"),
-                    null,
-                    rs.getInt("quantidade"),
-                    rs.getDouble("subtotal"),
+                    rs.getDouble("total"),
                     rs.getString("metodoPagamento"),
-                    rs.getString("cupomDesconto"),
-                    rs.getString("date"));
-            pedido.setCodComida(rs.getLong("codComida"));
+                    rs.getString("date"),
+                    null,null);
+            pedido.setCodCliente(rs.getLong("codCliente"));
+            pedido.setCodCupomDesconto(rs.getLong("codCUpomDesconto"));
         } catch (SQLException e) {
             e.printStackTrace();
         } finally {
@@ -119,14 +125,12 @@ public class PedidoDAO {
             rs.first();
             do {
                 pedido = new Pedido(rs.getLong("idPedido"),
-                         null,
-                        rs.getInt("quantidade"),
-                        rs.getDouble("subtotal"),
-                        rs.getString("metodoPagamento"),
-                        rs.getString("cupomDesconto"),
-                        rs.getString("date")
-                       );
-                pedido.setCodComida(rs.getLong("codComida"));
+                    rs.getDouble("total"),
+                    rs.getString("metodoPagamento"),
+                    rs.getString("date"),
+                    null,null);
+                pedido.setCodCliente(rs.getLong("codCliente"));
+                pedido.setCodCupomDesconto(rs.getLong("codCUpomDesconto"));
                 pedidos.add(pedido);
 
             }while (rs.next());

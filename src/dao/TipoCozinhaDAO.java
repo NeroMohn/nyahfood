@@ -14,11 +14,11 @@ public class TipoCozinhaDAO {
         PreparedStatement comando = null;
         try{
             conexao = BD.getConexao();
-            String sql = "Insert into tipoCozinha (tipo)"
+            String sql = "Insert into tipoCozinha (nome)"
                     + "values(?)";
             comando = conexao.prepareStatement(sql);
          
-            comando.setString(1,tipoCozinha.getTipo());
+            comando.setString(1,tipoCozinha.getNome());
             comando.execute();
             BD.fecharConexao(conexao, comando);
         }catch (SQLException e){throw e;}
@@ -33,9 +33,9 @@ public class TipoCozinhaDAO {
         PreparedStatement comando = null;
         try {
             conexao = BD.getConexao();
-            String sql = "update tipoCozinha set tipo = ? where idTipoCozinha = ?";
+            String sql = "update tipoCozinha set nome = ? where idTipoCozinha = ?";
             comando = conexao.prepareStatement(sql);
-            comando.setString(1, tipoCozinha.getTipo());
+            comando.setString(1, tipoCozinha.getNome());
             comando.setLong(2, tipoCozinha.getIdTipoCozinha());
             comando.execute();
             BD.fecharConexao(conexao, comando);
@@ -78,7 +78,7 @@ public class TipoCozinhaDAO {
             ResultSet rs = comando.executeQuery();
             rs.first();
             tipoCozinha = new TipoCozinha(rs.getLong("idTipoCozinha"),
-                    rs.getString("tipo"));
+                    rs.getString("nome"));
         } catch (SQLException e) {
             e.printStackTrace();
         } finally {
@@ -100,7 +100,7 @@ public class TipoCozinhaDAO {
             rs.first();
             do {
                 tipoCozinha = new TipoCozinha(rs.getLong("idTipoCozinha"),
-                rs.getString("tipo"));
+                rs.getString("nome"));
                 tipoCozinhas.add(tipoCozinha);  
             }
             while (rs.next());

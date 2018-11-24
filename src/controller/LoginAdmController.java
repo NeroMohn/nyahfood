@@ -39,7 +39,12 @@ public class LoginAdmController extends HttpServlet {
         String acao = request.getParameter("acao");
         if (acao.equals("logar")) {
             logar(request, response);
-        }else if (acao == null){
+        }else if (acao.equals(null)||acao.equals("")){
+        prepararOperacao(request,response);    
+        }
+        else if (acao.equals("preparar")){
+            prepararOperacao(request,response);
+        }else{
         prepararOperacao(request,response);    
         }
     }
@@ -106,20 +111,16 @@ public class LoginAdmController extends HttpServlet {
             try{
                 RequestDispatcher view = request.getRequestDispatcher("/LoginIncorreto.jsp");       
                 view.forward(request, response);
-            
-
-} catch (IOException ex) {  
-                Logger.getLogger(LoginClienteController.class
-.getName()).log(Level.SEVERE, null, ex);
-            }}else if(senha.equals(adm.getSenha())&& login.equals(adm.getLogin())){
-            try {
-                request.getSession().setAttribute("login", login);
-                request.getSession().setAttribute("tipo", tipo);
-                request.getSession().setAttribute("id", adm.getId());
-                RequestDispatcher view = request.getRequestDispatcher("/SessionAdm.jsp");       
-                view.forward(request, response);
-            
-
+            }catch(IOException ex) {  
+                Logger.getLogger(LoginClienteController.class.getName()).log(Level.SEVERE, null, ex);
+            }
+            }else if(senha.equals(adm.getSenha())&& login.equals(adm.getLogin())){
+                try {
+                    request.getSession().setAttribute("login", login);
+                    request.getSession().setAttribute("tipo", tipo);
+                    request.getSession().setAttribute("id", adm.getId());
+                    RequestDispatcher view = request.getRequestDispatcher("/SessionAdm.jsp");       
+                    view.forward(request, response);
 } catch (IOException ex) {  
                 Logger.getLogger(LoginAdmController.class
 .getName()).log(Level.SEVERE, null, ex);
@@ -144,6 +145,5 @@ public class LoginAdmController extends HttpServlet {
             Logger.getLogger(LoginClienteController.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
-
 }
 

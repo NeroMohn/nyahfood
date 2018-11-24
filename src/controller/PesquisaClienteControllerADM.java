@@ -16,6 +16,8 @@ import java.util.List;
 public class PesquisaClienteControllerADM extends HttpServlet {
 
     protected void processRequest(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        String tipo = request.getSession().getAttribute("tipo").toString();
+        if (tipo == "3"){
         try {
             List<Cliente> obterTodosClientes = Cliente.obterTodosClientes();
             if (obterTodosClientes.isEmpty()) {
@@ -29,6 +31,9 @@ public class PesquisaClienteControllerADM extends HttpServlet {
             throw new ServletException(e);
         } catch (SQLException e) {
             throw new ServletException(e);
+        }}
+        else{
+            RequestDispatcher view = request.getRequestDispatcher("/AcessoNegado.jsp");
         }
     }
     

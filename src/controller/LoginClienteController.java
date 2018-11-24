@@ -79,6 +79,7 @@ public class LoginClienteController extends HttpServlet {
                 request.getSession().setAttribute("login", login);
                 request.getSession().setAttribute("tipo", tipo);
                 request.getSession().setAttribute("id", cliente.getIdCliente());
+                request.getSession().setAttribute("nome", cliente.getNome());
                 RequestDispatcher view = request.getRequestDispatcher("/SessionCliente.jsp");       
                 view.forward(request, response);
             } catch (IOException ex) {  

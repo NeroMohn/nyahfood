@@ -9,7 +9,7 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>JSP Page</title>
+        <title>Login efetuado com sucesso</title>
     </head>
     <body>
        <a href="index.jsp"><button>Voltar para a página principal</button></a>

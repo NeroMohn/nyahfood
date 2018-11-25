@@ -23,7 +23,7 @@ public class Pedido {
         setCodCupomDesconto(codCupomDesconto);
     }
 
-    public Pedido(double total, String metodoPagamento, String date, Long codComida, Long codCupomDesconto) {
+    public Pedido(double total, String metodoPagamento, String date, Long codCupomDesconto, Long codCliente) {
         setTotal(total);
         setMetodoPagamento(metodoPagamento);
         setDate(date);
@@ -81,6 +81,10 @@ public class Pedido {
 
     public void gravar() throws SQLException, ClassNotFoundException {
         PedidoDAO.gravar(this);
+    }
+        
+    public static void  gravar(Pedido pedido) throws SQLException, ClassNotFoundException {
+        PedidoDAO.gravar(pedido);
     }
 
     public void alterar() throws SQLException, ClassNotFoundException {

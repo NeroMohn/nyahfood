@@ -6,7 +6,11 @@
 package controller;
 
 import java.io.IOException;
+import static java.lang.Long.parseLong;
+
 import java.sql.SQLException;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.servlet.RequestDispatcher;
@@ -17,6 +21,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import model.Comida;
 import model.ComidaPedida;
+import model.Pedido;
 
 /**
  *
@@ -27,6 +32,24 @@ public class ManterComidaPedidaController extends HttpServlet {
 
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+        if(request.getSession().getAttribute("tipo").toString() != "1"){
+            RequestDispatcher view = request.getRequestDispatcher("AcessoNegadoController");
+            view.forward(request, response);            
+        }else{
+        Long idCliente = Long.parseLong(request.getSession().getAttribute("tipo").toString());
+        Long idPedido = Long.parseLong(request.getSession().getAttribute("idPedido").toString());
+        if (idPedido == null){
+            String timeStamp = new SimpleDateFormat("ddMMyyyy_HHmmss").format(Calendar.getInstance().getTime());
+            Pedido pedido = new Pedido(0,null,timeStamp,idCliente,null);
+            try {
+                Pedido.gravar(pedido);
+            } catch (SQLException ex) {
+                Logger.getLogger(ManterComidaPedidaController.class.getName()).log(Level.SEVERE, null, ex);
+            } catch (ClassNotFoundException ex) {
+                Logger.getLogger(ManterComidaPedidaController.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }
+        
         String acao = request.getParameter("acao");
         if (acao.equals("confirmarOperacao")) {
                  confirmarOperacao(request, response);
@@ -37,18 +60,21 @@ public class ManterComidaPedidaController extends HttpServlet {
             }
         }
     }
+}
 
 public void prepararOperacao(HttpServletRequest request, HttpServletResponse response) {
         try{
     
     String operacao = request.getParameter("operacao");
         request.setAttribute("operacao", operacao);
-
+        Long idComida = Long.parseLong(request.getParameter("idComida"));
+        
         if (!operacao.equals("Incluir")) {
-            Long idComidaPedida = Long.parseLong(request.getParameter("idComidaPedida"));
+            request.setAttribute("idComida", idComida);
+            Long idComidaPedida;
+            idComidaPedida = Long.parseLong(request.getParameter("idComidaPedida"));
             ComidaPedida comidaPedida = ComidaPedida.obterComidaPedida(idComidaPedida);
             request.setAttribute("comidaPedida", comidaPedida);
-
         }
         RequestDispatcher view = request.getRequestDispatcher("/ManterComidaPedida.jsp");
         view.forward(request, response);
@@ -75,20 +101,25 @@ public void confirmarOperacao(HttpServletRequest request, HttpServletResponse re
         
         try {
       if (operacao.equals("Incluir")){
-           /* Comida comidaHolder = null;
-            comidaHolder = comida.obterComida(idComidaPedida);
-            Double total = comidaHolder * quantidade ; A lógica é essa    */ 
+            Comida comidaHolder = null;
+            Long idComida;
+            idComida = (Long) request.getAttribute("idComida");
+            comidaHolder = Comida.obterComida(idComida);
+            Double total = comidaHolder.getPreco() * quantidade ;
             ComidaPedida comidaPedida = new ComidaPedida(  quantidade, total, codComida, codPedido);
             comidaPedida.gravar();
         }else{ 
             if(operacao.equals("Editar")){
                 Long idComidaPedida = Long.parseLong(request.getParameter("txtIdComidaPedida"));
-                 ComidaPedida comidaPedida = new ComidaPedida( idComidaPedida,  quantidade, total, codComida, codPedido);
+                ComidaPedida comidaPedidaHolder = ComidaPedida.obterComidaPedida(idComidaPedida);
+                ComidaPedida comidaPedida = new ComidaPedida( idComidaPedida,  quantidade, comidaPedidaHolder.getTotal(), codComida, codPedido);
                 comidaPedida.alterar();
         } else{ 
                 if (operacao.equals("Excluir")){
                 Long idComidaPedida = Long.parseLong(request.getParameter("txtIdComidaPedida"));
-                 ComidaPedida comidaPedida = new ComidaPedida( idComidaPedida,  quantidade, total, codComida, codPedido);
+
+                ComidaPedida comidaPedidaHolder = ComidaPedida.obterComidaPedida(idComidaPedida);
+                 ComidaPedida comidaPedida = new ComidaPedida( idComidaPedida,  quantidade, comidaPedidaHolder.getTotal(), codComida, codPedido);
                 comidaPedida.excluir();
                 }
             }

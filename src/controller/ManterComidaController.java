@@ -46,7 +46,7 @@ public void prepararOperacao(HttpServletRequest request, HttpServletResponse res
         request.setAttribute("operacao", operacao);
         request.setAttribute("tipo",tipo);
         if(tipo != "2"){
-            RequestDispatcher view = request.getRequestDispatcher("AcessoNegadoController");//PRECISA SER FEITA
+            RequestDispatcher view = request.getRequestDispatcher("AcessoNegadoController");
             view.forward(request, response);
         }else{
         if (!operacao.equals("Incluir")) {

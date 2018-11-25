@@ -40,17 +40,22 @@ public class ManterPedidoController extends HttpServlet {
 
 public void prepararOperacao(HttpServletRequest request, HttpServletResponse response) {
         try{
-    
-    String operacao = request.getParameter("operacao");
+           
+        String operacao = request.getParameter("operacao");
         request.setAttribute("operacao", operacao);
         request.setAttribute("Pedido", Pedido.obterTodosPedidos());
-
+        String tipo = request.getSession().getAttribute("tipo").toString();
+       
+        if(tipo != "1"){
+            RequestDispatcher view = request.getRequestDispatcher("AcessoNegadoController");
+            view.forward(request, response);
+        }else{
         if (!operacao.equals("Incluir")) {
             Long idPedido = Long.parseLong(request.getParameter("idPedido"));
             Pedido pedido = Pedido.obterPedido(idPedido);
             request.setAttribute("pedido", pedido);
 
-        }
+        }}
         RequestDispatcher view = request.getRequestDispatcher("/ManterPedido.jsp");
         view.forward(request, response);
     }   catch (SQLException ex) {
@@ -69,7 +74,7 @@ public void confirmarOperacao(HttpServletRequest request, HttpServletResponse re
     Double total = Double.parseDouble(request.getParameter("txtTotal"));
     String metodoPagamento = request.getParameter("txtMetodoPagamento");
     String date = request.getParameter("txtDate");
-    Long codCliente = Long.parseLong(request.getParameter("txtCodCliente"));
+    Long codCliente = Long.parseLong(request.getSession().getAttribute("id").toString());
     Long codCupomDesconto = Long.parseLong(request.getParameter("txtCodCupomDesconto"));
     
     

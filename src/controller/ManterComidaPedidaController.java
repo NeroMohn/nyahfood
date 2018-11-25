@@ -15,6 +15,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import model.Comida;
 import model.ComidaPedida;
 
 /**
@@ -65,15 +66,18 @@ public void prepararOperacao(HttpServletRequest request, HttpServletResponse res
 
 public void confirmarOperacao(HttpServletRequest request, HttpServletResponse response) throws ServletException{
         String operacao = request.getParameter("operacao");
-       // Long idComidaPedida = Long.parseLong(request.getParameter("txtIdComidaPedida"));
+       //Long idComidaPedida = Long.parseLong(request.getParameter("txtIdComidaPedida"));
         Integer quantidade = Integer.parseInt(request.getParameter("txtQuantidade"));
-        Double total = Double.parseDouble(request.getParameter("txtTotal"));
+        //Double total = Double.parseDouble(request.getParameter("txtTotal"));
         Long codComida = Long.parseLong(request.getParameter("txtCodComida"));
         Long codPedido = Long.parseLong(request.getParameter("txtCodPedido"));
         
         
         try {
       if (operacao.equals("Incluir")){
+           /* Comida comidaHolder = null;
+            comidaHolder = comida.obterComida(idComidaPedida);
+            Double total = comidaHolder * quantidade ; A lógica é essa    */ 
             ComidaPedida comidaPedida = new ComidaPedida(  quantidade, total, codComida, codPedido);
             comidaPedida.gravar();
         }else{ 

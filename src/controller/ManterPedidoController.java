@@ -77,8 +77,6 @@ public void confirmarOperacao(HttpServletRequest request, HttpServletResponse re
     Long codCliente = Long.parseLong(request.getSession().getAttribute("id").toString());
     Long codCupomDesconto = Long.parseLong(request.getParameter("txtCodCupomDesconto"));
     
-    
-
     if (operacao.equals("Incluir")){
             Pedido pedido = new Pedido ( total, metodoPagamento, date, codCliente, codCupomDesconto);
             pedido.gravar();

@@ -37,10 +37,9 @@
     Pattern pattern = Pattern.compile(regex); 
     Matcher matcher = pattern.matcher(confirmacao); 
     if (matcher.find() && matcher.group().equals(confirmacao)){ 		    
-    }else{
-    alert("Insira um email válido");		    
+        }else{
+        alert("Insira um email válido");		    
     }
-        
     }
     
 <script>

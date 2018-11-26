@@ -43,6 +43,7 @@ public class ManterComidaPedidaController extends HttpServlet {
             Pedido pedido = new Pedido(0,null,timeStamp,idCliente,null);
             try {
                 Pedido.gravar(pedido);
+                request.getSession().setAttribute("idPedido", Pedido.obterPedido(idPedido));
             } catch (SQLException ex) {
                 Logger.getLogger(ManterComidaPedidaController.class.getName()).log(Level.SEVERE, null, ex);
             } catch (ClassNotFoundException ex) {

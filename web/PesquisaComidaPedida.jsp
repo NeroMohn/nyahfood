@@ -108,11 +108,8 @@
 
 
         </table> 
-             <div id="botaoInclui">
-        <form action="ManterComidaPedidaController?acao=prepararOperacao&operacao=Incluir" method="post">
-            <input type="submit" name="btnIncluir" value="Incluir">
-        </form>
-             </div>
+        
+             
                  </div>
                 <br>
              </div>

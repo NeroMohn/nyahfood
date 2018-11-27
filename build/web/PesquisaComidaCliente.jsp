@@ -1,80 +1,12 @@
-<%-- 
-    Document   : ManterPedido
-    Created on : 24/10/2018, 19:06:06
-    Author     : Usuário
---%>
-
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
-
-
-
 
 
 <!DOCTYPE html>
 <html>
 <head>
 <title>NyahFood</title>
-<!--Cep automático-->
-<script type="text/javascript" >
-    function limpa_formulário_cep() {
-            document.getElementById('rua').value=("");
-            document.getElementById('bairro').value=("");
-            document.getElementById('cidade').value=("");
-            document.getElementById('uf').value=("");
-    }
-
-    function meu_callback(conteudo) {
-        if (!("erro" in conteudo)) {
-            //Atualiza os campos com os valores.
-            document.getElementById('rua').value=(conteudo.logradouro);
-            document.getElementById('bairro').value=(conteudo.bairro);
-            document.getElementById('cidade').value=(conteudo.localidade);
-            document.getElementById('uf').value=(conteudo.uf);
-        } //end if.
-        else {
-            //CEP não Encontrado.
-            limpa_formulário_cep();
-            alert("CEP não encontrado.");
-        }
-    }
-        
-    function pesquisacep(valor) {
-        //Nova variável "cep" somente com dígitos.
-        var cep = valor.replace(/\D/g, '');
-        //Verifica se campo cep possui valor informado.
-        if (cep != "") {
-            var validacep = /^[0-9]{8}$/; //expressão para validação do cep
-
-            //Valida o formato do CEP.
-            if(validacep.test(cep)) {
-                //Preenche os campos com "..." enquanto consulta webservice.
-                document.getElementById('rua').value="...";
-                document.getElementById('bairro').value="...";
-                document.getElementById('cidade').value="...";
-                document.getElementById('uf').value="...";
-                //Cria um elemento javascript.
-                var script = document.createElement('script');
-                //Sincroniza com o callback.
-                script.src = 'https://viacep.com.br/ws/'+cep+'/json/?callback=meu_callback';
-                //Insere script no documento e carrega o conteúdo.
-                document.body.appendChild(script);
-            } //end if.
-            else {
-                //cep é inválido.
-                limpa_formulário_cep();
-                alert("Formato de CEP inválido.");
-            }
-        } //end if.
-        else {
-            //cep sem valor, limpa formulário.
-            limpa_formulário_cep();
-        }
-    }
-    </script>
-
-
 <link href="css/bootstrap.css" rel='stylesheet' type='text/css' />
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
 <script src="js/jquery.min.js"></script>
@@ -115,53 +47,72 @@
     <!-- header-section-starts -->
 	<div id="header"></div>
 		
-				
+					<div class="main-search">
+						<form action="search.html">
+							<input type="text" value="Search" onFocus="this.value = '';" onBlur="if (this.value == '') {this.value = 'Search';}" class="text"/>
+							<input type="submit" value=""/>
+						</form>
+						<div class="close"><img src="images/cross.png" /></div>
+					</div>
+					<div class="srch"><button></button></div>
+					<script type="text/javascript">
+                        $('.main-search').hide();
+                        $('button').click(function (){
+                                $('.main-search').show();
+                                $('.main-search text').focus();
+                            }
+                        );
+                        $('.close').click(function(){
+                            $('.main-search').hide();
+                        });
+					</script>
+
+				</div>
+			</div>
+		</div>
+	</div>
 	<!-- header-section-ends -->
 	<!-- content-section-starts -->
-	<div class="content">
-	<div class="main">
-	   <div class="container">
-		  <div class="register">
-		  	
-                      <div class="special-offers-section-head text-center dotted-line"> <div class="special-offers-section" > <h1>Manter Compra</h1></br> </div></div>
-        	
-           <form action ="ManterPedidoController?acao=confirmarOperacao&operacao=${operacao}"  method = "post" name="ManterPedido">
-            <table>
-                <tr>
-              
-                <td><input type="hidden" name="txtIdPedido" value="${pedido.idPedido}" <c:if test="${operacao != 'Incluir'}"> readonly</c:if>></input></td>
-            </tr>
+        <div  class="container text-center"> 
+           <h1>Pesquisa Comida</h1>
+           <br>
+         <table border=1  class=" col-lg-12 ">
             <tr>
-                <td>Total:</td>
-                <td><input type="text" pattern="[0-9].{3,}$" required name="txtTotal" value="${pedido.total}" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>></input></td>
+                <td>Código Comida</td>
+                <td>Nome Comida</td>
+                 <td>Ingrediente Comida</td>
+                <td>Tempo Estimado Comida</td>
+                 <td>Foto Comida</td>
+                <td>Preço Comida</td>
+                 <td>Desconto Comida</td>
+             
+                <td>Peça Já!</td>
+               
             </tr>
-             <tr>
-                <td>Metodo Pagamento:</td>
-                <td><input type="text" name="txtMetodoPagamento" required value="${pedido.metodoPagamento}"<c:if test="${operacao == 'Excluir'}"> readonly</c:if>></input></td>
-            </tr>
-            <tr>
-                <td>Data:</td>
-                <td><input type="text" pattern="[0-9].{8,}$" required name="txtDate" value="${pedido.date}"<c:if test="${operacao == 'Excluir'}"> readonly</c:if>></input></td>
-            </tr>
-            <tr>
-                <td>Cliente:</td>
-                <td><input type="text" name="txtCodCliente"  pattern="[0-9].{0,}$" required value="${pedido.codCliente}"<c:if test="${operacao == 'Excluir'}"> readonly</c:if>></input></td>
-            </tr>
-            <tr>
-                <td>Cupom Desconto:</td>
-                <td><input type="text"  pattern="[a-zA-Z0-9].{8,}$" requiredname="txtCodCupomDesconto" value="${pedido.codCupomDesconto}"<c:if test="${operacao == 'Excluir'}"> readonly</c:if>></input></td>
-            </tr>
-            </table>
-            <td><input type="submit" name="btnConfirmar" value="Confirmar"></td>
-        </form>
-                      
-                      
-                      
-				</div>
-		   </div>
-	     </div>
-	    </div>
-		<div class="special-offers-section">
+            <div><c:out value="${vazio}"/></div>
+                <c:forEach items="${comidas}" var="comida">
+                    <tr>
+                        <td><c:out value="${comida.idComida}"/></td>
+                        <td><c:out value="${comida.nome}"/></td>
+                         <td><c:out value="${comida.ingrediente}"/></td>
+                        <td><c:out value="${comida.tempoEstimado}"/></td>
+                         <td><c:out value="${comida.foto}"/></td>
+                        <td><c:out value="${comida.preco}"/></td>
+                         <td><c:out value="${comida.desconto}"/></td>
+                    
+                        <td><a href="#">Pedir</a></td>
+                  
+                    </tr>
+                </c:forEach>
+
+
+        </table>
+                       
+                 </div>
+                <br>
+             </div>
+        </div>
+                <div class="special-offers-section">
 			<div class="container">
 				<div class="special-offers-section-head text-center dotted-line">
 					<h4>Best Ofertas</h4>
@@ -262,6 +213,7 @@
 			</div>
 		</div>
 		</div>
+<div class="clearfix"></div>
 
 					<div class="clearfix"></div>
 				</div>
@@ -270,7 +222,7 @@
 	</div>
 	<!-- content-section-ends -->
 	<!-- footer-section-starts -->
-	<div class="footer"> 
+	<div class="footer">
 		<div class="container">
 			<p class="wow fadeInLeft" data-wow-delay="0.4s">&copy; 2018 NyahFood</p>		</div>
 		</div>

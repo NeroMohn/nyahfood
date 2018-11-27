@@ -75,7 +75,7 @@
 					</div>
 					<div class="col-md-7 buy">
 
-						<a class="morebtn hvr-rectangle-in" href="orders-list.html">Cardápio</a>
+						<a class="morebtn hvr-rectangle-in" href="PesquisaComidaControllerCliente">Cardápio</a>
 					</div>
 					<div class="clearfix"></div>
 				</div>
@@ -94,7 +94,7 @@
 					</div>
 					<div class="col-md-7 buy">
 
-						<a class="morebtn hvr-rectangle-in" href="orders-list.html">Cardápio</a>
+						<a class="morebtn hvr-rectangle-in" href="PesquisaComidaControllerCliente">Cardápio</a>
 					</div>
 					<div class="clearfix"></div>
 				</div>
@@ -113,7 +113,7 @@
 					</div>
 					<div class="col-md-7 buy">
 
-						<a class="morebtn hvr-rectangle-in" href="orders-list.html">Cardápio</a>
+						<a class="morebtn hvr-rectangle-in" href="PesquisaComidaControllerCliente">Cardápio</a>
 					</div>
 					<div class="clearfix"></div>
 				</div>
@@ -132,7 +132,7 @@
 					</div>
 					<div class="col-md-7 buy">
 
-						<a class="morebtn hvr-rectangle-in" href="orders-list.html">Cardápio</a>
+						<a class="morebtn hvr-rectangle-in" href="PesquisaComidaControllerCliente">Cardápio</a>
 					</div>
 					<div class="clearfix"></div>
 				</div>
@@ -151,7 +151,7 @@
 					</div>
 					<div class="col-md-7 buy">
 
-						<a class="morebtn hvr-rectangle-in" href="orders-list.html">Cardápio</a>
+						<a class="morebtn hvr-rectangle-in" href="PesquisaComidaControllerCliente">Cardápio</a>
 					</div>
 					<div class="clearfix"></div>
 				</div>
@@ -170,7 +170,7 @@
 					</div>
 					<div class="col-md-7 buy">
 
-						<a class="morebtn hvr-rectangle-in" href="orders-list.html">Cardápio</a>
+						<a class="morebtn hvr-rectangle-in" href="PesquisaComidaControllerCliente">Cardápio</a>
 					</div>
 					<div class="clearfix"></div>
 				</div>

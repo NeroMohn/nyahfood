@@ -1,7 +1,7 @@
 <%-- 
-    Document   : ManterPedido
-    Created on : 24/10/2018, 19:06:06
-    Author     : Usuário
+    Document   : ManterComida
+    Created on : 20/11/2018, 03:31:34
+    Author     : rodri
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
@@ -10,70 +10,10 @@
 
 
 
-
-
 <!DOCTYPE html>
 <html>
 <head>
 <title>NyahFood</title>
-<!--Cep automático-->
-<script type="text/javascript" >
-    function limpa_formulário_cep() {
-            document.getElementById('rua').value=("");
-            document.getElementById('bairro').value=("");
-            document.getElementById('cidade').value=("");
-            document.getElementById('uf').value=("");
-    }
-
-    function meu_callback(conteudo) {
-        if (!("erro" in conteudo)) {
-            //Atualiza os campos com os valores.
-            document.getElementById('rua').value=(conteudo.logradouro);
-            document.getElementById('bairro').value=(conteudo.bairro);
-            document.getElementById('cidade').value=(conteudo.localidade);
-            document.getElementById('uf').value=(conteudo.uf);
-        } //end if.
-        else {
-            //CEP não Encontrado.
-            limpa_formulário_cep();
-            alert("CEP não encontrado.");
-        }
-    }
-        
-    function pesquisacep(valor) {
-        //Nova variável "cep" somente com dígitos.
-        var cep = valor.replace(/\D/g, '');
-        //Verifica se campo cep possui valor informado.
-        if (cep != "") {
-            var validacep = /^[0-9]{8}$/; //expressão para validação do cep
-
-            //Valida o formato do CEP.
-            if(validacep.test(cep)) {
-                //Preenche os campos com "..." enquanto consulta webservice.
-                document.getElementById('rua').value="...";
-                document.getElementById('bairro').value="...";
-                document.getElementById('cidade').value="...";
-                document.getElementById('uf').value="...";
-                //Cria um elemento javascript.
-                var script = document.createElement('script');
-                //Sincroniza com o callback.
-                script.src = 'https://viacep.com.br/ws/'+cep+'/json/?callback=meu_callback';
-                //Insere script no documento e carrega o conteúdo.
-                document.body.appendChild(script);
-            } //end if.
-            else {
-                //cep é inválido.
-                limpa_formulário_cep();
-                alert("Formato de CEP inválido.");
-            }
-        } //end if.
-        else {
-            //cep sem valor, limpa formulário.
-            limpa_formulário_cep();
-        }
-    }
-    </script>
-
 
 <link href="css/bootstrap.css" rel='stylesheet' type='text/css' />
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
@@ -103,16 +43,24 @@
 			});
 		</script>
 <script src="js/simpleCart.min.js"> </script>	
+
 <script src="jquery-3.2.1.min.js"></script>
                <script>
                       $(function(){ 
                                 $("#header").load("Header.jsp");
-                               
+                                $("#UploadImagem").load("UploadImagem.jsp");
                        });
                  </script>
 </head>
 <body>
     <!-- header-section-starts -->
+    <% if (session.getAttribute("tipo") != "3" ) { %>
+     <img src="images/Acesso.png">
+    
+       <% } %>
+    
+
+		 <% if (session.getAttribute("tipo") == "3" ) { %>
 	<div id="header"></div>
 		
 				
@@ -123,37 +71,77 @@
 	   <div class="container">
 		  <div class="register">
 		  	
-                      <div class="special-offers-section-head text-center dotted-line"> <div class="special-offers-section" > <h1>Manter Compra</h1></br> </div></div>
+                      <div class="special-offers-section-head text-center dotted-line"> <div class="special-offers-section" > <h1>Cadastro Comida</h1></br> </div></div>
         	
-           <form action ="ManterPedidoController?acao=confirmarOperacao&operacao=${operacao}"  method = "post" name="ManterPedido">
-            <table>
+         <form action ="PesquisaComidaControllerADM?acao=confirmarOperacao&operacao=${operacao}"  method = "post" name="ManterComidaADM">
+
+
+             <table>
+                
                 <tr>
-              
-                <td><input type="hidden" name="txtIdPedido" value="${pedido.idPedido}" <c:if test="${operacao != 'Incluir'}"> readonly</c:if>></input></td>
-            </tr>
-            <tr>
-                <td>Total:</td>
-                <td><input type="text" pattern="[0-9].{3,}$" required name="txtTotal" value="${pedido.total}" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>></input></td>
-            </tr>
-             <tr>
-                <td>Metodo Pagamento:</td>
-                <td><input type="text" name="txtMetodoPagamento" required value="${pedido.metodoPagamento}"<c:if test="${operacao == 'Excluir'}"> readonly</c:if>></input></td>
-            </tr>
-            <tr>
-                <td>Data:</td>
-                <td><input type="text" pattern="[0-9].{8,}$" required name="txtDate" value="${pedido.date}"<c:if test="${operacao == 'Excluir'}"> readonly</c:if>></input></td>
-            </tr>
-            <tr>
-                <td>Cliente:</td>
-                <td><input type="text" name="txtCodCliente"  pattern="[0-9].{0,}$" required value="${pedido.codCliente}"<c:if test="${operacao == 'Excluir'}"> readonly</c:if>></input></td>
-            </tr>
-            <tr>
-                <td>Cupom Desconto:</td>
-                <td><input type="text"  pattern="[a-zA-Z0-9].{8,}$" requiredname="txtCodCupomDesconto" value="${pedido.codCupomDesconto}"<c:if test="${operacao == 'Excluir'}"> readonly</c:if>></input></td>
-            </tr>
+                  
+                    <td>
+                        <input type="hidden" name="txtIdComida" value="${comida.idComida}" <c:if test="${operacao != 'Incluir'}"> readonly</c:if>>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Nome da comida:
+                    </td>
+                    <td><input type="text" pattern="[a-zA-Z].{3,}$" required name="txtNome" value="${comida.nome}" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>>
+                    </td>
+                </tr>
+                  <tr>
+                  <tr>
+                    <td>
+                        Nome Ingrediente:
+                    </td>
+                    <td>
+                        <input type="text"  pattern="[a-zA-Z].{5,}$" required name="txtIngrediente" value="${comida.ingrediente}" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>>
+                    </td>
+                </tr>
+                  <tr>
+                    <td>
+                        Tempo Preparo:
+                    </td>
+                    <td>
+                        <input type="text" pattern="[0-9].{3,}$" required name="txtTempoEstimado" value="${comida.tempoEstimado}" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>>
+                    </td>
+                </tr>
+                  <tr>
+                    <td>
+                        Foto Comida:  
+                    </td>
+                    <td>
+
+                             <div id="UploadImagem"></div> <input type="hidden"  name="txtFoto" value="${comida.foto}" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>>
+                   
+                    </td>
+               
+                </tr>
+                  <tr>
+                    <td>
+                        Preço:
+                    </td>
+                    <td>
+                        <input type="text" pattern="[0-9].{3,}$" required name="txtPreco" value="${comida.preco}" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>>
+                    </td>
+                </tr>
+                  <tr>
+                    <td>
+                        Desconto:
+                    </td>
+                    <td>
+                        <input type="text" pattern="[0-9].{3,}$" required name="txtDesconto" value="${comida.desconto}" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>>
+                    </td>
+                </tr>
+                 
             </table>
-            <td><input type="submit" name="btnConfirmar" value="Confirmar"></td>
+                    <br>
+
+                    <div >   <td><input type="submit" name="btnConfirmar" value="Confirmar"></td></div>
+                      
         </form>
+          
                       
                       
                       
@@ -292,6 +280,7 @@
 						});
 					</script>
 				<a href="#" id="toTop" style="display: block;"> <span id="toTopHover" style="opacity: 1;"> </span></a>
+                                <% } %>
 
 </body>
 </html>

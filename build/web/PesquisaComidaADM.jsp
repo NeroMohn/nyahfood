@@ -106,16 +106,16 @@
                         <td><c:out value="${comida.preco}"/></td>
                          <td><c:out value="${comida.desconto}"/></td>
                         <td><c:out value="${comida.codLoja}"/></td>
-                        <td><a href="ManterComidaController?acao=prepararOperacao&operacao=Editar&idComida=<c:out value="${comida.idComida}"/>">Editar</a></td>
+                        <td><a href="ManterComidaControllerADM?acao=prepararOperacao&operacao=Editar&idComida=<c:out value="${comida.idComida}"/>">Editar</a></td>
                         <td>
-                            <a href="ManterComidaController?acao=prepararOperacao&operacao=Excluir&idComida=<c:out value="${comida.idComida}"/>">Excluir</a></td>
+                            <a href="ManterComidaControllerADM?acao=prepararOperacao&operacao=Excluir&idComida=<c:out value="${comida.idComida}"/>">Excluir</a></td>
                     </tr>
                 </c:forEach>
 
 
         </table>
                  <div id="botaoInclui">
-        <form action="ManterComidaController?acao=prepararOperacao&operacao=Incluir" method="post">
+        <form action="ManterComidaControllerADM?acao=prepararOperacao&operacao=Incluir" method="post">
             <input type="submit" name="btnIncluir" value="Incluir">
         </form>
                  </div>

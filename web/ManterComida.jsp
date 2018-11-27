@@ -48,19 +48,19 @@
                <script>
                       $(function(){ 
                                 $("#header").load("Header.jsp");
-                                $("#UploadImagem").load("UploadImagem.jsp")
+                                $("#UploadImagem").load("UploadImagem.jsp");
                        });
                  </script>
 </head>
 <body>
     <!-- header-section-starts -->
-    <% if (session.getAttribute("tipo") != "2") { %>
+    <% if (session.getAttribute("tipo") != "2" ) { %>
      <img src="images/Acesso.png">
     
        <% } %>
     
 
-		 <% if (session.getAttribute("tipo") == "2") { %>
+		 <% if (session.getAttribute("tipo") == "2" ) { %>
 	<div id="header"></div>
 		
 				
@@ -87,7 +87,7 @@
                 <tr>
                     <td>Nome da comida:
                     </td>
-                    <td><input type="text" name="txtNome" value="${comida.nome}" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>>
+                    <td><input type="text" pattern="[a-zA-Z].{3,}$" required name="txtNome" value="${comida.nome}" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>>
                     </td>
                 </tr>
                   <tr>
@@ -96,7 +96,7 @@
                         Nome Ingrediente:
                     </td>
                     <td>
-                        <input type="text" name="txtIngrediente" value="${comida.ingrediente}" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>>
+                        <input type="text"  pattern="[a-zA-Z].{5,}$" required name="txtIngrediente" value="${comida.ingrediente}" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>>
                     </td>
                 </tr>
                   <tr>
@@ -104,7 +104,7 @@
                         Tempo Preparo:
                     </td>
                     <td>
-                        <input type="text" name="txtTempoEstimado" value="${comida.tempoEstimado}" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>>
+                        <input type="text" pattern="[0-9].{3,}$" required name="txtTempoEstimado" value="${comida.tempoEstimado}" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>>
                     </td>
                 </tr>
                   <tr>
@@ -113,7 +113,7 @@
                     </td>
                     <td>
 
-                             <input  type="text" name="txtFoto" value="${comida.foto}" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>>
+                             <div id="UploadImagem"></div> <input type="hidden"  name="txtFoto" value="${comida.foto}" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>>
                    
                     </td>
                
@@ -123,7 +123,7 @@
                         Preço:
                     </td>
                     <td>
-                        <input type="text" name="txtPreco" value="${comida.preco}" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>>
+                        <input type="text" pattern="[0-9].{3,}$" required name="txtPreco" value="${comida.preco}" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>>
                     </td>
                 </tr>
                   <tr>
@@ -131,13 +131,14 @@
                         Desconto:
                     </td>
                     <td>
-                        <input type="text" name="txtDesconto" value="${comida.desconto}" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>>
+                        <input type="text" pattern="[0-9].{3,}$" required name="txtDesconto" value="${comida.desconto}" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>>
                     </td>
                 </tr>
                  
             </table>
+                    <br>
 
-                    <div class="special-offers-section-head text-center dotted-line">   <td><input type="submit" name="btnConfirmar" value="Confirmar"></td></div>
+                    <div >   <td><input type="submit" name="btnConfirmar" value="Confirmar"></td></div>
                       
         </form>
           

@@ -24,8 +24,8 @@ import model.Comida;
  *
  * @author rodri
  */
-@WebServlet(name = "ManterComidaController",urlPatterns = {"/controller.ManterComidaController"})
-public class ManterComidaController extends HttpServlet {
+@WebServlet(name = "ManterComidaControllerADM",urlPatterns = {"/ManterComidaControllerADM"})
+public class ManterComidaControllerADM extends HttpServlet {
 
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
         throws ServletException, IOException, SQLException, ClassNotFoundException {
@@ -45,7 +45,7 @@ public void prepararOperacao(HttpServletRequest request, HttpServletResponse res
         String operacao = request.getParameter("operacao");
         request.setAttribute("operacao", operacao);
         request.setAttribute("tipo",tipo);
-        if(tipo != "2"){
+        if(tipo != "3"){
             RequestDispatcher view = request.getRequestDispatcher("AcessoNegadoController");
             view.forward(request, response);
         }else{
@@ -54,18 +54,18 @@ public void prepararOperacao(HttpServletRequest request, HttpServletResponse res
             Comida comida = Comida.obterComida(idComida);
             request.setAttribute("comida", comida);
         }
-        RequestDispatcher view = request.getRequestDispatcher("/ManterComida.jsp");
+        RequestDispatcher view = request.getRequestDispatcher("/ManterComidaADM.jsp");
         view.forward(request, response);
         }
         
     }   catch (SQLException ex) {
-            Logger.getLogger(ManterComidaController.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(ManterComidaControllerADM.class.getName()).log(Level.SEVERE, null, ex);
         } catch (ClassNotFoundException ex) {
-            Logger.getLogger(ManterComidaController.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(ManterComidaControllerADM.class.getName()).log(Level.SEVERE, null, ex);
         } catch (ServletException ex) {
-            Logger.getLogger(ManterComidaController.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(ManterComidaControllerADM.class.getName()).log(Level.SEVERE, null, ex);
         } catch (IOException ex) {
-            Logger.getLogger(ManterComidaController.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(ManterComidaControllerADM.class.getName()).log(Level.SEVERE, null, ex);
         }
    
 }
@@ -104,7 +104,7 @@ public void confirmarOperacao(HttpServletRequest request, HttpServletResponse re
             }
       }
       
- RequestDispatcher view =request.getRequestDispatcher("PesquisaComidaController");
+ RequestDispatcher view =request.getRequestDispatcher("PesquisaComidaControllerADM");
         view.forward(request,response);
         }catch (IOException e) {
             throw new ServletException(e);
@@ -132,9 +132,9 @@ public void confirmarOperacao(HttpServletRequest request, HttpServletResponse re
         try {
             processRequest(request, response);
         } catch (SQLException ex) {
-            Logger.getLogger(ManterComidaController.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(ManterComidaControllerADM.class.getName()).log(Level.SEVERE, null, ex);
         } catch (ClassNotFoundException ex) {
-            Logger.getLogger(ManterComidaController.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(ManterComidaControllerADM.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
 
@@ -152,9 +152,9 @@ public void confirmarOperacao(HttpServletRequest request, HttpServletResponse re
         try {
             processRequest(request, response);
         } catch (SQLException ex) {
-            Logger.getLogger(ManterComidaController.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(ManterComidaControllerADM.class.getName()).log(Level.SEVERE, null, ex);
         } catch (ClassNotFoundException ex) {
-            Logger.getLogger(ManterComidaController.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(ManterComidaControllerADM.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
 

@@ -21,7 +21,7 @@ public class PesquisaClienteControllerADM extends HttpServlet {
         try {
             List<Cliente> obterTodosClientes = Cliente.obterTodosClientes();
             if (obterTodosClientes.isEmpty()) {
-                request.setAttribute("vazio", "Mensagem");
+                request.setAttribute("vazio", "");
             }
             request.setAttribute("clientes", obterTodosClientes);
             RequestDispatcher view = request.getRequestDispatcher("/PesquisaClienteADM.jsp");
@@ -31,8 +31,7 @@ public class PesquisaClienteControllerADM extends HttpServlet {
             throw new ServletException(e);
         } catch (SQLException e) {
             throw new ServletException(e);
-        }}
-        else{
+        }}else{
             RequestDispatcher view = request.getRequestDispatcher("/AcessoNegado.jsp");
         }
     }

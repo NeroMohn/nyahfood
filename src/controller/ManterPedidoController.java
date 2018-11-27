@@ -21,7 +21,7 @@ import model.Pedido;
  *
  * @author Yukas
  */
-@WebServlet (name= "ManterPedidoController", urlPatterns = "/controller.ManterPedidoController")
+@WebServlet (name= "ManterPedidoController", urlPatterns = "/ManterPedidoController")
 
 public class ManterPedidoController extends HttpServlet {
 
@@ -46,7 +46,7 @@ public void prepararOperacao(HttpServletRequest request, HttpServletResponse res
         request.setAttribute("Pedido", Pedido.obterTodosPedidos());
         String tipo = request.getSession().getAttribute("tipo").toString();
        
-        if(tipo != "1"){
+        if(tipo != "3"){
             RequestDispatcher view = request.getRequestDispatcher("AcessoNegadoController");
             view.forward(request, response);
         }else{

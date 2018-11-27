@@ -21,7 +21,7 @@ public class PesquisaClienteController extends HttpServlet {
         try {
             List<Cliente> obterTodosClientes = Cliente.obterTodosClientes();
             if (obterTodosClientes.isEmpty()) {
-                request.setAttribute("vazio", "Mensagem");
+                request.setAttribute("vazio", "");
             }
             request.setAttribute("clientes", obterTodosClientes);
             RequestDispatcher view = request.getRequestDispatcher("/PesquisaCliente.jsp");

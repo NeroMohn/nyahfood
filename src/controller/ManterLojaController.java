@@ -17,6 +17,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import model.Loja;
+import model.TipoCozinha;
 
 /**
  *
@@ -44,8 +45,7 @@ public void prepararOperacao(HttpServletRequest request, HttpServletResponse res
     
     String operacao = request.getParameter("operacao");
         request.setAttribute("operacao", operacao);
-        request.setAttribute("Loja", Loja.obterTodasLojas());
-
+        request.setAttribute("tiposCozinha", TipoCozinha.obterTodosTiposCozinha());
         if (!operacao.equals("Incluir")) {
             Long idLoja = Long.parseLong(request.getParameter("idLoja"));
             Loja loja = Loja.obterLoja(idLoja);
@@ -103,7 +103,7 @@ public void confirmarOperacao(HttpServletRequest request, HttpServletResponse re
                 }
             }
         }
-          RequestDispatcher view =request.getRequestDispatcher("PesquisaLojaController");
+          RequestDispatcher view =request.getRequestDispatcher("PesquisaLojaControllerADM");
         view.forward(request,response); 
      } catch (IOException e) {
             throw new ServletException(e);

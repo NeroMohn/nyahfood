@@ -110,7 +110,7 @@
                 <td colspan = 2 > Ação</td>
             </tr>
             <div><c:out value="${vazio}"/></div>
-                <c:forEach items="${clientes}" var="cliente">
+                <c:forEach items="${lojas}" var="loja">
                     <tr>
                         <td><c:out value="${loja.idLoja}"/></td>
                         <td><c:out value="${loja.nome}"/></td>
@@ -130,9 +130,9 @@
                                <td><c:out value="${loja.nomeGerente}"/></td>
                                  <td><c:out value="${loja.codTipoCozinha}"/></td>
                                              
-                        <td><a href="ManterClienteController?acao=prepararOperacao&operacao=Editar&idCliente=<c:out value="${cliente.idCliente}"/>">Editar</a></td>
+                        <td><a href="ManterLojaController?acao=prepararOperacao&operacao=Editar&idLoja=<c:out value="${loja.idLoja}"/>">Editar</a></td>
                         <td>
-                            <a href="ManterClienteController?acao=prepararOperacao&operacao=Excluir&idCliente=<c:out value="${cliente.idCliente}"/>">Excluir</a></td>
+                            <a href="ManterLojaController?acao=prepararOperacao&operacao=Excluir&idLoja=<c:out value="${loja.idLoja}"/>">Excluir</a></td>
                
                     </tr>
                 </c:forEach>

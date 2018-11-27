@@ -125,7 +125,7 @@
 		  	
                         <h1>Cadastro Cliente</h1>
         
-        <form action ="CadastroClienteController?acao=confirmarOperacao&operacao=${operacao}" method = "post" name="ManterCliente">
+        <form action ="CadastroClienteController?acao=confirmarOperacao&operacao=${operacao}" method = "post" name="ManterCliente" onsubmit=" return validacaoCliente()">
             <table>
             <tr>
               
@@ -133,52 +133,52 @@
             </tr>
             <tr>
                 <td>Nome:</td>
-                <td><input type="text" name="txtNomeCliente" value="${cliente.nome}" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>></td>
+                <td><input pattern="^[A-Za-z].{3,}$" required type="text" name="txtNomeCliente" value="${cliente.nome}" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>></td>
             </tr>
             <tr>
                 <td>CPF:</td>
-                <td><input type="text" name="txtCpfCliente" value="${cliente.cpf}" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>></td>
+                <td><input pattern="[0-9].{11}$" title="Utilize Apenas Numeros" required type="text" name="txtCpfCliente" value="${cliente.cpf}" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>></td>
             </tr>
              <tr>
                 <td>Email:</td>
-                <td><input type="text" name="txtEmailCliente" value="${cliente.email}" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>></td>
+                <td><input pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" required  type="email" name="txtEmailCliente" value="${cliente.email}" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>></td>
             </tr> 
              <tr>
                 <td>Senha:</td>
-                <td><input type="password" name="txtSenhaCliente" value="${cliente.senha}" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>></td>
+                <td><input title="Minimo 6 digitos"  pattern=".{6,}$" required type="password" name="txtSenhaCliente" value="${cliente.senha}" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>></td>
             </tr>
             <tr>
                 <td>Telefone:</td>
-                <td><input type="text" name="txtTelefoneCliente" value="${cliente.telefone}" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>></td>
+                <td><input title="Exemplo: (XX)XXXXXXX" pattern=".{10,}$" type="text" name="txtTelefoneCliente" value="${cliente.telefone}" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>></td>
             </tr>
              <tr>
                 <td>CEP:</td>
-                <td><input type="text" name="txtCepCliente" id="cep"  onblur="pesquisacep(this.value);" value="${cliente.cep}" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>></td>
+                <td><input pattern="[0-9].{7,}$" required type="text" name="txtCepCliente" id="cep"  onblur="pesquisacep(this.value);" value="${cliente.cep}" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>></td>
             </tr>
             
              <tr>
                 <td>Logradouro:</td>
-                <td><input type="text" name="txtLogradouroCliente" id="rua" value="${cliente.logradouro}" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>></td>
+                <td><input  pattern="[A-Za-z].{4,}" required type="text" name="txtLogradouroCliente" id="rua" value="${cliente.logradouro}" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>></td>
             </tr>
 			<tr>
                 <td>Bairro:</td>
-                <td><input type="text" name="txtBairroCliente" id="bairro" value="${cliente.bairro}" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>></td>
+                <td><input pattern="[A-Za-z].{4,}" required type="text" name="txtBairroCliente" id="bairro" value="${cliente.bairro}" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>></td>
             </tr>
              <tr>
                 <td>Numero:</td>
-                <td><input type="text" name="txtNumeroCliente" value="${cliente.numero}" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>></td>
+                <td><input pattern="[A-Za-z0-9].{0,}" required type="text" name="txtNumeroCliente" value="${cliente.numero}" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>></td>
             </tr>
              <tr>
                 <td>Complemento:</td>
-                <td><input type="text" name="txtComplementoCliente" value="${cliente.complemento}" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>></td>
+                <td><input pattern="[A-Za-z].{4,}" required type="text" name="txtComplementoCliente" value="${cliente.complemento}" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>></td>
             </tr>
              <tr>
                 <td>Cidade:</td>
-                <td><input type="text" name="txtCidadeCliente" id="cidade" value="${cliente.cidade}" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>></td>
+                <td><input pattern="[A-Za-z].{4,}" required type="text" name="txtCidadeCliente" id="cidade" value="${cliente.cidade}" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>></td>
             </tr>
              <tr>
                 <td>Estado:</td>
-                <td><input type="text" name="txtEstadoCliente" id="uf" value="${cliente.estado}" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>></td>
+                <td><input  pattern="[A-Za-z]{2}" required  title="Apenas a sigla" type="text" name="txtEstadoCliente" id="uf" value="${cliente.estado}" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>></td>
             </tr>
             
             </table>

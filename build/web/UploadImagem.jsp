@@ -12,7 +12,7 @@
         <form enctype="application/x-www-form-urlencoded">
         <input type="file" id="file" name="file" onchange="uploadFile();" />
       
-        <img alt="imagem" src="" id="target" width="200" height="200"><br> 
+        <img alt="imagem" src="" id="target" width="200" height="100"><br> 
         </form>
      
       </div>
@@ -42,7 +42,7 @@
                 url : "Upload",
                 data: {Upload : reader.result}
             }).done(function(response){
-                alert("Sucesso: " + response);   
+                alert("Sucesso: Imagem Selecionada " + response);   
             
             }).fail(function(xhr, status, errorThrown){
             alert("Error: " + xhr.responseText);

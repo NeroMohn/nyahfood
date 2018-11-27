@@ -128,11 +128,11 @@
                                 <form action="LoginClienteController?acao=logar" method="POST" name="LoginCliente">
 				  <div>
 					<span>Email<label for="log">*</label></span>
-					<input type="email" onBlur="confereEmail()" name="login" id="log" value="">
+					<input pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" required type="email" onBlur="confereEmail()" name="login" id="log" value="">
 				  </div>
 				  <div>
                                       <span>Senha <label for="pass">*</label></span>
-					 <input type="password" name="senha" id="pass" value="">
+					 <input  pattern=".{6,s}$" required type="password" name="senha" id="pass" value="">
 				  </div>
 					<div>						
 					</div>

@@ -108,11 +108,11 @@
                                 <form action="LoginLojaController?acao=logar" method="POST" name="LoginLoja">
 				  <div>
 					<span>Email Address<label for="log">*</label></span>
-					<input type="email" name="login" id="log" value="">
+					<input pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" required type="email" name="login" id="log" value="">
 				  </div>
 				  <div>
                                       <span>Password <label for="pass">*</label></span>
-					 <input type="password" name="senha" id="pass" value="">
+					 <input pattern=".{6,s}$" required type="password" name="senha" id="pass" value="">
 				  </div>
 					<div>						
 					</div>

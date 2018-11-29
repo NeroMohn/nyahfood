@@ -74,7 +74,7 @@ public void prepararOperacao(HttpServletRequest request, HttpServletResponse res
                 Logger.getLogger(ManterComidaPedidaController.class.getName()).log(Level.SEVERE, null, ex);
             }
         }  
-        request.setAttribute("", this);
+        request.setAttribute("idComida", this);
         request.setAttribute("operacao", operacao);
         Long idComida = Long.parseLong(request.getParameter("idComida"));
         

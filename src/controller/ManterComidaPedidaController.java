@@ -39,24 +39,6 @@ public class ManterComidaPedidaController extends HttpServlet {
             RequestDispatcher view = request.getRequestDispatcher("AcessoNegadoController");
             view.forward(request, response);            
         }else{
-        Long idCliente = Long.parseLong(request.getSession().getAttribute("id").toString());
-        
-        String status = (request.getSession().getAttribute("status").toString());
-        if (status.equals("0")){
-            String timeStamp = new SimpleDateFormat("ddMMyyyy_HHmmss").format(Calendar.getInstance().getTime());
-            Pedido pedido = new Pedido(0,null,timeStamp,idCliente,null);
-            try {
-                Pedido.gravar(pedido);
-                Pedido pedidoHolder = obterPedido(pedido.getIdPedido());
-                Long idPedido = pedidoHolder.getIdPedido();
-                request.getSession().setAttribute("idPedido", Pedido.obterPedido(idPedido));
-                request.getSession().setAttribute("status", "1");
-            } catch (SQLException ex) {
-                Logger.getLogger(ManterComidaPedidaController.class.getName()).log(Level.SEVERE, null, ex);
-            } catch (ClassNotFoundException ex) {
-                Logger.getLogger(ManterComidaPedidaController.class.getName()).log(Level.SEVERE, null, ex);
-            }
-        }  
         
         if (acao.equals("confirmarOperacao")) {
                  confirmarOperacao(request, response);
@@ -73,6 +55,26 @@ public void prepararOperacao(HttpServletRequest request, HttpServletResponse res
         try{
     
     String operacao = request.getParameter("operacao");
+    
+    Long idCliente = Long.parseLong(request.getSession().getAttribute("id").toString());
+        
+        String status = (request.getSession().getAttribute("status").toString());
+        if (status =="0"){
+            String timeStamp = new SimpleDateFormat("dd-MM-yyyy_HH:mm:ss").format(Calendar.getInstance().getTime());
+            Pedido pedido = new Pedido(0,null,timeStamp,idCliente,null);
+            try {
+                Pedido.gravar(pedido);
+                Pedido pedidoHolder = obterPedido(pedido.getIdPedido());
+                Long idPedido = pedidoHolder.getIdPedido();
+                request.getSession().setAttribute("idPedido", Pedido.obterPedido(idPedido));
+                request.getSession().setAttribute("status", "1");
+            } catch (SQLException ex) {
+                Logger.getLogger(ManterComidaPedidaController.class.getName()).log(Level.SEVERE, null, ex);
+            } catch (ClassNotFoundException ex) {
+                Logger.getLogger(ManterComidaPedidaController.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }  
+        request.setAttribute("", this);
         request.setAttribute("operacao", operacao);
         Long idComida = Long.parseLong(request.getParameter("idComida"));
         

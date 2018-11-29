@@ -131,7 +131,7 @@
                         Desconto:
                     </td>
                     <td>
-                        <input type="text" pattern="\d+(,\d{2})?" required name="txtDesconto" value="${comida.desconto}" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>>
+                        <input type="text" pattern="\d+(,\d{2})?" name="txtDesconto" value="${comida.desconto}" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>>
                     </td>
                 </tr>
                  

@@ -35,7 +35,7 @@ public class ManterComidaPedidaController extends HttpServlet {
             throws ServletException, IOException {
         String tipo = request.getSession().getAttribute("tipo").toString();
         String acao = request.getParameter("acao");
-        if(!tipo.equals("1")){
+        if(tipo!="1"){
             RequestDispatcher view = request.getRequestDispatcher("AcessoNegadoController");
             view.forward(request, response);            
         }else{

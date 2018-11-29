@@ -68,6 +68,8 @@ public class LoginClienteController extends HttpServlet {
         String senha = request.getParameter("senha");
         String tipo = "1";
         Cliente cliente = Cliente.obterCliente(login);
+        Long idCliente = cliente.getIdCliente();
+        String nomeCliente = cliente.getNome();
         if(cliente == null){
             try{
                 RequestDispatcher view = request.getRequestDispatcher("/LoginIncorreto.jsp");       
@@ -78,8 +80,9 @@ public class LoginClienteController extends HttpServlet {
             try {
                 request.getSession().setAttribute("login", login);
                 request.getSession().setAttribute("tipo", tipo);
-                request.getSession().setAttribute("id", cliente.getIdCliente());
-                request.getSession().setAttribute("nome", cliente.getNome());
+                request.getSession().setAttribute("id", idCliente);
+                request.getSession().setAttribute("nome", nomeCliente);
+                request.getSession().setAttribute("status", 0);
                 RequestDispatcher view = request.getRequestDispatcher("/SessionCliente.jsp");       
                 view.forward(request, response);
             } catch (IOException ex) {  

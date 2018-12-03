@@ -60,6 +60,12 @@
         <div  class="container text-center"> 
         <h1>Pesquisa Cliente</h1>
         <br>
+        
+        <form action="ManterClienteController?acao=prepararOperacao&operacao=Incluir" method="post">
+            <input type="submit" name="btnIncluir" value="Incluir">
+        </form>
+                <br>
+         
         <table  class=" col-lg-12 ">
             <tr>
                 <td>Código Cliente</td>
@@ -103,12 +109,7 @@
 
 
         </table>
-             <div id="botaoInclui">
-        <form action="ManterClienteController?acao=prepararOperacao&operacao=Incluir" method="post">
-            <input type="submit" name="btnIncluir" value="Incluir">
-        </form>
-                <br>
-             </div>
+           
         </div>
          
                                      <% } %>

@@ -57,34 +57,15 @@
 		 <% if (session.getAttribute("tipo") == "3") { %>
 	<div id="header"></div>
 		
-					<div class="main-search">
-						<form action="search.html">
-							<input type="text" value="Search" onFocus="this.value = '';" onBlur="if (this.value == '') {this.value = 'Search';}" class="text"/>
-							<input type="submit" value=""/>
-						</form>
-						<div class="close"><img src="images/cross.png" /></div>
-					</div>
-					<div class="srch"><button></button></div>
-					<script type="text/javascript">
-                        $('.main-search').hide();
-                        $('button').click(function (){
-                                $('.main-search').show();
-                                $('.main-search text').focus();
-                            }
-                        );
-                        $('.close').click(function(){
-                            $('.main-search').hide();
-                        });
-					</script>
-
-				</div>
-			</div>
-		</div>
-	</div>
+					
 	<!-- header-section-ends -->
 	<!-- content-section-starts -->
         <div  class="container text-center"> 
            <h1>Pesquisa Pedido</h1>
+           <br>
+           <form action="ManterPedidoController?acao=prepararOperacao&operacao=Incluir" method="post">
+            <input type="submit" name="btnIncluir" value="Incluir">
+        </form>
            <br>
         <table border=1  class=" col-lg-12 "> 
             <tr>

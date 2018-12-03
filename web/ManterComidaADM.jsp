@@ -126,15 +126,7 @@
                         <input type="text" pattern="[0-9].{3,}$" required name="txtPreco" value="${comida.preco}" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>>
                     </td>
                 </tr>
-                  <tr>
-                    <td>
-                        Desconto:
-                    </td>
-                    <td>
-                        <input type="text" pattern="[0-9].{3,}$" required name="txtDesconto" value="${comida.desconto}" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>>
-                    </td>
-                </tr>
-                 
+                   
             </table>
                     <br>
 

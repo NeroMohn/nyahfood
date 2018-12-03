@@ -153,7 +153,7 @@
             </tr>
             <tr>
                 <td>CNPJ*:</td>
-                <td><input  pattern="[0-9].{14}$" required title="14 Digitos. Apenas Numeros." type="text" name="txtCnpjLoja" value="${loja.cnpj}" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>></input></td>
+                <td><input  pattern="[0-9].{13}$" required title="14 Digitos. Apenas Numeros." type="text" name="txtCnpjLoja" value="${loja.cnpj}" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>></input></td>
             </tr>
             <tr>
                 <td>Descrição:</td>

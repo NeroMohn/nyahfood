@@ -87,16 +87,16 @@
                 <tr>
                     <td>Nome da comida*:
                     </td>
-                    <td><input type="text" pattern="[a-zA-Z].{3,}$" required name="txtNome" value="${comida.nome}" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>>
+                    <td><input type="text" pattern="[a-zA-Z].{3,45}$" required name="txtNome" value="${comida.nome}" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>>
                     </td>
                 </tr>
                   <tr>
                   <tr>
                     <td>
-                        Nome Ingrediente:
+                        Nome Ingrediente*:
                     </td>
                     <td>
-                        <input type="text"  pattern="[a-zA-Z].{5,}$" name="txtIngrediente" value="${comida.ingrediente}" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>>
+                        <input type="text"  pattern="[a-zA-Z].{5,45}$" name="txtIngrediente" value="${comida.ingrediente}" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>>
                     </td>
                 </tr>
                   <tr>
@@ -104,7 +104,7 @@
                         Tempo Preparo (em minutos):
                     </td>
                     <td>
-                        <input type="text" pattern="[0-9].{1,}$" required name="txtTempoEstimado" value="${comida.tempoEstimado}" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>>
+                        <input type="text" pattern="[0-9].{1,45}$" required name="txtTempoEstimado" value="${comida.tempoEstimado}" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>>
                     </td>
                 </tr>
                   <tr>
@@ -126,14 +126,7 @@
                         <input type="text" pattern="\d+(,\d{2})?" required name="txtPreco" value="${comida.preco}" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>>
                     </td>
                 </tr>
-                  <tr>
-                    <td>
-                        Desconto:
-                    </td>
-                    <td>
-                        <input type="text" pattern="\d+(,\d{2})?" name="txtDesconto" value="${comida.desconto}" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>>
-                    </td>
-                </tr>
+                 
                  
             </table>
                     <br>

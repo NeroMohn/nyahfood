@@ -88,7 +88,7 @@ public void prepararOperacao(HttpServletRequest request, HttpServletResponse res
                 }
             }
         }
-        RequestDispatcher view =request.getRequestDispatcher("index.jsp");
+        RequestDispatcher view =request.getRequestDispatcher("LoginCliente.jsp");
         view.forward(request,response);
         }catch (IOException e) {
             throw new ServletException(e);

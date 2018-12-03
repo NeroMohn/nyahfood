@@ -103,7 +103,7 @@ public void confirmarOperacao(HttpServletRequest request, HttpServletResponse re
                 }
             }
         }
-          RequestDispatcher view =request.getRequestDispatcher("index.jsp");
+          RequestDispatcher view =request.getRequestDispatcher("LoginLoja.jsp");
         view.forward(request,response); 
      } catch (IOException e) {
             throw new ServletException(e);

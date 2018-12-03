@@ -24,7 +24,7 @@ import model.Comida;
  *
  * @author rodri
  */
-@WebServlet(name = "ManterComidaController",urlPatterns = {"/controller.ManterComidaController"})
+@WebServlet(name = "ManterComidaController",urlPatterns = {"ManterComidaController"})
 public class ManterComidaController extends HttpServlet {
 
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)

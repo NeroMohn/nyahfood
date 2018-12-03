@@ -93,7 +93,7 @@
                   <tr>
                   <tr>
                     <td>
-                        Nome Ingrediente*:
+                        Nome Ingrediente:
                     </td>
                     <td>
                         <input type="text"  pattern="[a-zA-Z].{5,45}$" name="txtIngrediente" value="${comida.ingrediente}" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>>
@@ -101,10 +101,10 @@
                 </tr>
                   <tr>
                     <td>
-                        Tempo Preparo (em minutos):
+                        Tempo Preparo (em minutos)*:
                     </td>
                     <td>
-                        <input type="text" pattern="[0-9].{1,45}$" required name="txtTempoEstimado" value="${comida.tempoEstimado}" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>>
+                        <input type="text" pattern="[0-9].{0,3}$" required name="txtTempoEstimado" value="${comida.tempoEstimado}" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>>
                     </td>
                 </tr>
                   <tr>
@@ -120,7 +120,7 @@
                 </tr>
                   <tr>
                     <td>
-                        Preço:
+                        Preço*:
                     </td>
                     <td>
                         <input type="text" pattern="\d+(,\d{2})?" required name="txtPreco" value="${comida.preco}" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>>

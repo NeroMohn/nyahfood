@@ -90,6 +90,7 @@ public void confirmarOperacao(HttpServletRequest request, HttpServletResponse re
             comida.gravar();
         }else{ 
             if(operacao.equals("Editar")){
+         
                 Long idComida = Long.parseLong(request.getParameter("txtIdComida"));
                 Comida comida = new Comida(idComida,nome,  ingrediente,  tempoEstimado,  foto,  preco,
                    desconto,  codLoja);

@@ -88,7 +88,7 @@ public void prepararOperacao(HttpServletRequest request, HttpServletResponse res
                 }
             }
         }
-        RequestDispatcher view =request.getRequestDispatcher("PesquisaClienteController");
+        RequestDispatcher view =request.getRequestDispatcher("PesquisaClienteControllerADM");
         view.forward(request,response);
         }catch (IOException e) {
             throw new ServletException(e);

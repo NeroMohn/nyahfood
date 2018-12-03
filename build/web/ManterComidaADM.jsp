@@ -81,14 +81,14 @@
                  <tr>
                   
                     <td>
-                        <input type="hidden" name="txtIdComida" value="${comida.idComida}" <c:if test="${operacao != 'Incluir'}"> readonly</c:if>>
+                        <input type="text" name="txtIdComida" value="${comida.idComida}" <c:if test="${operacao != 'Incluir'}"> readonly</c:if>>
                     </td>
                 </tr>
                 <tr>
                 <td>
                     <select name="txtIdLoja" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>>
-                        <c:forEach items="${tiposCozinha}" var="tipoCozinha">
-                            <option value="${tipoCozinha.idTipoCozinha}" <c:if test="${loja.codTipoCozinha == tipoCozinha.idTipoCozinha}"> selected</c:if>>${tipoCozinha.nome}</option>
+                        <c:forEach items="${Loja}" var="idLoja">
+                            <option value="${loja.idLoja}" <c:if test="${loja.codTipoCozinha == itipoCozinha.idTipoCozinha}"> selected</c:if>>${tipoCozinha.nome}</option>
                         </c:forEach>
                     </select>
                 </td>

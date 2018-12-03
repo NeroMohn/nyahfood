@@ -41,6 +41,26 @@ public class Comida{
         setCodLoja(codLoja);
 
     }
+
+    /**
+     *
+     * @param idComida
+     * @param nome
+     * @param ingrediente
+     * @param tempoEstimado
+     * @param foto
+     * @param preco
+     * @param codLoja
+     */
+    public Comida(Long idComida, String nome,String ingrediente, Integer tempoEstimado, String foto, Double preco, Long codLoja) {
+        setIdComida(idComida);
+        setNome(nome);
+        setIngrediente(ingrediente);
+        setTempoEstimado(tempoEstimado);
+        setFoto(foto);
+        setPreco(preco);
+        setCodLoja(codLoja);   
+    }
     
 
     public Long getIdComida() {

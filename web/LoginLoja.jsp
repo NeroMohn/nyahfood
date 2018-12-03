@@ -75,8 +75,8 @@
 			   <div class="col-md-6 login-left wow fadeInLeft" data-wow-delay="0.4s">
 			  	 <h3>CRIE SUA CONTA</h3>
 				 <p>É rapido e grátis. Crie sua conta e peça sua comida onde estiver e quando quiser.</p>
-				 <a class="acount-btn" href="ManterClienteController?acao=prepararOperacao&operacao=Incluir">Criar Conta Usuário</a>
-                                  <a class="acount-btn" href="ManterLojaController?acao=prepararOperacao&operacao=Incluir">Criar Conta Loja</a>
+				 <a class="acount-btn" href="CadastroClienteController?acao=prepararOperacao&operacao=Incluir">Criar Conta Cliente</a>
+                                  <a class="acount-btn" href="CadastroLojaController?acao=prepararOperacao&operacao=Incluir">Criar Conta Loja</a>
 			   </div>
 			   <div class="col-md-6 login-right wow fadeInRight" data-wow-delay="0.4s">
 			  	<h3>Já está registrado?</h3>

@@ -59,7 +59,7 @@
 						 <% if (session.getAttribute("tipo") == null) { %>
                                                 <li><a href="PesquisaLojaController">Restaurantes</a></li>
                                                  <% } %>
-                                                <li><a href="contact.html">Contato</a></li>
+                                               
                                                 <% if (session.getAttribute("tipo") == "1") { %>
                                                     <li><a href="PesquisaLojaController">Restaurantes</a></li>
                                                     <li><a href="PesquisaPedidoCliente.jsp">Historico</a></li>

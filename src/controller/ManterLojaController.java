@@ -24,7 +24,7 @@ import model.TipoCozinha;
  * @author Yukas
  */
 
-@WebServlet (name= "ManterLojaController", urlPatterns = "/controller.ManterLojaController")
+@WebServlet (name= "ManterLojaController", urlPatterns = "/ManterLojaController")
 public class ManterLojaController extends HttpServlet {
 
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
@@ -89,11 +89,12 @@ public void confirmarOperacao(HttpServletRequest request, HttpServletResponse re
             loja.gravar();
         }else{ 
             if(operacao.equals("Editar")){
-                if(request.getSession().getAttribute("id")!=null){
-                String idLoja1 = (String)request.getSession().getAttribute("id");
-                Long idLoja = parseLong(idLoja1);
+               // if(request.getSession().getAttribute("id")!=null)
+              //  String idLoja1 = (String)request.getSession().getAttribute("id");
+                Long idLoja = Long.parseLong(request.getParameter("txtIdLoja"));
+          
                 Loja loja = new Loja (idLoja, nome, nomeGerente, email, senha, telefone, cnpj, descricao, codTipoCozinha, foto, cep, logradouro, bairro, numero, complemento, cidade, estado);
-                loja.alterar();}
+                loja.alterar();
         } else{ 
                 if (operacao.equals("Excluir")){
                 Long idLoja = Long.parseLong(request.getParameter("txtIdLoja"));
@@ -167,5 +168,9 @@ public void confirmarOperacao(HttpServletRequest request, HttpServletResponse re
         public String getServletInfo() {
         return "Short description";
     }// </editor-fold>
+
+    private Long parseLong(Long idLoja1) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
 }
 

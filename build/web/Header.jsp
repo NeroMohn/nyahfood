@@ -64,6 +64,7 @@
                                                     <li><a href="PesquisaLojaController">Restaurantes</a></li>
                                                     <li><a href="PesquisaPedidoCliente.jsp">Historico</a></li>
                                                     <li><a href="PesquisaCompraCliente.jsp">Acompanhar Pedido</a></li>
+                                                     <li><a href="#">Fazer Pedido</a></li>
                                                    
                                             <% } %>
                                                      <% if (session.getAttribute("tipo") == "2") { %>

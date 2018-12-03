@@ -14,7 +14,7 @@ import javax.servlet.http.HttpServletResponse;
 import static javax.swing.text.html.CSS.getAttribute;
 import model.Cliente;
 
-@WebServlet (name= "ManterClienteController", urlPatterns = "/controller.ManterClienteController")
+@WebServlet (name= "ManterClienteController", urlPatterns = "/ManterClienteController")
 public class ManterClienteController extends HttpServlet {
 
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
@@ -75,7 +75,8 @@ public void prepararOperacao(HttpServletRequest request, HttpServletResponse res
             cliente.gravar();
         }else{ 
             if(operacao.equals("Editar")){
-                Long idCliente =parseLong(request.getSession().getAttribute("id").toString());
+               //  com isso editar nao funciona Long idCliente =parseLong(request.getSession().getAttribute("id").toString());
+                Long idCliente = Long.parseLong(request.getParameter("txtIdCliente"));
                 Cliente cliente = new Cliente(idCliente, nome, cpf, email, senha, telefone, logradouro, cep, numero, bairro,
                 complemento, cidade, estado);
                 cliente.alterar();

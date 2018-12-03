@@ -85,6 +85,15 @@
                     </td>
                 </tr>
                 <tr>
+                <td>
+                    <select name="txtIdLoja" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>>
+                        <c:forEach items="${tiposCozinha}" var="tipoCozinha">
+                            <option value="${tipoCozinha.idTipoCozinha}" <c:if test="${loja.codTipoCozinha == tipoCozinha.idTipoCozinha}"> selected</c:if>>${tipoCozinha.nome}</option>
+                        </c:forEach>
+                    </select>
+                </td>
+                 </tr>
+                <tr>
                     <td>Nome da comida*:
                     </td>
                     <td><input type="text" pattern="[a-zA-Z].{3,45}$" required name="txtNome" value="${comida.nome}" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>>

@@ -80,12 +80,12 @@ public void confirmarOperacao(HttpServletRequest request, HttpServletResponse re
     String foto = request.getParameter("txtFoto");
     Double preco = Double.parseDouble(request.getParameter("txtPreco"));
     Double desconto = Double.parseDouble(request.getParameter("txtDesconto"));
-    Long codLoja = Long.parseLong(request.getSession().getAttribute("id").toString());
+    Long codLoja = Long.parseLong(request.getParameter("txtIdLoja"));
     
     try{
     
       if (operacao.equals("Incluir")){
-            Comida comida = new Comida( nome,  ingrediente,  tempoEstimado,  foto,  preco,
+            Comida comida = new Comida( codLoja, nome,  ingrediente,  tempoEstimado,  foto,  preco,
                    desconto,  codLoja);
             comida.gravar();
         }else{ 

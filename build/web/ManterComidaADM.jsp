@@ -81,7 +81,7 @@
                  <tr>
                   
                     <td>
-                        <input type="text" name="txtIdComida" value="${comida.idComida}" <c:if test="${operacao != 'Incluir'}"> readonly</c:if>>
+                        <input type="hidden" name="txtIdComida" value="${comida.idComida}" <c:if test="${operacao != 'Incluir'}"> readonly</c:if>>
                     </td>
                 </tr>
                 <tr>
@@ -132,7 +132,7 @@
                         Preço:
                     </td>
                     <td>
-                        <input type="text" pattern="\d+(,\d{2})?" required name="txtPreco" value="${comida.preco}" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>>
+                        <input type="text" pattern="^[0-9]+(\.[0-9]{1,2})?$" required name="txtPreco" value="${comida.preco}" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>>
                     </td>
                 </tr>
                  

@@ -45,7 +45,7 @@ public void prepararOperacao(HttpServletRequest request, HttpServletResponse res
 
         String operacao = request.getParameter("operacao");
         request.setAttribute("operacao", operacao);
-        request.setAttribute("idLoja", Loja.obterTodasLojas());
+        request.setAttribute("lojas", Loja.obterTodasLojas());
         String tipo = request.getSession().getAttribute("tipo").toString();
         request.setAttribute("tipo",tipo);
         if(tipo != "3"){
@@ -82,7 +82,7 @@ public void confirmarOperacao(HttpServletRequest request, HttpServletResponse re
     Integer tempoEstimado = Integer.parseInt(request.getParameter("txtTempoEstimado"));
     String foto = request.getParameter("txtFoto");
     Double preco = Double.parseDouble(request.getParameter("txtPreco"));
-    Long codLoja = Long.parseLong(request.getParameter("codTipoCozinha"));
+    Long codLoja = Long.parseLong(request.getParameter("optLoja"));
     
     try{
     

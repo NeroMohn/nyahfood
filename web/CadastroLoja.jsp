@@ -132,35 +132,35 @@
                 <td><input type="hidden" name="txtIdLoja" value="${loja.idLoja}" <c:if test="${operacao != 'Incluir'}"> readonly</c:if>></input></td>
             </tr>
             <tr>
-                <td>Nome Loja:</td>
-                <td><input pattern="^[A-Za-z].{2,}$" required  type="text" name="txtNomeLoja" value="${loja.nome}" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>></input></td>
+                <td>Nome Loja*:</td>
+                <td><input pattern="^[A-Za-z].{2,45}$" required  type="text" name="txtNomeLoja" value="${loja.nome}" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>></input></td>
             </tr>
             <tr>
-                <td>Nome do Gerente:</td>
-                <td><input pattern="^[A-Za-z].{3,}$" required  type="text" name="txtNomeGerenteLoja" value="${loja.nomeGerente}" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>></input></td>
+                <td>Nome do Gerente*:</td>
+                <td><input pattern="^[A-Za-z].{3,45}$" required  type="text" name="txtNomeGerenteLoja" value="${loja.nomeGerente}" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>></input></td>
             </tr>
             <tr>
-                <td>Email:</td>
-                <td><input  pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" required  type="email" name="txtEmailLoja" value="${loja.email}" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>></input></td>
+                <td>Email*:</td>
+                <td><input  pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,45}$" required  type="email" name="txtEmailLoja" value="${loja.email}" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>></input></td>
             </tr>
             <tr>
-                <td>Senha:</td>
-                <td><input title="Minimo 6 digitos"  pattern=".{6,}$" required  type="password" name="txtSenhaLoja" value="${loja.senha}" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>></input></td>
+                <td>Senha*:</td>
+                <td><input title="Minimo 6 digitos"  pattern=".{6,45}$" required  type="password" name="txtSenhaLoja" value="${loja.senha}" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>></input></td>
             </tr>
             <tr>
                 <td> Telefone:</td>
-                <td><input title="Exemplo: (XX)XXXXXXX" pattern="^\d{11}$" required type="tel" name="txtTelefoneLoja" value="${loja.telefone}" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>></input></td>
+                <td><input title="Exemplo: DDDXXXXXXXX" pattern="^\d{10,15}$"  type="tel" name="txtTelefoneLoja" value="${loja.telefone}" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>></input></td>
             </tr>
             <tr>
-                <td>CNPJ:</td>
-                <td><input  pattern="[0-9].{14}$" required title="Utilize Apenas Numeros" type="text" name="txtCnpjLoja" value="${loja.cnpj}" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>></input></td>
+                <td>CNPJ*:</td>
+                <td><input  pattern="[0-9].{14}$" required title="14 Digitos. Apenas Numeros." type="text" name="txtCnpjLoja" value="${loja.cnpj}" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>></input></td>
             </tr>
             <tr>
                 <td>Descrição:</td>
-                <td><textarea  rows="5" cols="25" name="txtDescricaoLoja" value="${loja.descricao}" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>></textarea></td>
+                <td><textarea  pattern="^[A-Za-z].{0,100}$"  rows="5" cols="25" name="txtDescricaoLoja" value="${loja.descricao}" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>></textarea></td>
             </tr>
              <tr>
-                <td>Tipo Cozinha:</td>
+                <td>Tipo Cozinha*:</td>
                 <td>
                     <select name="optTipoCozinha" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>>
                         <c:forEach items="${tiposCozinha}" var="tipoCozinha">
@@ -178,30 +178,30 @@
           
             </tr>
             <tr>
-                <td>CEP:</td>
-                <td><input pattern="[0-9].{7,}$"  type="text" name="txtCepLoja" id="cep" onblur="pesquisacep(this.value)" value="${loja.cep}" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>></input></td>
+                <td>CEP*:</td>
+                <td><input pattern="[0-9].{7,10}$"  type="text" name="txtCepLoja" required id="cep" onblur="pesquisacep(this.value)" value="${loja.cep}" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>></input></td>
             </tr>
               <tr>
-                <td>Logradouro:</td>
-                <td><input  pattern="[A-Za-z].{4,}" required  type="text" name="txtLogradouroLoja" id="rua" value="${loja.logradouro}" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>></input></td>
+                <td>Logradouro*:</td>
+                <td><input  pattern="[A-Za-z].{4,45}" required  type="text" name="txtLogradouroLoja" id="rua" value="${loja.logradouro}" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>></input></td>
             </tr>
              <tr>
-                <td>Bairro:</td>
-                <td><input pattern="[A-Za-z].{4,}" required type="text" name="txtBairroLoja" required  id="bairro" value="${loja.bairro}" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>></input></td>
+                <td>Bairro*:</td>
+                <td><input pattern="[A-Za-z].{4,45}" required type="text" name="txtBairroLoja" required  id="bairro" value="${loja.bairro}" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>></input></td>
             </tr>             <tr>
-                <td>Numero:</td>
-                <td><input pattern="[A-Za-z0-9].{0,}" required  type="text" name="txtNumeroLoja" value="${loja.numero}"<c:if test="${operacao == 'Excluir'}"> readonly</c:if>></input></td>
+                <td>Numero*:</td>
+                <td><input pattern="[A-Za-z0-9].{0,10}" required  type="text" name="txtNumeroLoja" value="${loja.numero}"<c:if test="${operacao == 'Excluir'}"> readonly</c:if>></input></td>
             </tr>
             <tr>
                 <td>Complemento:</td>
-                <td><input pattern="[A-Za-z].{4,}" required  type="text" name="txtComplementoLoja" value="${loja.complemento}" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>></input></td>
+                <td><input pattern="[A-Za-z].{4,45}"   type="text" name="txtComplementoLoja" value="${loja.complemento}" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>></input></td>
             </tr>
               <tr>
-                <td>Cidade:</td>
-                <td><input pattern="[A-Za-z].{4,}" required  type="text" name="txtCidadeLoja" id="cidade" value="${loja.cidade}" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>></input></td>
+                <td>Cidade*:</td>
+                <td><input pattern="[A-Za-z].{4,45}" required  type="text" name="txtCidadeLoja" id="cidade" value="${loja.cidade}" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>></input></td>
             </tr>
              <tr>
-                <td>Estado:</td>
+                <td>Estado*:</td>
                 <td><input pattern="[A-Za-z]{2}" required  title="Apenas a sigla" type="text" name="txtEstadoLoja" id="uf" value="${loja.estado}"<c:if test="${operacao == 'Excluir'}"> readonly</c:if>></input></td>
             </tr>
             </table>

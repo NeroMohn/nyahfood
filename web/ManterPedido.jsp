@@ -133,7 +133,7 @@
             </tr>
             <tr>
                 <td>Total:</td>
-                <td><input type="text" pattern="[0-9].{3,}$" required name="txtTotal" value="${pedido.total}" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>></input></td>
+                <td><input type="text" pattern="[0-9].{0,45}$" required name="txtTotal" value="${pedido.total}" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>></input></td>
             </tr>
              <tr>
                 <td>Metodo Pagamento:</td>
@@ -141,15 +141,15 @@
             </tr>
             <tr>
                 <td>Data:</td>
-                <td><input type="text" pattern="[0-9].{8,}$" required name="txtDate" value="${pedido.date}"<c:if test="${operacao == 'Excluir'}"> readonly</c:if>></input></td>
+                <td><input type="text" pattern="[0-9].{0,10}$" required name="txtDate" value="${pedido.date}"<c:if test="${operacao == 'Excluir'}"> readonly</c:if>></input></td>
             </tr>
             <tr>
                 <td>Cliente:</td>
-                <td><input type="text" name="txtCodCliente"  pattern="[0-9].{0,}$" required value="${pedido.codCliente}"<c:if test="${operacao == 'Excluir'}"> readonly</c:if>></input></td>
+                <td><input type="text" name="txtCodCliente"  pattern="[a-zA-Z0-9].{0,45}$" required value="${pedido.codCliente}"<c:if test="${operacao == 'Excluir'}"> readonly</c:if>></input></td>
             </tr>
             <tr>
                 <td>Cupom Desconto:</td>
-                <td><input type="text"  pattern="[a-zA-Z0-9].{8,}$" requiredname="txtCodCupomDesconto" value="${pedido.codCupomDesconto}"<c:if test="${operacao == 'Excluir'}"> readonly</c:if>></input></td>
+                <td><input type="text"  pattern="[a-zA-Z0-9].{0,45}$" requiredname="txtCodCupomDesconto" value="${pedido.codCupomDesconto}"<c:if test="${operacao == 'Excluir'}"> readonly</c:if>></input></td>
             </tr>
             </table>
             <td><input type="submit" name="btnConfirmar" value="Confirmar"></td>

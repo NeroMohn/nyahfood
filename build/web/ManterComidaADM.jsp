@@ -43,7 +43,7 @@
                 });
             });
         </script>
-        <script src="js/simpleCart.min.js"></script>	
+        <script src="js/simpleCart.min.js"></script>
 
         <script src="jquery-3.2.1.min.js"></script>
         <script>
@@ -72,7 +72,7 @@
                 <div class="container">
                     <div class="register">
 
-                        <div class="special-offers-section-head text-center dotted-line"> <div class="special-offers-section" > <h1>Editar Comida</h1></br> </div></div>
+                        <div class="special-offers-section-head text-center dotted-line"> <div class="special-offers-section" > <h1>${operacao} Comida</h1></br> </div></div>
 
                         <form action ="ManterComidaControllerADM?acao=confirmarOperacao&operacao=${operacao}"  method = "post" name="ManterComidaADM">
 
@@ -120,7 +120,7 @@
                                     </tr>
                                     <tr>
                                         <td>
-                                            Foto Comida:  
+                                            Foto Comida:
                                         </td>
                                         <td>
 

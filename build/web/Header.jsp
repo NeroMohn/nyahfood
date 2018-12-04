@@ -73,7 +73,7 @@
                                                     <li><a href="PesquisaComidaPedida.jsp">Pedidos</a></li>
                                             <% } %>
                                                  <% if (session.getAttribute("tipo") == "3") { %>
-                                                    <li><a href="AdminLogado.jsp">ADIMINISTRADOR</a></li>
+                                                    <li><a href="AdminLogado.jsp">ADMINISTRADOR</a></li>
                                                    
                                                     
                                             <% } %>

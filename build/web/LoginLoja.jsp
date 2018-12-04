@@ -67,7 +67,7 @@
                     </li>
                 </ul>
                 <ul class="previous">
-                	<li><a href="Home.jsp">Voltar para inicio</a></li>
+                	<li><a href="index.jsp">Voltar para inicio</a></li>
                 </ul>
                 <div class="clearfix"></div>
 			   </div>

@@ -123,7 +123,7 @@
                         Preço*:
                     </td>
                     <td>
-                        <input type="text" pattern="\d+(,\d{2})?" required name="txtPreco" value="${comida.preco}" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>>
+                        <input type="text" pattern="[0-9].{0,6}?"  required name="txtPreco" value="${comida.preco}" <c:if test="${operacao == 'Excluir'}"> readonly</c:if>>
                     </td>
                 </tr>
                  

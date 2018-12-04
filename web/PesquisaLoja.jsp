@@ -58,9 +58,7 @@
         <div  class="container text-center"> 
            <h1>Pesquisa Loja</h1>
            <br>
-           <form action="ManterLojaController?acao=prepararOperacao&operacao=Incluir" method="post">
-            <input type="submit" name="btnIncluir" value="Incluir">
-        </form>
+          
            <br><br>
         <table border=1 id="tablePesquisa" class=" col-lg-12 ">
             <tr>

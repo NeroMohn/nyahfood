@@ -84,10 +84,13 @@
             </tr>
             <div><c:out value="${vazio}"/></div>
                 <c:forEach items="${comidas}" var="comida">
-                    <tr>
+                  
+                    <tr>  <c:when test="${comida.codLoja == loja.idLoja}}">
                         <td><c:out value="${comida.idComida}"/></td>
                         <td><c:out value="${comida.nome}"/></td>
                         <td><c:out value="${comida.preco}"/></td>
+                        </c:when>
+                      
                         <!--<td><a href="ManterComidaController?acao=prepararOperacao&operacao=Editar&idComida=<c:out value="${comida.idComida}"/>">Editar</a></td>
                         <td>
                             <a href="ManterComidaController?acao=prepararOperacao&operacao=Excluir&idComida=<c:out value="${comida.idComida}"/>">Excluir</a></td><-->
@@ -96,6 +99,7 @@
                         
                    
                     </tr>
+                     
                 </c:forEach>
 
 

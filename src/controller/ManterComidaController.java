@@ -17,6 +17,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import model.Comida;
+import model.Loja;
 
 /**
  *
@@ -48,6 +49,7 @@ public void prepararOperacao(HttpServletRequest request, HttpServletResponse res
             view.forward(request, response);
         }else{
         if (!operacao.equals("Incluir")) {
+    
             Long idComida = Long.parseLong(request.getParameter("idComida"));
             Comida comida = Comida.obterComida(idComida);
             request.setAttribute("comida", comida);
@@ -80,6 +82,7 @@ public void confirmarOperacao(HttpServletRequest request, HttpServletResponse re
 
     Long codLoja = Long.parseLong(request.getSession().getAttribute("id").toString());
     
+
     try{
     
       if (operacao.equals("Incluir")){

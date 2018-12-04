@@ -13,8 +13,8 @@ import java.sql.SQLException;
 import java.util.List;
 import model.Loja;
 
-@WebServlet(name = "PesquisaComidaLojaController", urlPatterns = {"/PesquisaComidaLojaController"})
-public class PesquisaComidaLojaController extends HttpServlet {
+@WebServlet(name = "PesquisaComidaLojaClienteController", urlPatterns = {"/PesquisaComidaLojaClienteController"})
+public class PesquisaComidaLojaClienteController extends HttpServlet {
 
     protected void processRequest(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         try {
@@ -23,10 +23,10 @@ public class PesquisaComidaLojaController extends HttpServlet {
             if(obterTodasComidas.isEmpty()){
                 request.setAttribute("vazio", "");
             }
-             String id = request.getSession().getAttribute("id").toString();
-             request.setAttribute("id",id);
+             Long idLoja = Long.parseLong(request.getParameter("idLoja"));
+            request.setAttribute("id", idLoja);
             request.setAttribute("comidas", Comida.obterTodasComidas());
-            RequestDispatcher view = request.getRequestDispatcher("/PesquisaComidaLoja.jsp");
+            RequestDispatcher view = request.getRequestDispatcher("/PesquisaComidaLojaCliente.jsp");
             view.forward(request, response);
 
         } catch (ClassNotFoundException e) {

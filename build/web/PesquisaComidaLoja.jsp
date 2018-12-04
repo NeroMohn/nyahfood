@@ -47,30 +47,7 @@
     <!-- header-section-starts -->
 	<div id="header"></div>
 		
-					<div class="main-search">
-						<form action="search.html">
-							<input type="text" value="Search" onFocus="this.value = '';" onBlur="if (this.value == '') {this.value = 'Search';}" class="text"/>
-							<input type="submit" value=""/>
-						</form>
-						<div class="close"><img src="images/cross.png" /></div>
-					</div>
-					<div class="srch"><button></button></div>
-					<script type="text/javascript">
-                        $('.main-search').hide();
-                        $('button').click(function (){
-                                $('.main-search').show();
-                                $('.main-search text').focus();
-                            }
-                        );
-                        $('.close').click(function(){
-                            $('.main-search').hide();
-                        });
-					</script>
-
-				</div>
-			</div>
-		</div>
-	</div>
+					
 	<!-- header-section-ends -->
 	<!-- content-section-starts -->
         <div  class="container text-center"> 
@@ -84,14 +61,15 @@
             </tr>
             <div><c:out value="${vazio}"/></div>
                 <c:forEach items="${comidas}" var="comida">
-                    <tr>
+                    
+                    <tr> <c:if test="${comida.codLoja == id}">
                         <td><c:out value="${comida.idComida}"/></td>
                         <td><c:out value="${comida.nome}"/></td>
-                     
+                        
                         <td><a href="ManterComidaController?acao=prepararOperacao&operacao=Editar&idComida=<c:out value="${comida.idComida}"/>">Editar</a></td>
                         <td>
-                            <a href="ManterComidaController?acao=prepararOperacao&operacao=Excluir&idComida=<c:out value="${comida.idComida}"/>">Excluir</a></td><
-                 
+                            <a href="ManterComidaController?acao=prepararOperacao&operacao=Excluir&idComida=<c:out value="${comida.idComida}"/>">Excluir</a></td>
+                    </c:if>
                         
                         
                    

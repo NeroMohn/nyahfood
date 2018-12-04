@@ -1,6 +1,6 @@
 package controller;
 
-import model.Loja;
+import model.Pedido;
 
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -13,21 +13,19 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-@WebServlet(name = "PesquisaLojaController", urlPatterns = {"/PesquisaLojaController"})
-public class PesquisaLojaController extends HttpServlet {
+@WebServlet(name = "PesquisaPedidoClienteController", urlPatterns = {"/PesquisaPedidoClienteController"})
+public class PesquisaPedidoClienteController extends HttpServlet {
 
     protected void processRequest(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         try {
-            List<Loja> obterTodasLojas = Loja.obterTodasLojas();
-            if(obterTodasLojas.isEmpty()){
-                request.setAttribute("vazio", "Mensagem");
+            List<Pedido> obterTodosPedidos = Pedido.obterTodosPedidos();
+            if(obterTodosPedidos.isEmpty()){
+                 request.setAttribute("vazio", "");
             }
-             String id = request.getSession().getAttribute("id").toString();
-             request.setAttribute("id",id);
-            request.setAttribute("lojas", Loja.obterTodasLojas());
-            RequestDispatcher view = request.getRequestDispatcher("/PesquisaLoja.jsp");
+            request.setAttribute("pedidos", Pedido.obterTodosPedidos());
+            RequestDispatcher view = request.getRequestDispatcher("/PesquisaPedidoCliente.jsp");
             view.forward(request, response);
-                
+
         } catch (ClassNotFoundException e) {
             throw new ServletException(e);
         } catch (SQLException e) {

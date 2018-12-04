@@ -39,6 +39,7 @@ public class Loja extends Usuario {
     }
 
 
+    
     public Long getIdLoja() {
         return idLoja;
     }
@@ -107,6 +108,8 @@ public class Loja extends Usuario {
         LojaDAO.excluir(this);
     }
 
+
+    
     public static Loja obterLoja(Long idLoja) throws SQLException, ClassNotFoundException{
         return LojaDAO.obterLoja(idLoja);
     }
@@ -119,4 +122,5 @@ public class Loja extends Usuario {
         return LojaDAO.obterTodasLojas();
     }
 
+    
 }

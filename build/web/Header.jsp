@@ -56,9 +56,7 @@
                                                 
 						<li class="active"><a href="index.jsp">Inicio</a></li>|
                                                 
-						 <% if (session.getAttribute("tipo") == null) { %>
-                                                <li><a href="PesquisaLojaController">Restaurantes</a></li>
-                                                 <% } %>
+						
                                                
                                                 <% if (session.getAttribute("tipo") == "1") { %>
                                                     <li><a href="PesquisaLojaController">Restaurantes</a></li>

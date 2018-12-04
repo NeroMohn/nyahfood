@@ -65,10 +65,10 @@
                     <tr> <c:if test="${comida.codLoja == id}">
                         <td><c:out value="${comida.idComida}"/></td>
                         <td><c:out value="${comida.nome}"/></td>
-                        
-                        <td><a href="ManterComidaController?acao=prepararOperacao&operacao=Editar&idComida=<c:out value="${comida.idComida}"/>">Editar</a></td>
+                        <td><a href="PesquisaPedidoClienteController?acao=prepararOperacao&operacao=Editar&idComida="<c:out value="${comida.idComida}"/>>Pedir</a></td>
+                       <!-- <td><a href="ManterComidaController?acao=prepararOperacao&operacao=Editar&idComida=<c:out value="${comida.idComida}"/>">Editar</a></td>
                         <td>
-                            <a href="ManterComidaController?acao=prepararOperacao&operacao=Excluir&idComida=<c:out value="${comida.idComida}"/>">Excluir</a></td>
+                            <a href="ManterComidaController?acao=prepararOperacao&operacao=Excluir&idComida=<c:out value="${comida.idComida}"/>">Excluir</a></td>-->
                     </c:if>
                         
                         

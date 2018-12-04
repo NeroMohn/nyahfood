@@ -72,9 +72,9 @@
                     <tr>
                       
                         <td><c:out value="${loja.nome}"/></td>
-                      <td><a href="#">Pedir</a></td>
-                         <!--   <td><a href="ManterLojaController?acao=prepararOperacao&operacao=Editar&idLoja=<c:out value="${loja.idLoja}"/>">Editar</a></td>
-                        <td>
+                     
+                          <td><a href="PesquisaComidaLojaClienteController?acao=prepararOperacao&operacao=Editar&idLoja=<c:out value="${loja.idLoja}"/>">Pedir</a></td>
+                       <!--   <td>
                             <a href="ManterLojaController?acao=prepararOperacao&operacao=Excluir&idLoja=<c:out value="${loja.idLoja}"/>">Excluir</a></td>-->
                     </tr>
                 </c:forEach>

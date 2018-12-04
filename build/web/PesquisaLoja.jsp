@@ -64,19 +64,20 @@
            <br><br>
         <table border=1 id="tablePesquisa" class=" col-lg-12 ">
             <tr>
-                <td>Código Loja</td>
+                
                 <td>Nome Loja</td>
-                <td colspan=2>Ação</td>
+                <td colspan=2>Pedido</td>
             </tr>
             <div><c:out value="${vazio}"/></div>
   
                 <c:forEach items="${lojas}" var="loja">
                     <tr>
-                        <td><c:out value="${loja.idLoja}"/></td>
+                      
                         <td><c:out value="${loja.nome}"/></td>
-                        <td><a href="ManterLojaController?acao=prepararOperacao&operacao=Editar&idLoja=<c:out value="${loja.idLoja}"/>">Editar</a></td>
+                      <td><a href="#">Pedir</a></td>
+                         <!--   <td><a href="ManterLojaController?acao=prepararOperacao&operacao=Editar&idLoja=<c:out value="${loja.idLoja}"/>">Editar</a></td>
                         <td>
-                            <a href="ManterLojaController?acao=prepararOperacao&operacao=Excluir&idLoja=<c:out value="${loja.idLoja}"/>">Excluir</a></td>
+                            <a href="ManterLojaController?acao=prepararOperacao&operacao=Excluir&idLoja=<c:out value="${loja.idLoja}"/>">Excluir</a></td>-->
                     </tr>
                 </c:forEach>
      

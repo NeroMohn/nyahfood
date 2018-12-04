@@ -99,7 +99,7 @@ public void confirmarOperacao(HttpServletRequest request, HttpServletResponse re
             }
       }
       
- RequestDispatcher view =request.getRequestDispatcher("PesquisaComidaController");
+ RequestDispatcher view =request.getRequestDispatcher("PesquisaComidaLojaController");
         view.forward(request,response);
         }catch (IOException e) {
             throw new ServletException(e);

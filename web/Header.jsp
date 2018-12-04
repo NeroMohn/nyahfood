@@ -69,7 +69,7 @@
                                             <% } %>
                                                      <% if (session.getAttribute("tipo") == "2") { %>
                                                     <li><a href="ManterComidaController?acao=prepararOperacao&operacao=Incluir">Cadastrar Comida</a></li>
-                                                   <li><a href="PesquisaComidaLoja">Seus Cadastros</a></li>
+                                                   <li><a href="PesquisaComidaLojaController">Seus Cadastros</a></li>
                                                     <li><a href="PesquisaComidaPedida.jsp">Pedidos</a></li>
                                             <% } %>
                                                  <% if (session.getAttribute("tipo") == "3") { %>

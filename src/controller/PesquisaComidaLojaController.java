@@ -19,7 +19,7 @@ public class PesquisaComidaLojaController extends HttpServlet {
         try {
             List<Comida> obterTodasComidas = Comida.obterTodasComidas();
             if(obterTodasComidas.isEmpty()){
-                request.setAttribute("vazio", "Mensagem");
+                request.setAttribute("vazio", "");
             }
             request.setAttribute("comidas", Comida.obterTodasComidas());
             RequestDispatcher view = request.getRequestDispatcher("/PesquisaComidaLoja.jsp");

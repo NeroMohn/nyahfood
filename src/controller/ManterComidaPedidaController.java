@@ -55,7 +55,9 @@ public void prepararOperacao(HttpServletRequest request, HttpServletResponse res
         try{
     
     String operacao = request.getParameter("operacao");
-    
+    request.setAttribute("operacao", operacao);
+    request.setAttribute("comidas", Comida.obterTodasComidas());
+    request.setAttribute("pedidos", Pedido.obterTodosPedidos());
     Long idCliente = Long.parseLong(request.getSession().getAttribute("id").toString());
         
         String status = (request.getSession().getAttribute("status").toString());
@@ -104,8 +106,8 @@ public void confirmarOperacao(HttpServletRequest request, HttpServletResponse re
         Long idComidaPedida = Long.parseLong(request.getParameter("txtIdComidaPedida"));
         Integer quantidade = Integer.parseInt(request.getParameter("txtQuantidade"));
         //Double total = Double.parseDouble(request.getParameter("txtTotal"));
-        Long codComida = Long.parseLong(request.getParameter("txtCodComida"));
-        Long codPedido = Long.parseLong(request.getParameter("txtCodPedido"));
+        Long codComida = Long.parseLong(request.getParameter("optComida"));
+        Long codPedido = Long.parseLong(request.getParameter("optPedido"));
         
         
         try {

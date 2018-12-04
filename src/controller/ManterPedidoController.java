@@ -15,6 +15,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import model.Cliente;
 import model.Pedido;
 
 /**
@@ -43,7 +44,7 @@ public void prepararOperacao(HttpServletRequest request, HttpServletResponse res
            
         String operacao = request.getParameter("operacao");
         request.setAttribute("operacao", operacao);
-        request.setAttribute("Pedido", Pedido.obterTodosPedidos());
+        request.setAttribute("clientes", Cliente.obterTodosClientes());
         String tipo = request.getSession().getAttribute("tipo").toString();
        
         if(tipo != "3"){

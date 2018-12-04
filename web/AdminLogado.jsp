@@ -72,6 +72,7 @@
      <tr> <td>  <a href="PesquisaComidaControllerADM">Pesquisa Comidas</a><br /></td> </tr>
      <tr> <td>  <a href="PesquisaPedidoControllerADM">Pesquisa Pedidos</a><br /></td> </tr>
      <tr> <td>  <a href="PesquisaTipoCozinhaController">Pesquisa Tipo Cozinha</a><br /></td> </tr>
+     <tr> <td>  <a href="PesquisaTipoPagamentoController">Pesquisa Tipo Pagamento</a><br /></td> </tr>
      <!--
       <a href="PesquisaTipoCozinhaController">Pesquisa Tipo Cozinha</a><br />
       <a href="PesquisaTipoCulinariaController">Pesquisa Tipo Culinaria</a><br />

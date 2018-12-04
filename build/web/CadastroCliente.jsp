@@ -123,7 +123,7 @@
 	   <div class="container">
 		  <div class="register">
 		  	
-                        <h1>Cadastro Cliente</h1>
+                        <div class="special-offers-section-head text-center dotted-line"> <div class="special-offers-section" > <h1>Cadastrar Cliente</h1></br> </div></div>
         
         <form action ="CadastroClienteController?acao=confirmarOperacao&operacao=${operacao}" method = "post" name="ManterCliente" onsubmit=" return validacaoCliente()">
             <table>

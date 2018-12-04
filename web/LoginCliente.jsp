@@ -79,7 +79,7 @@
 			    <div class="dreamcrub">
 			   	 <ul class="breadcrumbs">
                     <li class="home">
-                       <a href="Home.jsp" title="Go to Home Page">Inicio</a>&nbsp;
+                       <a href="index.jsp" title="Go to Home Page">Inicio</a>&nbsp;
                        <span>&gt;</span>
                     </li>
                     <li class="women">

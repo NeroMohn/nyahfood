@@ -15,8 +15,8 @@ public class ComidaDAO {
         PreparedStatement comando = null;
         try {
             conexao = dao.BD.getConexao();
-            String sql = "insert into comida (  nome,  ingrediente,  tempoEstimado,  foto,  preco, desconto, codLoja)"+
-                    "values (?,?,?,?,?,?,?)";
+            String sql = "insert into comida (  nome,  ingrediente,  tempoEstimado,  foto,  preco, codLoja)"+
+                    "values (?,?,?,?,?,?)";
             comando = conexao.prepareStatement(sql);
           
             comando.setString(1, comida.getNome());
@@ -24,11 +24,11 @@ public class ComidaDAO {
             comando.setInt(3, comida.getTempoEstimado());
             comando.setString(4, comida.getFoto());
             comando.setDouble(5, comida.getPreco());
-            comando.setDouble(6, comida.getDesconto());
+          
             if (comida.getCodLoja() == null) {
-                comando.setNull(7, Types.NULL);
+                comando.setNull(6, Types.NULL);
             } else {
-                comando.setLong(7, comida.getCodLoja());
+                comando.setLong(6, comida.getCodLoja());
             }
             comando.execute();
             BD.fecharConexao(conexao, comando);
@@ -45,7 +45,7 @@ public class ComidaDAO {
         PreparedStatement comando = null;
         try {
             conexao = BD.getConexao();
-            String sql = "update comida set nome = ?, ingrediente = ?, tempoEstimado = ?, foto = ?, preco = ?, desconto = ?," +
+            String sql = "update comida set nome = ?, ingrediente = ?, tempoEstimado = ?, foto = ?, preco = ?," +
                     "codLoja = ? where idComida = ?";
             comando = conexao.prepareStatement(sql);
             comando.setString(1, comida.getNome());
@@ -53,13 +53,13 @@ public class ComidaDAO {
             comando.setInt(3, comida.getTempoEstimado());
             comando.setString(4, comida.getFoto());
             comando.setDouble(5, comida.getPreco());
-            comando.setDouble(6, comida.getDesconto());
+
             if (comida.getCodLoja()== null) {
-                comando.setNull(7, Types.NULL);
+                comando.setNull(6, Types.NULL);
             } else {
-                comando.setLong(7, comida.getCodLoja());
+                comando.setLong(6, comida.getCodLoja());
             }
-            comando.setLong(8, comida.getIdComida());
+            comando.setLong(7, comida.getIdComida());
             comando.execute();
             BD.fecharConexao(conexao, comando);
 
@@ -102,7 +102,7 @@ public class ComidaDAO {
                     rs.getInt("tempoEstimado"),
                     rs.getString("foto"),
                     rs.getDouble("preco"),
-                    rs.getDouble("desconto"),
+                
                     null);
             comida.setCodLoja(rs.getLong("codLoja"));
         } catch (SQLException e) {
@@ -131,7 +131,7 @@ public class ComidaDAO {
                         rs.getInt("tempoEstimado"),
                         rs.getString("foto"),
                         rs.getDouble("preco"),
-                        rs.getDouble("desconto"),
+               
                         null);
                 comida.setCodLoja(rs.getLong("codLoja"));
                 comidas.add(comida);

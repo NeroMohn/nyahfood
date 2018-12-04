@@ -19,6 +19,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.xml.bind.DatatypeConverter;
 import model.Comida;
+import model.Loja;
 
 /**
  *
@@ -41,9 +42,11 @@ public class ManterComidaControllerADM extends HttpServlet {
 
 public void prepararOperacao(HttpServletRequest request, HttpServletResponse response) {
         try{
-        String tipo = request.getSession().getAttribute("tipo").toString();
+
         String operacao = request.getParameter("operacao");
         request.setAttribute("operacao", operacao);
+        request.setAttribute("idLoja", Loja.obterTodasLojas());
+        String tipo = request.getSession().getAttribute("tipo").toString();
         request.setAttribute("tipo",tipo);
         if(tipo != "3"){
             RequestDispatcher view = request.getRequestDispatcher("AcessoNegadoController");
@@ -79,29 +82,25 @@ public void confirmarOperacao(HttpServletRequest request, HttpServletResponse re
     Integer tempoEstimado = Integer.parseInt(request.getParameter("txtTempoEstimado"));
     String foto = request.getParameter("txtFoto");
     Double preco = Double.parseDouble(request.getParameter("txtPreco"));
-    //Long codLoja = Long.parseLong(request.getParameter("txtIdLoja"));
+    Long codLoja = Long.parseLong(request.getParameter("codTipoCozinha"));
     
     try{
     
       if (operacao.equals("Incluir")){
-            Comida comida = new Comida( codLoja, nome,  ingrediente,  tempoEstimado,  foto,  preco,
-                    codLoja);
+            Comida comida = new Comida(  nome,  ingrediente,  tempoEstimado,  foto,  preco, codLoja);
             comida.gravar();
         }else{ 
             if(operacao.equals("Editar")){
          
                 Long idComida = Long.parseLong(request.getParameter("txtIdComida"));
-                Comida comida = new Comida(idComida,nome,  ingrediente,  tempoEstimado,  foto,  preco,
-                    codLoja);
+                Comida comida = new Comida(idComida,nome,  ingrediente,  tempoEstimado,  foto,  preco, codLoja);
                 comida.alterar();
         } else{ 
                 if (operacao.equals("Excluir")){
                 Long idComida = Long.parseLong(request.getParameter("txtIdComida"));
-                //Comida comida = new Comida(idComida,nome,  ingrediente,  tempoEstimado,  foto,  preco,
-                //codLoja);
-                //comida.excluir();
-                Comida comida = Comida.obterComida(idComida);
+                Comida comida = new Comida(idComida,nome,  ingrediente,  tempoEstimado,  foto,  preco, codLoja);
                 comida.excluir();
+
                 }
             }
       }

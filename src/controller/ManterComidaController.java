@@ -79,26 +79,23 @@ public void confirmarOperacao(HttpServletRequest request, HttpServletResponse re
     Integer tempoEstimado = Integer.parseInt(request.getParameter("txtTempoEstimado"));
     String foto = request.getParameter("txtFoto");
     Double preco = Double.parseDouble(request.getParameter("txtPreco"));
-    Double desconto = Double.parseDouble(request.getParameter("txtDesconto"));
+
     Long codLoja = Long.parseLong(request.getSession().getAttribute("id").toString());
     
     try{
     
       if (operacao.equals("Incluir")){
-            Comida comida = new Comida( nome,  ingrediente,  tempoEstimado,  foto,  preco,
-                   desconto,  codLoja);
+            Comida comida = new Comida( nome,  ingrediente,  tempoEstimado,  foto,  preco,  codLoja);           
             comida.gravar();
         }else{ 
             if(operacao.equals("Editar")){
                 Long idComida = Long.parseLong(request.getParameter("txtIdComida"));
-                Comida comida = new Comida(idComida,nome,  ingrediente,  tempoEstimado,  foto,  preco,
-                   desconto,  codLoja);
+                Comida comida = new Comida(idComida,nome,  ingrediente,  tempoEstimado,  foto,  preco, codLoja);
                 comida.alterar();
         } else{ 
                 if (operacao.equals("Excluir")){
                 Long idComida = Long.parseLong(request.getParameter("txtIdComida"));
-                Comida comida = new Comida(idComida,nome,  ingrediente,  tempoEstimado,  foto,  preco,
-                   desconto,  codLoja);
+                Comida comida = new Comida(idComida,nome,  ingrediente,  tempoEstimado,  foto,  preco, codLoja);
                 comida.excluir();
                 }
             }

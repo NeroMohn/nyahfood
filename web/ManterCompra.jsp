@@ -122,7 +122,7 @@
 	   <div class="container">
 		  <div class="register">
 		  	
-                      <div class="special-offers-section-head text-center dotted-line"> <div class="special-offers-section" > <h1>Manter Compra</h1></br> </div></div>
+                      <div class="special-offers-section-head text-center dotted-line"> <div class="special-offers-section" > <h1>${operacao} Compra</h1></br> </div></div>
         	
             <form action ="ManterCompraController?acao=confirmarOperacao&operacao=${operacao}" method = "post" name="ManterCompra" >
             <table>

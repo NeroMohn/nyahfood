@@ -115,7 +115,7 @@
 	   <div class="container">
 		  <div class="register">
 		  	
-                      <div class="special-offers-section-head text-center dotted-line"> <div class="special-offers-section" > <h1>Cadastrar Tipo Pagamento</h1></br> </div></div>
+                      <div class="special-offers-section-head text-center dotted-line"> <div class="special-offers-section" > <h1>${operacao} Tipo Pagamento</h1></br> </div></div>
         	
           <form action ="ManterTipoPagamentoController?acao=confirmarOperacao&operacao=${operacao}" method = "post" name="ManterTipoPagamento">
             <table>

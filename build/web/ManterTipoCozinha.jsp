@@ -122,7 +122,7 @@
 	   <div class="container">
 		  <div class="register">
 		  	
-                      <div class="special-offers-section-head text-center dotted-line"> <div class="special-offers-section" > <h1>Cadastrar Tipo Cozinha</h1></br> </div></div>
+                      <div class="special-offers-section-head text-center dotted-line"> <div class="special-offers-section" > <h1>${operacao} Tipo Cozinha</h1></br> </div></div>
         	
           <form action ="ManterTipoCozinhaController?acao=confirmarOperacao&operacao=${operacao}" method = "post" name="ManterTipoCozinha">
             <table>

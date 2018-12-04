@@ -71,7 +71,7 @@
 	   <div class="container">
 		  <div class="register">
 		  	
-                      <div class="special-offers-section-head text-center dotted-line"> <div class="special-offers-section" > <h1>Cadastro Comida</h1></br> </div></div>
+                      <div class="special-offers-section-head text-center dotted-line"> <div class="special-offers-section" > <h1>${operacao} Comida</h1></br> </div></div>
         	
          <form action ="ManterComidaController?acao=confirmarOperacao&operacao=${operacao}"  method = "post" name="ManterComida">
 

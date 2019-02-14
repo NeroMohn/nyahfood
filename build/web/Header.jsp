@@ -55,7 +55,7 @@
 					<ul>
                                                 
 						<li class="active"><a href="index.jsp">Inicio</a></li>|
-                                                
+                                                 <li><a href="RelatorioController">Relatorio</a></li>
 						
                                                
                                                 <% if (session.getAttribute("tipo") == "1") { %>

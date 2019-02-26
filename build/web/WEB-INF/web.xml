@@ -88,6 +88,10 @@
         <servlet-name>ManterTipoPagamentoController</servlet-name>
         <servlet-class>controller.ManterTipoPagamentoController</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>ReportTeste</servlet-name>
+        <servlet-class>relatorio.ReportTeste</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>PesquisaClienteController</servlet-name>
         <url-pattern>/PesquisaClienteController</url-pattern>
@@ -195,6 +199,10 @@
     <servlet-mapping>
         <servlet-name>RelatorioController</servlet-name>
         <url-pattern>/RelatorioController</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ReportTeste</servlet-name>
+        <url-pattern>/ReportTeste</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

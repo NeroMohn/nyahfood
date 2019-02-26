@@ -12,6 +12,11 @@
         <title>JSP Page</title>
     </head>
     <body>
-     
+        <div>
+            <form action="ReportTeste" method="post">
+                <input type ="submit" name="btnReport" value="RelatorioTeste">
+                    
+            </form>
+            </div>            
     </body>
 </html>

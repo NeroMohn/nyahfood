@@ -15,8 +15,20 @@
         <div>
             <form action="ReportTeste" method="post">
                 <input type ="submit" name="btnReport" value="RelatorioTeste">
-                    
+
             </form>
-            </div>            
+        </div>
+        <div>
+            <form action="ReportAdministrador" method="post">
+                <input type ="submit" name="btnReport" value="RelatorioAdministrador">
+
+            </form>
+        </div>
+         <div>
+            <form action="ReportCliente" method="post">
+                <input type ="submit" name="btnReport" value="RelatorioCliente">
+
+            </form>
+        </div>
     </body>
 </html>

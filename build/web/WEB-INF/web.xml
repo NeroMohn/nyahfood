@@ -92,6 +92,22 @@
         <servlet-name>ReportTeste</servlet-name>
         <servlet-class>relatorio.ReportTeste</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>ReportAdministrador</servlet-name>
+        <servlet-class>relatorio.ReportAdministrador</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>ReportCliente</servlet-name>
+        <servlet-class>relatorio.ReportCliente</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>ReportLoja</servlet-name>
+        <servlet-class>relatorio.ReportLoja</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>ReportTipoCozinha</servlet-name>
+        <servlet-class>relatorio.ReportTipoCozinha</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>PesquisaClienteController</servlet-name>
         <url-pattern>/PesquisaClienteController</url-pattern>
@@ -203,6 +219,22 @@
     <servlet-mapping>
         <servlet-name>ReportTeste</servlet-name>
         <url-pattern>/ReportTeste</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ReportAdministrador</servlet-name>
+        <url-pattern>/ReportAdministrador</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ReportCliente</servlet-name>
+        <url-pattern>/ReportCliente</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ReportLoja</servlet-name>
+        <url-pattern>/ReportLoja</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ReportTipoCozinha</servlet-name>
+        <url-pattern>/ReportTipoCozinha</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

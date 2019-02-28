@@ -24,9 +24,21 @@
 
             </form>
         </div>
-         <div>
+        <div>
             <form action="ReportCliente" method="post">
                 <input type ="submit" name="btnReport" value="RelatorioCliente">
+
+            </form>
+        </div>
+        <div>
+            <form action="ReportLoja" method="post">
+                <input type ="submit" name="btnReport" value="RelatorioLoja">
+
+            </form>
+        </div>
+        <div>
+            <form action="ReportTipoCozinha" method="post">
+                <input type ="submit" name="btnReport" value="RelatorioTipoCozinha">
 
             </form>
         </div>

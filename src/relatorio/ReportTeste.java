@@ -26,7 +26,7 @@ public class ReportTeste extends HttpServlet {
             /*Class.forName("com.mysql.jdbc.Driver");*/
             conexao = BD.getConexao();
             HashMap parametros = new HashMap();
-            //parametros.put("PAR_Tempo", Integer.parseInt(request.getParameter("txtCodCurso")));
+            parametros.put("PAR_cidade", Integer.parseInt(request.getParameter("txtAnswer")));
             String relatorio = getServletContext().getRealPath("/WEB-INF/classes/relatorio")+"/RelatorioTeste.jasper";
             JasperPrint jp = JasperFillManager.fillReport(relatorio, parametros, conexao);
             byte[] relat = JasperExportManager.exportReportToPdf(jp);

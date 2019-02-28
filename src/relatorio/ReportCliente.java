@@ -22,7 +22,6 @@ public class ReportCliente extends HttpServlet {
  Connection conexao = null;
         try {
          
-            /*Class.forName("com.mysql.jdbc.Driver");*/
             conexao = BD.getConexao();
             HashMap parametros = new HashMap();
             //parametros.put("PAR_Tempo", Integer.parseInt(request.getParameter("txtCodCurso")));

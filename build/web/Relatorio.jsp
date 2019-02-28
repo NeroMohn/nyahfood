@@ -14,8 +14,8 @@
     <body>
         <div>
             <form action="ReportTeste" method="post">
+                <input type="text" name="txtAnswer">
                 <input type ="submit" name="btnReport" value="RelatorioTeste">
-
             </form>
         </div>
         <div>

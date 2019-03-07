@@ -108,6 +108,10 @@
         <servlet-name>ReportTipoCozinha</servlet-name>
         <servlet-class>relatorio.ReportTipoCozinha</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>ReportClientID</servlet-name>
+        <servlet-class>relatorio.ReportClientID</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>PesquisaClienteController</servlet-name>
         <url-pattern>/PesquisaClienteController</url-pattern>
@@ -235,6 +239,10 @@
     <servlet-mapping>
         <servlet-name>ReportTipoCozinha</servlet-name>
         <url-pattern>/ReportTipoCozinha</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ReportClientID</servlet-name>
+        <url-pattern>/ReportClientID</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

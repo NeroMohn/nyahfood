@@ -24,9 +24,9 @@ public class PesquisaLojaController extends HttpServlet {
             }
              String id = request.getSession().getAttribute("id").toString();
              request.setAttribute("id",id);
-            request.setAttribute("lojas", Loja.obterTodasLojas());
-            RequestDispatcher view = request.getRequestDispatcher("/PesquisaLoja.jsp");
-            view.forward(request, response);
+             request.setAttribute("lojas", Loja.obterTodasLojas());
+             RequestDispatcher view = request.getRequestDispatcher("/PesquisaLoja.jsp");
+             view.forward(request, response);
                 
         } catch (ClassNotFoundException e) {
             throw new ServletException(e);

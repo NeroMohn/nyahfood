@@ -17,8 +17,7 @@ import net.sf.jasperreports.engine.JasperExportManager;
 import net.sf.jasperreports.engine.JasperFillManager;
 import net.sf.jasperreports.engine.JasperPrint;
 
-@WebServlet (name= "RelatorioController", urlPatterns = "/RelatorioController")
-public class ReportTeste extends HttpServlet {
+public class ReportClientID extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response) throws ServletException {
  Connection conexao = null;
         try {
@@ -26,11 +25,11 @@ public class ReportTeste extends HttpServlet {
             /*Class.forName("com.mysql.jdbc.Driver");*/
             conexao = BD.getConexao();
             HashMap parametros = new HashMap();
-            parametros.put("PAR_cidade", request.getParameter("txtAnswer"));
-            String relatorio = getServletContext().getRealPath("/WEB-INF/classes/relatorio")+"/RelatorioTeste.jasper";
+            parametros.put("PAR_idCliente", Integer.parseInt(request.getParameter("txtIdCliente")));
+            String relatorio = getServletContext().getRealPath("/WEB-INF/classes/relatorio")+"/ReportClientID.jasper";
             JasperPrint jp = JasperFillManager.fillReport(relatorio, parametros, conexao);
             byte[] relat = JasperExportManager.exportReportToPdf(jp);
-            response.setHeader("Content-Disposition", "attachment;filename=relatorio.pdf");
+            response.setHeader("Content-Disposition", "attachment;filename=relatorioAdmin.pdf");
             response.setContentType("application/pdf");
             response.getOutputStream().write(relat);
            

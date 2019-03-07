@@ -74,13 +74,6 @@
      <tr> <td>  <a href="PesquisaTipoCozinhaController">Pesquisa Tipo Cozinha</a><br /></td> </tr>
      <tr> <td>  <a href="PesquisaTipoPagamentoController">Pesquisa Tipo Pagamento</a><br /></td> </tr>
      
-     <tr> <td> 
-          
-            <form action="ReportTeste" method="post">
-                <imput type ="submit" name="btnReport" value="Relatorio Teste"/>
-                    
-            </form>
-         </td></tr>  
      <!--
       <a href="PesquisaTipoCozinhaController">Pesquisa Tipo Cozinha</a><br />
       <a href="PesquisaTipoCulinariaController">Pesquisa Tipo Culinaria</a><br />

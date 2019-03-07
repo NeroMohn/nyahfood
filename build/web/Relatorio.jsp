@@ -13,10 +13,7 @@
     </head>
     <body>
         <div>
-            <form action="ReportTeste" method="post">
-                <input type="text" name="txtAnswer">
-                <input type ="submit" name="btnReport" value="RelatorioTeste">
-            </form>
+            <a href="ReportClientID.jsp">Relatorio Digita</a>
         </div>
         <div>
             <form action="ReportAdministrador" method="post">

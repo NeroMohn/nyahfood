@@ -16,6 +16,9 @@
             <a href="ReportClientID.jsp">Relatorio Digita</a>
         </div>
         <div>
+            <a href="RelatorioLojaTipoCozinha.jsp">Relatorio Select</a>
+        </div>
+        <div>
             <form action="ReportAdministrador" method="post">
                 <input type ="submit" name="btnReport" value="RelatorioAdministrador">
 

@@ -1,9 +1,3 @@
-<%-- 
-    Document   : 400
-    Created on : 29/11/2018, 03:10:50
-    Author     : rodri
---%>
-
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -15,7 +9,7 @@
         <div>
             <form action="ReportClientID" method="post">
                 <input type="text" name = "txtIdCliente">
-                <input type ="submit" name="btnReport" value="ReportClientID">
+                <input type ="submit" name="btnReport" value="Enviar">
             </form>
         </div>
        
